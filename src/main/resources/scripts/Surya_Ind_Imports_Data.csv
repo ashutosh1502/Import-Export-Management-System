@@ -1,0 +1,1001 @@
+Supplier Name,Supplier ID,Product,Product ID,Product Quantity,Price per Product,Address,State,Phone Number,City,Email,Payment Status,Date
+Patel Enterprises,SUP6340,Roater/Multure-7ft,RTR0002,99,2688.06,"75, Industrial Area",Kerala,6041714010,Kochi,patelenterprises@example.com,Payment Paid,2022-08-21
+Khan Distributors,SUP5936,Sowing Machine 3F,SWM0003,68,2210.4,"35, Market Street",Tamil Nadu,8860989616,Chennai,khandistributors@example.com,Payment Pending,2020-07-17
+Khan Distributors,SUP5247,Milling Machine-40HP,MLL0002,97,3307.77,"38, Main Road",Tamil Nadu,6876090576,Coimbatore,khandistributors@example.com,Payment Pending,2020-10-29
+Khan Distributors,SUP9001,Milk Extractor 180LPM,ME0001,53,2260.82,"93, Industrial Area",Maharashtra,9097123441,Nagpur,khandistributors@example.com,Payment Pending,2020-02-04
+Reddy Trading Co.,SUP9062,Sowing Machine 2F,SWM0002,15,3089.03,"42, Main Road",Tamil Nadu,9569050788,Madurai,reddytradingco.@example.com,Payment Paid,2020-03-09
+Sharma Traders,SUP7279,Plow-60HP,PLW0002,27,4753.82,"87, Main Road",Karnataka,7927614586,Mysore,sharmatraders@example.com,Payment Pending,2020-02-24
+Gupta Suppliers,SUP4138,Plow-60HP,PLW0002,86,3999.64,"78, Market Street",West Bengal,6159133823,Howrah,guptasuppliers@example.com,Payment Pending,2022-03-05
+Reddy Trading Co.,SUP7952,Sowing Machine 1F,SWM0001,21,1497.86,"29, Main Road",Maharashtra,9890698258,Nagpur,reddytradingco.@example.com,Payment Paid,2023-12-15
+Desai Dealers,SUP8766,Milling Machine-40HP,MLL0002,74,606.61,"90, Industrial Area",Kerala,6342682570,Kozhikode,desaidealers@example.com,Payment Pending,2022-09-09
+Desai Dealers,SUP8029,Plow-60HP,PLW0002,59,2620.62,"26, Market Street",Gujarat,6705880321,Ahmedabad,desaidealers@example.com,Payment Paid,2022-04-03
+Nair Ventures,SUP9068,Milling Machine-7.5HP,MLL0001,10,3716.7,"75, Main Road",Uttar Pradesh,8082672892,Kanpur,nairventures@example.com,Payment Paid,2022-03-08
+Verma Industries,SUP9502,Sowing Machine 2F,SWM0002,8,3095.37,"37, Market Street",Rajasthan,8310204542,Udaipur,vermaindustries@example.com,Payment Paid,2021-09-06
+Nair Ventures,SUP5964,Sowing Machine 2F,SWM0002,86,2484.06,"75, Market Street",Rajasthan,8889750644,Udaipur,nairventures@example.com,Payment Paid,2020-03-07
+Khan Distributors,SUP6422,Sowing Machine 1F,SWM0001,71,3052.98,"97, Main Road",Kerala,9992526468,Kozhikode,khandistributors@example.com,Payment Paid,2023-07-01
+Reddy Trading Co.,SUP7676,Roater/Multure-7ft,RTR0002,80,2203.6,"11, Market Street",Kerala,8179180648,Thiruvananthapuram,reddytradingco.@example.com,Payment Paid,2020-06-24
+Bose Supplies,SUP2229,Kadaba Kutti Machine M1,KK0001,22,1930.71,"70, Main Road",Bihar,9371676028,Bhagalpur,bosesupplies@example.com,Payment Paid,2020-04-28
+Reddy Trading Co.,SUP1046,Kadaba Kutti Machine M2,KK0002,22,658.26,"48, Market Street",Uttar Pradesh,7641507386,Lucknow,reddytradingco.@example.com,Payment Pending,2023-12-22
+Nair Ventures,SUP7413,Sowing Machine 1F,SWM0001,21,1228.02,"68, Market Street",West Bengal,8251019752,Howrah,nairventures@example.com,Payment Paid,2022-09-25
+Desai Dealers,SUP4370,Plow-18HP,PLW0001,30,1218.95,"73, Market Street",Kerala,6754507959,Thiruvananthapuram,desaidealers@example.com,Payment Pending,2022-07-25
+Bose Supplies,SUP8123,Plow-18HP,PLW0001,44,3490.18,"51, Market Street",Uttar Pradesh,6355148959,Varanasi,bosesupplies@example.com,Payment Paid,2021-11-15
+Verma Industries,SUP1761,Milk Extractor 600LPM,ME0002,70,2460.86,"15, Market Street",Rajasthan,9091924081,Jaipur,vermaindustries@example.com,Payment Pending,2023-04-16
+Patel Enterprises,SUP3025,Roater/Multure-2ft,RTR0001,79,2639.14,"1, Industrial Area",West Bengal,6163468414,Howrah,patelenterprises@example.com,Payment Pending,2021-11-29
+Verma Industries,SUP1063,Roater/Multure-7ft,RTR0002,90,3957.96,"75, Industrial Area",Punjab,6673497745,Jalandhar,vermaindustries@example.com,Payment Paid,2022-06-23
+Reddy Trading Co.,SUP9728,Roater/Multure-2ft,RTR0001,82,2269.11,"14, Market Street",Uttar Pradesh,7015973624,Varanasi,reddytradingco.@example.com,Payment Paid,2020-05-03
+Bose Supplies,SUP3581,Roater/Multure-7ft,RTR0002,77,652.99,"48, Market Street",West Bengal,6102422261,Kolkata,bosesupplies@example.com,Payment Paid,2023-11-13
+Bose Supplies,SUP4439,Plow-60HP,PLW0002,31,542.91,"42, Market Street",Tamil Nadu,8246217718,Madurai,bosesupplies@example.com,Payment Paid,2023-08-17
+Patel Enterprises,SUP9026,Milk Extractor 600LPM,ME0002,35,3892.86,"60, Main Road",Rajasthan,8097438936,Udaipur,patelenterprises@example.com,Payment Paid,2023-07-04
+Nair Ventures,SUP1522,Kadaba Kutti Machine M2,KK0002,13,3371.24,"63, Market Street",Maharashtra,6041113483,Pune,nairventures@example.com,Payment Paid,2023-03-09
+Verma Industries,SUP4899,Kadaba Kutti Machine M3,KK0003,99,2459.52,"93, Market Street",Uttar Pradesh,8777627057,Kanpur,vermaindustries@example.com,Payment Paid,2020-04-25
+Desai Dealers,SUP5481,Milk Extractor 180LPM,ME0001,21,3398.15,"41, Main Road",Bihar,8723641496,Gaya,desaidealers@example.com,Payment Paid,2023-12-05
+Khan Distributors,SUP3832,Sowing Machine 4F,SWM0004,73,4318.73,"27, Industrial Area",West Bengal,9112286291,Darjeeling,khandistributors@example.com,Payment Pending,2021-03-04
+Nair Ventures,SUP6700,Kadaba Kutti Machine M2,KK0002,16,4474.47,"58, Main Road",Karnataka,9572704382,Mysore,nairventures@example.com,Payment Pending,2023-04-08
+Sharma Traders,SUP8322,Milling Machine-40HP,MLL0002,59,2133.94,"26, Market Street",Uttar Pradesh,8711784702,Varanasi,sharmatraders@example.com,Payment Pending,2021-03-26
+Nair Ventures,SUP1524,Roater/Multure-7ft,RTR0002,27,2845.55,"88, Main Road",Gujarat,9309986005,Ahmedabad,nairventures@example.com,Payment Paid,2020-11-11
+Desai Dealers,SUP2553,Kadaba Kutti Machine M1,KK0001,25,889.35,"100, Market Street",Bihar,6296285064,Patna,desaidealers@example.com,Payment Pending,2020-11-21
+Khan Distributors,SUP2800,Milling Machine-7.5HP,MLL0001,13,996.5,"53, Industrial Area",Kerala,9953302561,Kochi,khandistributors@example.com,Payment Pending,2023-10-26
+Khan Distributors,SUP3551,Sowing Machine 3F,SWM0003,92,693.28,"85, Main Road",Kerala,8411056940,Thiruvananthapuram,khandistributors@example.com,Payment Pending,2021-02-06
+Verma Industries,SUP5341,Milk Extractor 600LPM,ME0002,26,4054.52,"48, Industrial Area",Maharashtra,7590237935,Nagpur,vermaindustries@example.com,Payment Paid,2022-07-08
+Verma Industries,SUP9330,Sowing Machine 2F,SWM0002,95,944.1,"87, Main Road",Uttar Pradesh,9603441738,Lucknow,vermaindustries@example.com,Payment Paid,2021-06-21
+Singh Agro,SUP6984,Milling Machine-7.5HP,MLL0001,65,1126.21,"38, Market Street",Kerala,9788065380,Thiruvananthapuram,singhagro@example.com,Payment Paid,2022-07-19
+Gupta Suppliers,SUP6975,Kadaba Kutti Machine M1,KK0001,17,2737.04,"41, Main Road",Uttar Pradesh,6148022985,Kanpur,guptasuppliers@example.com,Payment Pending,2020-07-14
+Sharma Traders,SUP7256,Milling Machine-40HP,MLL0002,19,4122.17,"22, Industrial Area",Rajasthan,9180006148,Jaipur,sharmatraders@example.com,Payment Pending,2021-08-12
+Nair Ventures,SUP5408,Kadaba Kutti Machine M2,KK0002,97,1911.13,"2, Industrial Area",Gujarat,8706897293,Ahmedabad,nairventures@example.com,Payment Paid,2020-11-07
+Bose Supplies,SUP6949,Sowing Machine 1F,SWM0001,6,1265.13,"72, Market Street",Rajasthan,8976694197,Jaipur,bosesupplies@example.com,Payment Pending,2021-01-12
+Singh Agro,SUP4323,Milk Extractor 600LPM,ME0002,64,3472.37,"38, Industrial Area",Karnataka,8983271859,Mysore,singhagro@example.com,Payment Paid,2020-03-31
+Gupta Suppliers,SUP5819,Sowing Machine 1F,SWM0001,25,1957.39,"70, Industrial Area",Punjab,9154800701,Amritsar,guptasuppliers@example.com,Payment Pending,2020-02-20
+Sharma Traders,SUP3904,Plow-18HP,PLW0001,63,4185.25,"78, Market Street",Punjab,8733673252,Jalandhar,sharmatraders@example.com,Payment Paid,2023-05-02
+Singh Agro,SUP9144,Sowing Machine 3F,SWM0003,66,4909.63,"17, Industrial Area",Gujarat,8056836009,Surat,singhagro@example.com,Payment Pending,2020-07-03
+Reddy Trading Co.,SUP7529,Plow-18HP,PLW0001,53,851.35,"16, Market Street",Tamil Nadu,9017195023,Coimbatore,reddytradingco.@example.com,Payment Pending,2021-03-01
+Singh Agro,SUP2599,Sowing Machine 1F,SWM0001,93,3142.99,"68, Main Road",Kerala,7994709081,Thiruvananthapuram,singhagro@example.com,Payment Paid,2021-03-08
+Khan Distributors,SUP8231,Sowing Machine 2F,SWM0002,14,3624.75,"9, Market Street",Kerala,8798200663,Kochi,khandistributors@example.com,Payment Pending,2023-12-04
+Bose Supplies,SUP3373,Sowing Machine 2F,SWM0002,39,2831.87,"80, Industrial Area",Karnataka,7352354533,Mysore,bosesupplies@example.com,Payment Paid,2021-03-11
+Khan Distributors,SUP7603,Milk Extractor 600LPM,ME0002,86,4995.3,"43, Market Street",Kerala,8736790155,Kochi,khandistributors@example.com,Payment Paid,2022-11-05
+Nair Ventures,SUP8626,Milling Machine-7.5HP,MLL0001,2,3611.69,"12, Market Street",Bihar,7512844135,Bhagalpur,nairventures@example.com,Payment Paid,2020-04-26
+Bose Supplies,SUP4639,Roater/Multure-7ft,RTR0002,47,2717.7,"17, Main Road",Kerala,9258429262,Kozhikode,bosesupplies@example.com,Payment Pending,2021-09-05
+Sharma Traders,SUP7391,Sowing Machine 1F,SWM0001,70,2359.55,"28, Main Road",Uttar Pradesh,7641168081,Varanasi,sharmatraders@example.com,Payment Paid,2020-02-19
+Sharma Traders,SUP7543,Plow-18HP,PLW0001,74,982.25,"25, Market Street",Bihar,7121279818,Patna,sharmatraders@example.com,Payment Pending,2020-01-17
+Verma Industries,SUP2626,Milk Extractor 180LPM,ME0001,40,2885.95,"21, Market Street",Punjab,6567882913,Ludhiana,vermaindustries@example.com,Payment Pending,2023-06-14
+Desai Dealers,SUP2383,Plow-18HP,PLW0001,92,3304.19,"58, Main Road",Bihar,7258561582,Patna,desaidealers@example.com,Payment Paid,2020-03-10
+Khan Distributors,SUP2122,Sowing Machine 4F,SWM0004,56,4295.25,"19, Market Street",Karnataka,6266628250,Bangalore,khandistributors@example.com,Payment Pending,2020-05-08
+Gupta Suppliers,SUP1753,Plow-60HP,PLW0002,94,4483.12,"52, Industrial Area",Punjab,9095214369,Jalandhar,guptasuppliers@example.com,Payment Pending,2021-04-25
+Singh Agro,SUP5973,Roater/Multure-2ft,RTR0001,9,1197.4,"88, Market Street",Rajasthan,7063201175,Jaipur,singhagro@example.com,Payment Paid,2021-03-29
+Nair Ventures,SUP8960,Milk Extractor 600LPM,ME0002,93,4663.18,"60, Market Street",Uttar Pradesh,8998398178,Kanpur,nairventures@example.com,Payment Pending,2022-09-04
+Desai Dealers,SUP9820,Kadaba Kutti Machine M2,KK0002,62,1560.94,"32, Industrial Area",Punjab,6511496914,Ludhiana,desaidealers@example.com,Payment Paid,2022-10-09
+Reddy Trading Co.,SUP6269,Milk Extractor 600LPM,ME0002,9,1208.27,"57, Market Street",Bihar,9245751686,Patna,reddytradingco.@example.com,Payment Pending,2021-09-11
+Khan Distributors,SUP8598,Kadaba Kutti Machine M2,KK0002,85,3070.99,"93, Industrial Area",West Bengal,8559991564,Howrah,khandistributors@example.com,Payment Paid,2020-05-02
+Verma Industries,SUP5093,Kadaba Kutti Machine M3,KK0003,54,1060.18,"52, Main Road",Maharashtra,7351496494,Mumbai,vermaindustries@example.com,Payment Paid,2020-07-06
+Khan Distributors,SUP4420,Roater/Multure-2ft,RTR0001,3,2596.48,"94, Industrial Area",Karnataka,7439779946,Hubli,khandistributors@example.com,Payment Paid,2021-03-12
+Patel Enterprises,SUP1911,Sowing Machine 2F,SWM0002,90,4186.54,"52, Industrial Area",Tamil Nadu,8039639683,Coimbatore,patelenterprises@example.com,Payment Paid,2021-10-22
+Sharma Traders,SUP8085,Sowing Machine 1F,SWM0001,98,4856.81,"57, Main Road",Karnataka,8528840212,Bangalore,sharmatraders@example.com,Payment Paid,2022-03-22
+Patel Enterprises,SUP8294,Sowing Machine 2F,SWM0002,42,2835.29,"3, Market Street",West Bengal,8394554896,Darjeeling,patelenterprises@example.com,Payment Pending,2021-01-22
+Khan Distributors,SUP3335,Plow-18HP,PLW0001,78,1384.9,"47, Main Road",Tamil Nadu,9517514844,Madurai,khandistributors@example.com,Payment Pending,2021-09-23
+Reddy Trading Co.,SUP3795,Kadaba Kutti Machine M2,KK0002,73,2025.05,"47, Market Street",Gujarat,9519068291,Surat,reddytradingco.@example.com,Payment Pending,2023-08-03
+Gupta Suppliers,SUP9948,Sowing Machine 3F,SWM0003,100,3077.67,"22, Market Street",Gujarat,7326392986,Surat,guptasuppliers@example.com,Payment Pending,2022-08-20
+Singh Agro,SUP4294,Kadaba Kutti Machine M1,KK0001,72,3074.68,"35, Market Street",Gujarat,9194083827,Vadodara,singhagro@example.com,Payment Paid,2023-02-23
+Bose Supplies,SUP8186,Milling Machine-7.5HP,MLL0001,10,1243.41,"91, Industrial Area",Kerala,7110434028,Kozhikode,bosesupplies@example.com,Payment Paid,2020-10-21
+Patel Enterprises,SUP8456,Kadaba Kutti Machine M3,KK0003,43,3097.21,"8, Market Street",Tamil Nadu,9840917652,Coimbatore,patelenterprises@example.com,Payment Pending,2023-03-15
+Nair Ventures,SUP5447,Sowing Machine 2F,SWM0002,47,2665.71,"86, Main Road",Uttar Pradesh,8099700521,Kanpur,nairventures@example.com,Payment Pending,2023-01-11
+Bose Supplies,SUP3845,Sowing Machine 2F,SWM0002,54,2326.22,"10, Main Road",Gujarat,7084354351,Ahmedabad,bosesupplies@example.com,Payment Pending,2020-11-30
+Bose Supplies,SUP2185,Kadaba Kutti Machine M3,KK0003,3,1992.22,"71, Industrial Area",Rajasthan,7297405354,Jodhpur,bosesupplies@example.com,Payment Pending,2023-05-14
+Sharma Traders,SUP8238,Kadaba Kutti Machine M2,KK0002,80,849.07,"4, Industrial Area",Maharashtra,6741334855,Mumbai,sharmatraders@example.com,Payment Paid,2020-11-13
+Khan Distributors,SUP2556,Milk Extractor 600LPM,ME0002,28,829.14,"29, Industrial Area",West Bengal,9680733741,Kolkata,khandistributors@example.com,Payment Paid,2021-04-26
+Singh Agro,SUP1692,Plow-18HP,PLW0001,92,517.82,"93, Market Street",Bihar,7272376042,Patna,singhagro@example.com,Payment Paid,2021-08-19
+Gupta Suppliers,SUP9388,Kadaba Kutti Machine M3,KK0003,9,4981.52,"24, Market Street",Gujarat,7321901608,Vadodara,guptasuppliers@example.com,Payment Pending,2021-10-07
+Bose Supplies,SUP6406,Kadaba Kutti Machine M1,KK0001,30,4753.4,"88, Main Road",Maharashtra,6063486991,Nagpur,bosesupplies@example.com,Payment Paid,2023-07-22
+Verma Industries,SUP9217,Kadaba Kutti Machine M2,KK0002,74,3453.24,"23, Industrial Area",Bihar,9405478270,Gaya,vermaindustries@example.com,Payment Pending,2023-03-03
+Khan Distributors,SUP4115,Kadaba Kutti Machine M1,KK0001,5,3789.43,"46, Market Street",West Bengal,9274076079,Kolkata,khandistributors@example.com,Payment Pending,2021-10-15
+Verma Industries,SUP2709,Kadaba Kutti Machine M1,KK0001,31,1018.17,"62, Industrial Area",West Bengal,7436624266,Howrah,vermaindustries@example.com,Payment Paid,2022-11-30
+Nair Ventures,SUP7339,Plow-18HP,PLW0001,79,772.28,"39, Main Road",West Bengal,6284294239,Howrah,nairventures@example.com,Payment Paid,2020-07-12
+Reddy Trading Co.,SUP9075,Plow-18HP,PLW0001,65,2532.58,"95, Market Street",Maharashtra,6679365459,Nagpur,reddytradingco.@example.com,Payment Pending,2023-10-25
+Nair Ventures,SUP8429,Milling Machine-7.5HP,MLL0001,94,3171.82,"37, Market Street",West Bengal,7393526426,Kolkata,nairventures@example.com,Payment Pending,2020-11-05
+Patel Enterprises,SUP6053,Roater/Multure-7ft,RTR0002,56,1472.2,"6, Main Road",Maharashtra,7261268105,Pune,patelenterprises@example.com,Payment Pending,2021-07-04
+Patel Enterprises,SUP6487,Plow-60HP,PLW0002,39,4998.07,"41, Main Road",Kerala,6537045394,Kozhikode,patelenterprises@example.com,Payment Paid,2023-07-12
+Desai Dealers,SUP1512,Milling Machine-40HP,MLL0002,11,4058.44,"58, Main Road",Tamil Nadu,8155773999,Madurai,desaidealers@example.com,Payment Pending,2022-05-14
+Singh Agro,SUP2306,Plow-60HP,PLW0002,52,525.61,"61, Market Street",Maharashtra,7891990733,Nagpur,singhagro@example.com,Payment Paid,2021-02-27
+Khan Distributors,SUP8694,Kadaba Kutti Machine M2,KK0002,64,511.88,"73, Market Street",Kerala,7688623102,Kozhikode,khandistributors@example.com,Payment Pending,2021-09-05
+Singh Agro,SUP2818,Milk Extractor 180LPM,ME0001,76,3724.6,"92, Market Street",Maharashtra,6883688000,Pune,singhagro@example.com,Payment Pending,2022-11-20
+Reddy Trading Co.,SUP2056,Sowing Machine 4F,SWM0004,79,596.58,"14, Main Road",Karnataka,6767112324,Bangalore,reddytradingco.@example.com,Payment Paid,2020-05-24
+Patel Enterprises,SUP2963,Milling Machine-7.5HP,MLL0001,5,1149.29,"69, Industrial Area",Tamil Nadu,8228763830,Madurai,patelenterprises@example.com,Payment Paid,2023-01-14
+Desai Dealers,SUP2897,Sowing Machine 2F,SWM0002,22,2438.14,"60, Market Street",West Bengal,6164265592,Kolkata,desaidealers@example.com,Payment Paid,2020-10-28
+Nair Ventures,SUP5755,Sowing Machine 3F,SWM0003,71,2904.02,"24, Market Street",Maharashtra,6209033583,Mumbai,nairventures@example.com,Payment Pending,2020-11-24
+Desai Dealers,SUP8857,Milling Machine-7.5HP,MLL0001,89,4695.27,"54, Market Street",Punjab,7141066180,Ludhiana,desaidealers@example.com,Payment Pending,2023-08-26
+Singh Agro,SUP9691,Milk Extractor 600LPM,ME0002,40,1108.19,"49, Industrial Area",Gujarat,7787571951,Surat,singhagro@example.com,Payment Pending,2020-06-04
+Bose Supplies,SUP9327,Plow-60HP,PLW0002,95,1135.78,"97, Main Road",Tamil Nadu,7072954170,Coimbatore,bosesupplies@example.com,Payment Paid,2020-02-22
+Verma Industries,SUP8090,Milk Extractor 180LPM,ME0001,94,1525.09,"80, Industrial Area",Rajasthan,6506252712,Udaipur,vermaindustries@example.com,Payment Paid,2021-02-15
+Patel Enterprises,SUP5498,Milk Extractor 180LPM,ME0001,88,3172.5,"78, Main Road",Kerala,8382687064,Thiruvananthapuram,patelenterprises@example.com,Payment Pending,2023-08-14
+Reddy Trading Co.,SUP9611,Sowing Machine 1F,SWM0001,52,2432.2,"51, Main Road",Uttar Pradesh,6330870619,Lucknow,reddytradingco.@example.com,Payment Pending,2021-04-27
+Khan Distributors,SUP1069,Kadaba Kutti Machine M3,KK0003,64,2718.46,"5, Industrial Area",Uttar Pradesh,8243212467,Kanpur,khandistributors@example.com,Payment Pending,2023-12-13
+Sharma Traders,SUP8096,Roater/Multure-7ft,RTR0002,64,1639.33,"39, Main Road",Rajasthan,8161083790,Jodhpur,sharmatraders@example.com,Payment Pending,2022-08-01
+Sharma Traders,SUP2900,Kadaba Kutti Machine M3,KK0003,94,2165.28,"34, Main Road",Tamil Nadu,6733824441,Coimbatore,sharmatraders@example.com,Payment Pending,2020-01-19
+Verma Industries,SUP8013,Plow-18HP,PLW0001,6,2529.71,"83, Industrial Area",West Bengal,6419951468,Howrah,vermaindustries@example.com,Payment Paid,2020-11-25
+Desai Dealers,SUP3425,Kadaba Kutti Machine M1,KK0001,36,1338.58,"27, Main Road",Maharashtra,6601627896,Mumbai,desaidealers@example.com,Payment Paid,2023-02-20
+Patel Enterprises,SUP8708,Milk Extractor 600LPM,ME0002,77,975.25,"25, Market Street",Bihar,6610284774,Bhagalpur,patelenterprises@example.com,Payment Paid,2023-04-12
+Reddy Trading Co.,SUP5230,Milk Extractor 180LPM,ME0001,96,2613.62,"10, Main Road",Punjab,6190895579,Jalandhar,reddytradingco.@example.com,Payment Paid,2023-03-19
+Reddy Trading Co.,SUP5426,Plow-18HP,PLW0001,6,4416.63,"55, Main Road",Uttar Pradesh,7401012927,Lucknow,reddytradingco.@example.com,Payment Pending,2023-05-22
+Nair Ventures,SUP6256,Plow-60HP,PLW0002,79,3057.48,"42, Market Street",Kerala,6755266535,Kochi,nairventures@example.com,Payment Paid,2020-12-14
+Reddy Trading Co.,SUP2957,Plow-60HP,PLW0002,77,2835.93,"21, Market Street",Rajasthan,7391975841,Udaipur,reddytradingco.@example.com,Payment Paid,2022-11-08
+Singh Agro,SUP1455,Sowing Machine 4F,SWM0004,53,3852.51,"36, Market Street",Punjab,6532276049,Jalandhar,singhagro@example.com,Payment Paid,2023-07-10
+Nair Ventures,SUP5385,Milk Extractor 600LPM,ME0002,44,4258.05,"27, Industrial Area",Gujarat,6347680249,Ahmedabad,nairventures@example.com,Payment Paid,2021-10-27
+Gupta Suppliers,SUP9366,Kadaba Kutti Machine M2,KK0002,43,3752.66,"68, Main Road",Tamil Nadu,9524801252,Madurai,guptasuppliers@example.com,Payment Paid,2022-08-07
+Patel Enterprises,SUP7337,Milk Extractor 180LPM,ME0001,72,3867.5,"75, Main Road",Uttar Pradesh,7794554031,Kanpur,patelenterprises@example.com,Payment Paid,2020-07-09
+Gupta Suppliers,SUP9864,Milk Extractor 180LPM,ME0001,100,2077.86,"88, Market Street",Kerala,9387930319,Kochi,guptasuppliers@example.com,Payment Pending,2022-04-02
+Gupta Suppliers,SUP1743,Sowing Machine 3F,SWM0003,75,1117.72,"4, Market Street",Tamil Nadu,8873578433,Coimbatore,guptasuppliers@example.com,Payment Pending,2020-05-26
+Gupta Suppliers,SUP5120,Milk Extractor 180LPM,ME0001,32,1313.97,"86, Main Road",Gujarat,9037647717,Ahmedabad,guptasuppliers@example.com,Payment Paid,2020-03-18
+Singh Agro,SUP2191,Plow-60HP,PLW0002,75,4442.05,"41, Main Road",Bihar,6050237031,Gaya,singhagro@example.com,Payment Paid,2022-11-15
+Nair Ventures,SUP1518,Roater/Multure-2ft,RTR0001,35,4960.94,"51, Industrial Area",Punjab,9617474862,Ludhiana,nairventures@example.com,Payment Pending,2022-12-04
+Bose Supplies,SUP5811,Sowing Machine 2F,SWM0002,80,800.56,"10, Market Street",Maharashtra,6313673005,Pune,bosesupplies@example.com,Payment Paid,2020-11-23
+Singh Agro,SUP8912,Milling Machine-7.5HP,MLL0001,50,1606.41,"51, Industrial Area",Gujarat,9677400203,Surat,singhagro@example.com,Payment Paid,2020-02-26
+Verma Industries,SUP4005,Kadaba Kutti Machine M1,KK0001,100,3026.78,"55, Main Road",Karnataka,9429728745,Mysore,vermaindustries@example.com,Payment Pending,2022-07-08
+Sharma Traders,SUP7880,Kadaba Kutti Machine M1,KK0001,70,3029.49,"30, Market Street",Gujarat,9623921592,Ahmedabad,sharmatraders@example.com,Payment Pending,2022-08-15
+Gupta Suppliers,SUP5179,Kadaba Kutti Machine M3,KK0003,5,4832.43,"53, Main Road",Maharashtra,8041148138,Mumbai,guptasuppliers@example.com,Payment Paid,2021-03-08
+Patel Enterprises,SUP2284,Roater/Multure-2ft,RTR0001,61,2414.22,"58, Main Road",Karnataka,6530584456,Hubli,patelenterprises@example.com,Payment Pending,2023-09-25
+Bose Supplies,SUP1536,Milk Extractor 180LPM,ME0001,60,3657.28,"32, Market Street",Bihar,6143791012,Gaya,bosesupplies@example.com,Payment Pending,2023-04-05
+Singh Agro,SUP5728,Milk Extractor 600LPM,ME0002,81,4416.55,"31, Industrial Area",Gujarat,8012504563,Surat,singhagro@example.com,Payment Pending,2023-09-12
+Bose Supplies,SUP5050,Kadaba Kutti Machine M3,KK0003,76,1983.03,"77, Market Street",Rajasthan,6507816938,Jaipur,bosesupplies@example.com,Payment Pending,2023-04-30
+Reddy Trading Co.,SUP2940,Roater/Multure-7ft,RTR0002,82,1606.05,"93, Industrial Area",Tamil Nadu,8218290358,Chennai,reddytradingco.@example.com,Payment Pending,2022-06-15
+Desai Dealers,SUP2388,Kadaba Kutti Machine M1,KK0001,12,1592.57,"71, Main Road",Maharashtra,9267886791,Mumbai,desaidealers@example.com,Payment Paid,2023-04-27
+Desai Dealers,SUP9320,Kadaba Kutti Machine M1,KK0001,4,3402.43,"68, Main Road",Karnataka,7392376968,Mysore,desaidealers@example.com,Payment Paid,2021-02-15
+Bose Supplies,SUP8081,Milk Extractor 180LPM,ME0001,42,897.99,"13, Main Road",Kerala,6035371891,Kochi,bosesupplies@example.com,Payment Paid,2023-12-26
+Singh Agro,SUP8791,Roater/Multure-7ft,RTR0002,60,555.72,"98, Industrial Area",Rajasthan,6584633079,Udaipur,singhagro@example.com,Payment Paid,2023-01-22
+Gupta Suppliers,SUP6804,Sowing Machine 3F,SWM0003,78,3786.59,"43, Industrial Area",Gujarat,8020001158,Surat,guptasuppliers@example.com,Payment Pending,2020-01-13
+Patel Enterprises,SUP4201,Sowing Machine 2F,SWM0002,76,1798.78,"24, Industrial Area",Karnataka,7185158136,Mysore,patelenterprises@example.com,Payment Pending,2023-09-11
+Khan Distributors,SUP6034,Kadaba Kutti Machine M3,KK0003,43,1064.9,"41, Main Road",Karnataka,9049667277,Mysore,khandistributors@example.com,Payment Paid,2021-01-28
+Nair Ventures,SUP6932,Sowing Machine 2F,SWM0002,28,1636.96,"16, Industrial Area",Kerala,6634731141,Thiruvananthapuram,nairventures@example.com,Payment Paid,2023-02-24
+Sharma Traders,SUP3843,Milling Machine-40HP,MLL0002,68,3502.3,"48, Main Road",Maharashtra,7114671925,Pune,sharmatraders@example.com,Payment Paid,2020-09-28
+Gupta Suppliers,SUP5283,Plow-18HP,PLW0001,12,2308.71,"63, Market Street",Gujarat,6353661250,Ahmedabad,guptasuppliers@example.com,Payment Pending,2022-11-27
+Reddy Trading Co.,SUP3204,Roater/Multure-7ft,RTR0002,70,3920.65,"20, Industrial Area",Punjab,6847769801,Ludhiana,reddytradingco.@example.com,Payment Paid,2023-12-25
+Reddy Trading Co.,SUP4748,Plow-18HP,PLW0001,7,2276.74,"24, Main Road",Maharashtra,9294527705,Pune,reddytradingco.@example.com,Payment Paid,2022-08-29
+Nair Ventures,SUP3290,Milk Extractor 600LPM,ME0002,44,3754.86,"30, Market Street",Tamil Nadu,7347130470,Chennai,nairventures@example.com,Payment Pending,2022-05-21
+Reddy Trading Co.,SUP7929,Plow-60HP,PLW0002,34,832.8,"71, Main Road",Maharashtra,7527033835,Pune,reddytradingco.@example.com,Payment Paid,2020-04-28
+Bose Supplies,SUP7860,Kadaba Kutti Machine M2,KK0002,45,2776.88,"98, Main Road",West Bengal,9838024074,Kolkata,bosesupplies@example.com,Payment Pending,2020-11-30
+Bose Supplies,SUP5857,Roater/Multure-7ft,RTR0002,100,3215.03,"70, Market Street",Gujarat,9719017128,Surat,bosesupplies@example.com,Payment Paid,2023-10-15
+Gupta Suppliers,SUP8146,Sowing Machine 2F,SWM0002,99,2346.44,"98, Main Road",Punjab,8928731825,Ludhiana,guptasuppliers@example.com,Payment Pending,2022-09-30
+Khan Distributors,SUP3053,Sowing Machine 1F,SWM0001,57,1495.75,"35, Main Road",Rajasthan,6640684062,Udaipur,khandistributors@example.com,Payment Paid,2023-09-19
+Patel Enterprises,SUP4916,Plow-18HP,PLW0001,72,1684.82,"36, Main Road",Gujarat,6364067732,Surat,patelenterprises@example.com,Payment Paid,2023-11-22
+Desai Dealers,SUP8335,Milk Extractor 600LPM,ME0002,90,1649.77,"21, Market Street",Kerala,9032734156,Kochi,desaidealers@example.com,Payment Pending,2023-09-13
+Desai Dealers,SUP9478,Milk Extractor 600LPM,ME0002,35,1126.92,"78, Market Street",Rajasthan,9558993029,Jaipur,desaidealers@example.com,Payment Paid,2020-05-11
+Bose Supplies,SUP1038,Milk Extractor 600LPM,ME0002,61,1261.77,"23, Main Road",Bihar,7279599107,Patna,bosesupplies@example.com,Payment Pending,2021-12-16
+Bose Supplies,SUP8327,Plow-60HP,PLW0002,11,1553.91,"62, Industrial Area",Tamil Nadu,8350543834,Coimbatore,bosesupplies@example.com,Payment Paid,2020-07-09
+Desai Dealers,SUP8640,Plow-18HP,PLW0001,74,1883.52,"38, Market Street",West Bengal,6643962416,Darjeeling,desaidealers@example.com,Payment Pending,2021-04-20
+Sharma Traders,SUP2745,Plow-60HP,PLW0002,48,1820.07,"61, Market Street",West Bengal,8047116086,Kolkata,sharmatraders@example.com,Payment Paid,2020-06-05
+Bose Supplies,SUP6134,Kadaba Kutti Machine M3,KK0003,34,3496.31,"94, Industrial Area",Maharashtra,7879129069,Pune,bosesupplies@example.com,Payment Pending,2020-09-05
+Singh Agro,SUP7473,Roater/Multure-7ft,RTR0002,96,4398.48,"37, Market Street",Tamil Nadu,6693764547,Chennai,singhagro@example.com,Payment Pending,2020-06-15
+Nair Ventures,SUP1040,Roater/Multure-7ft,RTR0002,63,1272.17,"85, Main Road",Uttar Pradesh,9029732720,Lucknow,nairventures@example.com,Payment Pending,2023-11-26
+Khan Distributors,SUP3257,Plow-18HP,PLW0001,51,2548.83,"73, Market Street",Kerala,7228062723,Thiruvananthapuram,khandistributors@example.com,Payment Pending,2020-01-05
+Verma Industries,SUP9981,Roater/Multure-2ft,RTR0001,75,2832.2,"45, Main Road",Rajasthan,9178401917,Jaipur,vermaindustries@example.com,Payment Paid,2020-10-24
+Khan Distributors,SUP8548,Roater/Multure-7ft,RTR0002,58,850.67,"69, Main Road",Tamil Nadu,9983995743,Coimbatore,khandistributors@example.com,Payment Paid,2022-03-24
+Gupta Suppliers,SUP9495,Sowing Machine 4F,SWM0004,55,3296.21,"25, Main Road",Uttar Pradesh,8441542413,Kanpur,guptasuppliers@example.com,Payment Pending,2021-10-07
+Verma Industries,SUP3889,Kadaba Kutti Machine M1,KK0001,73,765.91,"86, Market Street",Karnataka,9320286929,Mysore,vermaindustries@example.com,Payment Paid,2022-04-27
+Desai Dealers,SUP8115,Kadaba Kutti Machine M1,KK0001,65,3609.32,"29, Market Street",West Bengal,9341222214,Kolkata,desaidealers@example.com,Payment Pending,2022-03-18
+Reddy Trading Co.,SUP3464,Milk Extractor 600LPM,ME0002,34,502.45,"9, Industrial Area",Tamil Nadu,7252077857,Coimbatore,reddytradingco.@example.com,Payment Pending,2022-08-05
+Patel Enterprises,SUP5313,Kadaba Kutti Machine M3,KK0003,85,1287.31,"31, Industrial Area",Uttar Pradesh,9206159798,Lucknow,patelenterprises@example.com,Payment Paid,2020-08-09
+Singh Agro,SUP8636,Milk Extractor 600LPM,ME0002,89,4019.73,"2, Main Road",Gujarat,8713986965,Ahmedabad,singhagro@example.com,Payment Pending,2022-09-19
+Verma Industries,SUP9873,Plow-60HP,PLW0002,57,3855.06,"25, Industrial Area",Kerala,7378772388,Kozhikode,vermaindustries@example.com,Payment Paid,2021-06-07
+Bose Supplies,SUP9713,Plow-18HP,PLW0001,19,3689.33,"45, Industrial Area",Maharashtra,8153771622,Pune,bosesupplies@example.com,Payment Pending,2020-05-07
+Sharma Traders,SUP9387,Plow-60HP,PLW0002,85,818.45,"70, Main Road",West Bengal,7787897811,Kolkata,sharmatraders@example.com,Payment Pending,2020-12-23
+Verma Industries,SUP1640,Roater/Multure-2ft,RTR0001,87,1771.17,"97, Industrial Area",Uttar Pradesh,9871984804,Kanpur,vermaindustries@example.com,Payment Pending,2021-12-13
+Khan Distributors,SUP2745,Roater/Multure-2ft,RTR0001,33,4766.57,"37, Main Road",Bihar,9042908938,Bhagalpur,khandistributors@example.com,Payment Paid,2023-01-14
+Gupta Suppliers,SUP9344,Kadaba Kutti Machine M2,KK0002,76,2858.57,"66, Market Street",Tamil Nadu,8380922014,Coimbatore,guptasuppliers@example.com,Payment Paid,2023-08-20
+Gupta Suppliers,SUP2353,Milk Extractor 600LPM,ME0002,29,810.21,"48, Industrial Area",Rajasthan,7703270937,Jaipur,guptasuppliers@example.com,Payment Pending,2021-12-01
+Khan Distributors,SUP7580,Milling Machine-40HP,MLL0002,7,1437.4,"61, Main Road",Kerala,7451936149,Thiruvananthapuram,khandistributors@example.com,Payment Pending,2022-08-07
+Bose Supplies,SUP7868,Roater/Multure-2ft,RTR0001,60,1391.45,"1, Main Road",West Bengal,8220544023,Howrah,bosesupplies@example.com,Payment Pending,2021-07-19
+Gupta Suppliers,SUP9175,Kadaba Kutti Machine M3,KK0003,80,3493.61,"85, Market Street",Gujarat,7732506639,Surat,guptasuppliers@example.com,Payment Paid,2022-12-04
+Khan Distributors,SUP3330,Plow-18HP,PLW0001,32,2772.54,"22, Main Road",Uttar Pradesh,8372874794,Varanasi,khandistributors@example.com,Payment Paid,2021-02-18
+Verma Industries,SUP1691,Milling Machine-40HP,MLL0002,73,2023.21,"65, Market Street",Uttar Pradesh,7845391979,Lucknow,vermaindustries@example.com,Payment Paid,2023-07-01
+Reddy Trading Co.,SUP2289,Kadaba Kutti Machine M2,KK0002,55,1524.85,"68, Market Street",Punjab,8440658390,Amritsar,reddytradingco.@example.com,Payment Pending,2022-01-06
+Sharma Traders,SUP2753,Kadaba Kutti Machine M3,KK0003,34,1162.89,"18, Main Road",Rajasthan,6876254511,Jodhpur,sharmatraders@example.com,Payment Paid,2023-09-09
+Sharma Traders,SUP8881,Roater/Multure-7ft,RTR0002,10,1507.32,"53, Industrial Area",Kerala,7647329846,Kozhikode,sharmatraders@example.com,Payment Paid,2021-04-18
+Sharma Traders,SUP9493,Kadaba Kutti Machine M2,KK0002,39,4351.39,"44, Industrial Area",West Bengal,9143572393,Howrah,sharmatraders@example.com,Payment Pending,2021-03-20
+Gupta Suppliers,SUP9456,Kadaba Kutti Machine M2,KK0002,92,1869.61,"51, Main Road",West Bengal,8527529318,Darjeeling,guptasuppliers@example.com,Payment Pending,2022-05-27
+Gupta Suppliers,SUP4945,Milk Extractor 600LPM,ME0002,47,4627.83,"47, Industrial Area",Maharashtra,6323873178,Mumbai,guptasuppliers@example.com,Payment Paid,2021-10-31
+Nair Ventures,SUP8459,Kadaba Kutti Machine M3,KK0003,91,1701.12,"92, Industrial Area",West Bengal,9299606133,Darjeeling,nairventures@example.com,Payment Paid,2020-04-08
+Gupta Suppliers,SUP5467,Sowing Machine 4F,SWM0004,20,2900.52,"51, Main Road",West Bengal,8987488666,Darjeeling,guptasuppliers@example.com,Payment Paid,2023-11-09
+Bose Supplies,SUP4829,Kadaba Kutti Machine M1,KK0001,1,812.87,"3, Main Road",Uttar Pradesh,9912794216,Kanpur,bosesupplies@example.com,Payment Paid,2023-02-23
+Reddy Trading Co.,SUP9395,Sowing Machine 3F,SWM0003,65,956.26,"39, Industrial Area",Uttar Pradesh,8557593263,Kanpur,reddytradingco.@example.com,Payment Paid,2020-09-09
+Singh Agro,SUP4743,Roater/Multure-7ft,RTR0002,44,4542.31,"71, Industrial Area",Uttar Pradesh,8160002259,Kanpur,singhagro@example.com,Payment Paid,2022-12-04
+Desai Dealers,SUP7770,Milk Extractor 600LPM,ME0002,97,1462.61,"80, Main Road",Tamil Nadu,7792330247,Coimbatore,desaidealers@example.com,Payment Paid,2021-12-10
+Verma Industries,SUP6003,Milk Extractor 600LPM,ME0002,16,2646.37,"62, Industrial Area",Tamil Nadu,6750166331,Madurai,vermaindustries@example.com,Payment Pending,2022-06-13
+Reddy Trading Co.,SUP3662,Sowing Machine 1F,SWM0001,85,4396.06,"1, Main Road",Gujarat,8425274065,Ahmedabad,reddytradingco.@example.com,Payment Pending,2021-10-01
+Sharma Traders,SUP6243,Roater/Multure-2ft,RTR0001,24,4111.86,"73, Industrial Area",Bihar,7417378277,Patna,sharmatraders@example.com,Payment Pending,2023-10-12
+Desai Dealers,SUP9837,Roater/Multure-7ft,RTR0002,32,3509.98,"34, Market Street",Tamil Nadu,8008944068,Madurai,desaidealers@example.com,Payment Pending,2023-11-22
+Khan Distributors,SUP8519,Milk Extractor 600LPM,ME0002,82,942.79,"19, Market Street",Karnataka,9119544928,Hubli,khandistributors@example.com,Payment Pending,2022-08-14
+Sharma Traders,SUP6712,Kadaba Kutti Machine M2,KK0002,98,1769.91,"41, Main Road",Gujarat,7249303690,Ahmedabad,sharmatraders@example.com,Payment Paid,2020-10-17
+Bose Supplies,SUP1989,Milk Extractor 600LPM,ME0002,18,3395.93,"25, Market Street",Maharashtra,9651811691,Mumbai,bosesupplies@example.com,Payment Pending,2022-12-30
+Desai Dealers,SUP8322,Milling Machine-40HP,MLL0002,27,3814.87,"5, Industrial Area",Punjab,7121434721,Ludhiana,desaidealers@example.com,Payment Paid,2023-11-05
+Verma Industries,SUP3110,Sowing Machine 1F,SWM0001,26,1785.05,"23, Market Street",Maharashtra,8507932020,Nagpur,vermaindustries@example.com,Payment Pending,2023-11-26
+Sharma Traders,SUP9595,Sowing Machine 2F,SWM0002,88,937.2,"6, Main Road",Karnataka,6105287941,Bangalore,sharmatraders@example.com,Payment Paid,2020-07-17
+Verma Industries,SUP3696,Kadaba Kutti Machine M3,KK0003,76,846.35,"61, Main Road",Punjab,6188654571,Jalandhar,vermaindustries@example.com,Payment Paid,2022-01-17
+Reddy Trading Co.,SUP4288,Kadaba Kutti Machine M3,KK0003,26,3079.19,"91, Industrial Area",Uttar Pradesh,6764131038,Varanasi,reddytradingco.@example.com,Payment Pending,2020-09-10
+Nair Ventures,SUP6683,Sowing Machine 2F,SWM0002,70,816.05,"89, Market Street",Maharashtra,6777198582,Nagpur,nairventures@example.com,Payment Pending,2021-10-13
+Singh Agro,SUP2596,Plow-60HP,PLW0002,65,3339.79,"7, Industrial Area",Kerala,9016335082,Kozhikode,singhagro@example.com,Payment Pending,2022-12-16
+Bose Supplies,SUP5911,Sowing Machine 4F,SWM0004,26,1219.05,"33, Market Street",Uttar Pradesh,8478552246,Kanpur,bosesupplies@example.com,Payment Paid,2022-05-25
+Sharma Traders,SUP6769,Sowing Machine 4F,SWM0004,23,3973.69,"3, Main Road",Karnataka,6687015955,Hubli,sharmatraders@example.com,Payment Pending,2020-03-25
+Patel Enterprises,SUP1345,Kadaba Kutti Machine M1,KK0001,13,2077.95,"84, Market Street",Uttar Pradesh,7097736617,Kanpur,patelenterprises@example.com,Payment Paid,2021-09-21
+Verma Industries,SUP7626,Sowing Machine 1F,SWM0001,47,1580.18,"71, Market Street",West Bengal,7553068749,Howrah,vermaindustries@example.com,Payment Paid,2021-01-08
+Bose Supplies,SUP1255,Milk Extractor 600LPM,ME0002,43,1798.65,"95, Industrial Area",Gujarat,7022576974,Surat,bosesupplies@example.com,Payment Pending,2020-06-17
+Gupta Suppliers,SUP6807,Sowing Machine 4F,SWM0004,82,1343.37,"57, Industrial Area",Maharashtra,6025252112,Mumbai,guptasuppliers@example.com,Payment Pending,2020-02-02
+Desai Dealers,SUP1821,Sowing Machine 4F,SWM0004,74,3649.22,"71, Market Street",Tamil Nadu,9670658569,Madurai,desaidealers@example.com,Payment Paid,2021-08-18
+Verma Industries,SUP4520,Plow-60HP,PLW0002,49,3933.12,"28, Main Road",Punjab,6649740428,Jalandhar,vermaindustries@example.com,Payment Paid,2020-07-09
+Patel Enterprises,SUP4245,Milling Machine-40HP,MLL0002,90,4498.13,"4, Industrial Area",Rajasthan,6672903711,Jaipur,patelenterprises@example.com,Payment Pending,2023-11-04
+Verma Industries,SUP3920,Sowing Machine 3F,SWM0003,6,1826.11,"29, Market Street",Uttar Pradesh,6078627927,Varanasi,vermaindustries@example.com,Payment Paid,2022-07-20
+Bose Supplies,SUP3467,Sowing Machine 3F,SWM0003,44,1154.67,"18, Market Street",Gujarat,9537160532,Ahmedabad,bosesupplies@example.com,Payment Paid,2023-11-20
+Nair Ventures,SUP6315,Sowing Machine 1F,SWM0001,85,2481.35,"8, Main Road",Rajasthan,6593173011,Jodhpur,nairventures@example.com,Payment Paid,2021-10-09
+Reddy Trading Co.,SUP8784,Sowing Machine 3F,SWM0003,74,3005.58,"41, Market Street",Uttar Pradesh,6338059532,Kanpur,reddytradingco.@example.com,Payment Paid,2020-04-18
+Khan Distributors,SUP6854,Roater/Multure-7ft,RTR0002,10,1839.22,"17, Main Road",Kerala,8342408012,Thiruvananthapuram,khandistributors@example.com,Payment Paid,2021-06-21
+Bose Supplies,SUP5190,Sowing Machine 4F,SWM0004,90,4774.4,"57, Market Street",Rajasthan,9252661712,Jaipur,bosesupplies@example.com,Payment Pending,2023-02-28
+Patel Enterprises,SUP5042,Kadaba Kutti Machine M3,KK0003,62,925.73,"24, Industrial Area",Tamil Nadu,6207892836,Madurai,patelenterprises@example.com,Payment Pending,2023-11-14
+Bose Supplies,SUP1179,Roater/Multure-2ft,RTR0001,67,2832.63,"4, Market Street",Rajasthan,9259441335,Jodhpur,bosesupplies@example.com,Payment Paid,2023-09-09
+Khan Distributors,SUP7975,Milk Extractor 180LPM,ME0001,40,4769.54,"78, Main Road",Kerala,6722435356,Kozhikode,khandistributors@example.com,Payment Pending,2020-12-09
+Bose Supplies,SUP9396,Kadaba Kutti Machine M1,KK0001,19,1034.69,"25, Market Street",Rajasthan,6271091743,Jodhpur,bosesupplies@example.com,Payment Paid,2020-07-31
+Desai Dealers,SUP5392,Kadaba Kutti Machine M2,KK0002,48,4706.19,"64, Main Road",Rajasthan,9384969077,Jodhpur,desaidealers@example.com,Payment Pending,2022-01-16
+Desai Dealers,SUP6153,Plow-60HP,PLW0002,50,1813.18,"26, Market Street",Tamil Nadu,7178008960,Madurai,desaidealers@example.com,Payment Paid,2023-06-14
+Bose Supplies,SUP1104,Roater/Multure-2ft,RTR0001,6,1549.52,"16, Industrial Area",Karnataka,9550776741,Hubli,bosesupplies@example.com,Payment Paid,2020-03-02
+Verma Industries,SUP7594,Milling Machine-40HP,MLL0002,94,1894.4,"2, Industrial Area",Uttar Pradesh,7472945300,Varanasi,vermaindustries@example.com,Payment Paid,2020-01-31
+Sharma Traders,SUP4558,Kadaba Kutti Machine M1,KK0001,75,1878.7,"73, Market Street",Kerala,8368713778,Thiruvananthapuram,sharmatraders@example.com,Payment Pending,2022-11-25
+Reddy Trading Co.,SUP8551,Milling Machine-7.5HP,MLL0001,67,2076.15,"10, Main Road",Maharashtra,8874257458,Pune,reddytradingco.@example.com,Payment Paid,2021-08-30
+Verma Industries,SUP5860,Milling Machine-40HP,MLL0002,72,2622.72,"54, Market Street",Karnataka,7388653845,Hubli,vermaindustries@example.com,Payment Paid,2021-12-03
+Nair Ventures,SUP3972,Sowing Machine 4F,SWM0004,50,3114.41,"89, Industrial Area",Karnataka,9383499485,Bangalore,nairventures@example.com,Payment Pending,2021-02-20
+Singh Agro,SUP2019,Milling Machine-7.5HP,MLL0001,100,4673.5,"57, Industrial Area",Punjab,8126815105,Amritsar,singhagro@example.com,Payment Paid,2021-06-08
+Desai Dealers,SUP4343,Plow-18HP,PLW0001,87,3391.64,"60, Industrial Area",Punjab,6060484046,Ludhiana,desaidealers@example.com,Payment Pending,2021-09-30
+Singh Agro,SUP8102,Plow-18HP,PLW0001,62,3843.32,"29, Market Street",Rajasthan,6947408774,Jaipur,singhagro@example.com,Payment Paid,2023-11-15
+Reddy Trading Co.,SUP2885,Sowing Machine 4F,SWM0004,15,774.14,"93, Market Street",Bihar,6393267259,Gaya,reddytradingco.@example.com,Payment Pending,2020-07-16
+Patel Enterprises,SUP9222,Sowing Machine 3F,SWM0003,74,1267.01,"77, Main Road",Bihar,8959493968,Gaya,patelenterprises@example.com,Payment Pending,2020-10-07
+Sharma Traders,SUP9006,Plow-60HP,PLW0002,42,4964.1,"5, Market Street",Karnataka,7518267789,Mysore,sharmatraders@example.com,Payment Pending,2022-12-23
+Bose Supplies,SUP1288,Milk Extractor 180LPM,ME0001,26,1372.91,"74, Industrial Area",Tamil Nadu,7244570876,Madurai,bosesupplies@example.com,Payment Paid,2022-05-26
+Reddy Trading Co.,SUP4332,Sowing Machine 3F,SWM0003,25,789.84,"49, Industrial Area",Kerala,6655024227,Thiruvananthapuram,reddytradingco.@example.com,Payment Paid,2021-09-10
+Sharma Traders,SUP4385,Kadaba Kutti Machine M3,KK0003,80,3281.7,"52, Industrial Area",Karnataka,6347004665,Bangalore,sharmatraders@example.com,Payment Paid,2020-06-23
+Verma Industries,SUP9934,Sowing Machine 3F,SWM0003,62,1557.14,"37, Main Road",Punjab,7884185400,Ludhiana,vermaindustries@example.com,Payment Paid,2020-03-21
+Nair Ventures,SUP3436,Plow-18HP,PLW0001,18,3667.78,"61, Market Street",West Bengal,6572932387,Darjeeling,nairventures@example.com,Payment Paid,2022-12-22
+Khan Distributors,SUP5164,Roater/Multure-7ft,RTR0002,45,3020.0,"75, Main Road",West Bengal,7190287214,Darjeeling,khandistributors@example.com,Payment Pending,2022-12-29
+Desai Dealers,SUP2971,Sowing Machine 2F,SWM0002,29,2198.72,"22, Market Street",Gujarat,9936176671,Ahmedabad,desaidealers@example.com,Payment Paid,2023-05-28
+Desai Dealers,SUP5646,Sowing Machine 3F,SWM0003,12,2966.81,"67, Industrial Area",West Bengal,9930078381,Kolkata,desaidealers@example.com,Payment Pending,2021-08-14
+Gupta Suppliers,SUP8375,Sowing Machine 4F,SWM0004,44,3823.53,"67, Main Road",Karnataka,7653342671,Hubli,guptasuppliers@example.com,Payment Pending,2021-02-05
+Sharma Traders,SUP2533,Sowing Machine 3F,SWM0003,97,1230.56,"60, Industrial Area",Karnataka,9541798828,Mysore,sharmatraders@example.com,Payment Paid,2023-01-07
+Bose Supplies,SUP4816,Sowing Machine 1F,SWM0001,12,3332.32,"30, Industrial Area",Gujarat,9350751168,Vadodara,bosesupplies@example.com,Payment Pending,2023-06-16
+Verma Industries,SUP3330,Milk Extractor 180LPM,ME0001,12,3310.17,"9, Market Street",Karnataka,6411852751,Mysore,vermaindustries@example.com,Payment Paid,2023-04-19
+Desai Dealers,SUP4919,Plow-18HP,PLW0001,32,3599.58,"73, Market Street",West Bengal,9950611672,Darjeeling,desaidealers@example.com,Payment Pending,2020-05-24
+Patel Enterprises,SUP7297,Milling Machine-40HP,MLL0002,41,4134.67,"26, Market Street",Bihar,6557254140,Patna,patelenterprises@example.com,Payment Pending,2021-03-22
+Singh Agro,SUP4781,Kadaba Kutti Machine M3,KK0003,98,2722.96,"55, Main Road",Kerala,8128140352,Kochi,singhagro@example.com,Payment Paid,2021-05-29
+Patel Enterprises,SUP4618,Milk Extractor 600LPM,ME0002,79,989.72,"63, Market Street",West Bengal,7499666955,Kolkata,patelenterprises@example.com,Payment Pending,2023-11-10
+Gupta Suppliers,SUP9545,Kadaba Kutti Machine M3,KK0003,16,2248.93,"63, Industrial Area",Punjab,7778273701,Ludhiana,guptasuppliers@example.com,Payment Paid,2022-10-26
+Singh Agro,SUP9444,Milling Machine-7.5HP,MLL0001,42,2579.29,"64, Industrial Area",Kerala,6608660310,Thiruvananthapuram,singhagro@example.com,Payment Paid,2020-04-30
+Verma Industries,SUP4415,Milling Machine-40HP,MLL0002,56,2551.77,"33, Market Street",Maharashtra,8212495163,Pune,vermaindustries@example.com,Payment Paid,2023-07-30
+Khan Distributors,SUP9897,Milk Extractor 180LPM,ME0001,50,2568.32,"9, Industrial Area",Gujarat,6013474888,Vadodara,khandistributors@example.com,Payment Pending,2021-10-09
+Verma Industries,SUP3464,Plow-18HP,PLW0001,7,1556.67,"63, Main Road",Kerala,6701707870,Kozhikode,vermaindustries@example.com,Payment Pending,2022-05-30
+Bose Supplies,SUP1689,Kadaba Kutti Machine M2,KK0002,99,4076.54,"2, Industrial Area",Rajasthan,6816946465,Jaipur,bosesupplies@example.com,Payment Paid,2021-01-12
+Verma Industries,SUP4906,Sowing Machine 1F,SWM0001,40,1751.27,"43, Main Road",Gujarat,7336862662,Ahmedabad,vermaindustries@example.com,Payment Pending,2023-10-02
+Khan Distributors,SUP7209,Roater/Multure-7ft,RTR0002,3,3240.13,"7, Market Street",Kerala,7890784392,Kochi,khandistributors@example.com,Payment Pending,2023-04-14
+Verma Industries,SUP9959,Roater/Multure-2ft,RTR0001,70,2279.82,"58, Market Street",Karnataka,8785040879,Hubli,vermaindustries@example.com,Payment Paid,2023-03-08
+Nair Ventures,SUP6077,Sowing Machine 1F,SWM0001,84,4424.36,"38, Main Road",Punjab,6739608651,Amritsar,nairventures@example.com,Payment Pending,2023-08-09
+Nair Ventures,SUP6794,Milling Machine-7.5HP,MLL0001,31,4826.28,"86, Market Street",Gujarat,9171971123,Ahmedabad,nairventures@example.com,Payment Pending,2022-05-17
+Gupta Suppliers,SUP3693,Plow-60HP,PLW0002,15,3239.6,"98, Main Road",West Bengal,9800494504,Kolkata,guptasuppliers@example.com,Payment Pending,2022-09-09
+Singh Agro,SUP1523,Milk Extractor 600LPM,ME0002,9,2348.65,"57, Industrial Area",Kerala,9808856408,Thiruvananthapuram,singhagro@example.com,Payment Pending,2021-08-18
+Singh Agro,SUP1671,Milling Machine-7.5HP,MLL0001,53,2149.62,"6, Industrial Area",Maharashtra,7896803554,Pune,singhagro@example.com,Payment Paid,2022-01-25
+Singh Agro,SUP9844,Plow-60HP,PLW0002,13,1077.33,"24, Market Street",Maharashtra,7733958421,Pune,singhagro@example.com,Payment Paid,2021-03-21
+Singh Agro,SUP2861,Plow-18HP,PLW0001,81,3898.74,"20, Market Street",Punjab,7064025838,Jalandhar,singhagro@example.com,Payment Pending,2022-05-01
+Nair Ventures,SUP6678,Plow-60HP,PLW0002,98,3495.67,"25, Industrial Area",Kerala,6058605150,Kochi,nairventures@example.com,Payment Pending,2020-11-27
+Singh Agro,SUP6126,Kadaba Kutti Machine M1,KK0001,36,3761.29,"12, Market Street",Punjab,7741095317,Amritsar,singhagro@example.com,Payment Pending,2023-08-07
+Patel Enterprises,SUP6181,Sowing Machine 1F,SWM0001,34,1290.15,"12, Market Street",Uttar Pradesh,9641300431,Varanasi,patelenterprises@example.com,Payment Pending,2022-03-08
+Reddy Trading Co.,SUP8196,Sowing Machine 4F,SWM0004,82,3267.04,"69, Industrial Area",Karnataka,6687871489,Bangalore,reddytradingco.@example.com,Payment Pending,2020-10-26
+Sharma Traders,SUP7632,Kadaba Kutti Machine M1,KK0001,84,1695.08,"29, Main Road",Kerala,6240242523,Kochi,sharmatraders@example.com,Payment Pending,2023-06-02
+Singh Agro,SUP6206,Sowing Machine 1F,SWM0001,8,2344.49,"100, Market Street",Uttar Pradesh,7428992168,Varanasi,singhagro@example.com,Payment Paid,2023-08-22
+Singh Agro,SUP1556,Sowing Machine 3F,SWM0003,74,3977.38,"2, Industrial Area",Uttar Pradesh,8265396078,Varanasi,singhagro@example.com,Payment Paid,2023-06-11
+Patel Enterprises,SUP4313,Sowing Machine 2F,SWM0002,23,2121.42,"1, Industrial Area",Uttar Pradesh,7863908741,Lucknow,patelenterprises@example.com,Payment Pending,2022-05-22
+Khan Distributors,SUP3557,Milling Machine-40HP,MLL0002,99,4213.15,"93, Market Street",Uttar Pradesh,8406068017,Lucknow,khandistributors@example.com,Payment Paid,2020-04-07
+Sharma Traders,SUP3644,Kadaba Kutti Machine M1,KK0001,28,2505.26,"78, Main Road",Gujarat,9885115690,Vadodara,sharmatraders@example.com,Payment Paid,2022-03-19
+Singh Agro,SUP5535,Kadaba Kutti Machine M2,KK0002,74,3110.83,"60, Main Road",Rajasthan,9615324628,Jaipur,singhagro@example.com,Payment Pending,2022-06-19
+Khan Distributors,SUP3418,Sowing Machine 1F,SWM0001,79,1759.55,"99, Industrial Area",Maharashtra,8578098337,Nagpur,khandistributors@example.com,Payment Paid,2023-01-21
+Reddy Trading Co.,SUP4912,Milling Machine-40HP,MLL0002,96,761.15,"26, Main Road",Uttar Pradesh,7239089166,Varanasi,reddytradingco.@example.com,Payment Paid,2023-04-29
+Nair Ventures,SUP1537,Roater/Multure-7ft,RTR0002,44,3451.96,"85, Market Street",West Bengal,9299293054,Howrah,nairventures@example.com,Payment Paid,2022-04-07
+Desai Dealers,SUP9972,Sowing Machine 2F,SWM0002,22,3324.78,"39, Industrial Area",Karnataka,9478914694,Bangalore,desaidealers@example.com,Payment Pending,2023-04-18
+Nair Ventures,SUP6123,Milk Extractor 180LPM,ME0001,72,3141.8,"7, Main Road",Tamil Nadu,8677930328,Chennai,nairventures@example.com,Payment Paid,2020-09-01
+Singh Agro,SUP1601,Sowing Machine 2F,SWM0002,61,1107.82,"85, Main Road",Gujarat,8327458255,Vadodara,singhagro@example.com,Payment Pending,2020-03-07
+Khan Distributors,SUP9910,Kadaba Kutti Machine M1,KK0001,30,3843.65,"7, Industrial Area",Uttar Pradesh,8534407939,Kanpur,khandistributors@example.com,Payment Paid,2023-08-17
+Desai Dealers,SUP2041,Sowing Machine 2F,SWM0002,33,3452.79,"81, Market Street",Bihar,6265457589,Patna,desaidealers@example.com,Payment Pending,2020-06-19
+Reddy Trading Co.,SUP7258,Sowing Machine 1F,SWM0001,39,2026.83,"67, Industrial Area",Maharashtra,7619662130,Pune,reddytradingco.@example.com,Payment Paid,2023-04-03
+Verma Industries,SUP1731,Sowing Machine 4F,SWM0004,78,2364.75,"25, Main Road",Karnataka,6157415784,Bangalore,vermaindustries@example.com,Payment Paid,2020-01-25
+Desai Dealers,SUP6905,Plow-18HP,PLW0001,73,2629.59,"34, Market Street",Rajasthan,7041482661,Udaipur,desaidealers@example.com,Payment Pending,2023-09-18
+Verma Industries,SUP9360,Kadaba Kutti Machine M1,KK0001,89,1008.94,"11, Market Street",Kerala,6396702424,Thiruvananthapuram,vermaindustries@example.com,Payment Paid,2020-05-05
+Khan Distributors,SUP3880,Plow-18HP,PLW0001,3,3116.01,"26, Main Road",Rajasthan,9633643920,Jodhpur,khandistributors@example.com,Payment Paid,2020-01-16
+Sharma Traders,SUP1667,Plow-60HP,PLW0002,38,2774.1,"73, Market Street",Uttar Pradesh,7866375512,Lucknow,sharmatraders@example.com,Payment Pending,2020-02-26
+Gupta Suppliers,SUP3862,Kadaba Kutti Machine M2,KK0002,86,4494.64,"47, Main Road",Bihar,7684382542,Gaya,guptasuppliers@example.com,Payment Paid,2020-06-14
+Reddy Trading Co.,SUP1206,Kadaba Kutti Machine M1,KK0001,32,695.71,"32, Industrial Area",West Bengal,9581290957,Kolkata,reddytradingco.@example.com,Payment Paid,2020-03-06
+Reddy Trading Co.,SUP2316,Milk Extractor 600LPM,ME0002,23,1658.99,"18, Market Street",Uttar Pradesh,6381479510,Lucknow,reddytradingco.@example.com,Payment Pending,2023-02-25
+Sharma Traders,SUP4646,Plow-60HP,PLW0002,98,2458.12,"37, Industrial Area",Rajasthan,7381950072,Jaipur,sharmatraders@example.com,Payment Pending,2022-02-03
+Singh Agro,SUP9077,Sowing Machine 2F,SWM0002,75,726.51,"63, Industrial Area",Rajasthan,9969683777,Jaipur,singhagro@example.com,Payment Paid,2022-07-18
+Patel Enterprises,SUP1730,Milling Machine-40HP,MLL0002,7,2498.01,"39, Main Road",Maharashtra,8926452155,Pune,patelenterprises@example.com,Payment Pending,2022-08-15
+Gupta Suppliers,SUP9700,Plow-60HP,PLW0002,2,550.91,"59, Industrial Area",Rajasthan,8719381152,Jodhpur,guptasuppliers@example.com,Payment Pending,2020-08-31
+Bose Supplies,SUP6990,Sowing Machine 3F,SWM0003,46,1035.27,"61, Market Street",Karnataka,8685426431,Hubli,bosesupplies@example.com,Payment Pending,2021-01-03
+Nair Ventures,SUP5908,Plow-18HP,PLW0001,1,2993.23,"39, Industrial Area",Kerala,6504579674,Kozhikode,nairventures@example.com,Payment Pending,2021-09-01
+Singh Agro,SUP5417,Sowing Machine 1F,SWM0001,8,1986.98,"59, Industrial Area",Bihar,7769166093,Bhagalpur,singhagro@example.com,Payment Paid,2020-04-22
+Bose Supplies,SUP8950,Milling Machine-7.5HP,MLL0001,59,4132.93,"36, Main Road",Rajasthan,6600582796,Udaipur,bosesupplies@example.com,Payment Pending,2022-05-03
+Reddy Trading Co.,SUP3580,Milling Machine-7.5HP,MLL0001,84,2694.89,"53, Industrial Area",Uttar Pradesh,7508097135,Kanpur,reddytradingco.@example.com,Payment Pending,2020-10-24
+Reddy Trading Co.,SUP7906,Sowing Machine 2F,SWM0002,42,2341.76,"74, Market Street",Bihar,6779921932,Gaya,reddytradingco.@example.com,Payment Paid,2023-12-20
+Reddy Trading Co.,SUP9455,Milk Extractor 600LPM,ME0002,23,1216.83,"54, Market Street",Karnataka,9820925715,Bangalore,reddytradingco.@example.com,Payment Paid,2022-08-02
+Reddy Trading Co.,SUP6826,Sowing Machine 3F,SWM0003,28,1868.57,"80, Market Street",West Bengal,7209341607,Howrah,reddytradingco.@example.com,Payment Pending,2020-10-05
+Patel Enterprises,SUP1318,Roater/Multure-7ft,RTR0002,7,3061.19,"22, Industrial Area",Gujarat,7447465304,Vadodara,patelenterprises@example.com,Payment Paid,2020-12-31
+Khan Distributors,SUP2471,Plow-60HP,PLW0002,63,3473.89,"48, Main Road",Bihar,8964860525,Gaya,khandistributors@example.com,Payment Paid,2022-10-20
+Nair Ventures,SUP7883,Sowing Machine 4F,SWM0004,32,4822.68,"43, Industrial Area",Bihar,7211880121,Bhagalpur,nairventures@example.com,Payment Paid,2021-01-06
+Khan Distributors,SUP4099,Milling Machine-7.5HP,MLL0001,17,2042.95,"10, Main Road",Punjab,6297978645,Amritsar,khandistributors@example.com,Payment Pending,2023-05-22
+Patel Enterprises,SUP2863,Milk Extractor 180LPM,ME0001,10,3704.13,"67, Market Street",Gujarat,6175471601,Vadodara,patelenterprises@example.com,Payment Pending,2020-01-18
+Khan Distributors,SUP8499,Milling Machine-40HP,MLL0002,16,1117.88,"32, Main Road",West Bengal,6004158105,Howrah,khandistributors@example.com,Payment Paid,2021-06-02
+Bose Supplies,SUP4849,Roater/Multure-7ft,RTR0002,72,2108.2,"40, Market Street",Rajasthan,8169129494,Jaipur,bosesupplies@example.com,Payment Pending,2023-11-22
+Gupta Suppliers,SUP1376,Kadaba Kutti Machine M1,KK0001,53,3587.53,"55, Industrial Area",Tamil Nadu,7886771966,Madurai,guptasuppliers@example.com,Payment Paid,2022-01-11
+Singh Agro,SUP9587,Sowing Machine 2F,SWM0002,62,3117.69,"30, Industrial Area",Gujarat,9566948528,Ahmedabad,singhagro@example.com,Payment Pending,2023-04-08
+Bose Supplies,SUP1629,Kadaba Kutti Machine M3,KK0003,28,4171.91,"13, Main Road",Rajasthan,9809724445,Jaipur,bosesupplies@example.com,Payment Pending,2021-07-12
+Singh Agro,SUP5854,Milling Machine-40HP,MLL0002,82,4789.92,"27, Industrial Area",Bihar,9592937411,Bhagalpur,singhagro@example.com,Payment Pending,2020-08-18
+Reddy Trading Co.,SUP9925,Roater/Multure-7ft,RTR0002,45,2367.46,"81, Market Street",Punjab,8496061913,Amritsar,reddytradingco.@example.com,Payment Paid,2021-06-21
+Nair Ventures,SUP2121,Plow-60HP,PLW0002,4,911.21,"67, Industrial Area",Rajasthan,7356169842,Jodhpur,nairventures@example.com,Payment Paid,2021-01-08
+Bose Supplies,SUP3805,Kadaba Kutti Machine M3,KK0003,14,3109.56,"70, Market Street",Karnataka,8812418325,Mysore,bosesupplies@example.com,Payment Paid,2021-11-13
+Singh Agro,SUP9107,Milk Extractor 180LPM,ME0001,100,3488.72,"97, Main Road",Kerala,7423605976,Thiruvananthapuram,singhagro@example.com,Payment Pending,2022-10-23
+Singh Agro,SUP3188,Milk Extractor 600LPM,ME0002,100,4537.99,"72, Main Road",West Bengal,7212817105,Howrah,singhagro@example.com,Payment Pending,2023-04-15
+Singh Agro,SUP8611,Sowing Machine 4F,SWM0004,50,3978.68,"25, Market Street",Tamil Nadu,6799949465,Madurai,singhagro@example.com,Payment Pending,2021-12-16
+Nair Ventures,SUP4672,Plow-60HP,PLW0002,48,2808.83,"61, Industrial Area",Kerala,8436858226,Thiruvananthapuram,nairventures@example.com,Payment Paid,2020-01-19
+Verma Industries,SUP9214,Milling Machine-40HP,MLL0002,58,3480.16,"48, Industrial Area",Bihar,7671780653,Patna,vermaindustries@example.com,Payment Pending,2021-02-25
+Reddy Trading Co.,SUP1552,Roater/Multure-2ft,RTR0001,46,4281.68,"12, Market Street",Punjab,9098717663,Ludhiana,reddytradingco.@example.com,Payment Pending,2021-02-23
+Reddy Trading Co.,SUP1015,Plow-60HP,PLW0002,50,884.94,"73, Market Street",Uttar Pradesh,8921246140,Varanasi,reddytradingco.@example.com,Payment Paid,2023-03-23
+Singh Agro,SUP4415,Sowing Machine 4F,SWM0004,71,2662.99,"66, Market Street",Bihar,8883298484,Gaya,singhagro@example.com,Payment Paid,2022-02-15
+Nair Ventures,SUP9253,Kadaba Kutti Machine M1,KK0001,19,2601.38,"20, Main Road",Maharashtra,6490437172,Nagpur,nairventures@example.com,Payment Pending,2023-04-07
+Nair Ventures,SUP4318,Kadaba Kutti Machine M3,KK0003,6,518.98,"59, Market Street",Uttar Pradesh,7050250375,Kanpur,nairventures@example.com,Payment Pending,2023-07-12
+Nair Ventures,SUP2343,Sowing Machine 1F,SWM0001,27,2256.22,"83, Industrial Area",Maharashtra,9356741201,Nagpur,nairventures@example.com,Payment Paid,2021-03-28
+Nair Ventures,SUP1443,Plow-60HP,PLW0002,94,4225.19,"46, Main Road",Bihar,7385116640,Patna,nairventures@example.com,Payment Pending,2020-10-31
+Patel Enterprises,SUP5827,Milk Extractor 180LPM,ME0001,65,2317.2,"69, Main Road",Gujarat,9503864440,Vadodara,patelenterprises@example.com,Payment Pending,2022-10-05
+Khan Distributors,SUP8451,Roater/Multure-2ft,RTR0001,76,1581.6,"81, Industrial Area",Uttar Pradesh,6819624305,Lucknow,khandistributors@example.com,Payment Pending,2021-09-14
+Khan Distributors,SUP7470,Kadaba Kutti Machine M1,KK0001,64,2071.78,"64, Main Road",Uttar Pradesh,6946713394,Varanasi,khandistributors@example.com,Payment Paid,2023-02-14
+Patel Enterprises,SUP1282,Plow-18HP,PLW0001,34,3332.11,"50, Industrial Area",Maharashtra,9716123390,Nagpur,patelenterprises@example.com,Payment Pending,2021-12-11
+Bose Supplies,SUP8582,Sowing Machine 3F,SWM0003,56,2924.23,"8, Industrial Area",Rajasthan,6311751763,Udaipur,bosesupplies@example.com,Payment Pending,2020-12-05
+Singh Agro,SUP7226,Milk Extractor 600LPM,ME0002,53,662.14,"40, Market Street",Uttar Pradesh,8888295909,Kanpur,singhagro@example.com,Payment Pending,2021-08-31
+Patel Enterprises,SUP5892,Roater/Multure-7ft,RTR0002,16,3276.14,"60, Market Street",West Bengal,8060878749,Darjeeling,patelenterprises@example.com,Payment Paid,2020-02-08
+Khan Distributors,SUP4508,Sowing Machine 1F,SWM0001,14,3792.16,"30, Market Street",Bihar,6946405915,Gaya,khandistributors@example.com,Payment Paid,2021-08-13
+Singh Agro,SUP3465,Kadaba Kutti Machine M1,KK0001,82,2853.17,"76, Industrial Area",Punjab,7948395368,Amritsar,singhagro@example.com,Payment Pending,2020-12-02
+Reddy Trading Co.,SUP5352,Kadaba Kutti Machine M3,KK0003,71,4883.84,"5, Industrial Area",West Bengal,7915337967,Darjeeling,reddytradingco.@example.com,Payment Paid,2023-04-06
+Nair Ventures,SUP2843,Milling Machine-7.5HP,MLL0001,64,2417.34,"58, Market Street",Gujarat,6963937511,Ahmedabad,nairventures@example.com,Payment Paid,2023-04-20
+Gupta Suppliers,SUP6154,Kadaba Kutti Machine M3,KK0003,17,1769.54,"100, Industrial Area",Punjab,6648208005,Amritsar,guptasuppliers@example.com,Payment Pending,2022-11-26
+Singh Agro,SUP3142,Milling Machine-40HP,MLL0002,45,3418.05,"58, Main Road",West Bengal,7456681415,Darjeeling,singhagro@example.com,Payment Paid,2021-05-29
+Verma Industries,SUP9698,Roater/Multure-7ft,RTR0002,25,934.77,"38, Main Road",Punjab,9354198103,Amritsar,vermaindustries@example.com,Payment Paid,2020-12-30
+Gupta Suppliers,SUP9745,Kadaba Kutti Machine M1,KK0001,94,3543.02,"51, Industrial Area",West Bengal,8832924457,Kolkata,guptasuppliers@example.com,Payment Paid,2023-12-08
+Khan Distributors,SUP7622,Kadaba Kutti Machine M2,KK0002,82,702.39,"7, Industrial Area",Karnataka,7772911273,Mysore,khandistributors@example.com,Payment Paid,2020-12-08
+Khan Distributors,SUP9812,Kadaba Kutti Machine M3,KK0003,69,2475.9,"53, Market Street",Bihar,7120993526,Gaya,khandistributors@example.com,Payment Pending,2021-05-24
+Patel Enterprises,SUP5435,Milling Machine-40HP,MLL0002,17,3791.88,"16, Market Street",Uttar Pradesh,6116499946,Lucknow,patelenterprises@example.com,Payment Pending,2020-01-25
+Bose Supplies,SUP8261,Milling Machine-40HP,MLL0002,13,3656.99,"26, Industrial Area",Gujarat,8961310159,Surat,bosesupplies@example.com,Payment Pending,2022-10-07
+Patel Enterprises,SUP5669,Sowing Machine 3F,SWM0003,39,4457.43,"25, Market Street",Tamil Nadu,8450132494,Chennai,patelenterprises@example.com,Payment Paid,2023-09-14
+Reddy Trading Co.,SUP3486,Milk Extractor 600LPM,ME0002,83,4446.17,"91, Main Road",Uttar Pradesh,9552613977,Lucknow,reddytradingco.@example.com,Payment Paid,2021-01-09
+Singh Agro,SUP7177,Sowing Machine 2F,SWM0002,6,2260.88,"45, Industrial Area",Gujarat,8500547667,Surat,singhagro@example.com,Payment Pending,2020-02-22
+Patel Enterprises,SUP9368,Milling Machine-7.5HP,MLL0001,92,1239.7,"67, Industrial Area",Uttar Pradesh,6267868145,Lucknow,patelenterprises@example.com,Payment Pending,2022-09-19
+Sharma Traders,SUP9647,Milling Machine-40HP,MLL0002,36,915.4,"80, Market Street",Karnataka,7756656644,Hubli,sharmatraders@example.com,Payment Paid,2020-08-08
+Khan Distributors,SUP5826,Roater/Multure-2ft,RTR0001,92,1460.54,"6, Market Street",Punjab,6282516780,Ludhiana,khandistributors@example.com,Payment Paid,2020-07-20
+Nair Ventures,SUP1229,Sowing Machine 4F,SWM0004,48,4134.28,"46, Market Street",Tamil Nadu,7240155261,Madurai,nairventures@example.com,Payment Pending,2021-05-04
+Gupta Suppliers,SUP1795,Plow-18HP,PLW0001,88,4529.55,"88, Main Road",Uttar Pradesh,9874363435,Kanpur,guptasuppliers@example.com,Payment Pending,2020-02-10
+Singh Agro,SUP9084,Plow-18HP,PLW0001,72,4439.39,"65, Industrial Area",West Bengal,6143760963,Kolkata,singhagro@example.com,Payment Pending,2021-01-28
+Khan Distributors,SUP7092,Sowing Machine 3F,SWM0003,3,3766.9,"64, Main Road",Tamil Nadu,7528944756,Chennai,khandistributors@example.com,Payment Pending,2021-06-20
+Khan Distributors,SUP9840,Roater/Multure-7ft,RTR0002,69,3127.4,"43, Market Street",Karnataka,9433984892,Mysore,khandistributors@example.com,Payment Pending,2023-06-15
+Verma Industries,SUP5828,Kadaba Kutti Machine M3,KK0003,6,4182.98,"53, Industrial Area",Karnataka,9719959680,Mysore,vermaindustries@example.com,Payment Paid,2020-03-06
+Patel Enterprises,SUP4571,Milk Extractor 180LPM,ME0001,84,2154.78,"15, Main Road",Tamil Nadu,7571682914,Madurai,patelenterprises@example.com,Payment Pending,2023-06-28
+Khan Distributors,SUP7640,Kadaba Kutti Machine M3,KK0003,23,4708.07,"63, Main Road",West Bengal,6223741600,Kolkata,khandistributors@example.com,Payment Paid,2020-04-02
+Reddy Trading Co.,SUP8115,Sowing Machine 4F,SWM0004,76,3311.61,"94, Market Street",West Bengal,9317983350,Kolkata,reddytradingco.@example.com,Payment Paid,2023-04-23
+Bose Supplies,SUP1298,Sowing Machine 1F,SWM0001,69,4997.65,"28, Market Street",West Bengal,7637436200,Howrah,bosesupplies@example.com,Payment Pending,2021-01-03
+Sharma Traders,SUP7161,Milling Machine-7.5HP,MLL0001,51,2193.79,"79, Market Street",Kerala,8151512091,Kochi,sharmatraders@example.com,Payment Paid,2023-08-03
+Singh Agro,SUP2216,Plow-60HP,PLW0002,83,1946.54,"70, Market Street",Maharashtra,7724670109,Mumbai,singhagro@example.com,Payment Paid,2021-11-04
+Patel Enterprises,SUP9038,Roater/Multure-7ft,RTR0002,98,3728.42,"30, Market Street",Kerala,7795491892,Kochi,patelenterprises@example.com,Payment Pending,2023-01-26
+Verma Industries,SUP8205,Sowing Machine 4F,SWM0004,49,1702.8,"50, Market Street",Maharashtra,6118130124,Mumbai,vermaindustries@example.com,Payment Pending,2023-04-09
+Sharma Traders,SUP7207,Kadaba Kutti Machine M2,KK0002,35,4624.51,"53, Industrial Area",Kerala,9138572151,Kochi,sharmatraders@example.com,Payment Paid,2022-02-05
+Sharma Traders,SUP9275,Kadaba Kutti Machine M3,KK0003,48,3351.07,"28, Market Street",Tamil Nadu,6797884299,Madurai,sharmatraders@example.com,Payment Pending,2021-03-30
+Reddy Trading Co.,SUP2899,Sowing Machine 3F,SWM0003,99,1721.13,"63, Market Street",Gujarat,9478720827,Ahmedabad,reddytradingco.@example.com,Payment Pending,2021-12-05
+Bose Supplies,SUP8755,Sowing Machine 2F,SWM0002,20,2168.9,"20, Main Road",Gujarat,6183788841,Vadodara,bosesupplies@example.com,Payment Pending,2021-10-29
+Singh Agro,SUP9345,Plow-60HP,PLW0002,30,3864.89,"58, Industrial Area",Punjab,8164225179,Amritsar,singhagro@example.com,Payment Paid,2021-07-13
+Reddy Trading Co.,SUP7433,Plow-60HP,PLW0002,84,585.66,"95, Main Road",Kerala,7614728210,Thiruvananthapuram,reddytradingco.@example.com,Payment Paid,2022-08-17
+Sharma Traders,SUP3233,Milling Machine-40HP,MLL0002,51,4714.22,"6, Main Road",Maharashtra,6064626885,Pune,sharmatraders@example.com,Payment Paid,2020-07-22
+Patel Enterprises,SUP8838,Kadaba Kutti Machine M2,KK0002,52,3094.93,"65, Industrial Area",Karnataka,7403258051,Hubli,patelenterprises@example.com,Payment Paid,2022-03-10
+Sharma Traders,SUP4375,Kadaba Kutti Machine M3,KK0003,23,3661.83,"2, Industrial Area",West Bengal,7013973791,Kolkata,sharmatraders@example.com,Payment Paid,2022-05-28
+Gupta Suppliers,SUP8054,Kadaba Kutti Machine M1,KK0001,97,3862.54,"52, Main Road",Tamil Nadu,6986759523,Chennai,guptasuppliers@example.com,Payment Paid,2023-08-20
+Patel Enterprises,SUP9897,Kadaba Kutti Machine M3,KK0003,87,4146.13,"68, Main Road",Rajasthan,6511962089,Jaipur,patelenterprises@example.com,Payment Pending,2020-10-16
+Desai Dealers,SUP4367,Sowing Machine 1F,SWM0001,99,1057.22,"49, Industrial Area",Bihar,7414642025,Gaya,desaidealers@example.com,Payment Paid,2023-06-28
+Singh Agro,SUP2285,Sowing Machine 3F,SWM0003,46,2164.01,"39, Market Street",Tamil Nadu,7777878704,Chennai,singhagro@example.com,Payment Paid,2022-09-05
+Bose Supplies,SUP7824,Plow-18HP,PLW0001,98,595.31,"68, Market Street",Uttar Pradesh,6537405929,Kanpur,bosesupplies@example.com,Payment Pending,2020-11-12
+Reddy Trading Co.,SUP6916,Plow-60HP,PLW0002,83,4667.32,"48, Market Street",Kerala,9681506585,Kochi,reddytradingco.@example.com,Payment Pending,2022-12-04
+Patel Enterprises,SUP8709,Plow-60HP,PLW0002,54,1982.41,"100, Main Road",Rajasthan,6161403063,Jodhpur,patelenterprises@example.com,Payment Paid,2020-01-12
+Desai Dealers,SUP4254,Milk Extractor 180LPM,ME0001,42,1693.29,"23, Market Street",Rajasthan,8071985229,Jaipur,desaidealers@example.com,Payment Paid,2021-02-12
+Desai Dealers,SUP7147,Kadaba Kutti Machine M2,KK0002,23,4952.76,"13, Main Road",Karnataka,8321588475,Hubli,desaidealers@example.com,Payment Pending,2021-05-01
+Patel Enterprises,SUP6527,Sowing Machine 2F,SWM0002,12,3234.01,"29, Market Street",Tamil Nadu,6977938717,Madurai,patelenterprises@example.com,Payment Paid,2023-04-22
+Bose Supplies,SUP9134,Sowing Machine 2F,SWM0002,27,2729.45,"51, Industrial Area",Uttar Pradesh,6405666296,Lucknow,bosesupplies@example.com,Payment Paid,2020-07-06
+Desai Dealers,SUP5098,Kadaba Kutti Machine M2,KK0002,48,2519.88,"39, Main Road",Uttar Pradesh,8873600722,Lucknow,desaidealers@example.com,Payment Paid,2023-02-08
+Sharma Traders,SUP8481,Milk Extractor 600LPM,ME0002,8,2335.14,"19, Market Street",West Bengal,7250450011,Howrah,sharmatraders@example.com,Payment Pending,2022-01-24
+Nair Ventures,SUP8037,Kadaba Kutti Machine M3,KK0003,100,2532.7,"16, Main Road",Gujarat,9155056218,Surat,nairventures@example.com,Payment Pending,2020-11-20
+Patel Enterprises,SUP1871,Sowing Machine 3F,SWM0003,56,2415.44,"1, Industrial Area",West Bengal,9793698274,Howrah,patelenterprises@example.com,Payment Paid,2020-08-31
+Singh Agro,SUP5178,Milling Machine-40HP,MLL0002,28,635.37,"25, Main Road",Karnataka,6471568480,Mysore,singhagro@example.com,Payment Paid,2020-10-05
+Gupta Suppliers,SUP2356,Kadaba Kutti Machine M3,KK0003,39,4149.64,"18, Market Street",Karnataka,9090746990,Bangalore,guptasuppliers@example.com,Payment Pending,2020-05-26
+Gupta Suppliers,SUP5073,Kadaba Kutti Machine M1,KK0001,71,2854.49,"16, Main Road",Bihar,7871734426,Bhagalpur,guptasuppliers@example.com,Payment Paid,2023-11-08
+Verma Industries,SUP7450,Plow-18HP,PLW0001,74,2105.54,"10, Industrial Area",Maharashtra,9209600091,Nagpur,vermaindustries@example.com,Payment Paid,2023-12-19
+Gupta Suppliers,SUP9706,Plow-18HP,PLW0001,21,1798.03,"50, Market Street",Maharashtra,6098381428,Nagpur,guptasuppliers@example.com,Payment Paid,2023-09-25
+Bose Supplies,SUP2944,Kadaba Kutti Machine M3,KK0003,50,3591.1,"8, Market Street",Kerala,8732915809,Kozhikode,bosesupplies@example.com,Payment Pending,2020-05-30
+Nair Ventures,SUP6874,Sowing Machine 2F,SWM0002,72,4152.96,"65, Market Street",Rajasthan,6975961825,Udaipur,nairventures@example.com,Payment Pending,2022-11-10
+Khan Distributors,SUP4945,Kadaba Kutti Machine M2,KK0002,55,2364.32,"80, Main Road",Punjab,8366112147,Amritsar,khandistributors@example.com,Payment Pending,2020-08-01
+Patel Enterprises,SUP2345,Sowing Machine 1F,SWM0001,14,1319.83,"16, Main Road",Karnataka,7662494805,Mysore,patelenterprises@example.com,Payment Pending,2023-01-14
+Khan Distributors,SUP1732,Roater/Multure-2ft,RTR0001,6,2852.44,"9, Market Street",Gujarat,8925308455,Vadodara,khandistributors@example.com,Payment Pending,2022-02-06
+Patel Enterprises,SUP2133,Milk Extractor 180LPM,ME0001,42,4753.93,"79, Industrial Area",Maharashtra,9327299275,Nagpur,patelenterprises@example.com,Payment Paid,2022-05-16
+Verma Industries,SUP2046,Sowing Machine 2F,SWM0002,83,4496.74,"88, Main Road",Kerala,6995344784,Thiruvananthapuram,vermaindustries@example.com,Payment Pending,2022-03-24
+Gupta Suppliers,SUP6144,Milk Extractor 600LPM,ME0002,77,1500.6,"8, Main Road",Kerala,7182959341,Kozhikode,guptasuppliers@example.com,Payment Paid,2021-10-04
+Nair Ventures,SUP6215,Milk Extractor 600LPM,ME0002,97,2314.53,"29, Main Road",Punjab,7480124413,Ludhiana,nairventures@example.com,Payment Pending,2023-01-23
+Desai Dealers,SUP5656,Roater/Multure-7ft,RTR0002,60,970.74,"70, Main Road",Uttar Pradesh,8266257042,Lucknow,desaidealers@example.com,Payment Paid,2021-02-02
+Gupta Suppliers,SUP6748,Roater/Multure-7ft,RTR0002,62,1022.0,"16, Main Road",Gujarat,7188338192,Surat,guptasuppliers@example.com,Payment Paid,2022-09-09
+Verma Industries,SUP8708,Plow-60HP,PLW0002,92,2801.65,"10, Industrial Area",West Bengal,9942791393,Kolkata,vermaindustries@example.com,Payment Pending,2022-04-13
+Gupta Suppliers,SUP8921,Sowing Machine 1F,SWM0001,24,820.84,"13, Industrial Area",Gujarat,9803626216,Surat,guptasuppliers@example.com,Payment Pending,2020-10-09
+Desai Dealers,SUP5802,Sowing Machine 1F,SWM0001,2,566.39,"88, Market Street",Maharashtra,6773688059,Nagpur,desaidealers@example.com,Payment Paid,2020-01-20
+Desai Dealers,SUP1973,Plow-18HP,PLW0001,35,3178.41,"48, Main Road",West Bengal,9651492648,Kolkata,desaidealers@example.com,Payment Paid,2023-07-17
+Gupta Suppliers,SUP2380,Sowing Machine 4F,SWM0004,51,2477.6,"21, Main Road",West Bengal,6143498724,Howrah,guptasuppliers@example.com,Payment Pending,2022-09-23
+Khan Distributors,SUP4809,Sowing Machine 2F,SWM0002,47,4433.63,"40, Industrial Area",Kerala,9361503947,Thiruvananthapuram,khandistributors@example.com,Payment Paid,2023-06-21
+Verma Industries,SUP6819,Sowing Machine 3F,SWM0003,53,1048.19,"55, Industrial Area",Punjab,8587410391,Ludhiana,vermaindustries@example.com,Payment Pending,2021-11-22
+Verma Industries,SUP4864,Plow-60HP,PLW0002,94,3443.89,"62, Market Street",Kerala,9070038682,Thiruvananthapuram,vermaindustries@example.com,Payment Pending,2022-01-10
+Verma Industries,SUP3060,Sowing Machine 2F,SWM0002,37,4495.43,"48, Industrial Area",Maharashtra,7349965111,Nagpur,vermaindustries@example.com,Payment Paid,2022-09-25
+Sharma Traders,SUP9194,Sowing Machine 1F,SWM0001,56,3422.91,"96, Industrial Area",Tamil Nadu,9434385690,Coimbatore,sharmatraders@example.com,Payment Pending,2022-09-02
+Nair Ventures,SUP7558,Plow-60HP,PLW0002,14,1382.74,"16, Industrial Area",Kerala,9495574091,Kochi,nairventures@example.com,Payment Pending,2020-05-04
+Sharma Traders,SUP9699,Plow-60HP,PLW0002,21,1965.89,"92, Market Street",Punjab,9925776252,Amritsar,sharmatraders@example.com,Payment Pending,2021-07-14
+Nair Ventures,SUP1058,Sowing Machine 2F,SWM0002,56,685.86,"54, Market Street",Rajasthan,8768248622,Jaipur,nairventures@example.com,Payment Paid,2020-11-25
+Singh Agro,SUP4550,Roater/Multure-7ft,RTR0002,68,3724.98,"45, Industrial Area",Bihar,9427731647,Bhagalpur,singhagro@example.com,Payment Paid,2021-03-06
+Nair Ventures,SUP6871,Milk Extractor 600LPM,ME0002,86,3725.97,"27, Main Road",Kerala,8188882073,Kozhikode,nairventures@example.com,Payment Pending,2023-04-15
+Patel Enterprises,SUP1129,Plow-18HP,PLW0001,64,4636.67,"6, Main Road",Gujarat,8463354238,Surat,patelenterprises@example.com,Payment Pending,2023-05-09
+Nair Ventures,SUP7345,Sowing Machine 1F,SWM0001,65,1569.56,"77, Market Street",Karnataka,7831372747,Bangalore,nairventures@example.com,Payment Pending,2021-01-07
+Verma Industries,SUP6777,Milling Machine-7.5HP,MLL0001,45,2974.7,"60, Industrial Area",Maharashtra,7750000831,Nagpur,vermaindustries@example.com,Payment Pending,2023-04-02
+Desai Dealers,SUP2351,Plow-60HP,PLW0002,1,2081.71,"30, Main Road",Maharashtra,9189682097,Pune,desaidealers@example.com,Payment Pending,2020-06-29
+Gupta Suppliers,SUP9479,Plow-18HP,PLW0001,81,1640.83,"23, Main Road",West Bengal,8373501445,Darjeeling,guptasuppliers@example.com,Payment Paid,2020-02-03
+Sharma Traders,SUP8802,Milling Machine-40HP,MLL0002,82,3531.81,"35, Main Road",Rajasthan,9548985403,Jodhpur,sharmatraders@example.com,Payment Paid,2021-09-06
+Verma Industries,SUP2148,Kadaba Kutti Machine M3,KK0003,43,4884.9,"41, Market Street",Karnataka,8008291426,Mysore,vermaindustries@example.com,Payment Pending,2020-02-13
+Reddy Trading Co.,SUP8757,Plow-18HP,PLW0001,4,1338.58,"44, Industrial Area",Tamil Nadu,9780392832,Coimbatore,reddytradingco.@example.com,Payment Paid,2020-06-13
+Patel Enterprises,SUP2973,Plow-18HP,PLW0001,1,3712.47,"55, Main Road",Kerala,6368324180,Kochi,patelenterprises@example.com,Payment Paid,2021-11-10
+Desai Dealers,SUP6007,Sowing Machine 3F,SWM0003,18,4907.05,"91, Industrial Area",Uttar Pradesh,7131386481,Kanpur,desaidealers@example.com,Payment Paid,2020-08-20
+Desai Dealers,SUP8223,Plow-60HP,PLW0002,89,4482.62,"54, Industrial Area",Karnataka,9125022781,Bangalore,desaidealers@example.com,Payment Paid,2021-08-24
+Bose Supplies,SUP5890,Milling Machine-7.5HP,MLL0001,1,3219.12,"11, Industrial Area",Punjab,8090383693,Jalandhar,bosesupplies@example.com,Payment Pending,2023-01-10
+Bose Supplies,SUP5582,Sowing Machine 1F,SWM0001,96,1672.84,"62, Industrial Area",Maharashtra,6720175939,Mumbai,bosesupplies@example.com,Payment Paid,2021-03-11
+Gupta Suppliers,SUP7283,Milling Machine-40HP,MLL0002,46,564.84,"1, Industrial Area",Rajasthan,9085252932,Udaipur,guptasuppliers@example.com,Payment Paid,2020-03-09
+Sharma Traders,SUP2041,Plow-18HP,PLW0001,48,3074.51,"27, Market Street",Punjab,6571737665,Amritsar,sharmatraders@example.com,Payment Paid,2021-04-10
+Singh Agro,SUP4791,Milk Extractor 600LPM,ME0002,73,4188.15,"76, Main Road",Rajasthan,8448926535,Jaipur,singhagro@example.com,Payment Pending,2023-03-06
+Sharma Traders,SUP3019,Roater/Multure-2ft,RTR0001,13,2091.85,"12, Main Road",Tamil Nadu,8846964127,Coimbatore,sharmatraders@example.com,Payment Paid,2022-11-05
+Patel Enterprises,SUP6598,Kadaba Kutti Machine M2,KK0002,89,4667.95,"39, Main Road",Bihar,9804747308,Gaya,patelenterprises@example.com,Payment Paid,2020-05-11
+Bose Supplies,SUP6906,Roater/Multure-7ft,RTR0002,57,4365.05,"98, Main Road",Kerala,6846472534,Kochi,bosesupplies@example.com,Payment Pending,2022-07-06
+Singh Agro,SUP8266,Plow-60HP,PLW0002,60,2448.6,"45, Main Road",Tamil Nadu,8259444574,Madurai,singhagro@example.com,Payment Paid,2020-03-17
+Bose Supplies,SUP1408,Roater/Multure-2ft,RTR0001,75,1838.07,"82, Industrial Area",Kerala,9151855172,Thiruvananthapuram,bosesupplies@example.com,Payment Pending,2023-11-16
+Bose Supplies,SUP9979,Milling Machine-7.5HP,MLL0001,64,4746.15,"34, Main Road",Bihar,9849742007,Patna,bosesupplies@example.com,Payment Paid,2021-04-10
+Singh Agro,SUP5543,Plow-60HP,PLW0002,36,4412.44,"100, Industrial Area",Rajasthan,9485516696,Udaipur,singhagro@example.com,Payment Paid,2020-01-14
+Patel Enterprises,SUP9851,Sowing Machine 1F,SWM0001,23,3335.8,"1, Industrial Area",Uttar Pradesh,7947496947,Kanpur,patelenterprises@example.com,Payment Paid,2020-12-12
+Nair Ventures,SUP2780,Kadaba Kutti Machine M3,KK0003,30,3626.29,"91, Industrial Area",Karnataka,6599109831,Mysore,nairventures@example.com,Payment Pending,2020-09-08
+Verma Industries,SUP1683,Sowing Machine 2F,SWM0002,64,2635.07,"13, Market Street",Rajasthan,8428488596,Udaipur,vermaindustries@example.com,Payment Pending,2020-12-08
+Bose Supplies,SUP3085,Sowing Machine 3F,SWM0003,45,2744.64,"34, Industrial Area",West Bengal,9232933774,Kolkata,bosesupplies@example.com,Payment Paid,2021-10-12
+Patel Enterprises,SUP4520,Milk Extractor 180LPM,ME0001,3,2567.74,"81, Market Street",Gujarat,6367761098,Vadodara,patelenterprises@example.com,Payment Paid,2022-05-23
+Khan Distributors,SUP8515,Plow-18HP,PLW0001,30,3538.95,"35, Market Street",West Bengal,7444697050,Howrah,khandistributors@example.com,Payment Paid,2021-06-21
+Sharma Traders,SUP1075,Sowing Machine 1F,SWM0001,46,2616.41,"11, Main Road",Maharashtra,7496203884,Nagpur,sharmatraders@example.com,Payment Pending,2020-02-15
+Gupta Suppliers,SUP5845,Milk Extractor 600LPM,ME0002,84,2653.53,"26, Industrial Area",Uttar Pradesh,9153288358,Lucknow,guptasuppliers@example.com,Payment Pending,2023-10-06
+Reddy Trading Co.,SUP4432,Kadaba Kutti Machine M1,KK0001,67,3608.82,"37, Market Street",Maharashtra,6126516385,Pune,reddytradingco.@example.com,Payment Pending,2020-08-17
+Khan Distributors,SUP5247,Sowing Machine 2F,SWM0002,60,4519.36,"33, Industrial Area",Kerala,9926790351,Kochi,khandistributors@example.com,Payment Pending,2021-01-09
+Nair Ventures,SUP4846,Sowing Machine 4F,SWM0004,70,2961.3,"23, Industrial Area",Rajasthan,9016104750,Jodhpur,nairventures@example.com,Payment Paid,2021-04-02
+Bose Supplies,SUP7186,Kadaba Kutti Machine M2,KK0002,32,2148.1,"15, Market Street",Bihar,6908561307,Gaya,bosesupplies@example.com,Payment Paid,2021-06-07
+Nair Ventures,SUP6646,Plow-18HP,PLW0001,44,633.52,"57, Main Road",Maharashtra,7169614332,Nagpur,nairventures@example.com,Payment Pending,2021-12-24
+Gupta Suppliers,SUP4710,Milk Extractor 600LPM,ME0002,4,3854.37,"69, Industrial Area",Gujarat,7247717810,Surat,guptasuppliers@example.com,Payment Pending,2023-08-31
+Reddy Trading Co.,SUP3941,Kadaba Kutti Machine M3,KK0003,3,3724.0,"72, Industrial Area",Kerala,7564984091,Kochi,reddytradingco.@example.com,Payment Pending,2020-12-06
+Desai Dealers,SUP6497,Plow-18HP,PLW0001,98,2980.38,"26, Main Road",Rajasthan,7058907186,Jaipur,desaidealers@example.com,Payment Pending,2022-12-10
+Desai Dealers,SUP2738,Kadaba Kutti Machine M3,KK0003,59,1265.23,"49, Industrial Area",Rajasthan,6839230245,Udaipur,desaidealers@example.com,Payment Paid,2020-07-26
+Gupta Suppliers,SUP4702,Roater/Multure-7ft,RTR0002,48,3622.38,"21, Market Street",Rajasthan,7276930967,Jaipur,guptasuppliers@example.com,Payment Paid,2023-09-03
+Patel Enterprises,SUP7668,Kadaba Kutti Machine M1,KK0001,54,4964.41,"48, Main Road",Karnataka,9226434780,Mysore,patelenterprises@example.com,Payment Pending,2020-06-25
+Nair Ventures,SUP9545,Kadaba Kutti Machine M3,KK0003,79,4147.43,"59, Industrial Area",Punjab,8747711276,Jalandhar,nairventures@example.com,Payment Paid,2023-12-23
+Bose Supplies,SUP6348,Kadaba Kutti Machine M3,KK0003,12,2941.44,"22, Industrial Area",Kerala,8539325653,Thiruvananthapuram,bosesupplies@example.com,Payment Paid,2020-04-09
+Verma Industries,SUP8694,Roater/Multure-2ft,RTR0001,91,4796.04,"48, Main Road",Bihar,9304871306,Bhagalpur,vermaindustries@example.com,Payment Paid,2023-06-27
+Bose Supplies,SUP6112,Sowing Machine 3F,SWM0003,34,3341.38,"39, Industrial Area",Maharashtra,6159645743,Nagpur,bosesupplies@example.com,Payment Pending,2023-02-13
+Sharma Traders,SUP3020,Sowing Machine 4F,SWM0004,59,4206.2,"78, Industrial Area",Punjab,9605279189,Amritsar,sharmatraders@example.com,Payment Paid,2020-07-31
+Desai Dealers,SUP9219,Sowing Machine 1F,SWM0001,78,3473.53,"79, Industrial Area",Karnataka,6031120551,Bangalore,desaidealers@example.com,Payment Pending,2020-05-17
+Sharma Traders,SUP9011,Plow-60HP,PLW0002,13,2155.19,"3, Industrial Area",Uttar Pradesh,6224234416,Lucknow,sharmatraders@example.com,Payment Pending,2022-12-14
+Khan Distributors,SUP2665,Plow-18HP,PLW0001,11,651.99,"38, Market Street",Punjab,8433041259,Jalandhar,khandistributors@example.com,Payment Pending,2020-08-11
+Gupta Suppliers,SUP3900,Plow-60HP,PLW0002,40,4463.67,"4, Market Street",Kerala,9050168675,Thiruvananthapuram,guptasuppliers@example.com,Payment Pending,2022-06-13
+Patel Enterprises,SUP8589,Milling Machine-40HP,MLL0002,40,1228.07,"27, Market Street",Maharashtra,7954733295,Nagpur,patelenterprises@example.com,Payment Paid,2021-06-26
+Desai Dealers,SUP4463,Milling Machine-7.5HP,MLL0001,2,4314.52,"68, Main Road",Uttar Pradesh,9909847445,Lucknow,desaidealers@example.com,Payment Paid,2022-01-19
+Sharma Traders,SUP9703,Kadaba Kutti Machine M1,KK0001,55,878.96,"100, Market Street",Uttar Pradesh,6832076838,Kanpur,sharmatraders@example.com,Payment Pending,2021-04-24
+Bose Supplies,SUP5965,Kadaba Kutti Machine M3,KK0003,16,2675.23,"83, Market Street",Punjab,8102989619,Ludhiana,bosesupplies@example.com,Payment Pending,2023-05-21
+Verma Industries,SUP8486,Kadaba Kutti Machine M3,KK0003,69,4569.61,"85, Main Road",Tamil Nadu,7223182896,Madurai,vermaindustries@example.com,Payment Paid,2021-01-01
+Gupta Suppliers,SUP8265,Sowing Machine 3F,SWM0003,62,3031.5,"58, Main Road",Punjab,6995524966,Ludhiana,guptasuppliers@example.com,Payment Paid,2020-02-09
+Gupta Suppliers,SUP7264,Roater/Multure-7ft,RTR0002,15,2906.36,"12, Market Street",Uttar Pradesh,8162404330,Lucknow,guptasuppliers@example.com,Payment Pending,2020-03-14
+Nair Ventures,SUP3688,Plow-60HP,PLW0002,33,2095.86,"64, Industrial Area",Uttar Pradesh,6647795528,Kanpur,nairventures@example.com,Payment Paid,2020-01-25
+Patel Enterprises,SUP4176,Milling Machine-7.5HP,MLL0001,18,2852.39,"8, Industrial Area",Rajasthan,9658954370,Jodhpur,patelenterprises@example.com,Payment Paid,2020-08-21
+Khan Distributors,SUP5068,Roater/Multure-2ft,RTR0001,23,4535.96,"81, Market Street",Punjab,8332286068,Ludhiana,khandistributors@example.com,Payment Paid,2023-05-28
+Desai Dealers,SUP7412,Roater/Multure-2ft,RTR0001,39,1299.36,"1, Main Road",Kerala,9605590046,Kozhikode,desaidealers@example.com,Payment Pending,2021-10-07
+Gupta Suppliers,SUP7904,Plow-60HP,PLW0002,33,3152.96,"78, Main Road",Tamil Nadu,7990209420,Coimbatore,guptasuppliers@example.com,Payment Pending,2022-07-02
+Gupta Suppliers,SUP7363,Roater/Multure-7ft,RTR0002,93,3076.3,"17, Industrial Area",Karnataka,9769438431,Bangalore,guptasuppliers@example.com,Payment Pending,2023-04-15
+Verma Industries,SUP9397,Kadaba Kutti Machine M3,KK0003,80,2733.76,"71, Industrial Area",Maharashtra,9292229022,Pune,vermaindustries@example.com,Payment Pending,2020-01-23
+Sharma Traders,SUP3445,Sowing Machine 2F,SWM0002,77,756.7,"53, Market Street",West Bengal,6455716993,Howrah,sharmatraders@example.com,Payment Pending,2020-04-21
+Khan Distributors,SUP7242,Milk Extractor 600LPM,ME0002,93,4035.94,"32, Industrial Area",Rajasthan,9919968720,Udaipur,khandistributors@example.com,Payment Paid,2022-04-24
+Verma Industries,SUP3061,Sowing Machine 1F,SWM0001,53,4419.41,"12, Market Street",Maharashtra,7869227534,Pune,vermaindustries@example.com,Payment Paid,2020-10-30
+Sharma Traders,SUP8072,Kadaba Kutti Machine M2,KK0002,50,1900.42,"7, Main Road",Rajasthan,9848861331,Jodhpur,sharmatraders@example.com,Payment Paid,2022-03-26
+Singh Agro,SUP8531,Milk Extractor 180LPM,ME0001,95,2330.56,"31, Market Street",Uttar Pradesh,6114542838,Varanasi,singhagro@example.com,Payment Paid,2022-02-11
+Bose Supplies,SUP4786,Plow-18HP,PLW0001,59,2970.59,"14, Main Road",Uttar Pradesh,6229673873,Varanasi,bosesupplies@example.com,Payment Pending,2023-03-01
+Patel Enterprises,SUP1257,Plow-18HP,PLW0001,4,4889.3,"84, Market Street",Karnataka,8390639753,Bangalore,patelenterprises@example.com,Payment Pending,2023-11-21
+Khan Distributors,SUP5316,Plow-18HP,PLW0001,62,4358.53,"14, Industrial Area",Tamil Nadu,6034288830,Madurai,khandistributors@example.com,Payment Paid,2022-08-07
+Desai Dealers,SUP2501,Plow-18HP,PLW0001,70,2170.0,"36, Industrial Area",Tamil Nadu,6493805798,Coimbatore,desaidealers@example.com,Payment Pending,2022-11-03
+Singh Agro,SUP7597,Plow-60HP,PLW0002,35,559.76,"13, Industrial Area",Gujarat,8025018274,Ahmedabad,singhagro@example.com,Payment Pending,2023-05-25
+Patel Enterprises,SUP4332,Milling Machine-7.5HP,MLL0001,55,1144.01,"84, Industrial Area",Uttar Pradesh,6298958876,Lucknow,patelenterprises@example.com,Payment Paid,2022-05-12
+Khan Distributors,SUP6711,Kadaba Kutti Machine M3,KK0003,92,2066.98,"61, Market Street",Bihar,7076249426,Patna,khandistributors@example.com,Payment Pending,2021-12-12
+Patel Enterprises,SUP4202,Milk Extractor 600LPM,ME0002,6,4533.5,"30, Industrial Area",Tamil Nadu,8643507882,Chennai,patelenterprises@example.com,Payment Paid,2023-09-23
+Verma Industries,SUP7698,Roater/Multure-7ft,RTR0002,10,3625.26,"6, Market Street",Tamil Nadu,7298727795,Chennai,vermaindustries@example.com,Payment Paid,2022-07-03
+Khan Distributors,SUP6998,Kadaba Kutti Machine M2,KK0002,76,3873.94,"7, Industrial Area",Gujarat,7032294268,Vadodara,khandistributors@example.com,Payment Paid,2023-03-19
+Bose Supplies,SUP4764,Milk Extractor 180LPM,ME0001,73,2554.97,"79, Market Street",West Bengal,9395614230,Howrah,bosesupplies@example.com,Payment Paid,2020-10-23
+Bose Supplies,SUP2252,Milling Machine-7.5HP,MLL0001,30,4814.97,"54, Market Street",Gujarat,6815926836,Vadodara,bosesupplies@example.com,Payment Paid,2023-02-18
+Verma Industries,SUP5479,Kadaba Kutti Machine M2,KK0002,56,3637.39,"13, Industrial Area",Punjab,9910173417,Ludhiana,vermaindustries@example.com,Payment Pending,2021-04-12
+Bose Supplies,SUP4700,Roater/Multure-7ft,RTR0002,55,1608.08,"18, Main Road",Gujarat,9092866553,Ahmedabad,bosesupplies@example.com,Payment Paid,2021-08-11
+Gupta Suppliers,SUP3911,Plow-18HP,PLW0001,52,1521.31,"53, Industrial Area",Karnataka,8872893702,Bangalore,guptasuppliers@example.com,Payment Pending,2021-09-23
+Desai Dealers,SUP1328,Milk Extractor 180LPM,ME0001,52,4288.32,"32, Market Street",Uttar Pradesh,6029953932,Lucknow,desaidealers@example.com,Payment Paid,2021-03-05
+Desai Dealers,SUP5601,Roater/Multure-2ft,RTR0001,49,654.03,"23, Main Road",Rajasthan,9772695428,Jodhpur,desaidealers@example.com,Payment Pending,2022-05-19
+Bose Supplies,SUP7699,Plow-18HP,PLW0001,100,2643.9,"18, Industrial Area",Uttar Pradesh,6051509010,Kanpur,bosesupplies@example.com,Payment Paid,2020-12-17
+Sharma Traders,SUP7122,Milling Machine-7.5HP,MLL0001,89,3268.37,"64, Market Street",West Bengal,9803092719,Howrah,sharmatraders@example.com,Payment Paid,2021-03-03
+Verma Industries,SUP4749,Kadaba Kutti Machine M2,KK0002,99,2010.61,"60, Industrial Area",Tamil Nadu,9882825598,Chennai,vermaindustries@example.com,Payment Paid,2023-08-03
+Nair Ventures,SUP8907,Milk Extractor 180LPM,ME0001,44,2592.12,"88, Market Street",Uttar Pradesh,9936546964,Kanpur,nairventures@example.com,Payment Paid,2021-10-09
+Nair Ventures,SUP7293,Milling Machine-7.5HP,MLL0001,35,2750.47,"38, Main Road",Kerala,7870009995,Thiruvananthapuram,nairventures@example.com,Payment Pending,2023-07-07
+Verma Industries,SUP5721,Roater/Multure-7ft,RTR0002,78,4533.13,"22, Market Street",Karnataka,9143814997,Mysore,vermaindustries@example.com,Payment Paid,2020-01-22
+Bose Supplies,SUP1939,Plow-60HP,PLW0002,78,1040.2,"53, Main Road",Uttar Pradesh,8209872021,Lucknow,bosesupplies@example.com,Payment Paid,2023-08-25
+Reddy Trading Co.,SUP3310,Plow-60HP,PLW0002,16,3877.39,"47, Industrial Area",West Bengal,9552181645,Darjeeling,reddytradingco.@example.com,Payment Pending,2022-04-06
+Nair Ventures,SUP6682,Milling Machine-40HP,MLL0002,26,4231.93,"61, Main Road",Gujarat,9668795345,Ahmedabad,nairventures@example.com,Payment Paid,2022-09-09
+Singh Agro,SUP8062,Sowing Machine 2F,SWM0002,69,1985.1,"50, Market Street",Bihar,8596721648,Gaya,singhagro@example.com,Payment Pending,2023-08-28
+Sharma Traders,SUP1927,Plow-18HP,PLW0001,78,4944.15,"21, Industrial Area",Uttar Pradesh,7172221554,Lucknow,sharmatraders@example.com,Payment Pending,2022-07-23
+Desai Dealers,SUP4362,Sowing Machine 2F,SWM0002,67,2670.9,"6, Market Street",Gujarat,7588362224,Surat,desaidealers@example.com,Payment Pending,2021-03-22
+Singh Agro,SUP9207,Roater/Multure-7ft,RTR0002,21,3535.11,"34, Industrial Area",Tamil Nadu,7546493280,Coimbatore,singhagro@example.com,Payment Paid,2022-03-05
+Sharma Traders,SUP7403,Sowing Machine 3F,SWM0003,80,2659.11,"93, Market Street",Rajasthan,7801716714,Jaipur,sharmatraders@example.com,Payment Paid,2023-06-05
+Verma Industries,SUP3793,Sowing Machine 3F,SWM0003,15,4233.86,"43, Market Street",Kerala,6779354615,Kozhikode,vermaindustries@example.com,Payment Pending,2022-10-24
+Verma Industries,SUP4206,Plow-18HP,PLW0001,71,2281.02,"64, Market Street",Gujarat,7831965708,Surat,vermaindustries@example.com,Payment Paid,2021-06-30
+Verma Industries,SUP2059,Roater/Multure-7ft,RTR0002,70,2641.85,"28, Main Road",Karnataka,9299880755,Hubli,vermaindustries@example.com,Payment Paid,2020-02-02
+Singh Agro,SUP9427,Milling Machine-40HP,MLL0002,44,1877.2,"74, Market Street",Bihar,7415697378,Bhagalpur,singhagro@example.com,Payment Paid,2021-03-08
+Sharma Traders,SUP4389,Milk Extractor 180LPM,ME0001,7,3582.75,"63, Market Street",Maharashtra,6218385379,Pune,sharmatraders@example.com,Payment Pending,2022-07-30
+Bose Supplies,SUP8500,Plow-60HP,PLW0002,23,1406.77,"51, Industrial Area",Rajasthan,6376155111,Udaipur,bosesupplies@example.com,Payment Pending,2021-12-20
+Desai Dealers,SUP8272,Kadaba Kutti Machine M1,KK0001,96,3145.16,"59, Industrial Area",Bihar,6874270209,Gaya,desaidealers@example.com,Payment Pending,2021-07-07
+Singh Agro,SUP9320,Kadaba Kutti Machine M3,KK0003,35,2017.02,"24, Industrial Area",Bihar,6960635828,Patna,singhagro@example.com,Payment Paid,2023-04-14
+Desai Dealers,SUP6743,Plow-18HP,PLW0001,7,3214.27,"96, Main Road",West Bengal,9325541198,Howrah,desaidealers@example.com,Payment Pending,2021-11-21
+Gupta Suppliers,SUP6438,Sowing Machine 3F,SWM0003,66,4003.76,"3, Industrial Area",Maharashtra,7284897340,Mumbai,guptasuppliers@example.com,Payment Pending,2021-10-20
+Nair Ventures,SUP4977,Kadaba Kutti Machine M2,KK0002,78,3627.57,"69, Market Street",Bihar,9010357467,Gaya,nairventures@example.com,Payment Paid,2021-07-22
+Singh Agro,SUP9733,Sowing Machine 1F,SWM0001,11,3669.01,"78, Industrial Area",Karnataka,9599587588,Hubli,singhagro@example.com,Payment Pending,2022-03-08
+Reddy Trading Co.,SUP7626,Plow-18HP,PLW0001,68,3524.99,"12, Market Street",Bihar,8497688212,Gaya,reddytradingco.@example.com,Payment Pending,2023-01-30
+Reddy Trading Co.,SUP4451,Milling Machine-7.5HP,MLL0001,44,2123.86,"35, Market Street",Karnataka,9651629783,Mysore,reddytradingco.@example.com,Payment Pending,2021-01-01
+Khan Distributors,SUP6839,Kadaba Kutti Machine M2,KK0002,79,738.09,"2, Main Road",Kerala,8899449980,Kozhikode,khandistributors@example.com,Payment Pending,2021-05-22
+Reddy Trading Co.,SUP5821,Plow-18HP,PLW0001,78,4069.85,"39, Main Road",West Bengal,9924083523,Darjeeling,reddytradingco.@example.com,Payment Paid,2023-06-29
+Reddy Trading Co.,SUP5768,Kadaba Kutti Machine M1,KK0001,68,2233.87,"69, Industrial Area",Karnataka,7750800591,Bangalore,reddytradingco.@example.com,Payment Paid,2022-05-14
+Patel Enterprises,SUP9607,Plow-60HP,PLW0002,2,2585.53,"54, Main Road",Maharashtra,6573076792,Nagpur,patelenterprises@example.com,Payment Paid,2023-04-20
+Nair Ventures,SUP8054,Kadaba Kutti Machine M2,KK0002,74,1698.22,"87, Market Street",Karnataka,8692064025,Mysore,nairventures@example.com,Payment Pending,2020-03-13
+Khan Distributors,SUP6562,Kadaba Kutti Machine M3,KK0003,98,1095.92,"10, Main Road",Maharashtra,7465485035,Nagpur,khandistributors@example.com,Payment Paid,2022-08-20
+Patel Enterprises,SUP3717,Kadaba Kutti Machine M2,KK0002,74,4103.93,"46, Industrial Area",Rajasthan,7969151327,Jaipur,patelenterprises@example.com,Payment Pending,2021-03-20
+Verma Industries,SUP4211,Sowing Machine 1F,SWM0001,10,658.62,"68, Industrial Area",Gujarat,7499150166,Vadodara,vermaindustries@example.com,Payment Pending,2023-07-09
+Khan Distributors,SUP5279,Sowing Machine 2F,SWM0002,42,3971.8,"84, Industrial Area",Tamil Nadu,7616151883,Coimbatore,khandistributors@example.com,Payment Paid,2020-03-30
+Bose Supplies,SUP8296,Roater/Multure-2ft,RTR0001,9,3845.84,"49, Main Road",Gujarat,8545601565,Surat,bosesupplies@example.com,Payment Pending,2023-03-30
+Singh Agro,SUP9785,Milling Machine-40HP,MLL0002,81,2109.36,"41, Main Road",Uttar Pradesh,8627985802,Lucknow,singhagro@example.com,Payment Paid,2022-08-21
+Gupta Suppliers,SUP2441,Sowing Machine 4F,SWM0004,41,2487.65,"44, Industrial Area",Punjab,9394705612,Amritsar,guptasuppliers@example.com,Payment Pending,2023-07-24
+Verma Industries,SUP9471,Sowing Machine 1F,SWM0001,44,3264.95,"41, Main Road",Uttar Pradesh,6632921286,Varanasi,vermaindustries@example.com,Payment Paid,2022-09-22
+Verma Industries,SUP6491,Sowing Machine 2F,SWM0002,38,1387.14,"64, Industrial Area",Tamil Nadu,6527715434,Chennai,vermaindustries@example.com,Payment Pending,2020-01-28
+Gupta Suppliers,SUP3815,Milk Extractor 600LPM,ME0002,36,2023.04,"53, Industrial Area",Kerala,7767390828,Kochi,guptasuppliers@example.com,Payment Pending,2023-04-06
+Verma Industries,SUP3805,Roater/Multure-2ft,RTR0001,53,3733.28,"74, Main Road",Bihar,6353923018,Gaya,vermaindustries@example.com,Payment Pending,2021-02-12
+Nair Ventures,SUP7560,Sowing Machine 3F,SWM0003,66,702.64,"58, Main Road",Gujarat,8800305905,Ahmedabad,nairventures@example.com,Payment Pending,2020-05-25
+Gupta Suppliers,SUP2994,Milk Extractor 180LPM,ME0001,8,3541.21,"35, Market Street",West Bengal,7164538138,Kolkata,guptasuppliers@example.com,Payment Pending,2023-07-07
+Reddy Trading Co.,SUP7266,Sowing Machine 3F,SWM0003,65,4394.59,"19, Main Road",Gujarat,9761489890,Surat,reddytradingco.@example.com,Payment Paid,2023-08-04
+Verma Industries,SUP6059,Milling Machine-40HP,MLL0002,74,1014.75,"63, Market Street",West Bengal,9479536606,Darjeeling,vermaindustries@example.com,Payment Pending,2020-11-17
+Verma Industries,SUP3355,Sowing Machine 2F,SWM0002,66,4747.61,"97, Main Road",Uttar Pradesh,9311728757,Kanpur,vermaindustries@example.com,Payment Pending,2020-07-09
+Bose Supplies,SUP7651,Roater/Multure-2ft,RTR0001,98,3667.35,"82, Main Road",Gujarat,6226585127,Vadodara,bosesupplies@example.com,Payment Paid,2022-06-24
+Sharma Traders,SUP1531,Plow-18HP,PLW0001,74,3388.21,"15, Main Road",Gujarat,9041449999,Ahmedabad,sharmatraders@example.com,Payment Paid,2020-08-17
+Nair Ventures,SUP4379,Sowing Machine 3F,SWM0003,18,4358.66,"36, Market Street",Gujarat,7446820647,Surat,nairventures@example.com,Payment Paid,2021-11-18
+Khan Distributors,SUP9230,Kadaba Kutti Machine M1,KK0001,17,2054.79,"16, Market Street",Tamil Nadu,7156717632,Chennai,khandistributors@example.com,Payment Paid,2022-02-22
+Reddy Trading Co.,SUP5822,Sowing Machine 4F,SWM0004,98,597.22,"4, Main Road",West Bengal,9871050756,Howrah,reddytradingco.@example.com,Payment Pending,2021-09-16
+Verma Industries,SUP3029,Milk Extractor 180LPM,ME0001,53,1492.13,"29, Market Street",Karnataka,9904454011,Hubli,vermaindustries@example.com,Payment Paid,2020-01-13
+Gupta Suppliers,SUP8624,Roater/Multure-7ft,RTR0002,63,3126.35,"88, Main Road",Karnataka,8012160203,Hubli,guptasuppliers@example.com,Payment Paid,2022-07-05
+Singh Agro,SUP9423,Kadaba Kutti Machine M1,KK0001,92,600.32,"56, Main Road",West Bengal,8352378670,Howrah,singhagro@example.com,Payment Pending,2022-10-03
+Patel Enterprises,SUP4202,Roater/Multure-7ft,RTR0002,41,4763.66,"50, Main Road",Karnataka,9291763788,Mysore,patelenterprises@example.com,Payment Pending,2023-06-06
+Desai Dealers,SUP7409,Plow-18HP,PLW0001,66,1350.1,"82, Main Road",West Bengal,9126622571,Howrah,desaidealers@example.com,Payment Paid,2020-10-27
+Gupta Suppliers,SUP3064,Sowing Machine 1F,SWM0001,53,2132.56,"42, Market Street",West Bengal,9345800372,Darjeeling,guptasuppliers@example.com,Payment Pending,2020-09-09
+Reddy Trading Co.,SUP2612,Kadaba Kutti Machine M3,KK0003,37,4565.65,"62, Industrial Area",Kerala,9729231240,Kochi,reddytradingco.@example.com,Payment Pending,2022-10-21
+Gupta Suppliers,SUP2836,Roater/Multure-7ft,RTR0002,8,2840.38,"89, Industrial Area",Kerala,6342912599,Thiruvananthapuram,guptasuppliers@example.com,Payment Pending,2022-04-13
+Reddy Trading Co.,SUP5407,Milk Extractor 600LPM,ME0002,3,4088.28,"43, Industrial Area",Rajasthan,9949197065,Jaipur,reddytradingco.@example.com,Payment Paid,2021-07-04
+Sharma Traders,SUP4682,Sowing Machine 4F,SWM0004,59,1027.49,"7, Industrial Area",Bihar,8836408761,Bhagalpur,sharmatraders@example.com,Payment Pending,2023-10-26
+Gupta Suppliers,SUP8407,Roater/Multure-7ft,RTR0002,47,4372.17,"43, Market Street",Uttar Pradesh,7532495968,Varanasi,guptasuppliers@example.com,Payment Paid,2023-03-11
+Patel Enterprises,SUP4903,Milk Extractor 180LPM,ME0001,80,846.34,"92, Main Road",West Bengal,6068689289,Howrah,patelenterprises@example.com,Payment Paid,2020-02-19
+Nair Ventures,SUP2918,Milling Machine-7.5HP,MLL0001,97,4217.19,"70, Main Road",Tamil Nadu,8520833205,Chennai,nairventures@example.com,Payment Paid,2020-10-09
+Reddy Trading Co.,SUP3266,Plow-18HP,PLW0001,16,583.52,"62, Industrial Area",Karnataka,9300097089,Hubli,reddytradingco.@example.com,Payment Pending,2021-06-06
+Reddy Trading Co.,SUP5029,Plow-60HP,PLW0002,70,3782.54,"75, Market Street",Karnataka,9626580377,Hubli,reddytradingco.@example.com,Payment Paid,2020-06-30
+Patel Enterprises,SUP6902,Kadaba Kutti Machine M1,KK0001,87,2694.91,"27, Industrial Area",West Bengal,6042810031,Kolkata,patelenterprises@example.com,Payment Paid,2023-05-24
+Patel Enterprises,SUP9950,Milling Machine-7.5HP,MLL0001,88,3780.35,"80, Market Street",West Bengal,6294669227,Howrah,patelenterprises@example.com,Payment Pending,2022-08-12
+Nair Ventures,SUP1450,Sowing Machine 4F,SWM0004,52,1714.26,"48, Industrial Area",Maharashtra,6210395162,Pune,nairventures@example.com,Payment Paid,2021-08-24
+Singh Agro,SUP2750,Sowing Machine 1F,SWM0001,52,4048.33,"52, Main Road",Rajasthan,7716878068,Jodhpur,singhagro@example.com,Payment Pending,2022-12-21
+Singh Agro,SUP6997,Milk Extractor 180LPM,ME0001,18,1961.26,"53, Market Street",Uttar Pradesh,6830925064,Kanpur,singhagro@example.com,Payment Paid,2023-03-27
+Bose Supplies,SUP7796,Milk Extractor 600LPM,ME0002,77,4010.39,"89, Market Street",Tamil Nadu,8356233283,Chennai,bosesupplies@example.com,Payment Paid,2022-11-29
+Sharma Traders,SUP7150,Sowing Machine 2F,SWM0002,80,3619.77,"17, Main Road",Maharashtra,7725475782,Mumbai,sharmatraders@example.com,Payment Pending,2021-01-22
+Singh Agro,SUP3162,Plow-60HP,PLW0002,32,3737.37,"14, Industrial Area",Kerala,8449348419,Kozhikode,singhagro@example.com,Payment Paid,2021-04-16
+Reddy Trading Co.,SUP7637,Kadaba Kutti Machine M3,KK0003,59,3438.69,"86, Market Street",Tamil Nadu,6049962844,Chennai,reddytradingco.@example.com,Payment Pending,2020-06-15
+Sharma Traders,SUP1459,Milling Machine-7.5HP,MLL0001,82,2086.48,"99, Main Road",West Bengal,9734942324,Howrah,sharmatraders@example.com,Payment Pending,2023-06-08
+Patel Enterprises,SUP8696,Sowing Machine 4F,SWM0004,2,1576.33,"64, Main Road",Gujarat,6511934964,Ahmedabad,patelenterprises@example.com,Payment Pending,2020-01-08
+Desai Dealers,SUP3494,Sowing Machine 1F,SWM0001,32,1405.84,"91, Industrial Area",Punjab,8355783018,Jalandhar,desaidealers@example.com,Payment Paid,2023-06-27
+Gupta Suppliers,SUP7311,Milling Machine-40HP,MLL0002,39,1900.01,"20, Main Road",Gujarat,9732211584,Surat,guptasuppliers@example.com,Payment Pending,2022-01-21
+Desai Dealers,SUP7098,Milk Extractor 600LPM,ME0002,87,2805.24,"58, Market Street",Kerala,7942274537,Kozhikode,desaidealers@example.com,Payment Pending,2022-06-27
+Bose Supplies,SUP7491,Plow-18HP,PLW0001,86,712.36,"67, Industrial Area",Karnataka,7664625293,Hubli,bosesupplies@example.com,Payment Pending,2022-08-05
+Desai Dealers,SUP6456,Milk Extractor 600LPM,ME0002,35,2830.76,"2, Market Street",Bihar,6190824499,Gaya,desaidealers@example.com,Payment Pending,2021-01-30
+Gupta Suppliers,SUP4634,Sowing Machine 4F,SWM0004,9,931.71,"47, Industrial Area",Maharashtra,7830377909,Nagpur,guptasuppliers@example.com,Payment Paid,2020-10-03
+Desai Dealers,SUP4582,Roater/Multure-2ft,RTR0001,34,906.79,"15, Main Road",West Bengal,8766673702,Kolkata,desaidealers@example.com,Payment Paid,2020-03-19
+Verma Industries,SUP4628,Sowing Machine 1F,SWM0001,23,4599.24,"94, Main Road",Kerala,7965632469,Kozhikode,vermaindustries@example.com,Payment Paid,2023-01-17
+Patel Enterprises,SUP1385,Plow-18HP,PLW0001,36,3600.23,"86, Market Street",Gujarat,6401211369,Vadodara,patelenterprises@example.com,Payment Paid,2023-11-27
+Sharma Traders,SUP3579,Kadaba Kutti Machine M3,KK0003,54,3336.29,"27, Market Street",Gujarat,7583915413,Surat,sharmatraders@example.com,Payment Pending,2023-08-23
+Patel Enterprises,SUP5070,Milling Machine-7.5HP,MLL0001,78,4717.03,"3, Industrial Area",Gujarat,7677073498,Ahmedabad,patelenterprises@example.com,Payment Paid,2020-01-04
+Singh Agro,SUP9540,Plow-18HP,PLW0001,42,1846.53,"72, Industrial Area",Punjab,9484337436,Ludhiana,singhagro@example.com,Payment Paid,2020-06-22
+Reddy Trading Co.,SUP8593,Sowing Machine 2F,SWM0002,67,4298.14,"10, Market Street",Karnataka,9674820766,Hubli,reddytradingco.@example.com,Payment Paid,2020-02-25
+Nair Ventures,SUP4661,Sowing Machine 2F,SWM0002,89,2439.39,"49, Market Street",Bihar,9088766542,Gaya,nairventures@example.com,Payment Pending,2021-05-18
+Desai Dealers,SUP6167,Milling Machine-40HP,MLL0002,82,4380.56,"50, Market Street",Rajasthan,8483054447,Jodhpur,desaidealers@example.com,Payment Pending,2021-12-03
+Patel Enterprises,SUP9356,Milk Extractor 600LPM,ME0002,26,2315.5,"2, Market Street",West Bengal,8816502972,Howrah,patelenterprises@example.com,Payment Pending,2020-04-04
+Singh Agro,SUP8962,Kadaba Kutti Machine M2,KK0002,67,1320.55,"56, Market Street",Uttar Pradesh,8571302711,Kanpur,singhagro@example.com,Payment Pending,2022-10-14
+Bose Supplies,SUP8324,Kadaba Kutti Machine M3,KK0003,38,3962.07,"60, Industrial Area",West Bengal,8462669942,Darjeeling,bosesupplies@example.com,Payment Paid,2021-01-25
+Verma Industries,SUP2624,Sowing Machine 4F,SWM0004,4,2712.96,"28, Market Street",Uttar Pradesh,7154382177,Kanpur,vermaindustries@example.com,Payment Pending,2023-08-24
+Patel Enterprises,SUP5969,Roater/Multure-7ft,RTR0002,56,1654.4,"32, Industrial Area",Karnataka,7576330024,Mysore,patelenterprises@example.com,Payment Paid,2022-07-27
+Desai Dealers,SUP5300,Plow-60HP,PLW0002,60,2611.58,"70, Industrial Area",Gujarat,9811128850,Vadodara,desaidealers@example.com,Payment Paid,2023-01-31
+Verma Industries,SUP7682,Kadaba Kutti Machine M2,KK0002,84,1532.79,"53, Main Road",Bihar,8402707059,Gaya,vermaindustries@example.com,Payment Paid,2022-03-27
+Gupta Suppliers,SUP6335,Milling Machine-7.5HP,MLL0001,55,797.4,"14, Market Street",Kerala,6431172787,Thiruvananthapuram,guptasuppliers@example.com,Payment Paid,2022-07-12
+Khan Distributors,SUP8556,Kadaba Kutti Machine M1,KK0001,94,882.07,"58, Main Road",West Bengal,6085677988,Howrah,khandistributors@example.com,Payment Paid,2022-10-22
+Reddy Trading Co.,SUP7661,Milk Extractor 180LPM,ME0001,47,2682.53,"74, Market Street",Kerala,9425102925,Kochi,reddytradingco.@example.com,Payment Paid,2023-04-27
+Reddy Trading Co.,SUP8035,Roater/Multure-7ft,RTR0002,24,871.23,"33, Industrial Area",Tamil Nadu,9630123511,Chennai,reddytradingco.@example.com,Payment Paid,2021-09-25
+Nair Ventures,SUP2795,Plow-18HP,PLW0001,13,2760.91,"32, Industrial Area",Punjab,8964268958,Jalandhar,nairventures@example.com,Payment Paid,2020-05-16
+Gupta Suppliers,SUP1796,Milling Machine-7.5HP,MLL0001,22,3217.73,"62, Main Road",Tamil Nadu,9069889959,Coimbatore,guptasuppliers@example.com,Payment Paid,2021-03-05
+Bose Supplies,SUP4511,Milling Machine-40HP,MLL0002,47,3868.36,"87, Market Street",Karnataka,7479559656,Hubli,bosesupplies@example.com,Payment Pending,2022-11-13
+Gupta Suppliers,SUP5431,Kadaba Kutti Machine M1,KK0001,14,2461.61,"40, Market Street",Tamil Nadu,9909227479,Madurai,guptasuppliers@example.com,Payment Paid,2022-01-19
+Khan Distributors,SUP6445,Sowing Machine 1F,SWM0001,7,3272.81,"94, Main Road",Tamil Nadu,9669675288,Madurai,khandistributors@example.com,Payment Pending,2020-02-19
+Nair Ventures,SUP7889,Kadaba Kutti Machine M2,KK0002,5,2886.04,"90, Main Road",Kerala,8022352936,Kochi,nairventures@example.com,Payment Pending,2021-03-05
+Gupta Suppliers,SUP7520,Roater/Multure-2ft,RTR0001,49,1424.52,"44, Main Road",Uttar Pradesh,6540073335,Lucknow,guptasuppliers@example.com,Payment Paid,2022-09-25
+Gupta Suppliers,SUP3267,Milk Extractor 180LPM,ME0001,81,528.92,"13, Market Street",Tamil Nadu,8632710157,Coimbatore,guptasuppliers@example.com,Payment Pending,2020-11-09
+Singh Agro,SUP8223,Milk Extractor 180LPM,ME0001,36,4336.76,"26, Industrial Area",Maharashtra,6173640394,Nagpur,singhagro@example.com,Payment Paid,2020-11-20
+Bose Supplies,SUP5694,Kadaba Kutti Machine M2,KK0002,72,1881.56,"67, Industrial Area",Kerala,9952873150,Kochi,bosesupplies@example.com,Payment Pending,2023-12-26
+Bose Supplies,SUP8436,Milk Extractor 600LPM,ME0002,65,1885.52,"84, Industrial Area",Karnataka,8957143980,Mysore,bosesupplies@example.com,Payment Paid,2020-02-11
+Khan Distributors,SUP6919,Plow-18HP,PLW0001,87,1385.87,"83, Market Street",Maharashtra,7900125159,Nagpur,khandistributors@example.com,Payment Paid,2023-07-02
+Singh Agro,SUP2954,Plow-18HP,PLW0001,38,1591.51,"67, Main Road",Rajasthan,7712052635,Jaipur,singhagro@example.com,Payment Pending,2022-05-19
+Bose Supplies,SUP5185,Plow-60HP,PLW0002,8,1263.22,"17, Market Street",Rajasthan,6272708575,Jodhpur,bosesupplies@example.com,Payment Paid,2023-06-10
+Sharma Traders,SUP8105,Milling Machine-7.5HP,MLL0001,93,1280.36,"100, Main Road",West Bengal,9306937296,Darjeeling,sharmatraders@example.com,Payment Pending,2022-06-29
+Verma Industries,SUP5953,Plow-18HP,PLW0001,56,3175.01,"3, Industrial Area",Kerala,7511851906,Thiruvananthapuram,vermaindustries@example.com,Payment Pending,2022-01-14
+Nair Ventures,SUP8889,Plow-18HP,PLW0001,10,2665.96,"56, Main Road",Punjab,8205888351,Amritsar,nairventures@example.com,Payment Paid,2020-08-20
+Reddy Trading Co.,SUP5635,Sowing Machine 4F,SWM0004,87,4036.74,"5, Market Street",Uttar Pradesh,8297835434,Lucknow,reddytradingco.@example.com,Payment Paid,2022-10-30
+Desai Dealers,SUP2548,Milling Machine-40HP,MLL0002,24,3594.32,"92, Main Road",Tamil Nadu,7265204231,Coimbatore,desaidealers@example.com,Payment Paid,2023-11-12
+Desai Dealers,SUP2432,Milk Extractor 600LPM,ME0002,25,3317.41,"91, Market Street",Bihar,6445130509,Gaya,desaidealers@example.com,Payment Paid,2023-12-18
+Nair Ventures,SUP3963,Sowing Machine 3F,SWM0003,52,1463.57,"22, Market Street",Kerala,7467048364,Kochi,nairventures@example.com,Payment Pending,2022-09-20
+Nair Ventures,SUP2902,Roater/Multure-7ft,RTR0002,85,1049.32,"81, Main Road",Uttar Pradesh,6844404383,Lucknow,nairventures@example.com,Payment Pending,2020-07-13
+Desai Dealers,SUP7427,Milk Extractor 600LPM,ME0002,55,4138.24,"85, Main Road",Punjab,9112627067,Amritsar,desaidealers@example.com,Payment Paid,2022-06-14
+Gupta Suppliers,SUP4477,Plow-18HP,PLW0001,17,2289.5,"52, Main Road",Uttar Pradesh,9979522503,Varanasi,guptasuppliers@example.com,Payment Pending,2020-02-16
+Khan Distributors,SUP6839,Milling Machine-7.5HP,MLL0001,18,4932.33,"52, Main Road",Uttar Pradesh,7633116231,Lucknow,khandistributors@example.com,Payment Pending,2023-07-28
+Khan Distributors,SUP7251,Kadaba Kutti Machine M1,KK0001,26,3814.0,"90, Market Street",Maharashtra,6198350204,Nagpur,khandistributors@example.com,Payment Paid,2021-02-25
+Reddy Trading Co.,SUP1734,Sowing Machine 4F,SWM0004,50,2097.4,"100, Main Road",Tamil Nadu,7713999760,Coimbatore,reddytradingco.@example.com,Payment Pending,2022-03-06
+Singh Agro,SUP8785,Sowing Machine 2F,SWM0002,21,4094.18,"10, Market Street",Kerala,6959327553,Kozhikode,singhagro@example.com,Payment Pending,2021-05-22
+Gupta Suppliers,SUP7879,Sowing Machine 3F,SWM0003,27,1401.63,"60, Main Road",Gujarat,8656041982,Ahmedabad,guptasuppliers@example.com,Payment Pending,2022-06-05
+Bose Supplies,SUP4349,Sowing Machine 2F,SWM0002,91,3726.26,"80, Main Road",West Bengal,7191582455,Howrah,bosesupplies@example.com,Payment Paid,2023-10-14
+Desai Dealers,SUP5799,Plow-60HP,PLW0002,46,2911.49,"30, Market Street",Tamil Nadu,8969679300,Chennai,desaidealers@example.com,Payment Pending,2020-06-29
+Desai Dealers,SUP1549,Milling Machine-7.5HP,MLL0001,1,2315.4,"30, Market Street",Gujarat,8322215623,Ahmedabad,desaidealers@example.com,Payment Paid,2020-02-12
+Nair Ventures,SUP5460,Kadaba Kutti Machine M2,KK0002,72,2518.79,"50, Market Street",Punjab,9617557111,Jalandhar,nairventures@example.com,Payment Pending,2022-05-30
+Singh Agro,SUP9397,Kadaba Kutti Machine M3,KK0003,16,614.85,"21, Main Road",Bihar,7261151907,Gaya,singhagro@example.com,Payment Pending,2023-07-12
+Nair Ventures,SUP1473,Sowing Machine 4F,SWM0004,45,2119.78,"67, Main Road",Gujarat,7658606322,Vadodara,nairventures@example.com,Payment Paid,2023-03-26
+Singh Agro,SUP8573,Kadaba Kutti Machine M2,KK0002,2,3621.41,"60, Industrial Area",Kerala,7386025836,Kochi,singhagro@example.com,Payment Paid,2021-12-12
+Bose Supplies,SUP4761,Milling Machine-40HP,MLL0002,70,4726.78,"43, Main Road",Bihar,6916494753,Patna,bosesupplies@example.com,Payment Pending,2021-04-26
+Sharma Traders,SUP2541,Kadaba Kutti Machine M3,KK0003,72,4218.7,"52, Industrial Area",Karnataka,9000614848,Mysore,sharmatraders@example.com,Payment Pending,2022-02-12
+Gupta Suppliers,SUP2899,Roater/Multure-2ft,RTR0001,42,665.39,"69, Industrial Area",Maharashtra,6160966115,Mumbai,guptasuppliers@example.com,Payment Paid,2022-07-30
+Khan Distributors,SUP4661,Milling Machine-7.5HP,MLL0001,81,3072.0,"6, Main Road",Bihar,8319562661,Gaya,khandistributors@example.com,Payment Paid,2020-01-20
+Bose Supplies,SUP1409,Roater/Multure-7ft,RTR0002,98,574.36,"32, Industrial Area",Bihar,9126078185,Gaya,bosesupplies@example.com,Payment Pending,2022-05-27
+Khan Distributors,SUP4208,Roater/Multure-7ft,RTR0002,24,3514.22,"13, Industrial Area",Punjab,8505995139,Ludhiana,khandistributors@example.com,Payment Pending,2023-01-14
+Reddy Trading Co.,SUP4209,Kadaba Kutti Machine M1,KK0001,39,3023.89,"17, Main Road",Gujarat,7054496701,Ahmedabad,reddytradingco.@example.com,Payment Pending,2020-07-18
+Desai Dealers,SUP5169,Milling Machine-40HP,MLL0002,10,500.12,"11, Main Road",Kerala,8792563632,Thiruvananthapuram,desaidealers@example.com,Payment Paid,2022-01-09
+Reddy Trading Co.,SUP3676,Milling Machine-7.5HP,MLL0001,63,4362.25,"75, Industrial Area",Rajasthan,9383596464,Jodhpur,reddytradingco.@example.com,Payment Paid,2023-04-08
+Sharma Traders,SUP3650,Milling Machine-40HP,MLL0002,20,2244.95,"82, Market Street",Uttar Pradesh,6048498230,Kanpur,sharmatraders@example.com,Payment Paid,2021-12-14
+Gupta Suppliers,SUP7033,Kadaba Kutti Machine M1,KK0001,80,4224.77,"39, Industrial Area",West Bengal,9999387683,Kolkata,guptasuppliers@example.com,Payment Pending,2021-05-06
+Desai Dealers,SUP5985,Kadaba Kutti Machine M1,KK0001,58,1508.12,"13, Main Road",Rajasthan,6224193032,Udaipur,desaidealers@example.com,Payment Pending,2020-01-20
+Patel Enterprises,SUP5758,Kadaba Kutti Machine M2,KK0002,98,3911.5,"41, Industrial Area",Gujarat,8183063007,Vadodara,patelenterprises@example.com,Payment Pending,2021-07-31
+Reddy Trading Co.,SUP5928,Kadaba Kutti Machine M2,KK0002,23,978.32,"15, Market Street",West Bengal,9297666309,Howrah,reddytradingco.@example.com,Payment Paid,2022-04-19
+Verma Industries,SUP3186,Plow-18HP,PLW0001,98,838.79,"4, Main Road",West Bengal,8323270371,Kolkata,vermaindustries@example.com,Payment Paid,2021-02-28
+Singh Agro,SUP4440,Roater/Multure-7ft,RTR0002,48,663.22,"34, Main Road",Tamil Nadu,9090426866,Madurai,singhagro@example.com,Payment Pending,2023-04-11
+Reddy Trading Co.,SUP7662,Plow-60HP,PLW0002,95,3067.69,"78, Market Street",Rajasthan,9644745434,Jaipur,reddytradingco.@example.com,Payment Paid,2023-09-13
+Singh Agro,SUP5118,Sowing Machine 1F,SWM0001,72,2193.97,"78, Main Road",Kerala,6466840549,Thiruvananthapuram,singhagro@example.com,Payment Paid,2023-03-19
+Reddy Trading Co.,SUP6487,Milk Extractor 180LPM,ME0001,54,4856.2,"34, Market Street",Gujarat,6296261908,Vadodara,reddytradingco.@example.com,Payment Pending,2022-09-22
+Patel Enterprises,SUP3663,Roater/Multure-7ft,RTR0002,95,3921.65,"38, Main Road",Tamil Nadu,7359555098,Coimbatore,patelenterprises@example.com,Payment Paid,2021-10-29
+Desai Dealers,SUP5113,Roater/Multure-2ft,RTR0001,14,1238.21,"92, Main Road",Tamil Nadu,9946900340,Coimbatore,desaidealers@example.com,Payment Pending,2020-04-10
+Singh Agro,SUP2690,Sowing Machine 2F,SWM0002,61,2958.25,"31, Main Road",Rajasthan,8148726064,Jaipur,singhagro@example.com,Payment Paid,2020-02-22
+Sharma Traders,SUP4332,Roater/Multure-2ft,RTR0001,16,4301.6,"21, Industrial Area",West Bengal,9921427946,Howrah,sharmatraders@example.com,Payment Paid,2021-08-28
+Singh Agro,SUP7231,Roater/Multure-2ft,RTR0001,5,3884.02,"63, Industrial Area",Tamil Nadu,9016417334,Madurai,singhagro@example.com,Payment Pending,2021-12-17
+Patel Enterprises,SUP1246,Plow-60HP,PLW0002,75,3689.12,"7, Market Street",Kerala,6606711604,Kozhikode,patelenterprises@example.com,Payment Pending,2021-07-10
+Verma Industries,SUP9885,Roater/Multure-7ft,RTR0002,90,3834.28,"55, Market Street",Kerala,7129961187,Kozhikode,vermaindustries@example.com,Payment Pending,2023-03-28
+Patel Enterprises,SUP1579,Milk Extractor 600LPM,ME0002,18,3810.91,"61, Market Street",Rajasthan,6338767982,Udaipur,patelenterprises@example.com,Payment Paid,2020-02-13
+Desai Dealers,SUP7218,Roater/Multure-2ft,RTR0001,29,3279.55,"10, Industrial Area",Punjab,7572354795,Amritsar,desaidealers@example.com,Payment Paid,2020-05-15
+Sharma Traders,SUP3423,Kadaba Kutti Machine M3,KK0003,95,3492.11,"51, Industrial Area",Kerala,9982566854,Kochi,sharmatraders@example.com,Payment Pending,2022-08-09
+Singh Agro,SUP4212,Plow-60HP,PLW0002,32,3276.73,"73, Industrial Area",Maharashtra,9393569311,Nagpur,singhagro@example.com,Payment Pending,2022-07-02
+Verma Industries,SUP9792,Sowing Machine 4F,SWM0004,70,3276.51,"36, Market Street",Uttar Pradesh,8491473090,Kanpur,vermaindustries@example.com,Payment Paid,2021-03-24
+Verma Industries,SUP4574,Sowing Machine 1F,SWM0001,82,4496.52,"4, Main Road",Karnataka,8622802732,Bangalore,vermaindustries@example.com,Payment Paid,2020-01-22
+Patel Enterprises,SUP4312,Milling Machine-40HP,MLL0002,56,674.08,"23, Main Road",Bihar,8260839417,Bhagalpur,patelenterprises@example.com,Payment Pending,2023-06-15
+Sharma Traders,SUP9657,Sowing Machine 2F,SWM0002,73,2563.0,"6, Industrial Area",Kerala,9262661150,Kochi,sharmatraders@example.com,Payment Paid,2021-10-09
+Khan Distributors,SUP1529,Sowing Machine 2F,SWM0002,92,519.76,"25, Main Road",Punjab,8341873628,Jalandhar,khandistributors@example.com,Payment Paid,2023-12-09
+Bose Supplies,SUP9113,Plow-60HP,PLW0002,13,1583.81,"23, Main Road",West Bengal,7603724902,Darjeeling,bosesupplies@example.com,Payment Pending,2020-06-16
+Khan Distributors,SUP9946,Sowing Machine 4F,SWM0004,29,4769.95,"8, Market Street",Kerala,9842662424,Thiruvananthapuram,khandistributors@example.com,Payment Pending,2022-06-03
+Desai Dealers,SUP4766,Sowing Machine 2F,SWM0002,5,1882.73,"90, Industrial Area",Punjab,8973027805,Ludhiana,desaidealers@example.com,Payment Paid,2023-05-15
+Sharma Traders,SUP2052,Milling Machine-7.5HP,MLL0001,76,4708.32,"8, Market Street",Uttar Pradesh,6720412727,Lucknow,sharmatraders@example.com,Payment Pending,2022-11-17
+Sharma Traders,SUP4688,Roater/Multure-7ft,RTR0002,48,1470.18,"82, Industrial Area",Kerala,9151780362,Kozhikode,sharmatraders@example.com,Payment Paid,2020-02-14
+Singh Agro,SUP1891,Milling Machine-7.5HP,MLL0001,43,2421.7,"27, Industrial Area",West Bengal,9209289236,Darjeeling,singhagro@example.com,Payment Paid,2022-03-31
+Patel Enterprises,SUP3673,Milling Machine-7.5HP,MLL0001,83,2127.64,"74, Industrial Area",Bihar,9679653750,Bhagalpur,patelenterprises@example.com,Payment Paid,2021-06-13
+Sharma Traders,SUP1918,Roater/Multure-2ft,RTR0001,66,3081.65,"33, Industrial Area",Tamil Nadu,8825567424,Chennai,sharmatraders@example.com,Payment Pending,2021-03-16
+Reddy Trading Co.,SUP2085,Milling Machine-40HP,MLL0002,81,2352.51,"26, Industrial Area",West Bengal,6669287308,Howrah,reddytradingco.@example.com,Payment Paid,2022-04-15
+Gupta Suppliers,SUP7019,Milling Machine-7.5HP,MLL0001,95,2657.01,"69, Industrial Area",Gujarat,7955352870,Vadodara,guptasuppliers@example.com,Payment Pending,2020-04-08
+Gupta Suppliers,SUP3263,Roater/Multure-2ft,RTR0001,83,2129.97,"10, Industrial Area",Karnataka,7331985486,Bangalore,guptasuppliers@example.com,Payment Paid,2023-11-02
+Khan Distributors,SUP8782,Kadaba Kutti Machine M3,KK0003,44,3952.33,"33, Industrial Area",Punjab,8748723637,Amritsar,khandistributors@example.com,Payment Paid,2022-12-13
+Verma Industries,SUP6966,Plow-18HP,PLW0001,89,821.43,"64, Industrial Area",Maharashtra,7225182807,Pune,vermaindustries@example.com,Payment Pending,2021-01-02
+Bose Supplies,SUP5702,Milk Extractor 180LPM,ME0001,16,1146.28,"13, Main Road",Maharashtra,6756347200,Pune,bosesupplies@example.com,Payment Paid,2022-12-18
+Bose Supplies,SUP5163,Milling Machine-7.5HP,MLL0001,55,2868.1,"33, Industrial Area",Punjab,6878218212,Jalandhar,bosesupplies@example.com,Payment Pending,2020-05-19
+Desai Dealers,SUP5927,Sowing Machine 1F,SWM0001,72,1667.04,"89, Industrial Area",Maharashtra,7199785947,Nagpur,desaidealers@example.com,Payment Pending,2020-06-19
+Nair Ventures,SUP3333,Milling Machine-7.5HP,MLL0001,35,1727.99,"65, Market Street",Bihar,9345129549,Bhagalpur,nairventures@example.com,Payment Paid,2022-08-04
+Singh Agro,SUP2650,Milk Extractor 600LPM,ME0002,44,2668.1,"93, Industrial Area",Tamil Nadu,8249095234,Chennai,singhagro@example.com,Payment Pending,2020-08-01
+Verma Industries,SUP6456,Kadaba Kutti Machine M3,KK0003,89,4415.34,"99, Industrial Area",Uttar Pradesh,9038893018,Varanasi,vermaindustries@example.com,Payment Paid,2023-11-15
+Khan Distributors,SUP8627,Milling Machine-40HP,MLL0002,97,2653.57,"38, Market Street",Rajasthan,7641582591,Jodhpur,khandistributors@example.com,Payment Paid,2022-05-03
+Khan Distributors,SUP9141,Milling Machine-7.5HP,MLL0001,39,3029.39,"11, Market Street",Punjab,9490139150,Amritsar,khandistributors@example.com,Payment Pending,2021-10-10
+Singh Agro,SUP2222,Sowing Machine 4F,SWM0004,71,501.53,"95, Main Road",Rajasthan,8222220468,Jodhpur,singhagro@example.com,Payment Paid,2023-12-30
+Gupta Suppliers,SUP1268,Roater/Multure-2ft,RTR0001,56,760.36,"45, Main Road",Rajasthan,7120558909,Udaipur,guptasuppliers@example.com,Payment Pending,2021-08-02
+Singh Agro,SUP8606,Milling Machine-7.5HP,MLL0001,53,513.96,"79, Market Street",West Bengal,7060273887,Kolkata,singhagro@example.com,Payment Paid,2021-04-12
+Sharma Traders,SUP4792,Milk Extractor 180LPM,ME0001,73,815.05,"48, Industrial Area",Karnataka,6830376531,Hubli,sharmatraders@example.com,Payment Pending,2023-05-29
+Singh Agro,SUP6606,Kadaba Kutti Machine M3,KK0003,49,3306.13,"59, Market Street",Uttar Pradesh,9385575258,Varanasi,singhagro@example.com,Payment Paid,2022-10-29
+Patel Enterprises,SUP8761,Milk Extractor 600LPM,ME0002,82,3972.57,"23, Main Road",Kerala,9271727650,Kozhikode,patelenterprises@example.com,Payment Paid,2021-06-12
+Nair Ventures,SUP6438,Milling Machine-40HP,MLL0002,28,1092.05,"32, Industrial Area",Rajasthan,8209136638,Udaipur,nairventures@example.com,Payment Pending,2021-12-03
+Nair Ventures,SUP8921,Sowing Machine 4F,SWM0004,1,2136.2,"26, Industrial Area",Kerala,8266070400,Kochi,nairventures@example.com,Payment Paid,2023-06-20
+Singh Agro,SUP6524,Kadaba Kutti Machine M3,KK0003,33,4242.16,"100, Main Road",Rajasthan,9820771504,Udaipur,singhagro@example.com,Payment Paid,2020-01-03
+Nair Ventures,SUP5629,Sowing Machine 1F,SWM0001,24,941.25,"20, Industrial Area",Rajasthan,8724568720,Jaipur,nairventures@example.com,Payment Pending,2021-06-04
+Desai Dealers,SUP1088,Milk Extractor 180LPM,ME0001,94,1190.93,"85, Main Road",Gujarat,7548482110,Ahmedabad,desaidealers@example.com,Payment Paid,2023-09-25
+Gupta Suppliers,SUP6561,Sowing Machine 1F,SWM0001,61,3179.56,"40, Market Street",West Bengal,6623628221,Kolkata,guptasuppliers@example.com,Payment Pending,2020-10-10
+Singh Agro,SUP2649,Roater/Multure-7ft,RTR0002,30,1746.71,"49, Market Street",Bihar,9937420540,Gaya,singhagro@example.com,Payment Paid,2022-11-08
+Desai Dealers,SUP7066,Sowing Machine 2F,SWM0002,65,1765.73,"86, Market Street",Bihar,8275026236,Bhagalpur,desaidealers@example.com,Payment Pending,2022-03-20
+Nair Ventures,SUP5423,Milling Machine-7.5HP,MLL0001,12,4938.1,"66, Main Road",Bihar,7973466136,Gaya,nairventures@example.com,Payment Pending,2023-02-02
+Sharma Traders,SUP9587,Sowing Machine 4F,SWM0004,92,4990.71,"38, Industrial Area",Uttar Pradesh,8200554506,Kanpur,sharmatraders@example.com,Payment Paid,2022-04-27
+Verma Industries,SUP3365,Milling Machine-40HP,MLL0002,79,3984.76,"43, Industrial Area",Uttar Pradesh,7734223626,Kanpur,vermaindustries@example.com,Payment Pending,2020-12-12
+Verma Industries,SUP5962,Kadaba Kutti Machine M2,KK0002,15,2082.15,"52, Market Street",Punjab,7280459080,Amritsar,vermaindustries@example.com,Payment Paid,2023-03-12
+Reddy Trading Co.,SUP1935,Milling Machine-40HP,MLL0002,71,3952.95,"50, Main Road",Karnataka,6145760193,Hubli,reddytradingco.@example.com,Payment Paid,2022-10-09
+Sharma Traders,SUP1458,Plow-60HP,PLW0002,95,2623.44,"47, Industrial Area",Kerala,9014119116,Kochi,sharmatraders@example.com,Payment Pending,2021-11-04
+Singh Agro,SUP2230,Sowing Machine 1F,SWM0001,99,662.91,"89, Industrial Area",Punjab,6678274277,Amritsar,singhagro@example.com,Payment Paid,2023-01-08
+Verma Industries,SUP1449,Milk Extractor 600LPM,ME0002,61,2158.41,"31, Market Street",Tamil Nadu,7502093864,Chennai,vermaindustries@example.com,Payment Paid,2020-04-10
+Bose Supplies,SUP7053,Milk Extractor 180LPM,ME0001,24,4447.14,"26, Market Street",Karnataka,9726319606,Hubli,bosesupplies@example.com,Payment Pending,2021-01-12
+Desai Dealers,SUP8556,Kadaba Kutti Machine M2,KK0002,49,680.86,"22, Industrial Area",Uttar Pradesh,9050461337,Lucknow,desaidealers@example.com,Payment Paid,2021-06-27
+Desai Dealers,SUP5789,Roater/Multure-2ft,RTR0001,73,2059.43,"71, Main Road",Uttar Pradesh,8355609211,Lucknow,desaidealers@example.com,Payment Pending,2022-07-03
+Sharma Traders,SUP3892,Kadaba Kutti Machine M2,KK0002,8,4763.67,"27, Main Road",Punjab,7024296549,Amritsar,sharmatraders@example.com,Payment Pending,2023-11-24
+Patel Enterprises,SUP9144,Sowing Machine 4F,SWM0004,46,4365.37,"100, Industrial Area",Punjab,9509610603,Amritsar,patelenterprises@example.com,Payment Paid,2020-05-22
+Khan Distributors,SUP5802,Milling Machine-7.5HP,MLL0001,89,1105.38,"71, Main Road",Gujarat,7902916392,Ahmedabad,khandistributors@example.com,Payment Pending,2023-11-24
+Singh Agro,SUP1237,Milk Extractor 600LPM,ME0002,38,2875.0,"93, Market Street",Uttar Pradesh,7598351509,Varanasi,singhagro@example.com,Payment Paid,2021-10-25
+Reddy Trading Co.,SUP6940,Sowing Machine 3F,SWM0003,32,1387.79,"85, Industrial Area",West Bengal,9697297685,Howrah,reddytradingco.@example.com,Payment Paid,2023-10-09
+Khan Distributors,SUP8482,Roater/Multure-2ft,RTR0001,28,3182.17,"17, Industrial Area",Maharashtra,9605112792,Pune,khandistributors@example.com,Payment Pending,2023-02-26
+Nair Ventures,SUP8657,Milling Machine-40HP,MLL0002,54,3737.62,"47, Market Street",Punjab,9335735398,Ludhiana,nairventures@example.com,Payment Paid,2021-06-23
+Desai Dealers,SUP8810,Roater/Multure-2ft,RTR0001,49,898.25,"6, Main Road",West Bengal,7620547877,Kolkata,desaidealers@example.com,Payment Pending,2022-08-08
+Bose Supplies,SUP7326,Milk Extractor 600LPM,ME0002,75,2252.87,"72, Industrial Area",Punjab,6531618453,Ludhiana,bosesupplies@example.com,Payment Pending,2023-10-01
+Bose Supplies,SUP9329,Kadaba Kutti Machine M2,KK0002,20,3072.52,"48, Main Road",Punjab,6747604862,Jalandhar,bosesupplies@example.com,Payment Paid,2020-03-15
+Patel Enterprises,SUP6301,Milk Extractor 180LPM,ME0001,47,3531.84,"77, Main Road",Kerala,9352433620,Kozhikode,patelenterprises@example.com,Payment Pending,2020-01-14
+Sharma Traders,SUP2127,Sowing Machine 1F,SWM0001,5,4050.51,"39, Main Road",Maharashtra,8462610510,Nagpur,sharmatraders@example.com,Payment Pending,2022-08-07
+Nair Ventures,SUP9404,Kadaba Kutti Machine M2,KK0002,32,3736.8,"41, Industrial Area",West Bengal,6688068200,Darjeeling,nairventures@example.com,Payment Paid,2022-06-30
+Nair Ventures,SUP9415,Sowing Machine 4F,SWM0004,20,2383.03,"67, Industrial Area",Tamil Nadu,9516172989,Coimbatore,nairventures@example.com,Payment Pending,2020-09-12
+Gupta Suppliers,SUP5149,Kadaba Kutti Machine M1,KK0001,99,1256.59,"4, Main Road",Punjab,9139780334,Amritsar,guptasuppliers@example.com,Payment Pending,2020-03-28
+Khan Distributors,SUP4578,Kadaba Kutti Machine M3,KK0003,54,4462.84,"5, Main Road",Karnataka,7456650827,Bangalore,khandistributors@example.com,Payment Paid,2023-08-08
+Reddy Trading Co.,SUP4407,Roater/Multure-2ft,RTR0001,63,1819.33,"5, Industrial Area",Karnataka,6857642925,Hubli,reddytradingco.@example.com,Payment Pending,2020-06-10
+Nair Ventures,SUP1631,Sowing Machine 1F,SWM0001,4,2278.72,"23, Industrial Area",Kerala,6969533721,Kozhikode,nairventures@example.com,Payment Paid,2021-09-11
+Verma Industries,SUP1862,Kadaba Kutti Machine M2,KK0002,11,1166.0,"39, Industrial Area",Karnataka,6465125201,Bangalore,vermaindustries@example.com,Payment Paid,2022-02-18
+Sharma Traders,SUP5462,Sowing Machine 1F,SWM0001,70,4651.08,"69, Market Street",Gujarat,8653467869,Ahmedabad,sharmatraders@example.com,Payment Pending,2021-11-25
+Khan Distributors,SUP1988,Kadaba Kutti Machine M1,KK0001,81,672.54,"34, Industrial Area",Punjab,6421876955,Jalandhar,khandistributors@example.com,Payment Paid,2022-12-27
+Khan Distributors,SUP6819,Plow-18HP,PLW0001,2,3840.93,"18, Industrial Area",Rajasthan,7454201081,Udaipur,khandistributors@example.com,Payment Pending,2022-09-01
+Sharma Traders,SUP7050,Kadaba Kutti Machine M2,KK0002,15,3030.59,"54, Industrial Area",Maharashtra,6595550425,Nagpur,sharmatraders@example.com,Payment Paid,2020-09-28
+Nair Ventures,SUP7009,Milling Machine-7.5HP,MLL0001,88,2251.53,"68, Industrial Area",Bihar,7951273682,Bhagalpur,nairventures@example.com,Payment Pending,2021-06-14
+Gupta Suppliers,SUP2560,Sowing Machine 2F,SWM0002,71,3079.94,"5, Main Road",West Bengal,8533116827,Kolkata,guptasuppliers@example.com,Payment Pending,2023-11-12
+Reddy Trading Co.,SUP3522,Sowing Machine 2F,SWM0002,74,4023.04,"32, Main Road",Punjab,9035172283,Jalandhar,reddytradingco.@example.com,Payment Paid,2021-07-09
+Singh Agro,SUP6399,Plow-60HP,PLW0002,43,2648.87,"85, Main Road",West Bengal,8441015527,Kolkata,singhagro@example.com,Payment Paid,2022-01-14
+Verma Industries,SUP2745,Milling Machine-7.5HP,MLL0001,9,565.51,"66, Industrial Area",Gujarat,8550536107,Surat,vermaindustries@example.com,Payment Paid,2022-11-15
+Patel Enterprises,SUP3070,Kadaba Kutti Machine M1,KK0001,97,1736.86,"58, Market Street",Bihar,6767348481,Bhagalpur,patelenterprises@example.com,Payment Paid,2021-11-18
+Verma Industries,SUP2027,Kadaba Kutti Machine M1,KK0001,28,876.7,"84, Industrial Area",Maharashtra,8782849310,Nagpur,vermaindustries@example.com,Payment Paid,2020-01-29
+Desai Dealers,SUP6395,Kadaba Kutti Machine M1,KK0001,91,4620.65,"42, Industrial Area",Tamil Nadu,8197764745,Chennai,desaidealers@example.com,Payment Paid,2020-04-21
+Bose Supplies,SUP1276,Sowing Machine 4F,SWM0004,52,3318.6,"5, Main Road",Maharashtra,6785172421,Nagpur,bosesupplies@example.com,Payment Pending,2022-01-27
+Bose Supplies,SUP1635,Sowing Machine 1F,SWM0001,77,3712.48,"48, Market Street",Bihar,6794512295,Patna,bosesupplies@example.com,Payment Pending,2023-04-06
+Desai Dealers,SUP5825,Sowing Machine 2F,SWM0002,56,1356.39,"16, Industrial Area",Punjab,6746950728,Jalandhar,desaidealers@example.com,Payment Paid,2020-12-01
+Sharma Traders,SUP3414,Sowing Machine 3F,SWM0003,80,3613.13,"62, Industrial Area",West Bengal,8523100925,Kolkata,sharmatraders@example.com,Payment Paid,2021-09-04
+Desai Dealers,SUP6339,Kadaba Kutti Machine M3,KK0003,34,2411.61,"14, Industrial Area",Punjab,8534830516,Amritsar,desaidealers@example.com,Payment Paid,2021-10-20
+Verma Industries,SUP2738,Sowing Machine 1F,SWM0001,100,4588.45,"12, Industrial Area",Karnataka,8096469855,Bangalore,vermaindustries@example.com,Payment Pending,2022-12-07
+Khan Distributors,SUP8236,Kadaba Kutti Machine M3,KK0003,4,4930.35,"58, Market Street",Punjab,6686959214,Jalandhar,khandistributors@example.com,Payment Paid,2023-04-15
+Desai Dealers,SUP5045,Kadaba Kutti Machine M2,KK0002,2,3554.25,"25, Market Street",Punjab,8484560576,Jalandhar,desaidealers@example.com,Payment Paid,2023-10-21
+Bose Supplies,SUP4286,Milk Extractor 180LPM,ME0001,8,933.39,"4, Industrial Area",Gujarat,6495572517,Ahmedabad,bosesupplies@example.com,Payment Pending,2022-12-24
+Singh Agro,SUP7184,Milk Extractor 600LPM,ME0002,86,2038.47,"46, Market Street",Karnataka,9026571072,Hubli,singhagro@example.com,Payment Pending,2021-06-10
+Bose Supplies,SUP9106,Kadaba Kutti Machine M3,KK0003,38,2384.93,"4, Market Street",West Bengal,7828902311,Howrah,bosesupplies@example.com,Payment Pending,2023-04-14
+Desai Dealers,SUP4262,Sowing Machine 2F,SWM0002,84,1045.91,"4, Main Road",Maharashtra,8851259960,Nagpur,desaidealers@example.com,Payment Pending,2022-12-25
+Gupta Suppliers,SUP3207,Milling Machine-40HP,MLL0002,10,3712.5,"73, Market Street",Uttar Pradesh,9352108782,Varanasi,guptasuppliers@example.com,Payment Paid,2020-06-24
+Bose Supplies,SUP8879,Milk Extractor 180LPM,ME0001,31,1950.84,"5, Main Road",Gujarat,6381178010,Vadodara,bosesupplies@example.com,Payment Paid,2020-02-09
+Nair Ventures,SUP9127,Milling Machine-7.5HP,MLL0001,60,743.33,"88, Main Road",Gujarat,7959734276,Vadodara,nairventures@example.com,Payment Paid,2021-01-17
+Gupta Suppliers,SUP5068,Kadaba Kutti Machine M2,KK0002,61,4031.58,"97, Market Street",Karnataka,7733481330,Hubli,guptasuppliers@example.com,Payment Pending,2023-02-02
+Gupta Suppliers,SUP6251,Kadaba Kutti Machine M1,KK0001,56,4950.34,"4, Market Street",Gujarat,8604079821,Vadodara,guptasuppliers@example.com,Payment Paid,2023-10-05
+Singh Agro,SUP2134,Roater/Multure-7ft,RTR0002,45,981.51,"77, Market Street",Tamil Nadu,8462222498,Chennai,singhagro@example.com,Payment Pending,2020-01-29
+Reddy Trading Co.,SUP3196,Sowing Machine 4F,SWM0004,34,1074.95,"76, Market Street",Tamil Nadu,8858916324,Madurai,reddytradingco.@example.com,Payment Pending,2021-04-01
+Khan Distributors,SUP3951,Roater/Multure-2ft,RTR0001,58,1215.37,"67, Market Street",Gujarat,7310932983,Surat,khandistributors@example.com,Payment Paid,2023-06-27
+Sharma Traders,SUP6901,Kadaba Kutti Machine M1,KK0001,65,523.39,"98, Market Street",Karnataka,8891008516,Mysore,sharmatraders@example.com,Payment Paid,2022-06-01
+Reddy Trading Co.,SUP8450,Milling Machine-40HP,MLL0002,80,2244.75,"36, Industrial Area",Kerala,6288379628,Thiruvananthapuram,reddytradingco.@example.com,Payment Paid,2021-11-23
+Khan Distributors,SUP8865,Plow-60HP,PLW0002,27,812.87,"51, Main Road",Maharashtra,8594270286,Pune,khandistributors@example.com,Payment Pending,2020-06-13
+Verma Industries,SUP8164,Sowing Machine 2F,SWM0002,15,1817.89,"59, Industrial Area",Rajasthan,6344390324,Udaipur,vermaindustries@example.com,Payment Pending,2020-04-02
+Bose Supplies,SUP1747,Kadaba Kutti Machine M3,KK0003,15,2732.7,"98, Industrial Area",West Bengal,7721083072,Kolkata,bosesupplies@example.com,Payment Pending,2020-05-01
+Sharma Traders,SUP7396,Roater/Multure-2ft,RTR0001,23,1880.03,"85, Market Street",West Bengal,6633394950,Howrah,sharmatraders@example.com,Payment Paid,2020-02-16
+Singh Agro,SUP7880,Milk Extractor 180LPM,ME0001,51,1331.55,"12, Main Road",Tamil Nadu,9651491594,Madurai,singhagro@example.com,Payment Paid,2020-04-23
+Singh Agro,SUP6741,Sowing Machine 1F,SWM0001,15,1209.61,"78, Industrial Area",Maharashtra,9525929874,Pune,singhagro@example.com,Payment Paid,2021-09-06
+Verma Industries,SUP4651,Milling Machine-40HP,MLL0002,96,1377.22,"85, Market Street",West Bengal,8903529900,Howrah,vermaindustries@example.com,Payment Paid,2023-01-04
+Bose Supplies,SUP1891,Sowing Machine 4F,SWM0004,28,3364.4,"39, Market Street",Punjab,8978698610,Ludhiana,bosesupplies@example.com,Payment Pending,2023-02-25
+Reddy Trading Co.,SUP7971,Milk Extractor 600LPM,ME0002,50,3089.87,"89, Industrial Area",Maharashtra,9570739865,Pune,reddytradingco.@example.com,Payment Pending,2021-07-19
+Patel Enterprises,SUP4808,Milk Extractor 180LPM,ME0001,65,1988.11,"62, Industrial Area",Uttar Pradesh,7132316121,Lucknow,patelenterprises@example.com,Payment Paid,2021-08-13
+Sharma Traders,SUP4472,Kadaba Kutti Machine M2,KK0002,88,2740.44,"69, Market Street",Punjab,9917206183,Ludhiana,sharmatraders@example.com,Payment Pending,2023-06-29
+Reddy Trading Co.,SUP9400,Sowing Machine 2F,SWM0002,54,3005.64,"80, Main Road",Tamil Nadu,6771033453,Madurai,reddytradingco.@example.com,Payment Pending,2020-04-22
+Sharma Traders,SUP4949,Kadaba Kutti Machine M1,KK0001,22,4102.09,"16, Main Road",Punjab,7100655364,Amritsar,sharmatraders@example.com,Payment Paid,2021-06-29
+Singh Agro,SUP8252,Sowing Machine 1F,SWM0001,37,3675.06,"89, Main Road",Punjab,7457260047,Ludhiana,singhagro@example.com,Payment Pending,2020-08-18
+Gupta Suppliers,SUP2173,Roater/Multure-7ft,RTR0002,11,531.31,"36, Main Road",West Bengal,8591054511,Kolkata,guptasuppliers@example.com,Payment Pending,2021-05-16
+Khan Distributors,SUP9238,Milk Extractor 600LPM,ME0002,1,3885.08,"7, Main Road",Maharashtra,7332693128,Mumbai,khandistributors@example.com,Payment Pending,2020-12-31
+Khan Distributors,SUP3823,Plow-60HP,PLW0002,66,4762.69,"88, Main Road",Rajasthan,6435912437,Jodhpur,khandistributors@example.com,Payment Paid,2020-08-10
+Singh Agro,SUP8629,Milling Machine-40HP,MLL0002,62,970.47,"72, Main Road",Maharashtra,8404340869,Pune,singhagro@example.com,Payment Paid,2023-01-29
+Verma Industries,SUP1157,Milling Machine-40HP,MLL0002,35,3269.79,"51, Main Road",Karnataka,8081659722,Hubli,vermaindustries@example.com,Payment Pending,2020-11-14
+Desai Dealers,SUP1170,Milk Extractor 180LPM,ME0001,79,3896.47,"54, Main Road",Maharashtra,7996209255,Nagpur,desaidealers@example.com,Payment Paid,2023-06-13
+Khan Distributors,SUP3262,Plow-18HP,PLW0001,37,1908.57,"61, Main Road",Bihar,8922261446,Gaya,khandistributors@example.com,Payment Pending,2022-03-12
+Desai Dealers,SUP8903,Plow-60HP,PLW0002,76,784.1,"26, Industrial Area",Punjab,9642984342,Ludhiana,desaidealers@example.com,Payment Paid,2022-12-12
+Singh Agro,SUP7542,Sowing Machine 3F,SWM0003,3,2445.58,"52, Main Road",Uttar Pradesh,6713776278,Varanasi,singhagro@example.com,Payment Pending,2022-10-03
+Desai Dealers,SUP1482,Plow-60HP,PLW0002,58,1744.59,"68, Market Street",Karnataka,7013943693,Bangalore,desaidealers@example.com,Payment Pending,2023-11-18
+Verma Industries,SUP1289,Sowing Machine 3F,SWM0003,100,4582.53,"43, Market Street",Bihar,8678273305,Gaya,vermaindustries@example.com,Payment Paid,2022-12-22
+Bose Supplies,SUP9381,Milling Machine-40HP,MLL0002,23,3306.42,"71, Main Road",Maharashtra,9407592262,Nagpur,bosesupplies@example.com,Payment Paid,2021-10-04
+Khan Distributors,SUP8413,Sowing Machine 2F,SWM0002,17,4429.29,"80, Market Street",Gujarat,7930578677,Vadodara,khandistributors@example.com,Payment Pending,2021-09-20
+Verma Industries,SUP1234,Roater/Multure-7ft,RTR0002,27,1970.05,"29, Industrial Area",Rajasthan,9126056777,Jaipur,vermaindustries@example.com,Payment Pending,2022-04-26
+Verma Industries,SUP2437,Milling Machine-40HP,MLL0002,67,3940.06,"61, Market Street",West Bengal,7879212369,Darjeeling,vermaindustries@example.com,Payment Pending,2023-06-06
+Singh Agro,SUP8921,Milling Machine-7.5HP,MLL0001,9,4935.17,"33, Market Street",Punjab,7962110421,Jalandhar,singhagro@example.com,Payment Paid,2022-03-05
+Bose Supplies,SUP4744,Plow-18HP,PLW0001,33,2226.1,"60, Main Road",Rajasthan,7576923636,Udaipur,bosesupplies@example.com,Payment Pending,2022-07-17
+Khan Distributors,SUP5875,Milling Machine-40HP,MLL0002,94,3265.61,"32, Industrial Area",Maharashtra,9092138100,Mumbai,khandistributors@example.com,Payment Pending,2022-05-19
+Desai Dealers,SUP7343,Milk Extractor 600LPM,ME0002,82,4532.53,"23, Market Street",Kerala,9571807064,Thiruvananthapuram,desaidealers@example.com,Payment Paid,2023-10-18
+Reddy Trading Co.,SUP2473,Milk Extractor 600LPM,ME0002,19,2941.39,"35, Market Street",West Bengal,6903277415,Howrah,reddytradingco.@example.com,Payment Pending,2020-02-24
+Khan Distributors,SUP5706,Roater/Multure-2ft,RTR0001,17,2369.45,"21, Main Road",Tamil Nadu,9054598625,Chennai,khandistributors@example.com,Payment Pending,2022-02-13
+Patel Enterprises,SUP6403,Roater/Multure-7ft,RTR0002,3,2839.56,"95, Main Road",Tamil Nadu,8853584292,Coimbatore,patelenterprises@example.com,Payment Pending,2023-05-10
+Patel Enterprises,SUP3852,Kadaba Kutti Machine M2,KK0002,61,3495.3,"14, Market Street",West Bengal,9179337854,Darjeeling,patelenterprises@example.com,Payment Paid,2020-12-26
+Singh Agro,SUP5079,Sowing Machine 3F,SWM0003,91,3648.7,"9, Industrial Area",Maharashtra,9433407318,Nagpur,singhagro@example.com,Payment Paid,2020-01-19
+Khan Distributors,SUP3876,Kadaba Kutti Machine M2,KK0002,5,4749.44,"91, Market Street",West Bengal,6208931166,Kolkata,khandistributors@example.com,Payment Paid,2021-02-12
+Verma Industries,SUP5765,Roater/Multure-7ft,RTR0002,35,4428.25,"27, Main Road",Maharashtra,9495923578,Nagpur,vermaindustries@example.com,Payment Paid,2022-10-13
+Nair Ventures,SUP3036,Sowing Machine 4F,SWM0004,75,2872.58,"34, Market Street",Uttar Pradesh,7657187990,Kanpur,nairventures@example.com,Payment Pending,2020-05-21
+Singh Agro,SUP4122,Sowing Machine 3F,SWM0003,25,4991.51,"75, Industrial Area",Rajasthan,9042476054,Jaipur,singhagro@example.com,Payment Paid,2020-07-17
+Reddy Trading Co.,SUP2074,Milling Machine-7.5HP,MLL0001,96,2834.64,"100, Main Road",Karnataka,6616685764,Hubli,reddytradingco.@example.com,Payment Paid,2021-08-31
+Patel Enterprises,SUP6253,Roater/Multure-2ft,RTR0001,79,3433.5,"82, Main Road",West Bengal,7855129061,Kolkata,patelenterprises@example.com,Payment Pending,2021-03-19
+Desai Dealers,SUP6381,Roater/Multure-2ft,RTR0001,54,2715.3,"73, Market Street",Uttar Pradesh,8755716184,Lucknow,desaidealers@example.com,Payment Paid,2020-01-23
+Reddy Trading Co.,SUP9211,Milk Extractor 600LPM,ME0002,68,2019.95,"24, Main Road",Uttar Pradesh,8823539595,Varanasi,reddytradingco.@example.com,Payment Pending,2023-11-02
+Reddy Trading Co.,SUP6892,Plow-18HP,PLW0001,84,2100.2,"83, Industrial Area",Tamil Nadu,7073461251,Madurai,reddytradingco.@example.com,Payment Paid,2021-02-13
+Gupta Suppliers,SUP2440,Milling Machine-7.5HP,MLL0001,7,1693.0,"56, Market Street",Gujarat,9129540708,Ahmedabad,guptasuppliers@example.com,Payment Paid,2021-06-23
+Patel Enterprises,SUP9744,Kadaba Kutti Machine M3,KK0003,21,4984.51,"19, Industrial Area",Uttar Pradesh,8593488605,Varanasi,patelenterprises@example.com,Payment Paid,2021-10-24
+Gupta Suppliers,SUP5083,Plow-18HP,PLW0001,96,4899.07,"94, Main Road",Tamil Nadu,9467326581,Chennai,guptasuppliers@example.com,Payment Paid,2021-02-18
+Reddy Trading Co.,SUP5803,Kadaba Kutti Machine M2,KK0002,83,1499.61,"92, Market Street",Maharashtra,8592261798,Nagpur,reddytradingco.@example.com,Payment Pending,2023-08-08
+Khan Distributors,SUP5110,Sowing Machine 2F,SWM0002,7,1884.93,"90, Market Street",Gujarat,7633431632,Vadodara,khandistributors@example.com,Payment Pending,2023-04-07
+Sharma Traders,SUP4668,Sowing Machine 4F,SWM0004,21,3580.52,"69, Market Street",West Bengal,6414954593,Kolkata,sharmatraders@example.com,Payment Pending,2023-02-06
+Patel Enterprises,SUP6723,Milk Extractor 600LPM,ME0002,47,2417.35,"19, Market Street",Punjab,7512173821,Jalandhar,patelenterprises@example.com,Payment Paid,2020-03-16
+Bose Supplies,SUP1367,Plow-18HP,PLW0001,71,696.23,"35, Market Street",Rajasthan,8614753056,Jaipur,bosesupplies@example.com,Payment Paid,2020-06-11
+Verma Industries,SUP4184,Milling Machine-7.5HP,MLL0001,70,1266.29,"69, Main Road",Karnataka,9603886840,Bangalore,vermaindustries@example.com,Payment Paid,2022-05-24
+Verma Industries,SUP8752,Roater/Multure-7ft,RTR0002,24,1711.61,"95, Industrial Area",West Bengal,6395649688,Howrah,vermaindustries@example.com,Payment Pending,2020-02-24
+Gupta Suppliers,SUP9504,Kadaba Kutti Machine M1,KK0001,51,2917.51,"83, Market Street",Uttar Pradesh,6248381943,Kanpur,guptasuppliers@example.com,Payment Paid,2023-09-04
+Desai Dealers,SUP1407,Kadaba Kutti Machine M2,KK0002,62,4945.96,"69, Main Road",West Bengal,8819476303,Darjeeling,desaidealers@example.com,Payment Paid,2021-07-14
+Bose Supplies,SUP1873,Sowing Machine 3F,SWM0003,81,562.37,"91, Market Street",Punjab,6536991814,Jalandhar,bosesupplies@example.com,Payment Pending,2022-04-01
+Sharma Traders,SUP2663,Sowing Machine 2F,SWM0002,59,3245.94,"32, Market Street",Rajasthan,8449513547,Jodhpur,sharmatraders@example.com,Payment Paid,2023-04-25
+Gupta Suppliers,SUP8287,Plow-18HP,PLW0001,56,3787.52,"67, Industrial Area",Karnataka,6088746024,Mysore,guptasuppliers@example.com,Payment Paid,2023-11-08
+Singh Agro,SUP2502,Sowing Machine 3F,SWM0003,36,4194.04,"75, Industrial Area",Punjab,8562537490,Jalandhar,singhagro@example.com,Payment Paid,2023-10-12
+Nair Ventures,SUP1899,Milk Extractor 600LPM,ME0002,43,2160.16,"48, Main Road",Tamil Nadu,6061934705,Madurai,nairventures@example.com,Payment Paid,2023-05-14
+Gupta Suppliers,SUP1448,Plow-18HP,PLW0001,19,4201.54,"64, Market Street",Gujarat,8472487352,Surat,guptasuppliers@example.com,Payment Paid,2022-04-24
+Nair Ventures,SUP5240,Sowing Machine 1F,SWM0001,5,1746.52,"60, Market Street",Uttar Pradesh,9532522021,Kanpur,nairventures@example.com,Payment Paid,2023-11-06
+Nair Ventures,SUP9148,Milk Extractor 180LPM,ME0001,20,2221.08,"13, Industrial Area",Rajasthan,8691261046,Jaipur,nairventures@example.com,Payment Paid,2021-03-31
+Verma Industries,SUP8486,Milling Machine-7.5HP,MLL0001,86,4810.29,"93, Market Street",Bihar,6100312196,Bhagalpur,vermaindustries@example.com,Payment Pending,2023-06-12
+Verma Industries,SUP9867,Kadaba Kutti Machine M2,KK0002,65,553.29,"2, Main Road",Rajasthan,9251301443,Jodhpur,vermaindustries@example.com,Payment Paid,2021-03-02
+Bose Supplies,SUP3447,Sowing Machine 2F,SWM0002,59,4145.9,"34, Industrial Area",Bihar,8723809018,Bhagalpur,bosesupplies@example.com,Payment Pending,2020-11-08
+Khan Distributors,SUP4378,Sowing Machine 3F,SWM0003,98,4702.67,"43, Industrial Area",Bihar,9553000441,Patna,khandistributors@example.com,Payment Pending,2021-07-19
+Gupta Suppliers,SUP9725,Milk Extractor 180LPM,ME0001,24,4327.48,"20, Main Road",Bihar,9064712338,Bhagalpur,guptasuppliers@example.com,Payment Paid,2023-05-15
+Singh Agro,SUP7181,Milk Extractor 180LPM,ME0001,30,2433.12,"62, Industrial Area",Kerala,6401855082,Kozhikode,singhagro@example.com,Payment Paid,2020-11-10
+Khan Distributors,SUP8117,Sowing Machine 3F,SWM0003,78,3005.53,"40, Industrial Area",Punjab,9065578383,Jalandhar,khandistributors@example.com,Payment Pending,2023-03-04
+Sharma Traders,SUP6025,Kadaba Kutti Machine M1,KK0001,37,4308.83,"29, Market Street",Punjab,9787462610,Jalandhar,sharmatraders@example.com,Payment Paid,2022-10-03
+Nair Ventures,SUP5210,Milling Machine-40HP,MLL0002,46,1885.59,"46, Main Road",Rajasthan,9015343337,Udaipur,nairventures@example.com,Payment Paid,2022-02-05
+Bose Supplies,SUP9145,Roater/Multure-2ft,RTR0001,66,1607.83,"100, Market Street",Bihar,6839514035,Bhagalpur,bosesupplies@example.com,Payment Pending,2023-12-03
+Patel Enterprises,SUP7349,Roater/Multure-2ft,RTR0001,51,3612.9,"9, Main Road",Rajasthan,7235868431,Jaipur,patelenterprises@example.com,Payment Paid,2020-07-08
+Khan Distributors,SUP1826,Milling Machine-40HP,MLL0002,43,3144.74,"93, Market Street",Maharashtra,7931111932,Nagpur,khandistributors@example.com,Payment Pending,2020-01-06
+Gupta Suppliers,SUP8875,Kadaba Kutti Machine M3,KK0003,28,1831.88,"78, Market Street",Rajasthan,7031942018,Jaipur,guptasuppliers@example.com,Payment Paid,2020-01-01
+Reddy Trading Co.,SUP2672,Milk Extractor 180LPM,ME0001,64,3243.62,"56, Industrial Area",Uttar Pradesh,9718612078,Lucknow,reddytradingco.@example.com,Payment Pending,2021-12-23
+Reddy Trading Co.,SUP9099,Kadaba Kutti Machine M3,KK0003,2,3659.04,"21, Industrial Area",Uttar Pradesh,8547428256,Varanasi,reddytradingco.@example.com,Payment Pending,2023-08-29
+Khan Distributors,SUP1464,Milling Machine-7.5HP,MLL0001,82,2986.61,"87, Industrial Area",Bihar,7255769838,Bhagalpur,khandistributors@example.com,Payment Pending,2020-04-27
+Verma Industries,SUP7283,Roater/Multure-2ft,RTR0001,83,1912.71,"20, Industrial Area",Gujarat,8652544666,Vadodara,vermaindustries@example.com,Payment Paid,2022-05-26
+Reddy Trading Co.,SUP1248,Milling Machine-40HP,MLL0002,55,1794.55,"16, Market Street",Karnataka,9791813732,Bangalore,reddytradingco.@example.com,Payment Paid,2022-06-28
+Nair Ventures,SUP1178,Milling Machine-7.5HP,MLL0001,76,721.98,"15, Industrial Area",Karnataka,8032356677,Mysore,nairventures@example.com,Payment Pending,2023-08-29
+Desai Dealers,SUP1251,Roater/Multure-7ft,RTR0002,35,3302.03,"25, Main Road",Rajasthan,7091598935,Udaipur,desaidealers@example.com,Payment Paid,2020-07-10
+Patel Enterprises,SUP8078,Plow-60HP,PLW0002,98,1873.58,"86, Industrial Area",Kerala,9603352660,Kochi,patelenterprises@example.com,Payment Paid,2023-11-06
+Singh Agro,SUP2199,Milk Extractor 600LPM,ME0002,83,989.9,"89, Market Street",Gujarat,7548130768,Vadodara,singhagro@example.com,Payment Pending,2021-06-30
+Singh Agro,SUP3233,Milling Machine-40HP,MLL0002,51,2035.25,"5, Market Street",West Bengal,9620676719,Darjeeling,singhagro@example.com,Payment Pending,2021-09-28
+Bose Supplies,SUP8109,Kadaba Kutti Machine M3,KK0003,93,1775.33,"49, Industrial Area",Rajasthan,9112813402,Udaipur,bosesupplies@example.com,Payment Pending,2021-04-24
+Gupta Suppliers,SUP6649,Roater/Multure-2ft,RTR0001,15,1211.46,"41, Market Street",Rajasthan,9836898253,Jodhpur,guptasuppliers@example.com,Payment Pending,2021-11-19
+Nair Ventures,SUP9629,Sowing Machine 3F,SWM0003,11,4156.92,"96, Industrial Area",Karnataka,6525223167,Hubli,nairventures@example.com,Payment Pending,2022-11-12
+Khan Distributors,SUP6721,Kadaba Kutti Machine M1,KK0001,70,2458.49,"4, Market Street",Karnataka,8037178958,Bangalore,khandistributors@example.com,Payment Paid,2021-07-01
+Reddy Trading Co.,SUP5207,Roater/Multure-7ft,RTR0002,100,1604.22,"100, Main Road",Kerala,8306579609,Kochi,reddytradingco.@example.com,Payment Paid,2023-03-12
+Nair Ventures,SUP7786,Kadaba Kutti Machine M2,KK0002,43,1954.74,"97, Main Road",Kerala,8581280041,Kochi,nairventures@example.com,Payment Pending,2023-12-25
+Reddy Trading Co.,SUP9996,Plow-60HP,PLW0002,34,3082.09,"63, Main Road",Kerala,7753997048,Kozhikode,reddytradingco.@example.com,Payment Paid,2022-05-12
+Sharma Traders,SUP8453,Plow-18HP,PLW0001,65,1538.11,"29, Market Street",Bihar,6079081498,Bhagalpur,sharmatraders@example.com,Payment Paid,2021-01-02
+Khan Distributors,SUP6334,Milling Machine-40HP,MLL0002,72,3775.66,"26, Main Road",Maharashtra,8420197236,Mumbai,khandistributors@example.com,Payment Paid,2023-01-30
+Singh Agro,SUP5605,Plow-18HP,PLW0001,23,953.09,"50, Industrial Area",Punjab,8508444912,Jalandhar,singhagro@example.com,Payment Paid,2021-05-07
+Sharma Traders,SUP7816,Sowing Machine 1F,SWM0001,94,544.47,"81, Industrial Area",Maharashtra,7025853644,Nagpur,sharmatraders@example.com,Payment Pending,2020-11-26
+Khan Distributors,SUP3734,Sowing Machine 4F,SWM0004,45,3564.46,"6, Industrial Area",West Bengal,7818782136,Howrah,khandistributors@example.com,Payment Paid,2021-05-09
+Gupta Suppliers,SUP1383,Sowing Machine 2F,SWM0002,63,2058.14,"98, Main Road",West Bengal,6068886533,Kolkata,guptasuppliers@example.com,Payment Pending,2021-08-23
+Gupta Suppliers,SUP1282,Kadaba Kutti Machine M3,KK0003,48,4245.06,"21, Market Street",Tamil Nadu,6237087859,Chennai,guptasuppliers@example.com,Payment Pending,2021-12-25
+Desai Dealers,SUP6207,Milk Extractor 180LPM,ME0001,55,1049.95,"88, Industrial Area",Maharashtra,6001853268,Mumbai,desaidealers@example.com,Payment Pending,2022-02-17
+Desai Dealers,SUP6706,Kadaba Kutti Machine M2,KK0002,20,2287.36,"12, Industrial Area",Rajasthan,6503203875,Jodhpur,desaidealers@example.com,Payment Paid,2023-01-03
+Nair Ventures,SUP5100,Milk Extractor 180LPM,ME0001,2,2634.76,"100, Main Road",Rajasthan,9142749327,Jodhpur,nairventures@example.com,Payment Pending,2020-01-30
+Singh Agro,SUP1588,Plow-60HP,PLW0002,16,4835.78,"33, Industrial Area",Karnataka,6646112584,Mysore,singhagro@example.com,Payment Pending,2020-12-14
+Desai Dealers,SUP6805,Sowing Machine 3F,SWM0003,83,876.88,"47, Main Road",West Bengal,9285766556,Darjeeling,desaidealers@example.com,Payment Pending,2021-08-21
+Singh Agro,SUP4805,Sowing Machine 4F,SWM0004,7,2031.22,"2, Market Street",Punjab,8943712315,Ludhiana,singhagro@example.com,Payment Paid,2023-07-18
+Bose Supplies,SUP5986,Sowing Machine 3F,SWM0003,12,3231.97,"78, Market Street",West Bengal,7218311121,Kolkata,bosesupplies@example.com,Payment Pending,2023-06-30
+Reddy Trading Co.,SUP7159,Milk Extractor 600LPM,ME0002,41,1276.21,"50, Main Road",Uttar Pradesh,8756915457,Varanasi,reddytradingco.@example.com,Payment Pending,2020-06-23
+Desai Dealers,SUP8692,Milk Extractor 600LPM,ME0002,3,1110.98,"12, Industrial Area",Punjab,9441925893,Ludhiana,desaidealers@example.com,Payment Pending,2023-07-01
+Khan Distributors,SUP8652,Kadaba Kutti Machine M2,KK0002,20,4523.04,"92, Main Road",Uttar Pradesh,7057358686,Kanpur,khandistributors@example.com,Payment Pending,2021-05-27
+Khan Distributors,SUP8271,Milk Extractor 600LPM,ME0002,88,1695.6,"83, Market Street",Rajasthan,7364312276,Udaipur,khandistributors@example.com,Payment Pending,2020-04-26
+Nair Ventures,SUP2320,Milling Machine-40HP,MLL0002,56,2431.37,"9, Industrial Area",Gujarat,9720255664,Vadodara,nairventures@example.com,Payment Paid,2022-08-18
+Gupta Suppliers,SUP9209,Sowing Machine 4F,SWM0004,45,1230.97,"52, Industrial Area",Tamil Nadu,6932420948,Madurai,guptasuppliers@example.com,Payment Paid,2021-05-14
+Verma Industries,SUP1200,Milling Machine-7.5HP,MLL0001,81,2767.01,"21, Industrial Area",Tamil Nadu,7822757826,Chennai,vermaindustries@example.com,Payment Pending,2023-04-14
+Desai Dealers,SUP1753,Sowing Machine 1F,SWM0001,12,1982.8,"93, Industrial Area",Punjab,8700850583,Jalandhar,desaidealers@example.com,Payment Paid,2022-08-23
+Gupta Suppliers,SUP7774,Milk Extractor 600LPM,ME0002,86,2611.1,"47, Main Road",Bihar,7623935766,Gaya,guptasuppliers@example.com,Payment Pending,2020-03-24
+Nair Ventures,SUP9771,Sowing Machine 1F,SWM0001,25,950.96,"45, Industrial Area",West Bengal,7985154773,Howrah,nairventures@example.com,Payment Pending,2023-05-19
+Verma Industries,SUP9569,Milk Extractor 600LPM,ME0002,62,2626.48,"49, Main Road",Kerala,6599423211,Kozhikode,vermaindustries@example.com,Payment Pending,2021-08-20
+Sharma Traders,SUP4154,Milk Extractor 180LPM,ME0001,88,1938.07,"67, Industrial Area",Karnataka,8812604040,Bangalore,sharmatraders@example.com,Payment Pending,2022-12-17
+Sharma Traders,SUP2690,Plow-60HP,PLW0002,14,3196.53,"34, Main Road",Punjab,7352832502,Amritsar,sharmatraders@example.com,Payment Pending,2022-05-25
+Reddy Trading Co.,SUP3479,Sowing Machine 1F,SWM0001,20,693.38,"85, Market Street",Tamil Nadu,8262794936,Coimbatore,reddytradingco.@example.com,Payment Paid,2022-11-01
+Gupta Suppliers,SUP4228,Sowing Machine 2F,SWM0002,92,1273.52,"6, Main Road",Maharashtra,7277469960,Nagpur,guptasuppliers@example.com,Payment Paid,2023-03-22
+Verma Industries,SUP9913,Sowing Machine 1F,SWM0001,91,3212.67,"87, Industrial Area",Kerala,6931493420,Kochi,vermaindustries@example.com,Payment Paid,2023-10-21
+Bose Supplies,SUP9336,Plow-60HP,PLW0002,76,3835.25,"88, Main Road",Bihar,9230078388,Bhagalpur,bosesupplies@example.com,Payment Pending,2020-07-30
+Singh Agro,SUP5096,Plow-60HP,PLW0002,42,2799.96,"23, Main Road",Karnataka,8496936541,Hubli,singhagro@example.com,Payment Pending,2021-12-05
+Gupta Suppliers,SUP6933,Sowing Machine 3F,SWM0003,65,1848.58,"85, Industrial Area",Karnataka,6300192775,Hubli,guptasuppliers@example.com,Payment Pending,2022-01-29
+Reddy Trading Co.,SUP8833,Sowing Machine 4F,SWM0004,18,4980.57,"63, Main Road",Maharashtra,8428318706,Nagpur,reddytradingco.@example.com,Payment Paid,2023-09-16
+Desai Dealers,SUP8949,Milling Machine-40HP,MLL0002,54,1057.61,"4, Main Road",Kerala,7708195087,Kochi,desaidealers@example.com,Payment Pending,2023-12-02
+Patel Enterprises,SUP4803,Sowing Machine 1F,SWM0001,24,2675.41,"14, Market Street",Karnataka,6582992579,Hubli,patelenterprises@example.com,Payment Paid,2022-05-27
+Patel Enterprises,SUP7490,Sowing Machine 1F,SWM0001,36,3354.6,"1, Industrial Area",Uttar Pradesh,9722771243,Kanpur,patelenterprises@example.com,Payment Paid,2020-11-29
+Bose Supplies,SUP7721,Kadaba Kutti Machine M2,KK0002,61,1261.83,"9, Industrial Area",Rajasthan,8123622179,Udaipur,bosesupplies@example.com,Payment Paid,2020-11-08
+Desai Dealers,SUP7202,Plow-18HP,PLW0001,21,2900.46,"54, Market Street",Karnataka,9938956828,Hubli,desaidealers@example.com,Payment Paid,2022-01-26
+Reddy Trading Co.,SUP9031,Kadaba Kutti Machine M2,KK0002,100,792.93,"40, Main Road",Punjab,7112344280,Ludhiana,reddytradingco.@example.com,Payment Pending,2021-07-09
+Reddy Trading Co.,SUP4537,Milk Extractor 600LPM,ME0002,40,2587.6,"53, Market Street",Punjab,8660103004,Ludhiana,reddytradingco.@example.com,Payment Paid,2023-04-10
+Verma Industries,SUP7878,Sowing Machine 2F,SWM0002,81,3657.05,"78, Main Road",Punjab,9696013345,Jalandhar,vermaindustries@example.com,Payment Pending,2023-11-22
+Sharma Traders,SUP5914,Milling Machine-7.5HP,MLL0001,72,2429.7,"26, Market Street",Maharashtra,7215523414,Nagpur,sharmatraders@example.com,Payment Pending,2020-09-17
+Desai Dealers,SUP2654,Kadaba Kutti Machine M2,KK0002,19,3700.55,"18, Main Road",Maharashtra,8992965272,Nagpur,desaidealers@example.com,Payment Pending,2023-04-14
+Khan Distributors,SUP7660,Milk Extractor 180LPM,ME0001,88,4036.53,"52, Main Road",Kerala,8474370747,Thiruvananthapuram,khandistributors@example.com,Payment Paid,2020-11-09
+Reddy Trading Co.,SUP4496,Sowing Machine 1F,SWM0001,79,2926.31,"67, Industrial Area",Karnataka,7526477849,Hubli,reddytradingco.@example.com,Payment Pending,2020-10-12
+Nair Ventures,SUP3993,Plow-18HP,PLW0001,7,3669.42,"91, Industrial Area",West Bengal,9158778066,Darjeeling,nairventures@example.com,Payment Pending,2020-09-22
+Reddy Trading Co.,SUP8866,Roater/Multure-2ft,RTR0001,21,4069.69,"4, Market Street",Maharashtra,6411808881,Nagpur,reddytradingco.@example.com,Payment Paid,2021-10-11
+Bose Supplies,SUP1399,Kadaba Kutti Machine M2,KK0002,99,2288.9,"38, Main Road",Uttar Pradesh,7461877608,Lucknow,bosesupplies@example.com,Payment Pending,2021-05-28
+Gupta Suppliers,SUP2046,Milling Machine-40HP,MLL0002,96,2252.97,"68, Industrial Area",Gujarat,7504086942,Surat,guptasuppliers@example.com,Payment Pending,2020-11-07
+Desai Dealers,SUP6848,Roater/Multure-7ft,RTR0002,85,805.06,"86, Main Road",West Bengal,8912849250,Darjeeling,desaidealers@example.com,Payment Paid,2021-04-15
+Sharma Traders,SUP5768,Milk Extractor 600LPM,ME0002,32,1553.91,"94, Main Road",Maharashtra,6008173238,Mumbai,sharmatraders@example.com,Payment Pending,2022-03-09
+Bose Supplies,SUP7380,Sowing Machine 2F,SWM0002,60,3643.88,"7, Main Road",Tamil Nadu,6311965045,Coimbatore,bosesupplies@example.com,Payment Pending,2021-08-18
+Reddy Trading Co.,SUP5379,Roater/Multure-7ft,RTR0002,22,3894.52,"46, Market Street",Tamil Nadu,8734555047,Chennai,reddytradingco.@example.com,Payment Paid,2021-04-23
+Desai Dealers,SUP6908,Milling Machine-40HP,MLL0002,24,3402.75,"64, Main Road",Gujarat,8331322871,Ahmedabad,desaidealers@example.com,Payment Pending,2020-06-16
+Verma Industries,SUP6191,Sowing Machine 4F,SWM0004,36,3943.64,"30, Industrial Area",Rajasthan,8346090523,Jaipur,vermaindustries@example.com,Payment Pending,2021-10-25
+Khan Distributors,SUP9764,Kadaba Kutti Machine M2,KK0002,24,3220.67,"37, Main Road",Rajasthan,9998842744,Jodhpur,khandistributors@example.com,Payment Pending,2020-06-16
+Khan Distributors,SUP4829,Sowing Machine 2F,SWM0002,22,1487.94,"19, Market Street",Rajasthan,9667336862,Jodhpur,khandistributors@example.com,Payment Pending,2023-07-19
+Desai Dealers,SUP3430,Sowing Machine 3F,SWM0003,74,3177.49,"40, Industrial Area",Uttar Pradesh,8014655990,Varanasi,desaidealers@example.com,Payment Pending,2023-03-25
+Reddy Trading Co.,SUP4164,Plow-60HP,PLW0002,42,4594.7,"93, Market Street",Rajasthan,6532068761,Udaipur,reddytradingco.@example.com,Payment Paid,2021-11-15
+Desai Dealers,SUP4486,Milk Extractor 180LPM,ME0001,94,1928.29,"39, Main Road",West Bengal,6654200629,Howrah,desaidealers@example.com,Payment Pending,2021-09-01
+Patel Enterprises,SUP8106,Kadaba Kutti Machine M2,KK0002,75,3673.7,"80, Market Street",Gujarat,8618216137,Vadodara,patelenterprises@example.com,Payment Pending,2020-04-18
+Khan Distributors,SUP2747,Sowing Machine 3F,SWM0003,95,1450.3,"83, Market Street",West Bengal,9347581355,Kolkata,khandistributors@example.com,Payment Pending,2021-03-20
+Gupta Suppliers,SUP7922,Milling Machine-7.5HP,MLL0001,1,4202.77,"69, Market Street",Karnataka,6716412284,Hubli,guptasuppliers@example.com,Payment Pending,2020-06-28
+Gupta Suppliers,SUP2931,Milk Extractor 600LPM,ME0002,10,3932.9,"52, Main Road",Gujarat,6630524895,Ahmedabad,guptasuppliers@example.com,Payment Paid,2022-12-21
+Reddy Trading Co.,SUP1024,Sowing Machine 4F,SWM0004,33,727.76,"38, Market Street",Rajasthan,7626908987,Udaipur,reddytradingco.@example.com,Payment Paid,2020-03-28
+Khan Distributors,SUP9074,Milling Machine-40HP,MLL0002,83,3432.92,"29, Main Road",Bihar,6018688306,Gaya,khandistributors@example.com,Payment Pending,2022-03-16
+Singh Agro,SUP6857,Plow-60HP,PLW0002,86,2412.07,"14, Industrial Area",Maharashtra,9861419454,Nagpur,singhagro@example.com,Payment Paid,2020-11-04
+Singh Agro,SUP5349,Plow-18HP,PLW0001,79,2422.69,"85, Market Street",Rajasthan,7741056829,Jodhpur,singhagro@example.com,Payment Pending,2021-11-11
+Khan Distributors,SUP3589,Roater/Multure-2ft,RTR0001,79,3435.77,"93, Main Road",Rajasthan,8542863480,Udaipur,khandistributors@example.com,Payment Paid,2022-01-02
+Desai Dealers,SUP6956,Sowing Machine 3F,SWM0003,33,2503.0,"8, Industrial Area",Maharashtra,7893819076,Nagpur,desaidealers@example.com,Payment Pending,2021-01-01
+Singh Agro,SUP8889,Milk Extractor 600LPM,ME0002,23,4461.24,"65, Market Street",Gujarat,7874979687,Surat,singhagro@example.com,Payment Paid,2022-03-09
+Desai Dealers,SUP1027,Plow-60HP,PLW0002,20,3075.51,"94, Industrial Area",Punjab,8977044786,Jalandhar,desaidealers@example.com,Payment Pending,2021-06-04
+Sharma Traders,SUP4258,Sowing Machine 3F,SWM0003,12,4723.38,"48, Industrial Area",Gujarat,8991793643,Vadodara,sharmatraders@example.com,Payment Paid,2022-09-04
+Verma Industries,SUP6759,Sowing Machine 3F,SWM0003,26,3587.49,"4, Market Street",Kerala,7507552189,Kochi,vermaindustries@example.com,Payment Paid,2020-05-01
+Khan Distributors,SUP4922,Roater/Multure-7ft,RTR0002,87,1724.74,"73, Industrial Area",Karnataka,9275567772,Hubli,khandistributors@example.com,Payment Paid,2023-12-03
+Bose Supplies,SUP3682,Plow-18HP,PLW0001,74,2793.03,"16, Main Road",Karnataka,6322183703,Mysore,bosesupplies@example.com,Payment Pending,2022-04-04
+Gupta Suppliers,SUP7283,Kadaba Kutti Machine M3,KK0003,85,3860.26,"31, Main Road",Rajasthan,7103350804,Jodhpur,guptasuppliers@example.com,Payment Pending,2023-03-04
+Singh Agro,SUP9944,Milk Extractor 600LPM,ME0002,84,2309.24,"71, Market Street",Bihar,6474811119,Gaya,singhagro@example.com,Payment Paid,2020-03-10
+Desai Dealers,SUP2956,Kadaba Kutti Machine M2,KK0002,91,2988.99,"88, Market Street",West Bengal,9735267125,Howrah,desaidealers@example.com,Payment Paid,2022-01-29
+Desai Dealers,SUP2822,Plow-60HP,PLW0002,57,2161.26,"26, Main Road",Kerala,8105605165,Thiruvananthapuram,desaidealers@example.com,Payment Pending,2022-04-10
+Nair Ventures,SUP3826,Sowing Machine 3F,SWM0003,8,3764.88,"64, Market Street",Gujarat,6188545333,Vadodara,nairventures@example.com,Payment Pending,2022-05-02
+Bose Supplies,SUP3407,Sowing Machine 1F,SWM0001,28,3157.15,"34, Industrial Area",Rajasthan,6775233145,Udaipur,bosesupplies@example.com,Payment Pending,2020-03-14
+Verma Industries,SUP2799,Plow-18HP,PLW0001,68,4562.64,"34, Market Street",Bihar,8278618978,Bhagalpur,vermaindustries@example.com,Payment Paid,2022-12-24
+Khan Distributors,SUP1217,Kadaba Kutti Machine M1,KK0001,13,3522.1,"85, Market Street",Tamil Nadu,8377235235,Madurai,khandistributors@example.com,Payment Paid,2023-02-01
+Sharma Traders,SUP3188,Kadaba Kutti Machine M3,KK0003,73,3072.04,"34, Industrial Area",Uttar Pradesh,7026055211,Varanasi,sharmatraders@example.com,Payment Paid,2023-11-12
+Bose Supplies,SUP5670,Kadaba Kutti Machine M3,KK0003,22,4163.44,"90, Industrial Area",Bihar,9670619286,Bhagalpur,bosesupplies@example.com,Payment Pending,2023-06-14
+Khan Distributors,SUP7793,Plow-18HP,PLW0001,38,3079.94,"77, Main Road",Karnataka,7384412640,Hubli,khandistributors@example.com,Payment Pending,2023-09-11
+Singh Agro,SUP1591,Kadaba Kutti Machine M3,KK0003,48,1469.74,"93, Main Road",Rajasthan,7552344724,Udaipur,singhagro@example.com,Payment Pending,2020-02-08
+Khan Distributors,SUP4523,Roater/Multure-7ft,RTR0002,6,4012.78,"84, Industrial Area",West Bengal,9785282562,Howrah,khandistributors@example.com,Payment Pending,2020-11-13
+Sharma Traders,SUP8513,Milling Machine-40HP,MLL0002,27,4400.6,"20, Market Street",Kerala,8909816830,Kochi,sharmatraders@example.com,Payment Pending,2023-10-28
+Bose Supplies,SUP9327,Plow-60HP,PLW0002,28,1163.32,"43, Industrial Area",Karnataka,6800082555,Bangalore,bosesupplies@example.com,Payment Paid,2022-03-13
+Patel Enterprises,SUP6193,Sowing Machine 3F,SWM0003,43,1669.31,"17, Main Road",Tamil Nadu,8120770238,Chennai,patelenterprises@example.com,Payment Pending,2023-05-10
+Reddy Trading Co.,SUP8482,Sowing Machine 3F,SWM0003,41,1122.19,"75, Main Road",Rajasthan,9820386982,Udaipur,reddytradingco.@example.com,Payment Paid,2020-07-30
+Desai Dealers,SUP3452,Roater/Multure-2ft,RTR0001,47,4588.69,"92, Main Road",Tamil Nadu,7366527966,Coimbatore,desaidealers@example.com,Payment Paid,2021-10-15
+Desai Dealers,SUP8357,Sowing Machine 1F,SWM0001,51,2650.06,"89, Market Street",Maharashtra,8234291025,Nagpur,desaidealers@example.com,Payment Paid,2022-05-04
+Desai Dealers,SUP5096,Roater/Multure-2ft,RTR0001,61,2686.41,"81, Main Road",Bihar,7181874049,Bhagalpur,desaidealers@example.com,Payment Pending,2022-08-08
+Khan Distributors,SUP5910,Kadaba Kutti Machine M3,KK0003,14,2917.26,"48, Industrial Area",Uttar Pradesh,9504997987,Varanasi,khandistributors@example.com,Payment Pending,2020-05-24
+Gupta Suppliers,SUP4042,Plow-60HP,PLW0002,70,832.3,"48, Market Street",Gujarat,6111049393,Vadodara,guptasuppliers@example.com,Payment Pending,2020-03-05
+Bose Supplies,SUP6006,Plow-60HP,PLW0002,35,4842.74,"31, Industrial Area",Maharashtra,8806933135,Nagpur,bosesupplies@example.com,Payment Pending,2023-02-21
+Reddy Trading Co.,SUP4565,Sowing Machine 4F,SWM0004,1,4274.61,"74, Market Street",Rajasthan,7869891347,Jaipur,reddytradingco.@example.com,Payment Paid,2021-08-26
+Reddy Trading Co.,SUP5701,Sowing Machine 3F,SWM0003,66,2192.77,"53, Market Street",Bihar,8963489677,Bhagalpur,reddytradingco.@example.com,Payment Pending,2022-05-02
+Reddy Trading Co.,SUP2878,Sowing Machine 1F,SWM0001,3,967.1,"74, Industrial Area",West Bengal,9250599892,Kolkata,reddytradingco.@example.com,Payment Paid,2021-11-29
+Sharma Traders,SUP4545,Sowing Machine 1F,SWM0001,10,2756.33,"86, Industrial Area",Punjab,8428258982,Amritsar,sharmatraders@example.com,Payment Pending,2022-09-16

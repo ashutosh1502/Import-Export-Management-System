@@ -1,0 +1,1001 @@
+Supplier Name,Supplier ID,Product,Product ID,Product Quantity,Price per Product,Address,State,Phone Number,City,Email,Payment Status,Date
+Sehgal and Sons,5086,"Pulp (e.g., mango, guava, or tomato pulp)",P003,495,27.36,"H.No. 07, Magar Ganj, New Delhi 338196",Punjab,+918988577392,Coimbatore,samairawason@hotmail.com,Payment Pending,2021-11-04
+Bera-Dani,2442,Rice or Pasta,P020,12,441.23,"30/73, Vohra Marg, Kollam-622620",Karnataka,08664743826,Jalandhar,xthaker@kulkarni.com,Payment Pending,2022-04-30
+Sehgal and Sons,6013,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,131,15.79,"H.No. 009, Sagar Ganj, Kochi 939824",Jharkhand,2874068431,Machilipatnam,echauhan@mahajan-setty.com,Payment Paid,2020-09-24
+Swaminathan and Sons,6869,Ice Cream,P002,26,112.72,"44, Agate Path, Hosur 660174",Mizoram,02317720828,Ghaziabad,xgarg@yahoo.com,Payment Paid,2023-01-19
+"Sem, Mann and Karnik",2827,Whipping Cream,P016,47,268.58,"02/84, Keer Ganj, Danapur 454388",Arunachal Pradesh,+910927184171,Satara,kashvi91@gmail.com,Payment Pending,2022-03-11
+"Sem, Mann and Karnik",2990,Paneer (Cottage Cheese),P008,251,10.83,"553, Hora Nagar, Vijayawada 078982",Assam,04856793740,Jalgaon,baralveer@hotmail.com,Payment Pending,2022-07-03
+"Sem, Mann and Karnik",7450,Rice or Pasta,P020,19,415.69,"H.No. 433, Thaker Circle, Srinagar-188580",Chhattisgarh,4509984504,Barasat,shayak45@dhaliwal-lalla.com,Payment Paid,2020-11-13
+Swaminathan and Sons,7363,Frozen Fish Fillets,P011,265,193.8,"45/977, Sahni Road, Shimoga-684998",Andhra Pradesh,+915111906659,Bihar Sharif,hbakshi@gmail.com,Payment Paid,2021-04-04
+Ratta-Buch,5165,Sweet Corn,P001,177,481.48,"80/718, Sanghvi Chowk, Jamnagar-591904",Goa,03820294974,Gulbarga,reneeben@bhavsar-sen.com,Payment Paid,2020-11-11
+"Grover, Sidhu and Varma",3698,Frozen Mixed Vegetables,P009,196,220.26,"H.No. 996, Raval Zila, Mysore 585429",Uttar Pradesh,3726302191,Berhampore,annehunar@srivastava-chakrabarti.com,Payment Paid,2020-12-30
+Chana-Sankar,5897,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,265,378.83,"H.No. 40, Zacharia Circle, Udupi 398060",Himachal Pradesh,1721127825,Etawah,madhup18@gmail.com,Payment Paid,2021-10-29
+Sehgal and Sons,3144,Rice or Pasta,P020,21,44.67,"37, Bahl Path, Muzaffarnagar-673629",Arunachal Pradesh,+913362615583,Faridabad,hansh31@dyal-suri.com,Payment Paid,2023-02-26
+Bera-Dani,1895,Frozen French Fries,P005,195,168.43,"H.No. 808, Bumb Street, Satna-298115",Arunachal Pradesh,09672568205,Ghaziabad,prerak21@krishnamurthy-sur.biz,Payment Pending,2020-03-20
+"Tella, Andra and Grover",1305,Milk or Milk Powder,P013,55,335.97,"75/29, Ben Street, Mathura-069793",Mizoram,+917786157498,Hospet,hbail@hotmail.com,Payment Pending,2021-03-16
+"Tella, Andra and Grover",1118,Frozen Fish Fillets,P011,331,307.57,"H.No. 484, Amble Chowk, Siwan 278671",Assam,04549808357,Jammu,routshanaya@de.org,Payment Pending,2021-06-29
+Deo Ltd,6115,Yogurt or Curd,P012,409,143.82,"81/17, Tailor Marg, Aurangabad-535893",Karnataka,7080258077,Ghaziabad,riyamall@barad-iyengar.com,Payment Paid,2020-03-24
+"Bali, Iyer and Lad",9515,Pickles,P018,403,346.43,"00/506, Chatterjee Zila, Silchar 483105",Uttarakhand,6749138121,Kalyan-Dombivli,jkrishnamurthy@hotmail.com,Payment Paid,2023-01-01
+Deo Ltd,1678,Paneer (Cottage Cheese),P008,17,106.75,"32/822, Dave Road, Kottayam-060215",Odisha,+912331120662,Haridwar,jivin07@yahoo.com,Payment Pending,2021-02-24
+Sehgal and Sons,2768,Whipping Cream,P016,105,403.99,"37, Chacko Path, Malegaon-295831",Assam,00624431969,Bulandshahr,jkala@gmail.com,Payment Pending,2021-01-08
+Ratta-Buch,9681,Pickles,P018,143,237.57,"H.No. 925, Varughese Path, Adoni-115448",Uttarakhand,8980761470,Secunderabad,ogarg@yahoo.com,Payment Paid,2023-11-25
+Deo Ltd,5972,Green Peas,P004,25,386.64,"32, Vohra Street, Dindigul 144916",Nagaland,+912787280479,Firozabad,krandhawa@yahoo.com,Payment Paid,2020-02-23
+"Sem, Mann and Karnik",4316,Paneer (Cottage Cheese),P008,251,477.62,"H.No. 53, Rao Nagar, Chennai-651270",Karnataka,5621881748,Gudivada,banikrohan@sathe.com,Payment Paid,2021-11-02
+Bera-Dani,1086,Ice Cream,P002,197,202.0,"02/222, Acharya Zila, Karnal 429295",Punjab,+915828231130,Ahmedabad,doctorgokul@sabharwal.biz,Payment Pending,2023-11-03
+Swaminathan and Sons,8832,Juice Concentrates (like orange or cranberry),P014,3,353.95,"H.No. 89, Butala Nagar, Yamunanagar 123039",Assam,8648741031,Danapur,mishtitiwari@yahoo.com,Payment Pending,2021-12-11
+Swaminathan and Sons,1081,Ice Cream,P002,301,74.89,"H.No. 60, Srinivas Road, Jamalpur 734129",Rajasthan,0721177763,Jabalpur,tara31@yahoo.com,Payment Paid,2021-10-29
+Swaminathan and Sons,7992,"Frozen Berries (e.g., strawberries, blueberries)",P015,16,202.91,"797, Sagar Marg, Satna-711470",Karnataka,0343970179,Chapra,bravel@hotmail.com,Payment Paid,2021-04-11
+"Tella, Andra and Grover",5254,Whipping Cream,P016,105,235.82,"H.No. 802, Vasa Chowk, Pondicherry-054356",Rajasthan,06444345764,Karnal,bijusuresh@gmail.com,Payment Pending,2023-05-10
+Ratta-Buch,6351,"Pulp (e.g., mango, guava, or tomato pulp)",P003,488,178.74,"493, Borah Zila, Ramgarh-402961",Tripura,1514369231,Kolkata,jaggiindrajit@yahoo.com,Payment Pending,2020-01-17
+Chana-Sankar,7238,Chicken Nuggets,P010,222,56.28,"21/53, Buch Zila, Tenali-036139",Karnataka,+915422840205,Naihati,ryanbhat@ramesh.com,Payment Pending,2023-12-22
+Chana-Sankar,6473,Pickles,P018,355,96.97,"H.No. 90, Gulati Marg, Amritsar-541282",Punjab,+910283750806,Kanpur,tarinibakshi@deo.org,Payment Pending,2020-06-21
+"Grover, Sidhu and Varma",1455,Frozen Mixed Vegetables,P009,60,299.4,"20/27, Taneja Road, Kurnool-630909",Mizoram,03829785366,Dhanbad,kanavwable@tailor-chand.org,Payment Pending,2023-09-18
+Chana-Sankar,7355,Milk or Milk Powder,P013,454,141.87,"21, Bains, Durgapur-843067",Meghalaya,05337333201,Vadodara,chanavidur@sabharwal-tella.org,Payment Pending,2022-09-04
+Swaminathan and Sons,7782,Yogurt or Curd,P012,377,157.74,"507, Saini Zila, Unnao 508624",Madhya Pradesh,1888791426,Aizawl,ayeshahari@yahoo.com,Payment Pending,2020-06-20
+Deo Ltd,9451,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,26,498.66,"29, Krishnamurthy, Rajahmundry 952969",Punjab,+918883698891,Sikar,htoor@hotmail.com,Payment Paid,2022-08-11
+"Bali, Iyer and Lad",1561,Green Peas,P004,103,446.39,"H.No. 95, Jaggi Road, Kulti 504327",Haryana,02411411446,Gandhinagar,reyanshbasu@subramaniam-chaudry.biz,Payment Paid,2021-11-21
+"Bali, Iyer and Lad",5612,Yogurt or Curd,P012,390,272.67,"288, Varghese Chowk, Mathura 127870",Kerala,+914174702728,Arrah,kiberati@yahoo.com,Payment Pending,2022-05-02
+Sehgal and Sons,3120,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,190,170.35,"17/59, Anne Nagar, Moradabad 708734",Uttarakhand,08292498387,Rajahmundry,uthkarshdivan@sastry-shetty.info,Payment Pending,2023-09-17
+Bera-Dani,7261,"Pulp (e.g., mango, guava, or tomato pulp)",P003,425,102.96,"61, Singhal Ganj, Saharanpur 188598",Maharashtra,+915705754112,Tezpur,arnavgarg@magar.net,Payment Pending,2020-08-28
+Sehgal and Sons,5326,"Frozen Berries (e.g., strawberries, blueberries)",P015,357,253.07,"499, Sethi Zila, Asansol-675641",Tamil Nadu,5965210037,Unnao,gmanne@bir.org,Payment Paid,2023-05-01
+Sehgal and Sons,1000,"Frozen Berries (e.g., strawberries, blueberries)",P015,265,474.02,"39, Das Marg, Mehsana 273477",Odisha,03746266107,Thanjavur,anayaborah@sami.com,Payment Paid,2020-01-28
+Bera-Dani,6635,Butter,P007,105,360.31,"H.No. 344, Ravel Path, Chandigarh 475187",Gujarat,8711898114,Chinsurah,rheamalhotra@hotmail.com,Payment Pending,2023-12-09
+Swaminathan and Sons,5720,Cheese Slices or Blocks,P006,231,440.09,"H.No. 678, Dada Ganj, Allahabad-519154",Himachal Pradesh,+910793657647,Rohtak,anika47@dave.info,Payment Pending,2023-06-03
+Sehgal and Sons,4013,Paneer (Cottage Cheese),P008,151,377.7,"12, Sampath Circle, Bardhaman-710739",Nagaland,+918740350472,Alappuzha,kiara06@gmail.com,Payment Paid,2020-11-06
+Bera-Dani,7249,Rice or Pasta,P020,353,325.85,"H.No. 883, Sandhu Nagar, Pimpri-Chinchwad-538263",Kerala,+916869816937,Bhopal,trisha12@gmail.com,Payment Paid,2020-02-19
+"Bali, Iyer and Lad",6456,Milk or Milk Powder,P013,469,340.89,"H.No. 155, Venkataraman Circle, Saharsa 114415",Tamil Nadu,+917099947360,Adoni,mdey@gokhale.com,Payment Paid,2021-10-13
+"Bali, Iyer and Lad",9126,Chicken Nuggets,P010,400,421.48,"43/52, Ray Circle, Agartala 206597",West Bengal,05131987332,Uluberia,ybhardwaj@dora.net,Payment Pending,2023-04-05
+"Sem, Mann and Karnik",6824,Sweet Corn,P001,73,55.33,"H.No. 46, Thakur Zila, Katihar 405116",Gujarat,09565456412,Kirari Suleman Nagar,ibassi@hotmail.com,Payment Pending,2021-02-08
+"Tella, Andra and Grover",5037,Frozen Mixed Vegetables,P009,446,318.18,"812, Bhat Nagar, Fatehpur 483850",Odisha,+911995485355,Berhampur,jayaramanurvi@mann.com,Payment Paid,2023-09-27
+"Sem, Mann and Karnik",2410,Frozen Mixed Vegetables,P009,374,172.31,"H.No. 25, Karnik Street, Machilipatnam-264644",Haryana,4099496008,Pudukkottai,chackolagan@hotmail.com,Payment Pending,2021-05-31
+"Bali, Iyer and Lad",3462,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,362,213.08,"60, Bora Chowk, Delhi 311122",Maharashtra,04581760501,Aligarh,ikurian@gaba.biz,Payment Paid,2023-08-27
+Chana-Sankar,3814,"Pulp (e.g., mango, guava, or tomato pulp)",P003,238,327.82,"53, Kunda Road, Dibrugarh 416151",Gujarat,02971977215,Vellore,keyabhatia@gmail.com,Payment Paid,2022-05-15
+"Grover, Sidhu and Varma",6254,Ice Cream,P002,267,435.97,"H.No. 169, Sant Marg, Jaunpur-620684",Himachal Pradesh,03199128975,Kanpur,indransmahal@chatterjee-sama.com,Payment Paid,2021-02-07
+Sehgal and Sons,5940,Sweet Corn,P001,286,78.55,"39/82, Gera Zila, Motihari-315812",Meghalaya,00281482252,Ahmedabad,gardezain@yahoo.com,Payment Pending,2020-11-23
+Deo Ltd,9525,Juice Concentrates (like orange or cranberry),P014,497,133.94,"H.No. 75, Deep Road, Bettiah 247507",Chhattisgarh,01068864070,Karaikudi,bdeshmukh@gmail.com,Payment Pending,2022-06-10
+"Tella, Andra and Grover",7012,Chicken Nuggets,P010,356,133.27,"H.No. 11, Sule Zila, Moradabad-722513",Assam,6101703937,Belgaum,aniruddh58@sankaran.com,Payment Pending,2023-07-05
+Bera-Dani,2198,Sweet Corn,P001,175,219.86,"H.No. 330, Chandran Path, Singrauli 347228",Uttarakhand,07107823814,Solapur,evala@kapoor.biz,Payment Pending,2020-09-07
+"Bali, Iyer and Lad",8421,Chicken Nuggets,P010,219,419.97,"H.No. 45, Tripathi Circle, Agra 590057",Uttarakhand,9225100926,Hyderabad,lakshit27@hotmail.com,Payment Paid,2022-08-25
+Chana-Sankar,5228,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,213,37.76,"21, Rao Nagar, Hosur-625990",Telangana,8942938536,Nagercoil,chirag67@hotmail.com,Payment Pending,2021-02-09
+"Bali, Iyer and Lad",1088,Frozen French Fries,P005,88,237.2,"524, Sarma Chowk, Madanapalle-216907",Sikkim,5259773420,Bhiwani,raunak63@kohli.com,Payment Paid,2022-05-22
+Bera-Dani,8289,Frozen Mixed Vegetables,P009,263,463.52,"252, Raman Zila, Berhampur-612555",Tamil Nadu,+912100132666,Allahabad,vihaan24@guha-gokhale.com,Payment Pending,2023-01-22
+Bera-Dani,2128,Yogurt or Curd,P012,455,269.0,"H.No. 037, Bhatia Ganj, Chandrapur-436736",Sikkim,06068882065,Sagar,elakshi51@kumar.org,Payment Paid,2022-08-12
+Chana-Sankar,7681,Milk or Milk Powder,P013,288,190.76,"278, Bedi, Chinsurah 785820",Punjab,+916869316905,Nanded,hseth@hotmail.com,Payment Paid,2021-11-23
+Ratta-Buch,6695,Ice Cream,P002,74,395.41,"331, Dhaliwal Chowk, Saharanpur-147306",Nagaland,+917580590022,Narasaraopet,kdave@keer-bava.com,Payment Paid,2020-03-30
+Ratta-Buch,6196,Butter,P007,133,481.15,"H.No. 914, Shetty Marg, Miryalaguda 272485",Tripura,+913532218830,Burhanpur,lalbhavin@yahoo.com,Payment Pending,2022-05-23
+Deo Ltd,3838,Chicken Nuggets,P010,468,441.06,"23/09, Kar Ganj, Dehri 029734",Sikkim,02625591473,Ujjain,ndugar@yahoo.com,Payment Pending,2020-01-18
+Sehgal and Sons,6329,Yogurt or Curd,P012,107,111.37,"18/93, Dugar Chowk, Bettiah-378393",Chhattisgarh,+918965153893,Ghaziabad,hiranramachandran@gmail.com,Payment Paid,2021-12-30
+Bera-Dani,5289,Cheese Slices or Blocks,P006,241,57.8,"H.No. 73, Krishnan Nagar, Shimla-195913",Manipur,01373181974,Faridabad,hunar04@yahoo.com,Payment Pending,2023-02-02
+Deo Ltd,7680,Whipping Cream,P016,437,441.15,"50/52, Kapoor Marg, Kalyan-Dombivli-137827",Kerala,+919673758459,Uluberia,ratiraman@varughese.com,Payment Paid,2020-07-25
+Swaminathan and Sons,7953,Frozen Mixed Vegetables,P009,85,166.4,"58/97, Baral Chowk, Orai 131737",Manipur,+918870947031,Pimpri-Chinchwad,priyanshdara@gmail.com,Payment Paid,2021-11-06
+"Bali, Iyer and Lad",2802,Rice or Pasta,P020,494,21.31,"960, Shah Street, Vijayawada 644636",West Bengal,+919750362808,Ramagundam,bhatthrishita@ramachandran-walia.com,Payment Pending,2021-07-05
+Chana-Sankar,6308,Paneer (Cottage Cheese),P008,293,20.44,"H.No. 698, Mani Path, Howrah-584249",Bihar,06631503955,Bahraich,khushisura@verma.com,Payment Pending,2023-08-11
+Swaminathan and Sons,5832,Pickles,P018,221,119.97,"883, Sarraf, Mira-Bhayandar 816741",Haryana,1999013783,Hapur,tankkavya@tripathi.com,Payment Pending,2022-12-03
+"Grover, Sidhu and Varma",5753,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,276,309.43,"H.No. 13, Bains Chowk, Nanded 562807",Tripura,9720142484,Baranagar,roysamarth@yahoo.com,Payment Pending,2023-02-02
+"Sem, Mann and Karnik",1215,Sweet Corn,P001,161,397.45,"15, Bahl Nagar, Hazaribagh 705064",Maharashtra,0227437401,Tiruchirappalli,badalreyansh@hotmail.com,Payment Pending,2021-06-03
+"Bali, Iyer and Lad",3382,Rice or Pasta,P020,463,173.98,"H.No. 25, Saha Nagar, Ratlam 177354",Arunachal Pradesh,+919472950171,Nagaon,ybalan@karan.com,Payment Paid,2020-07-27
+"Sem, Mann and Karnik",9887,Chicken Nuggets,P010,225,114.11,"45, Krishnan Ganj, Kulti-567203",Andhra Pradesh,+915899603149,Narasaraopet,madhavwalia@gmail.com,Payment Pending,2020-01-18
+Ratta-Buch,2976,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,130,438.09,"82/79, Shan Circle, Shahjahanpur 510700",Tamil Nadu,4363136942,Raiganj,madhav80@yahoo.com,Payment Pending,2021-09-02
+"Bali, Iyer and Lad",2921,Paneer (Cottage Cheese),P008,445,203.55,"H.No. 166, Garg Street, Sasaram 119670",Uttarakhand,05835422046,Ozhukarai,singhinaaya@gmail.com,Payment Pending,2022-11-06
+Sehgal and Sons,1464,Chicken Nuggets,P010,295,465.16,"08, Walla Street, Raebareli 934837",Maharashtra,04881246609,Ranchi,alisha16@yahoo.com,Payment Paid,2022-06-11
+"Bali, Iyer and Lad",9376,Ice Cream,P002,23,386.78,"068, Rege Circle, Secunderabad 921997",Odisha,+919601415693,Gurgaon,dbahl@suresh-ganesan.com,Payment Paid,2022-08-12
+Swaminathan and Sons,6965,Chicken Nuggets,P010,406,389.97,"83/16, Chaudhry Marg, Ambala-975500",Arunachal Pradesh,+915400763819,Sasaram,aaina62@hotmail.com,Payment Paid,2023-06-04
+Deo Ltd,3564,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,15,360.59,"H.No. 184, Chander Nagar, Durg-789385",Himachal Pradesh,+911767356277,Vijayanagaram,aggarwalkashvi@hotmail.com,Payment Pending,2020-10-31
+Ratta-Buch,3990,"Pulp (e.g., mango, guava, or tomato pulp)",P003,25,161.0,"H.No. 084, Ganesh Ganj, Allahabad-692566",Odisha,00123305746,Howrah,misha93@korpal.com,Payment Paid,2020-08-18
+Ratta-Buch,8731,Rice or Pasta,P020,449,22.64,"75/53, Uppal Circle, Dhule 580141",Bihar,6320506522,Bellary,shray91@doctor-deep.org,Payment Pending,2020-08-13
+"Bali, Iyer and Lad",7872,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,229,32.95,"02/10, Borra Circle, Bihar Sharif 142974",Meghalaya,08528346731,Vijayanagaram,ssule@saraf.com,Payment Paid,2021-07-02
+"Grover, Sidhu and Varma",3999,Milk or Milk Powder,P013,41,487.11,"72, Chad Path, Madanapalle 332093",Assam,+911783610081,Sirsa,rbarman@yahoo.com,Payment Pending,2022-02-27
+Sehgal and Sons,2236,Ice Cream,P002,284,275.9,"98/34, Dora Road, Chandrapur 601667",Himachal Pradesh,02055336031,Sambhal,dhanush60@hotmail.com,Payment Pending,2021-04-20
+"Sem, Mann and Karnik",2003,Ice Cream,P002,55,112.01,"963, Lad Circle, Dehradun-734997",Meghalaya,+917132550837,Panihati,shlokkonda@kothari.info,Payment Pending,2021-09-29
+Deo Ltd,5608,Rice or Pasta,P020,120,12.28,"H.No. 587, Vig Road, Ramagundam 948684",West Bengal,05720606620,Warangal,eshenoy@chadha.com,Payment Pending,2020-03-26
+Bera-Dani,3264,Frozen French Fries,P005,69,267.83,"59, Gaba Marg, Bijapur-371816",Sikkim,+915627090371,Hazaribagh,mishti81@yahoo.com,Payment Pending,2022-11-25
+Ratta-Buch,5435,Yogurt or Curd,P012,215,92.59,"H.No. 976, Ram Path, Bijapur-704383",Odisha,09266108950,Chandigarh,amblekavya@gmail.com,Payment Pending,2021-08-28
+Bera-Dani,6904,Frozen French Fries,P005,228,204.38,"024, Bhavsar Ganj, Asansol 440479",Madhya Pradesh,+916532847923,Ozhukarai,rheaverma@mall.biz,Payment Pending,2020-07-10
+Ratta-Buch,6501,Cheese Slices or Blocks,P006,157,316.31,"64, Ben Ganj, Tezpur 853382",Karnataka,01577070849,Srinagar,kulkarnisuhana@goyal.info,Payment Paid,2021-02-03
+Swaminathan and Sons,1229,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,426,382.49,"H.No. 302, Bhattacharyya Chowk, Thrissur 761646",Rajasthan,+910465157050,Jaunpur,kiaangoswami@yahoo.com,Payment Paid,2020-09-13
+"Sem, Mann and Karnik",8448,Butter,P007,254,279.91,"59/82, Iyengar Road, Tezpur-999612",Odisha,5853572909,Proddatur,zshroff@saini.com,Payment Paid,2021-03-04
+Swaminathan and Sons,1888,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,220,463.25,"H.No. 93, Tella Street, Phagwara 132190",Assam,0866867874,Guntakal,vanyadasgupta@wagle-ramanathan.biz,Payment Pending,2021-05-12
+Bera-Dani,6532,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,178,328.59,"56/837, Venkataraman, Sasaram-636878",Goa,03014492434,Amroha,jayantbahri@venkatesh-dalal.info,Payment Pending,2023-10-24
+"Sem, Mann and Karnik",5377,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,15,254.63,"H.No. 07, Gade Circle, Sagar 865150",Rajasthan,+912451762887,Burhanpur,taranbabu@brar.com,Payment Pending,2021-09-27
+Bera-Dani,4792,Milk or Milk Powder,P013,101,387.65,"103, Sen Road, Dehradun 372707",Odisha,9910272815,Anantapuram,urviagarwal@sami.com,Payment Pending,2023-09-04
+"Bali, Iyer and Lad",5628,Juice Concentrates (like orange or cranberry),P014,34,77.42,"832, Bahl, Mira-Bhayandar-608271",West Bengal,04559728080,Bally,bhamini76@lala.com,Payment Paid,2021-04-27
+Deo Ltd,2889,Whipping Cream,P016,225,389.5,"H.No. 020, Sandhu Marg, Jamalpur 040223",Telangana,+916075168057,Kanpur,purab00@goswami.com,Payment Paid,2020-03-31
+Chana-Sankar,1417,Chicken Nuggets,P010,305,491.44,"81/085, Sood Chowk, Jamshedpur-905583",Himachal Pradesh,7922278396,Danapur,agrawalsumer@sankar.com,Payment Pending,2023-09-10
+"Sem, Mann and Karnik",9346,Chicken Nuggets,P010,365,151.38,"89/56, Chaudhry Chowk, Warangal 593357",Tamil Nadu,01667752481,Cuttack,srivastavakiara@dora.com,Payment Paid,2021-05-05
+Swaminathan and Sons,4465,Chicken Nuggets,P010,256,147.48,"95/77, Ganesan Circle, Gandhidham 362384",Tamil Nadu,07266705652,Singrauli,rkibe@yahoo.com,Payment Paid,2022-12-25
+"Tella, Andra and Grover",3908,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,97,239.47,"644, Buch Marg, Faridabad 210512",Assam,5403318303,Loni,baliaarush@gmail.com,Payment Paid,2020-11-14
+Deo Ltd,4826,Frozen French Fries,P005,286,21.17,"967, Jha Zila, Sagar-652079",Haryana,06049441619,Bhilwara,tandonlakshit@hotmail.com,Payment Paid,2020-06-14
+"Grover, Sidhu and Varma",5460,Frozen French Fries,P005,467,131.45,"13, Yogi Circle, Fatehpur-443718",Karnataka,+915600500782,Etawah,keyachacko@gmail.com,Payment Pending,2022-07-07
+Ratta-Buch,9818,Paneer (Cottage Cheese),P008,229,234.88,"H.No. 655, Kala Chowk, Vadodara-943486",Odisha,+910440573869,Moradabad,gchaudry@dass-sangha.org,Payment Pending,2023-01-17
+"Sem, Mann and Karnik",9416,Cheese Slices or Blocks,P006,490,221.64,"66, Majumdar Marg, Medininagar-321451",Arunachal Pradesh,5596428502,Fatehpur,oorja51@yahoo.com,Payment Paid,2021-07-13
+"Tella, Andra and Grover",9769,Chicken Nuggets,P010,326,386.8,"929, Ram Street, Davanagere-967123",Tripura,7643324994,Nashik,jaggizaina@hotmail.com,Payment Pending,2022-01-30
+"Tella, Andra and Grover",6285,Frozen Mixed Vegetables,P009,268,466.77,"38/18, Rana Circle, Ratlam-867357",Goa,4312603729,Bally,mahikaupadhyay@gmail.com,Payment Pending,2021-11-06
+Ratta-Buch,2098,Butter,P007,62,226.03,"H.No. 466, Dewan Path, Mira-Bhayandar 779555",Nagaland,05114749603,Nagaon,ddhingra@dhar.info,Payment Paid,2021-08-16
+Chana-Sankar,6351,Frozen Fish Fillets,P011,292,183.05,"47/30, Kibe Chowk, Bhopal-422483",Tripura,6389573442,Panvel,psethi@hotmail.com,Payment Paid,2021-11-30
+"Bali, Iyer and Lad",7627,Frozen Fish Fillets,P011,400,342.64,"275, Chahal Ganj, Kottayam 374427",Goa,+911617544716,Hosur,sarmarasha@hotmail.com,Payment Pending,2021-03-02
+Swaminathan and Sons,5035,Butter,P007,482,271.8,"18/88, Toor Path, Nagercoil-171706",Chhattisgarh,7497049298,Jamnagar,jmall@hotmail.com,Payment Pending,2020-09-09
+Chana-Sankar,8176,Rice or Pasta,P020,161,481.54,"461, Kurian Path, Thiruvananthapuram 859439",Sikkim,7882074639,Tumkur,fatehjani@loyal-jayaraman.biz,Payment Pending,2022-05-24
+Swaminathan and Sons,2788,Butter,P007,200,44.11,"62, Sidhu Circle, Coimbatore-436712",Bihar,0498106943,Bhiwandi,badalgandhi@hotmail.com,Payment Pending,2021-07-26
+"Tella, Andra and Grover",7483,"Frozen Berries (e.g., strawberries, blueberries)",P015,285,17.8,"47, Ranganathan Ganj, Dehradun-891177",Uttarakhand,4353308473,Pune,umangtiwari@yahoo.com,Payment Paid,2021-10-25
+Bera-Dani,1270,Pickles,P018,96,375.48,"99/578, Sani, Guwahati-191441",Sikkim,08753152277,Rewa,rania39@krish.com,Payment Pending,2020-05-26
+Swaminathan and Sons,8079,Chicken Nuggets,P010,95,243.34,"H.No. 905, Varma Zila, Kavali 715761",Uttar Pradesh,+913156475919,Bardhaman,divij81@hotmail.com,Payment Pending,2022-07-31
+"Grover, Sidhu and Varma",8436,Frozen Fish Fillets,P011,486,172.28,"95/45, Contractor Zila, Bikaner 639175",Andhra Pradesh,03824505316,Saharanpur,jhanvikhalsa@yahoo.com,Payment Paid,2023-04-28
+"Grover, Sidhu and Varma",9743,Pickles,P018,171,465.55,"04/18, Das Circle, Phusro-246158",Bihar,04161160975,Jalandhar,csrivastava@hotmail.com,Payment Paid,2020-07-01
+Sehgal and Sons,3177,Rice or Pasta,P020,113,97.23,"H.No. 375, Rajan Circle, Ramgarh-315796",Himachal Pradesh,0571994617,Bhiwani,mkamdar@vig.org,Payment Paid,2021-08-20
+Swaminathan and Sons,5501,Milk or Milk Powder,P013,208,46.24,"H.No. 925, Sani Chowk, Ahmedabad 733643",Sikkim,06472455731,Delhi,qkata@gour-gupta.biz,Payment Paid,2022-07-15
+Swaminathan and Sons,4459,Butter,P007,79,398.35,"29/646, Koshy Path, Noida 746967",Assam,0668996326,Bhalswa Jahangir Pur,andradivit@varty.com,Payment Pending,2022-05-25
+Ratta-Buch,1728,Paneer (Cottage Cheese),P008,9,365.35,"581, Suri Road, Tirunelveli-953806",Karnataka,02881378707,Nashik,shettyalisha@anand.com,Payment Pending,2020-04-29
+"Sem, Mann and Karnik",2283,Ice Cream,P002,443,193.91,"767, Amble Street, Morena 903736",Punjab,+912724747689,Kumbakonam,zachariahhimmat@hotmail.com,Payment Paid,2023-10-01
+Swaminathan and Sons,8934,Sweet Corn,P001,56,420.85,"789, Jayaraman Road, Burhanpur-535764",Goa,01804544525,Bidar,madhavandra@kota.org,Payment Pending,2020-04-23
+Sehgal and Sons,3683,Sweet Corn,P001,46,422.78,"67/712, Amble, Ramagundam-385557",Bihar,00100100965,Anantapuram,amira54@bala.info,Payment Pending,2021-06-19
+"Grover, Sidhu and Varma",7004,Frozen French Fries,P005,183,340.09,"H.No. 116, Ganesh Road, Faridabad 690830",Rajasthan,+911742073883,Alwar,kalaaarna@hotmail.com,Payment Paid,2022-10-24
+Bera-Dani,3762,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,401,68.13,"99/766, Krishnamurthy Road, Patiala-401452",Chhattisgarh,+910926734205,Ambala,venkateshlakshay@andra.com,Payment Pending,2022-05-12
+Deo Ltd,7935,Green Peas,P004,411,34.38,"H.No. 57, Rajan Marg, Vijayawada 271838",Goa,00122258863,Agra,baijusama@hotmail.com,Payment Paid,2022-03-28
+Sehgal and Sons,6622,Pickles,P018,498,307.49,"11/994, Bakshi Ganj, Ghaziabad-145932",Sikkim,0007153798,Hazaribagh,nbains@yahoo.com,Payment Pending,2021-04-21
+"Grover, Sidhu and Varma",7951,Cheese Slices or Blocks,P006,278,278.79,"H.No. 16, Bhalla Nagar, Srinagar 232006",Maharashtra,7505035399,Durg,wsahni@grover.com,Payment Paid,2020-07-06
+"Grover, Sidhu and Varma",1453,Pickles,P018,103,43.19,"62/238, Mander, Madurai-481784",Nagaland,08651739699,Guna,priyansh39@hotmail.com,Payment Paid,2022-02-11
+Ratta-Buch,3069,Frozen Fish Fillets,P011,379,120.46,"234, Kumer Chowk, Bhiwani-192906",Kerala,+912613412098,Kalyan-Dombivli,deolshray@hora.info,Payment Pending,2023-04-26
+Chana-Sankar,1879,Chicken Nuggets,P010,24,295.43,"745, Sawhney Street, Pimpri-Chinchwad 538580",Tripura,5079272234,Bhilwara,chaudrysana@gokhale-sekhon.com,Payment Pending,2023-03-08
+"Tella, Andra and Grover",5227,Milk or Milk Powder,P013,410,70.02,"91/225, Vala Marg, Karimnagar-565970",Karnataka,2244724271,Naihati,jivikabhatia@yahoo.com,Payment Paid,2023-08-06
+Deo Ltd,2735,"Frozen Berries (e.g., strawberries, blueberries)",P015,171,33.86,"01, Dar Ganj, Bhusawal-267987",West Bengal,06223671572,Guwahati,nakul81@varghese.info,Payment Paid,2021-01-09
+"Grover, Sidhu and Varma",9571,Milk or Milk Powder,P013,255,459.14,"51/86, Balay, Durgapur-980464",Nagaland,+914290170656,Ballia,kbhatt@lalla.info,Payment Pending,2023-01-28
+Ratta-Buch,3273,Frozen Fish Fillets,P011,228,338.76,"18/01, Sarma Marg, Bulandshahr 093154",Odisha,1601322754,Siliguri,rvarughese@kapadia-badami.org,Payment Paid,2021-08-24
+Chana-Sankar,2436,Ice Cream,P002,172,105.08,"H.No. 15, Krishnamurthy, Tinsukia-018467",Gujarat,5542028504,Proddatur,fsood@hotmail.com,Payment Pending,2023-01-16
+"Tella, Andra and Grover",4111,Frozen French Fries,P005,223,253.8,"36, Shanker Path, Vijayawada 735536",Chhattisgarh,06948463925,Nagercoil,bathaaryahi@gmail.com,Payment Paid,2023-10-02
+Deo Ltd,2949,Pickles,P018,459,251.26,"H.No. 592, Edwin Zila, Bardhaman 448808",Manipur,+911586110987,Bally,canne@yahoo.com,Payment Paid,2020-11-03
+"Sem, Mann and Karnik",5252,Milk or Milk Powder,P013,345,220.67,"H.No. 44, Wable Circle, Alwar-137631",Meghalaya,06147743495,Thane,vritika48@yahoo.com,Payment Pending,2021-05-16
+Sehgal and Sons,4084,Green Peas,P004,173,427.45,"792, Basak Street, Kolkata 305642",Haryana,+917048007391,Surat,badalbhavsar@yahoo.com,Payment Pending,2021-01-25
+"Tella, Andra and Grover",1496,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,135,103.66,"H.No. 123, Mann Road, Guntakal-550540",West Bengal,+917320134024,Kavali,dishanisekhon@gmail.com,Payment Paid,2021-12-30
+Swaminathan and Sons,1507,Pickles,P018,146,147.25,"H.No. 922, Venkatesh Chowk, Gwalior 917533",Meghalaya,2048193588,Ballia,marya@dutta.net,Payment Pending,2023-11-15
+"Sem, Mann and Karnik",3288,"Frozen Berries (e.g., strawberries, blueberries)",P015,112,272.64,"H.No. 362, Goswami, Guntakal 283453",Karnataka,9962753493,Chennai,vihaangoda@seshadri.org,Payment Paid,2022-11-18
+Bera-Dani,9042,"Frozen Berries (e.g., strawberries, blueberries)",P015,477,46.44,"66, Saini Nagar, Jammu 232626",Andhra Pradesh,+919055534662,Sagar,alisha76@yahoo.com,Payment Paid,2022-10-04
+Ratta-Buch,3887,Yogurt or Curd,P012,58,139.07,"693, Dasgupta Circle, Machilipatnam-292651",Haryana,+919724121826,Gandhidham,kbansal@bora.com,Payment Pending,2020-10-13
+Chana-Sankar,5293,Rice or Pasta,P020,188,267.44,"H.No. 83, Mani Nagar, New Delhi 073044",Himachal Pradesh,1675222068,Shimla,shettydamini@warrior.net,Payment Paid,2023-06-14
+Swaminathan and Sons,5535,Yogurt or Curd,P012,37,149.27,"47/40, Batra Path, Patiala-882968",Mizoram,03792271415,Vellore,shalv57@hotmail.com,Payment Pending,2020-09-22
+"Grover, Sidhu and Varma",9949,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,174,19.73,"H.No. 58, Ramachandran Zila, Thoothukudi 029481",Himachal Pradesh,2179901483,Danapur,biju53@biswas.biz,Payment Pending,2022-06-04
+"Sem, Mann and Karnik",2607,Butter,P007,353,429.56,"65/40, Sekhon Chowk, Hapur 289347",Bihar,+911809056614,Kota,smani@dada-khalsa.org,Payment Paid,2022-05-15
+Deo Ltd,8451,Frozen Fish Fillets,P011,46,465.05,"H.No. 644, Desai, Indore-128015",Uttar Pradesh,3295717369,Bardhaman,semmyra@sheth.info,Payment Pending,2023-01-15
+Deo Ltd,8750,Frozen Fish Fillets,P011,315,30.41,"H.No. 79, Sehgal Circle, Solapur 803349",Arunachal Pradesh,09884473716,Bhilai,brajagopalan@mani.net,Payment Paid,2021-10-12
+"Bali, Iyer and Lad",7374,Sweet Corn,P001,301,193.27,"94/00, Sawhney Street, Katihar-402925",West Bengal,02144329026,Ramgarh,jwason@chokshi.com,Payment Pending,2021-02-23
+"Tella, Andra and Grover",5776,Frozen French Fries,P005,170,420.46,"41/26, Devan Circle, Vadodara-516814",Tamil Nadu,06037867052,Raebareli,wram@yahoo.com,Payment Pending,2020-02-08
+Sehgal and Sons,7091,Paneer (Cottage Cheese),P008,93,186.82,"16, Deep Marg, Ujjain 842782",Haryana,3549470885,Panipat,inaaya-78@kata.org,Payment Pending,2020-07-10
+"Grover, Sidhu and Varma",6460,Chicken Nuggets,P010,418,229.47,"97/84, Deo Road, Sambhal 982819",Karnataka,9562211489,Firozabad,uswaminathan@hotmail.com,Payment Pending,2021-10-26
+Ratta-Buch,3898,"Pulp (e.g., mango, guava, or tomato pulp)",P003,323,392.75,"793, Loyal Ganj, Junagadh-350872",Andhra Pradesh,06978503033,Barasat,aradhya45@yahoo.com,Payment Paid,2023-10-10
+Ratta-Buch,8751,Ice Cream,P002,126,146.35,"H.No. 486, Aggarwal Nagar, Ranchi 084131",Rajasthan,+910140200667,Tiruchirappalli,parinaazganesh@shenoy.biz,Payment Paid,2021-05-29
+"Tella, Andra and Grover",1851,Juice Concentrates (like orange or cranberry),P014,309,179.25,"91, Zachariah Zila, Bhagalpur 508349",Chhattisgarh,01999098851,Pimpri-Chinchwad,danimanjari@yahoo.com,Payment Paid,2021-09-04
+Bera-Dani,4243,Frozen French Fries,P005,41,168.43,"H.No. 05, Rama Street, Bhatpara-579968",Goa,04421625742,Patiala,hsachdev@taneja.com,Payment Pending,2021-07-26
+Swaminathan and Sons,6201,Frozen Mixed Vegetables,P009,280,163.4,"20, Lad Chowk, Lucknow-071273",Sikkim,07837707494,Jalgaon,manjari92@chada-kibe.com,Payment Pending,2020-07-31
+"Sem, Mann and Karnik",7477,Rice or Pasta,P020,337,410.23,"92/335, Loyal Marg, Srikakulam-503798",Gujarat,+919560924110,Bulandshahr,priyansh77@borde.org,Payment Paid,2020-03-04
+"Bali, Iyer and Lad",6376,"Frozen Berries (e.g., strawberries, blueberries)",P015,278,181.8,"400, Gade Zila, Thanjavur 074313",Odisha,+911621602027,Rohtak,sarachatterjee@vora.com,Payment Pending,2023-10-16
+Ratta-Buch,4594,Ice Cream,P002,395,393.52,"H.No. 666, Datta Road, Dhule 912113",Meghalaya,02196034271,Belgaum,vedikabhatnagar@sodhi.net,Payment Pending,2023-03-03
+"Grover, Sidhu and Varma",1366,Sweet Corn,P001,156,457.22,"14/049, Gour Ganj, Uluberia-696558",Kerala,08223191622,Hajipur,yjayaraman@johal.org,Payment Paid,2021-01-10
+"Grover, Sidhu and Varma",3058,Chicken Nuggets,P010,431,286.96,"H.No. 641, Chaudhari Road, Barasat-328928",Uttar Pradesh,+910717274304,Tumkur,neysabobal@shanker.biz,Payment Pending,2022-04-21
+Ratta-Buch,9317,"Pulp (e.g., mango, guava, or tomato pulp)",P003,436,373.74,"28/56, Balakrishnan Chowk, Avadi-675896",Arunachal Pradesh,03065611730,Kozhikode,itara@chanda-desai.biz,Payment Paid,2020-02-14
+Bera-Dani,9307,Cheese Slices or Blocks,P006,223,338.99,"350, Sawhney Path, Kulti-753385",Gujarat,8684175922,Kavali,vardaniyashroff@gara-dhingra.biz,Payment Pending,2023-08-01
+Sehgal and Sons,4898,Frozen Fish Fillets,P011,473,312.13,"350, Shankar Path, Nandyal-519878",Chhattisgarh,05915400037,Ramgarh,siyasoman@gaba.com,Payment Paid,2020-07-24
+Bera-Dani,1418,Milk or Milk Powder,P013,84,418.63,"256, Ben Street, Giridih-119254",Haryana,8365013494,Chittoor,gardemiraya@yahoo.com,Payment Paid,2023-11-09
+"Grover, Sidhu and Varma",1190,Ice Cream,P002,337,481.03,"276, Ahuja Marg, Ghaziabad-653962",Karnataka,4614503860,Giridih,kiaanseshadri@sangha.com,Payment Paid,2023-02-23
+"Tella, Andra and Grover",7952,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,155,372.14,"H.No. 69, Bobal Marg, Nellore-681766",Telangana,5153707325,New Delhi,gokul98@datta-kaur.biz,Payment Paid,2020-06-16
+Bera-Dani,7427,Chicken Nuggets,P010,494,329.27,"H.No. 707, Bobal Circle, Bokaro-956517",Haryana,+915526034437,Khandwa,irabalakrishnan@jain.com,Payment Paid,2022-05-27
+Bera-Dani,8393,Sweet Corn,P001,100,76.33,"H.No. 84, Gera Street, Nandyal 428956",Maharashtra,+911851826324,Madhyamgram,naggarwal@anne-thakur.com,Payment Paid,2021-05-12
+"Tella, Andra and Grover",2754,Cheese Slices or Blocks,P006,77,90.24,"37, Sangha Nagar, Rourkela 611294",Madhya Pradesh,03802155543,Bhusawal,rohan45@yahoo.com,Payment Paid,2023-04-09
+Swaminathan and Sons,5461,Pickles,P018,473,480.02,"544, Majumdar Path, Kakinada 284476",Madhya Pradesh,02967222957,Mahbubnagar,hridaan46@gmail.com,Payment Pending,2023-12-12
+Swaminathan and Sons,3589,Paneer (Cottage Cheese),P008,333,12.31,"51, Kapur Street, Muzaffarpur 742879",Himachal Pradesh,+913514777721,Serampore,indrans73@shroff.info,Payment Pending,2020-01-06
+"Tella, Andra and Grover",7292,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,151,268.84,"07/544, Basu Ganj, Kozhikode-395945",Arunachal Pradesh,+912460966408,Sonipat,shankarrasha@yahoo.com,Payment Paid,2023-04-18
+"Tella, Andra and Grover",4386,Milk or Milk Powder,P013,50,285.04,"55/675, Kala Marg, Patna 861789",Manipur,+916817505548,Machilipatnam,solankishamik@yahoo.com,Payment Pending,2023-02-04
+"Tella, Andra and Grover",4513,Butter,P007,253,111.71,"489, Dhar Street, Salem 150614",West Bengal,9499730321,Malda,tiyavyas@yahoo.com,Payment Paid,2023-05-06
+Swaminathan and Sons,6549,Ice Cream,P002,58,340.56,"25/295, Chaudhary Nagar, Ludhiana-212452",Uttar Pradesh,+911497473820,Mehsana,kashvi87@yahoo.com,Payment Pending,2023-09-14
+Bera-Dani,2248,Paneer (Cottage Cheese),P008,435,202.7,"50, Ratta Nagar, Bhusawal 231185",Chhattisgarh,+913419777942,Tezpur,raghavdalal@gmail.com,Payment Pending,2023-08-16
+Deo Ltd,8846,Sweet Corn,P001,301,156.82,"74/803, Lad, Tadepalligudem-409823",Gujarat,+915913721461,Bardhaman,indrans10@grewal.com,Payment Paid,2020-07-21
+Swaminathan and Sons,8581,Frozen Fish Fillets,P011,483,112.35,"09, Das, Udupi-364667",Odisha,0048299116,Vasai-Virar,bumbjhanvi@hotmail.com,Payment Pending,2020-01-09
+Swaminathan and Sons,3537,Sweet Corn,P001,341,296.88,"83/67, Tak Nagar, Dehradun 477689",Tripura,+912749145388,Bongaigaon,keya49@koshy.com,Payment Pending,2021-01-05
+"Sem, Mann and Karnik",7661,Rice or Pasta,P020,292,271.65,"H.No. 163, Chandran Path, Mahbubnagar-960545",Nagaland,8713633338,Noida,rajaranbir@hotmail.com,Payment Pending,2023-09-20
+"Bali, Iyer and Lad",5473,Paneer (Cottage Cheese),P008,332,347.55,"34, Shankar Path, Nellore 116297",Assam,+916014184719,Khammam,pranay06@hotmail.com,Payment Pending,2020-07-26
+Bera-Dani,1109,Juice Concentrates (like orange or cranberry),P014,208,429.69,"387, Shenoy Street, Jamshedpur-661176",Sikkim,0552014076,Machilipatnam,riya66@balakrishnan.com,Payment Paid,2021-09-19
+Sehgal and Sons,1678,Cheese Slices or Blocks,P006,240,411.11,"H.No. 553, Solanki Path, Naihati-322417",Mizoram,05168225265,Rourkela,dharhrishita@sachar-rao.com,Payment Paid,2020-11-21
+"Bali, Iyer and Lad",8593,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,280,146.51,"94/18, Dada Marg, Katihar 198581",Kerala,+915828872883,Begusarai,chiragsrinivasan@dugal.biz,Payment Pending,2022-12-03
+Bera-Dani,1977,Green Peas,P004,474,259.17,"40/47, Salvi, Gurgaon-839765",Nagaland,09109547314,Thiruvananthapuram,amira35@sengupta.net,Payment Paid,2023-02-10
+Ratta-Buch,1563,Frozen Fish Fillets,P011,346,412.3,"52/988, Thakkar Zila, Barasat 768826",Punjab,05805860092,Jammu,mehul10@rout-uppal.com,Payment Paid,2023-01-16
+Ratta-Buch,6624,Milk or Milk Powder,P013,262,457.43,"64, Banerjee Zila, Ambarnath-017977",Punjab,4589994870,Shivpuri,mohanlal62@hotmail.com,Payment Pending,2023-10-07
+Ratta-Buch,8011,Milk or Milk Powder,P013,415,187.83,"H.No. 782, Swamy Ganj, Tiruvottiyur 609942",Himachal Pradesh,06272377930,Tiruppur,ranapriyansh@hotmail.com,Payment Paid,2022-08-10
+Ratta-Buch,5632,Sweet Corn,P001,313,75.34,"H.No. 092, Randhawa Nagar, Thiruvananthapuram-040584",Punjab,04444459731,Tiruchirappalli,dhanuk78@yahoo.com,Payment Paid,2022-04-18
+Ratta-Buch,3221,Cheese Slices or Blocks,P006,48,46.89,"529, Soman Street, Gudivada-646319",Arunachal Pradesh,0950504535,Mehsana,manjarithaman@walia.net,Payment Pending,2020-11-29
+Sehgal and Sons,8054,Whipping Cream,P016,79,35.48,"H.No. 22, Lala, Ratlam 545761",Manipur,04900901894,Kanpur,hiran05@bail-mahal.biz,Payment Pending,2023-06-15
+Ratta-Buch,8616,Paneer (Cottage Cheese),P008,265,45.04,"20, Sethi Ganj, Mysore-030090",Andhra Pradesh,0965122031,Meerut,tdeshmukh@edwin.com,Payment Paid,2023-06-23
+"Bali, Iyer and Lad",2651,Ice Cream,P002,375,262.25,"494, Dhawan Nagar, Ambala-642176",Gujarat,+910325704154,Amritsar,tushar03@anand-atwal.com,Payment Paid,2023-01-12
+Bera-Dani,5990,Rice or Pasta,P020,377,206.65,"75, Sood Nagar, Nanded-040089",Madhya Pradesh,05241271104,Bijapur,ivanavenkataraman@gmail.com,Payment Paid,2023-03-15
+Chana-Sankar,3320,"Pulp (e.g., mango, guava, or tomato pulp)",P003,424,372.5,"14/53, Ghose, Dharmavaram-082499",Haryana,00691189127,Junagadh,dhanuk03@koshy.info,Payment Paid,2020-04-14
+Deo Ltd,3238,Frozen Mixed Vegetables,P009,371,174.92,"H.No. 205, Malhotra Chowk, Ambala 983616",Uttarakhand,5024407215,Thrissur,yzachariah@yahoo.com,Payment Paid,2021-08-25
+"Sem, Mann and Karnik",2660,Juice Concentrates (like orange or cranberry),P014,13,429.3,"58/04, Vyas Chowk, Ajmer 500942",Uttarakhand,08513723151,Tezpur,lavanya84@gmail.com,Payment Paid,2022-05-17
+"Grover, Sidhu and Varma",7032,Sweet Corn,P001,421,125.1,"H.No. 984, Bawa Road, Bahraich 228800",Telangana,+918410496629,Bahraich,sarmaindranil@hegde.info,Payment Paid,2023-12-13
+"Tella, Andra and Grover",4535,Rice or Pasta,P020,412,85.77,"14/144, Setty Nagar, Jaunpur-001966",Uttarakhand,6353034130,Mira-Bhayandar,obhagat@hotmail.com,Payment Paid,2022-01-02
+Swaminathan and Sons,8606,Ice Cream,P002,54,18.21,"45/388, Sunder Marg, Kochi-140854",West Bengal,00541032251,Sagar,mandadrishya@hotmail.com,Payment Paid,2023-07-20
+"Bali, Iyer and Lad",3979,Ice Cream,P002,358,14.1,"83/03, Roy Street, Mau 967280",Jharkhand,03532157089,Etawah,myra53@bhat-rastogi.org,Payment Pending,2021-01-15
+"Grover, Sidhu and Varma",9113,Pickles,P018,316,266.05,"45, Chandra Nagar, Nandyal-701217",Madhya Pradesh,+912418240322,Karaikudi,heerdeol@hotmail.com,Payment Pending,2022-12-03
+Swaminathan and Sons,1103,"Pulp (e.g., mango, guava, or tomato pulp)",P003,62,337.0,"H.No. 74, Badami Zila, Kozhikode-119477",Nagaland,07221400694,Jamalpur,aniruddhram@hotmail.com,Payment Pending,2021-05-18
+Bera-Dani,9118,Frozen French Fries,P005,399,387.02,"42/58, Srinivasan Chowk, Kurnool 805407",Haryana,05961195265,Tirunelveli,renee29@hayre-kata.com,Payment Pending,2021-03-25
+Bera-Dani,5997,Juice Concentrates (like orange or cranberry),P014,255,408.29,"06, Banerjee Marg, Bardhaman-344795",Sikkim,9808608636,Durgapur,zchacko@yahoo.com,Payment Pending,2021-02-15
+Deo Ltd,5231,Frozen Fish Fillets,P011,97,42.11,"05/03, Luthra Chowk, Tiruppur-676927",Rajasthan,+910150734426,Bhavnagar,qviswanathan@hotmail.com,Payment Pending,2021-04-02
+Chana-Sankar,7160,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,109,263.89,"H.No. 140, Trivedi Ganj, North Dumdum 165152",Assam,08540736086,Belgaum,qtoor@sood-ganguly.net,Payment Paid,2021-02-24
+Deo Ltd,3916,"Frozen Berries (e.g., strawberries, blueberries)",P015,350,30.18,"H.No. 93, Mani Road, Dibrugarh 687623",Arunachal Pradesh,+915061588604,Bikaner,borraelakshi@singhal-salvi.org,Payment Paid,2023-09-19
+"Grover, Sidhu and Varma",9725,Whipping Cream,P016,125,361.31,"56, Edwin Road, Bareilly-394558",Rajasthan,+919941012879,Chapra,gokulrajagopal@hotmail.com,Payment Paid,2022-08-21
+"Grover, Sidhu and Varma",5296,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,172,97.33,"26/554, Babu Nagar, Visakhapatnam-106059",Madhya Pradesh,07537102594,Bilaspur,zdhar@bajaj.info,Payment Paid,2023-11-17
+Ratta-Buch,4742,Chicken Nuggets,P010,467,481.79,"47/826, Dhillon, Tadipatri 643533",Odisha,05104547427,Jammu,diya98@anand.com,Payment Pending,2020-03-07
+Chana-Sankar,5434,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,324,226.03,"322, Raju Path, Vasai-Virar-863992",Tamil Nadu,08470322097,Aizawl,urvikapadia@gmail.com,Payment Paid,2023-10-09
+Chana-Sankar,8338,Frozen French Fries,P005,88,207.16,"75/763, Dash Path, Imphal-698306",Chhattisgarh,+919277257843,Gaya,myradin@acharya-mahajan.com,Payment Pending,2022-01-27
+"Bali, Iyer and Lad",8151,Frozen Mixed Vegetables,P009,276,381.78,"11/61, Seth Road, Vadodara 236993",Chhattisgarh,08515838164,Thane,deepreyansh@jani.com,Payment Pending,2023-03-23
+Sehgal and Sons,5270,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,443,382.92,"33/63, Barman Chowk, Anantapuram-243080",Haryana,7439760400,Pondicherry,anvi03@gmail.com,Payment Pending,2021-11-26
+Bera-Dani,4305,Ice Cream,P002,353,285.35,"05/85, Bail Road, Ambala-479004",Andhra Pradesh,03554607606,Meerut,gsura@gmail.com,Payment Pending,2022-06-30
+Bera-Dani,9327,Paneer (Cottage Cheese),P008,357,292.32,"959, Dara, Durgapur 104809",Rajasthan,00499574445,Vellore,fmanda@walla.com,Payment Pending,2021-05-16
+Sehgal and Sons,3038,Whipping Cream,P016,201,221.98,"73, Brar Circle, Hospet 107544",Sikkim,01697299735,Jalandhar,krishalisha@salvi.com,Payment Pending,2020-11-12
+Ratta-Buch,8330,Sweet Corn,P001,172,260.61,"29/042, Sandhu Nagar, Rourkela-613079",Gujarat,+919195283101,Nashik,gbalasubramanian@soman-subramanian.com,Payment Paid,2023-11-07
+Deo Ltd,9595,Rice or Pasta,P020,250,394.05,"H.No. 299, Sastry Zila, Anantapuram 106924",Sikkim,+914426850746,Vijayanagaram,azad31@gmail.com,Payment Pending,2022-10-03
+Chana-Sankar,4591,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,22,455.88,"05, Chad Ganj, Mumbai-573781",Mizoram,6715735322,Mumbai,pbumb@madan.info,Payment Pending,2020-09-12
+"Grover, Sidhu and Varma",8209,Yogurt or Curd,P012,392,65.54,"97/09, Balan Zila, Hajipur-573626",Karnataka,5984976398,Jehanabad,dhruv05@hotmail.com,Payment Pending,2022-12-16
+Sehgal and Sons,2445,Frozen Fish Fillets,P011,462,387.4,"556, Shukla Marg, Kozhikode 830153",Manipur,3014275577,Rohtak,wbhargava@gmail.com,Payment Pending,2021-03-07
+"Tella, Andra and Grover",8383,"Frozen Berries (e.g., strawberries, blueberries)",P015,323,141.53,"H.No. 14, Dhar, Rampur-121201",Jharkhand,07303687505,Navi Mumbai,zara51@hotmail.com,Payment Pending,2020-02-20
+"Grover, Sidhu and Varma",5497,"Frozen Berries (e.g., strawberries, blueberries)",P015,337,193.07,"H.No. 18, Sheth Path, Mahbubnagar-173594",Andhra Pradesh,02649574031,Guntur,heervarughese@krishnan.com,Payment Pending,2020-10-07
+Bera-Dani,6145,Cheese Slices or Blocks,P006,268,46.75,"34/75, Ram Chowk, Amravati-057303",Goa,+911079005302,Gwalior,zoyabala@gmail.com,Payment Pending,2020-12-11
+Sehgal and Sons,2085,Milk or Milk Powder,P013,222,253.17,"H.No. 15, Lad Road, Baranagar 545094",Telangana,3056077135,Durgapur,ivansachdev@suresh.biz,Payment Paid,2020-07-12
+Bera-Dani,7063,Pickles,P018,234,180.99,"H.No. 42, Sundaram Road, Jodhpur 263410",Haryana,+916847267205,Hosur,tusharsaha@varghese.org,Payment Paid,2022-04-08
+Ratta-Buch,7938,"Frozen Berries (e.g., strawberries, blueberries)",P015,323,321.39,"71/52, Apte Path, Gudivada 402107",Meghalaya,04134325293,Kurnool,tarabehl@gmail.com,Payment Pending,2021-03-19
+"Sem, Mann and Karnik",5744,Chicken Nuggets,P010,397,494.84,"H.No. 44, Bhardwaj Zila, Danapur-677461",Goa,4529956669,Unnao,yasminbajaj@hotmail.com,Payment Pending,2021-02-15
+"Tella, Andra and Grover",4485,Yogurt or Curd,P012,160,322.59,"36, Batta Marg, Sikar-228751",Telangana,6645222305,Kalyan-Dombivli,ishitaguha@gmail.com,Payment Paid,2023-01-23
+Swaminathan and Sons,4094,Rice or Pasta,P020,231,312.01,"72/913, Chacko Road, Thiruvananthapuram 860735",Uttar Pradesh,04100337208,Mehsana,dhanush84@gmail.com,Payment Pending,2022-06-26
+Sehgal and Sons,7389,Yogurt or Curd,P012,301,301.95,"H.No. 678, Saini Circle, Tezpur 165826",Tamil Nadu,05466632884,Durgapur,devanira@dayal-balan.com,Payment Pending,2020-07-28
+"Bali, Iyer and Lad",8610,Paneer (Cottage Cheese),P008,464,80.14,"H.No. 036, Khosla Zila, Akola 133872",Bihar,06383132257,Mangalore,azad90@salvi-sahota.com,Payment Paid,2022-10-07
+Ratta-Buch,4411,Ice Cream,P002,371,119.76,"34/862, Brahmbhatt Chowk, Bidar-059624",Meghalaya,01884479960,Chinsurah,dhanukborah@yahoo.com,Payment Pending,2021-03-19
+Sehgal and Sons,6352,"Frozen Berries (e.g., strawberries, blueberries)",P015,330,166.07,"H.No. 78, Thaman Marg, Fatehpur-053863",Goa,3626115992,Bhimavaram,reyanshsunder@dass.com,Payment Paid,2023-03-30
+Deo Ltd,1490,Frozen Fish Fillets,P011,498,210.61,"47/56, Karan Street, Jodhpur 831670",Gujarat,04595085680,Tiruppur,trisha41@chahal-bhatnagar.biz,Payment Paid,2020-08-07
+"Grover, Sidhu and Varma",1782,Milk or Milk Powder,P013,225,60.26,"91/136, Desai Chowk, Bareilly 638123",Sikkim,1542568925,Durgapur,choudharydiya@gupta-sabharwal.org,Payment Pending,2020-03-20
+Chana-Sankar,3162,Yogurt or Curd,P012,459,453.19,"24, Madan Nagar, Hazaribagh-034324",Manipur,04035305059,Chandigarh,nehmatbahl@sarraf.biz,Payment Paid,2021-01-21
+Chana-Sankar,2625,Whipping Cream,P016,113,473.65,"192, Bhat Chowk, Ghaziabad 572544",Haryana,04241972630,Begusarai,kabirvarghese@apte.com,Payment Pending,2022-05-10
+Sehgal and Sons,7583,Frozen Mixed Vegetables,P009,347,172.75,"H.No. 335, Soman Circle, Gopalpur-133509",Uttar Pradesh,07461338404,Bathinda,dadaira@kamdar.com,Payment Pending,2022-12-31
+Bera-Dani,9438,Butter,P007,295,68.18,"22, Sandal Circle, Bhilwara 128794",Goa,02335793790,Buxar,tiwarinitya@gmail.com,Payment Paid,2021-07-17
+Bera-Dani,2308,Frozen Fish Fillets,P011,383,464.15,"H.No. 39, Balan Chowk, Chandigarh 923924",Meghalaya,8027370418,Jhansi,dhanushdutt@khalsa.com,Payment Paid,2021-12-14
+"Tella, Andra and Grover",8149,Frozen Mixed Vegetables,P009,77,346.76,"694, Raju Circle, Bhilwara-131889",Rajasthan,+910545795191,Nadiad,divyansh99@rana.com,Payment Paid,2021-01-25
+Bera-Dani,6589,Paneer (Cottage Cheese),P008,349,428.87,"92, Goda Chowk, Rourkela 286157",Uttar Pradesh,7368057526,Siliguri,qsur@yahoo.com,Payment Pending,2020-05-31
+Chana-Sankar,3624,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,306,413.87,"H.No. 955, Gala Street, Maheshtala-576601",Maharashtra,+910886520278,Khandwa,horaprisha@madan.org,Payment Pending,2022-05-04
+"Sem, Mann and Karnik",4372,Yogurt or Curd,P012,271,472.43,"44, Gulati Marg, Sasaram-380729",Rajasthan,04687515809,Bhagalpur,dishani21@krishnamurthy.net,Payment Pending,2023-01-02
+Sehgal and Sons,2840,Whipping Cream,P016,110,404.3,"H.No. 591, Dubey Zila, Kishanganj-596932",Goa,1544638965,Bilaspur,trama@goswami.org,Payment Paid,2020-05-30
+"Sem, Mann and Karnik",2657,Frozen Mixed Vegetables,P009,52,210.05,"82, Sehgal Chowk, Miryalaguda-842324",Tripura,09875387727,Kharagpur,lataanahita@hotmail.com,Payment Paid,2023-09-11
+Deo Ltd,8458,Frozen French Fries,P005,253,433.98,"H.No. 358, Kashyap Ganj, Cuttack-752559",Nagaland,8460134592,Meerut,dubeurvi@goel-bedi.com,Payment Paid,2021-11-03
+Swaminathan and Sons,4243,Sweet Corn,P001,9,317.58,"H.No. 656, Bahl Path, Visakhapatnam-458499",Sikkim,+916282546673,Bhatpara,zara23@chakrabarti.com,Payment Pending,2022-04-03
+Chana-Sankar,2714,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,69,323.38,"116, Comar Street, New Delhi-339583",Chhattisgarh,9513224993,Baranagar,saxenarenee@yahoo.com,Payment Pending,2022-03-19
+Chana-Sankar,5121,Juice Concentrates (like orange or cranberry),P014,388,19.17,"H.No. 416, Banerjee Road, Madanapalle 427958",Arunachal Pradesh,9910168189,Sri Ganganagar,riaanchakraborty@hotmail.com,Payment Pending,2021-08-29
+Chana-Sankar,6304,Rice or Pasta,P020,265,28.0,"86/84, Loke Road, Mumbai-436913",Bihar,09474688645,Burhanpur,nirvi91@tank.org,Payment Paid,2022-11-21
+Chana-Sankar,7599,Paneer (Cottage Cheese),P008,7,190.66,"83, Kari Path, Amravati-478388",Kerala,0050564455,Alwar,osura@hotmail.com,Payment Pending,2020-10-31
+Swaminathan and Sons,2255,Whipping Cream,P016,153,138.46,"33/467, Deep Ganj, Baranagar-795379",Haryana,00781436625,Khora ,ritvikkumar@gupta.com,Payment Pending,2020-10-06
+Chana-Sankar,7540,Sweet Corn,P001,291,455.02,"04/150, Golla Road, Noida-712586",Meghalaya,+917441092137,Nizamabad,heer87@hotmail.com,Payment Pending,2020-07-18
+"Bali, Iyer and Lad",4168,Juice Concentrates (like orange or cranberry),P014,262,95.32,"742, Guha Path, Amritsar 536137",Haryana,02759107878,Tiruppur,godafarhan@yahoo.com,Payment Pending,2020-11-07
+Sehgal and Sons,3343,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,362,41.46,"197, Wason Ganj, Bhiwandi 872187",West Bengal,08662786270,New Delhi,prisha27@yahoo.com,Payment Paid,2022-01-05
+Ratta-Buch,8801,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,191,383.6,"794, Kothari Path, Panchkula-904134",Maharashtra,+915376084752,Secunderabad,ishaan33@saran-bansal.org,Payment Paid,2021-06-05
+Swaminathan and Sons,8746,Sweet Corn,P001,293,381.47,"118, Lalla Path, Kurnool-936960",Chhattisgarh,+917526915570,Silchar,aarna25@hotmail.com,Payment Paid,2022-09-27
+Ratta-Buch,5200,"Frozen Berries (e.g., strawberries, blueberries)",P015,81,91.49,"549, Zachariah Circle, Nadiad-659368",Odisha,0695236708,Shahjahanpur,rbanik@dixit-karan.com,Payment Pending,2020-09-28
+Ratta-Buch,1191,Whipping Cream,P016,73,402.58,"13, Kalla Ganj, Bally 018079",Telangana,07047468009,Serampore,qsachdev@gara.net,Payment Pending,2020-03-04
+"Bali, Iyer and Lad",7731,Ice Cream,P002,175,377.47,"H.No. 96, Karpe Chowk, Ujjain-318301",Sikkim,+910391836155,Gwalior,aliachander@yahoo.com,Payment Paid,2021-07-27
+"Bali, Iyer and Lad",4131,Juice Concentrates (like orange or cranberry),P014,313,343.53,"H.No. 262, Taneja Marg, Gandhinagar 419713",Mizoram,02992253471,Tirunelveli,kchoudhury@soni.net,Payment Pending,2020-03-16
+Ratta-Buch,7043,Pickles,P018,209,330.87,"06, Kapoor Chowk, Secunderabad-947199",Meghalaya,8522736616,Hindupur,hghosh@gmail.com,Payment Pending,2023-12-23
+Chana-Sankar,3651,Frozen French Fries,P005,499,360.63,"92/07, Chad Marg, Durgapur 040377",Himachal Pradesh,+913099844333,Tadipatri,ykara@krish-bhagat.com,Payment Pending,2020-01-25
+Ratta-Buch,3493,Ice Cream,P002,462,299.14,"435, Konda Street, Pimpri-Chinchwad-040471",West Bengal,+910186773739,Visakhapatnam,koshymannat@kant.info,Payment Pending,2021-05-12
+"Sem, Mann and Karnik",8668,"Pulp (e.g., mango, guava, or tomato pulp)",P003,60,36.06,"H.No. 08, Dara, Vijayanagaram-878730",Mizoram,5066471118,Solapur,biyengar@dutta.org,Payment Pending,2022-12-10
+Sehgal and Sons,3467,Chicken Nuggets,P010,415,414.28,"69/030, Kohli Path, Durgapur 895406",Telangana,+919467928669,Guntur,dhanush63@gmail.com,Payment Pending,2021-03-17
+Chana-Sankar,1107,Sweet Corn,P001,87,407.5,"02, Wadhwa Road, Ambarnath 100870",Gujarat,+912967434842,Nadiad,vardaniya60@uppal.com,Payment Paid,2023-06-12
+Sehgal and Sons,9523,Sweet Corn,P001,43,436.77,"43/19, Deshmukh Chowk, Pali-330681",Punjab,0733704556,Mirzapur,choprasuhana@yahoo.com,Payment Pending,2020-05-19
+Swaminathan and Sons,5055,Paneer (Cottage Cheese),P008,319,344.0,"40/16, Varughese, Visakhapatnam-204286",Odisha,07277746892,Deoghar,lagankarpe@char.com,Payment Pending,2020-02-24
+Swaminathan and Sons,3828,Ice Cream,P002,79,223.01,"23/131, Ravel Circle, Bardhaman-468084",Odisha,3400327930,Madanapalle,jsule@kaur-balakrishnan.com,Payment Pending,2022-06-01
+Bera-Dani,4168,Pickles,P018,278,426.86,"75/603, Shetty Zila, Karnal 306933",Bihar,00429001120,Dhule,ekohli@yahoo.com,Payment Pending,2022-04-21
+Ratta-Buch,4455,Rice or Pasta,P020,339,280.39,"950, Bhargava Road, Raebareli 994396",Maharashtra,+911180052969,Medininagar,sbedi@sane-bobal.com,Payment Paid,2022-01-29
+Ratta-Buch,2482,Frozen Fish Fillets,P011,323,53.58,"57, Gokhale Street, Morena-475949",Arunachal Pradesh,5464641601,Guna,purabrajagopalan@hotmail.com,Payment Pending,2022-12-08
+"Bali, Iyer and Lad",1634,Juice Concentrates (like orange or cranberry),P014,450,30.11,"07, Sarkar Ganj, Khammam-797149",Himachal Pradesh,+911619191035,Kharagpur,diyamall@gmail.com,Payment Paid,2021-03-14
+Swaminathan and Sons,5838,Yogurt or Curd,P012,449,133.88,"03, Krishnamurthy Zila, Etawah 565584",Assam,8602648804,Ambattur,atwalira@srinivasan.com,Payment Paid,2022-06-13
+Chana-Sankar,2470,Ice Cream,P002,467,266.17,"40/295, Dugar Path, Chinsurah-133195",Uttarakhand,+913851213488,Avadi,jhapihu@hotmail.com,Payment Paid,2022-07-19
+"Bali, Iyer and Lad",8079,"Frozen Berries (e.g., strawberries, blueberries)",P015,406,311.53,"07/27, Ranganathan Ganj, Alwar 373563",Odisha,+918599306107,Durgapur,elakshi04@yahoo.com,Payment Pending,2021-07-28
+"Sem, Mann and Karnik",6988,Ice Cream,P002,169,166.9,"H.No. 040, Sandal, Kadapa 640294",Meghalaya,04288388865,Rajahmundry,karprerak@yahoo.com,Payment Paid,2021-10-17
+"Bali, Iyer and Lad",9830,"Frozen Berries (e.g., strawberries, blueberries)",P015,498,324.03,"H.No. 063, Devi, Berhampore-730381",Punjab,+915031285954,Tumkur,anahita79@hotmail.com,Payment Paid,2022-02-09
+Deo Ltd,8485,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,204,247.33,"H.No. 03, Chokshi, Sambhal-897310",Maharashtra,00128818156,Kumbakonam,kimayaaggarwal@borra.com,Payment Pending,2022-02-06
+"Grover, Sidhu and Varma",6596,Milk or Milk Powder,P013,51,342.06,"H.No. 91, Chad Circle, Agartala 265165",Nagaland,+912633526072,Tiruppur,rattanshanaya@hotmail.com,Payment Paid,2023-08-25
+Deo Ltd,6546,Butter,P007,184,447.67,"29/792, Venkatesh Nagar, Saharanpur-306428",Bihar,4251443874,Bijapur,ramaswamyeva@dubey.com,Payment Pending,2023-04-10
+"Grover, Sidhu and Varma",3662,Ice Cream,P002,205,440.47,"H.No. 04, Kashyap Marg, Mathura-946442",Rajasthan,09588345776,Tiruchirappalli,qverma@hotmail.com,Payment Pending,2021-09-07
+Chana-Sankar,1890,Whipping Cream,P016,384,366.21,"08/75, Wason Ganj, Arrah 615486",Sikkim,00231062441,Kadapa,raunak25@gmail.com,Payment Paid,2021-11-17
+Ratta-Buch,8113,Paneer (Cottage Cheese),P008,442,303.21,"26/342, Jha Circle, Ramagundam 241895",Madhya Pradesh,+914842689310,Thanjavur,ivanadhar@gmail.com,Payment Pending,2022-02-07
+"Tella, Andra and Grover",5304,Sweet Corn,P001,345,339.54,"H.No. 60, Dave Circle, Bidar-137916",West Bengal,+918612621807,Mehsana,purabdhar@hotmail.com,Payment Paid,2020-11-10
+"Bali, Iyer and Lad",2532,Frozen French Fries,P005,249,50.89,"H.No. 587, Sani Circle, Kakinada 115091",Himachal Pradesh,8471746058,Ulhasnagar,zeeshan20@gmail.com,Payment Paid,2022-11-11
+Bera-Dani,3502,"Pulp (e.g., mango, guava, or tomato pulp)",P003,311,60.18,"376, Varma Circle, Dehradun 218112",Meghalaya,+915454308276,Thanjavur,yuvraj-bhavsar@bhasin-sood.com,Payment Paid,2022-06-09
+Sehgal and Sons,5675,Butter,P007,260,158.25,"25/87, Gupta Chowk, Kolkata 751957",Jharkhand,+918034092797,Bettiah,kurianalisha@virk.net,Payment Pending,2022-08-14
+Chana-Sankar,2458,Pickles,P018,316,197.92,"H.No. 18, Raj Nagar, Bidhannagar-775318",Chhattisgarh,08384069016,Ranchi,emir38@hotmail.com,Payment Pending,2022-03-10
+Bera-Dani,5329,Frozen Fish Fillets,P011,30,184.84,"H.No. 91, Khosla, Bijapur 999767",Jharkhand,+916705066713,Srinagar,ragarwal@comar.com,Payment Pending,2022-07-04
+Bera-Dani,2792,Frozen Mixed Vegetables,P009,166,28.12,"576, Tiwari Chowk, Kulti 161865",Uttarakhand,00432301015,Aurangabad,mahika47@halder.com,Payment Pending,2020-07-14
+"Bali, Iyer and Lad",7736,Paneer (Cottage Cheese),P008,481,469.43,"H.No. 08, Rajagopal Circle, Barasat-065455",Assam,+913867995095,Jamshedpur,karpepranay@yahoo.com,Payment Pending,2023-08-25
+Bera-Dani,4227,Juice Concentrates (like orange or cranberry),P014,300,50.66,"12/69, Barman Road, Silchar 379056",Arunachal Pradesh,+911084269151,Bhatpara,aggarwalinaaya@hotmail.com,Payment Pending,2021-10-27
+Deo Ltd,2926,"Frozen Berries (e.g., strawberries, blueberries)",P015,321,330.05,"H.No. 36, Shukla Circle, Tiruvottiyur 587098",Karnataka,+917744214799,Jamalpur,tiya51@yahoo.com,Payment Pending,2023-12-04
+Swaminathan and Sons,6632,Frozen Mixed Vegetables,P009,22,206.31,"13/00, Choudhary Zila, Orai 078266",Uttarakhand,3946017779,Vijayanagaram,drao@gmail.com,Payment Paid,2020-04-05
+"Tella, Andra and Grover",3834,Chicken Nuggets,P010,145,277.68,"485, Sunder Road, Thoothukudi 682693",Bihar,7906010316,Sri Ganganagar,aniruddhkaul@hotmail.com,Payment Pending,2020-03-27
+Swaminathan and Sons,6250,Frozen Mixed Vegetables,P009,237,90.71,"15, Manne Path, Bhimavaram-327764",Nagaland,+913186249279,Meerut,rati94@yahoo.com,Payment Paid,2021-03-26
+Swaminathan and Sons,8225,Chicken Nuggets,P010,488,401.28,"37/459, Sunder Circle, Amravati-261551",Jharkhand,7103237688,Burhanpur,kalitamanikya@sen-sarin.biz,Payment Pending,2021-08-12
+"Tella, Andra and Grover",5139,Frozen Fish Fillets,P011,99,198.25,"41, Vig Road, Avadi 959805",Himachal Pradesh,8996965688,Bhilai,comarvritika@gmail.com,Payment Pending,2020-07-23
+Chana-Sankar,6508,Rice or Pasta,P020,433,293.24,"57/940, Amble Street, Proddatur 415166",Mizoram,3636712792,Varanasi,graju@hotmail.com,Payment Paid,2021-03-27
+"Sem, Mann and Karnik",4962,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,38,16.97,"29/663, Seshadri Zila, Buxar 365242",Jharkhand,05008362485,Aligarh,jchada@yahoo.com,Payment Pending,2023-11-16
+Deo Ltd,2548,Rice or Pasta,P020,249,271.43,"72, Soni Path, Secunderabad 190962",Assam,+914872167756,Howrah,keermannat@gmail.com,Payment Paid,2023-06-09
+Bera-Dani,7565,Frozen French Fries,P005,54,41.59,"98/061, Babu Road, Bathinda-374473",Sikkim,+911161599496,Dhanbad,nehmatsethi@balan-ravel.net,Payment Pending,2020-12-04
+"Sem, Mann and Karnik",3946,Butter,P007,459,416.47,"H.No. 018, Lalla Road, Bhilwara-342336",Maharashtra,7571282023,Varanasi,sunderishaan@yahoo.com,Payment Pending,2022-05-07
+Chana-Sankar,3624,Rice or Pasta,P020,97,293.51,"75/65, Vig Circle, Hospet-153478",Odisha,+916395833933,Kalyan-Dombivli,nirvirandhawa@gupta-sampath.org,Payment Paid,2022-06-05
+"Grover, Sidhu and Varma",6016,Yogurt or Curd,P012,357,482.86,"812, Tailor Nagar, Silchar 518584",Maharashtra,+916901292323,Deoghar,ahujaindranil@hotmail.com,Payment Paid,2023-12-13
+Sehgal and Sons,6185,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,481,250.89,"H.No. 59, Mandal Marg, Dehradun 879168",Haryana,7008675335,Machilipatnam,gdhawan@sandhu.com,Payment Pending,2020-07-22
+"Bali, Iyer and Lad",7504,"Frozen Berries (e.g., strawberries, blueberries)",P015,287,61.16,"H.No. 86, Rastogi Zila, Aizawl-917808",Meghalaya,5450163478,Bhimavaram,mannat62@doshi.com,Payment Paid,2020-11-13
+Swaminathan and Sons,8404,Frozen Fish Fillets,P011,295,25.53,"H.No. 209, Ganesh, Kozhikode 644085",Meghalaya,05232269647,Shimoga,shray60@yahoo.com,Payment Pending,2020-11-25
+"Tella, Andra and Grover",1992,Butter,P007,147,311.49,"80, Ahuja Chowk, Kurnool 947139",Odisha,6363515936,Siliguri,gatikrastogi@gmail.com,Payment Paid,2023-05-18
+Swaminathan and Sons,4067,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,153,33.01,"H.No. 688, Bawa Marg, Mahbubnagar-785006",Haryana,03415799557,Ghaziabad,vaibhav45@gmail.com,Payment Pending,2022-03-11
+"Sem, Mann and Karnik",8392,Whipping Cream,P016,367,304.62,"21, Gokhale, Guntur 736909",Tamil Nadu,5581576972,Gurgaon,evajohal@yahoo.com,Payment Paid,2021-07-07
+Deo Ltd,4197,Pickles,P018,216,48.19,"69/77, Ramanathan Road, Bhatpara 397632",Telangana,9488502076,Dharmavaram,kaira80@hotmail.com,Payment Pending,2021-04-03
+Ratta-Buch,3549,Ice Cream,P002,92,23.53,"59, Sood Street, Guwahati-719568",Uttarakhand,7669973877,Hyderabad,kandaalia@gmail.com,Payment Pending,2022-05-06
+Ratta-Buch,6212,Chicken Nuggets,P010,179,148.0,"H.No. 416, De Path, Dhanbad-292820",Uttarakhand,00466331283,Patna,ahujatiya@gmail.com,Payment Paid,2022-09-13
+Swaminathan and Sons,7443,Yogurt or Curd,P012,171,274.06,"14, Acharya Zila, Udupi 580439",Gujarat,04723325955,Kulti,singhivan@sathe.org,Payment Paid,2021-05-14
+"Bali, Iyer and Lad",8309,Frozen Mixed Vegetables,P009,117,121.26,"98/467, Raju Road, Aurangabad-282905",Chhattisgarh,+919617800614,Srikakulam,aaryahibhagat@gmail.com,Payment Pending,2022-06-14
+Sehgal and Sons,6164,Paneer (Cottage Cheese),P008,329,287.61,"13, Gandhi Marg, Danapur-136338",Madhya Pradesh,02506202701,Coimbatore,pchoudhry@dhaliwal.biz,Payment Paid,2022-10-19
+Swaminathan and Sons,1224,"Frozen Berries (e.g., strawberries, blueberries)",P015,376,87.39,"H.No. 38, Mannan Zila, Bhagalpur 116147",Assam,+916147889783,Kishanganj,biju48@hotmail.com,Payment Paid,2023-09-25
+Sehgal and Sons,7620,Frozen Fish Fillets,P011,110,463.9,"17, Sagar Circle, Sri Ganganagar 736832",Madhya Pradesh,01707669840,Kalyan-Dombivli,anay26@gmail.com,Payment Paid,2020-02-03
+"Sem, Mann and Karnik",5450,Ice Cream,P002,422,321.18,"092, Magar Road, Kolkata 499102",Haryana,5250714661,Jamalpur,nakul88@toor.biz,Payment Pending,2022-10-10
+Swaminathan and Sons,5098,Chicken Nuggets,P010,280,300.27,"297, Ganesh Ganj, Hapur-197834",Madhya Pradesh,02782580871,Indore,qbanerjee@kulkarni.biz,Payment Paid,2020-02-27
+"Bali, Iyer and Lad",1617,Frozen Fish Fillets,P011,49,110.91,"67/81, Subramaniam Ganj, Sirsa 760636",West Bengal,3565544714,Bhiwandi,randhawadharmajan@hotmail.com,Payment Pending,2023-08-20
+Ratta-Buch,4377,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,211,415.87,"H.No. 503, Iyer Ganj, Jaunpur-372311",Himachal Pradesh,06274221865,Mango,sbalay@yahoo.com,Payment Pending,2023-02-09
+Swaminathan and Sons,2818,Frozen Fish Fillets,P011,61,267.09,"H.No. 69, Sule Nagar, Gopalpur-850772",Assam,+914371817431,Kollam,drishya30@yahoo.com,Payment Pending,2021-12-24
+Deo Ltd,7360,Juice Concentrates (like orange or cranberry),P014,349,459.8,"24/22, Ahuja Marg, Kulti 743318",Himachal Pradesh,08661030918,Unnao,lavanyalad@sem.com,Payment Paid,2022-02-20
+"Tella, Andra and Grover",9078,Rice or Pasta,P020,137,18.01,"31, Sawhney Ganj, Bhalswa Jahangir Pur-906138",Jharkhand,9737490488,Silchar,tiyakothari@gmail.com,Payment Pending,2020-04-06
+Swaminathan and Sons,8318,Frozen Fish Fillets,P011,138,433.82,"142, Chad, Parbhani 494589",Gujarat,2637331217,Muzaffarpur,waglelakshit@bora.net,Payment Pending,2022-08-26
+Deo Ltd,1898,Cheese Slices or Blocks,P006,106,338.57,"45/18, Sidhu Circle, Ahmedabad-523731",Karnataka,3534705443,Raichur,kalavardaniya@bakshi-buch.com,Payment Pending,2021-03-02
+"Sem, Mann and Karnik",6819,"Pulp (e.g., mango, guava, or tomato pulp)",P003,458,265.31,"H.No. 74, Keer Circle, Khandwa-061702",Tripura,01751450099,Vadodara,hazelchowdhury@solanki.biz,Payment Pending,2023-03-30
+Deo Ltd,2509,Cheese Slices or Blocks,P006,156,128.09,"45, Rajagopalan Zila, Bhagalpur 834192",Odisha,7277157446,Salem,balhridaan@yahoo.com,Payment Paid,2023-01-21
+"Grover, Sidhu and Varma",2311,Green Peas,P004,177,23.35,"367, Bhatia Circle, Srinagar-023675",Punjab,+914031500661,Raebareli,bassirhea@bawa.biz,Payment Pending,2023-04-15
+"Grover, Sidhu and Varma",7484,Green Peas,P004,339,111.28,"H.No. 85, Sahota Marg, Ludhiana 489321",Andhra Pradesh,02030117349,Panihati,okakar@warrior.com,Payment Paid,2023-03-30
+Chana-Sankar,8286,Cheese Slices or Blocks,P006,5,123.83,"04, Krishnamurthy Circle, Mysore-455428",Gujarat,02939590557,Karaikudi,neysachoudhary@loyal.com,Payment Pending,2020-03-10
+Deo Ltd,4611,Juice Concentrates (like orange or cranberry),P014,129,150.87,"H.No. 480, Shetty, Orai-789509",Karnataka,08428199267,Bhalswa Jahangir Pur,amiraseshadri@yahoo.com,Payment Pending,2022-03-19
+Deo Ltd,2487,Frozen Mixed Vegetables,P009,90,267.33,"25/46, Handa Ganj, Patna-320033",Haryana,08469149298,Bilaspur,vritikaissac@gmail.com,Payment Pending,2022-02-12
+"Sem, Mann and Karnik",5507,Chicken Nuggets,P010,278,111.21,"H.No. 04, Sandhu Street, Gorakhpur 686097",Assam,07673345032,Sonipat,cseth@loke.com,Payment Paid,2022-03-27
+"Tella, Andra and Grover",9048,Cheese Slices or Blocks,P006,29,348.36,"253, Sarna Zila, Tirunelveli-676855",Tamil Nadu,06934014525,Bhalswa Jahangir Pur,madhav84@gmail.com,Payment Pending,2020-01-31
+Bera-Dani,7146,Pickles,P018,319,334.08,"43/32, Basak Chowk, Srinagar-319408",Meghalaya,9486882345,Bellary,shlokbhatnagar@bhattacharyya.com,Payment Pending,2021-12-22
+Ratta-Buch,5566,Cheese Slices or Blocks,P006,19,255.64,"46/40, Saraf Road, Ichalkaranji-532114",Uttar Pradesh,+919377258069,Uluberia,mannatbajaj@saini-sibal.info,Payment Paid,2021-07-04
+Ratta-Buch,4083,Pickles,P018,35,385.8,"H.No. 759, Dutta, Howrah 596101",Nagaland,02683882716,Bellary,nkala@gmail.com,Payment Pending,2020-10-21
+Ratta-Buch,6554,Green Peas,P004,452,362.19,"93/81, Dada Chowk, Imphal 482665",Jharkhand,01370301346,Gulbarga,mdeshpande@ramachandran-chandran.net,Payment Paid,2021-04-02
+"Bali, Iyer and Lad",6381,Chicken Nuggets,P010,357,66.55,"37/598, Choudhry Street, Morbi-262016",Goa,5158562510,Bareilly,aniruddhdora@kadakia.info,Payment Paid,2021-07-26
+Bera-Dani,8745,Cheese Slices or Blocks,P006,466,200.13,"56/679, Mammen Road, Mahbubnagar-774689",Tamil Nadu,6683249398,Gwalior,suhanadave@buch-deep.com,Payment Pending,2020-10-25
+Chana-Sankar,6145,Frozen Mixed Vegetables,P009,138,342.44,"16/777, Varma Street, Phusro-140632",Telangana,7100864924,Tenali,shloksandal@rajagopalan-dutt.com,Payment Paid,2023-04-05
+"Grover, Sidhu and Varma",2042,Sweet Corn,P001,387,458.05,"083, Mangal, Jammu 280162",Meghalaya,02953149337,Faridabad,devanshwalia@gmail.com,Payment Pending,2022-08-27
+Ratta-Buch,5024,Whipping Cream,P016,132,393.98,"96/13, Sengupta Circle, Ambala-558291",Manipur,02573416948,Belgaum,purabkoshy@hotmail.com,Payment Paid,2021-10-25
+Bera-Dani,4597,Frozen French Fries,P005,311,142.09,"H.No. 09, Grover Zila, Panihati-128783",Sikkim,+918985570869,Mehsana,masterivan@hotmail.com,Payment Pending,2023-10-26
+Deo Ltd,7746,Yogurt or Curd,P012,18,459.7,"H.No. 759, Khurana Path, Uluberia-009098",Assam,1477485019,Satara,dhanushchopra@sachdeva.info,Payment Pending,2020-02-23
+"Grover, Sidhu and Varma",3932,Butter,P007,373,453.9,"76/85, Raj Ganj, Thane 940994",West Bengal,07186067480,Hindupur,riaan78@zachariah-borra.com,Payment Paid,2021-11-12
+"Tella, Andra and Grover",6508,Paneer (Cottage Cheese),P008,118,98.44,"80, Chana Nagar, Ozhukarai 322413",Himachal Pradesh,5711985226,Gangtok,charvisachdev@yahoo.com,Payment Pending,2022-01-21
+Ratta-Buch,2354,Sweet Corn,P001,81,334.23,"05/612, Konda Street, Srinagar 363882",Meghalaya,2571520988,Mangalore,elakshi01@wagle.com,Payment Paid,2021-08-08
+"Tella, Andra and Grover",6762,Cheese Slices or Blocks,P006,145,147.65,"24/218, Kumar Path, Arrah-886413",Uttarakhand,3015749598,Srinagar,duttsamiha@saini-buch.org,Payment Pending,2021-09-18
+Ratta-Buch,6032,Butter,P007,193,188.08,"H.No. 00, Din Zila, Pimpri-Chinchwad 518222",Uttarakhand,+911988529810,Kochi,anaya81@hotmail.com,Payment Pending,2023-05-12
+Chana-Sankar,7605,Sweet Corn,P001,392,77.21,"353, Loke Zila, Gandhinagar 007305",Tamil Nadu,8243237499,Mira-Bhayandar,chalder@thaker.com,Payment Pending,2023-07-01
+"Bali, Iyer and Lad",6139,Frozen Fish Fillets,P011,157,472.41,"97, Cherian Circle, Kanpur 647243",Uttar Pradesh,0605491089,Buxar,indrans81@yahoo.com,Payment Paid,2023-07-21
+"Sem, Mann and Karnik",8489,Paneer (Cottage Cheese),P008,122,460.03,"55/111, Dewan, Jabalpur-666729",Chhattisgarh,09895856028,Hajipur,farhanbaria@bhardwaj.com,Payment Paid,2023-12-06
+Swaminathan and Sons,9200,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,237,25.87,"883, Agrawal Path, Hubli–Dharwad 551963",Jharkhand,+911512811439,Mahbubnagar,tdave@mahal.com,Payment Paid,2020-01-13
+"Tella, Andra and Grover",3465,Frozen Fish Fillets,P011,34,233.97,"849, Ramesh Marg, Guntur-970520",Uttar Pradesh,+911152325740,Erode,miraansampath@srinivasan-ratta.com,Payment Pending,2022-12-10
+Swaminathan and Sons,7913,Juice Concentrates (like orange or cranberry),P014,476,326.43,"H.No. 63, Ravel Path, Firozabad 310420",Nagaland,+912406074354,Pali,mehulyohannan@hotmail.com,Payment Paid,2023-02-05
+"Tella, Andra and Grover",2786,Butter,P007,140,98.88,"H.No. 96, Malhotra Chowk, Moradabad-344548",Andhra Pradesh,6361106322,Madanapalle,kotharizeeshan@hotmail.com,Payment Paid,2023-06-05
+Deo Ltd,4260,Frozen French Fries,P005,136,237.61,"293, Dube, Tirupati 844902",Sikkim,3592660993,Khora ,rashakuruvilla@yahoo.com,Payment Pending,2021-07-19
+"Sem, Mann and Karnik",1727,Cheese Slices or Blocks,P006,255,20.05,"94, Bobal Zila, Dindigul 125353",Jharkhand,2139090163,Pudukkottai,uthkarshsarkar@hotmail.com,Payment Pending,2022-05-21
+"Grover, Sidhu and Varma",6514,Ice Cream,P002,218,466.04,"964, Balay Chowk, Bilaspur 704353",Odisha,+916378293520,Alappuzha,jayan24@datta.com,Payment Pending,2023-01-23
+"Grover, Sidhu and Varma",7956,Ice Cream,P002,475,430.69,"H.No. 93, Agate Ganj, Bikaner 109286",Sikkim,6724462331,Mathura,sendishani@hayer.biz,Payment Paid,2022-09-16
+"Grover, Sidhu and Varma",4864,Green Peas,P004,349,141.69,"H.No. 74, Babu Marg, Motihari 289227",West Bengal,07008938655,Machilipatnam,ssetty@hotmail.com,Payment Paid,2020-07-21
+Sehgal and Sons,3996,Whipping Cream,P016,500,252.77,"H.No. 039, Jani Circle, North Dumdum-739668",Jharkhand,8298333765,Hospet,baiju32@gola.info,Payment Paid,2022-07-29
+Sehgal and Sons,5656,Frozen Mixed Vegetables,P009,222,271.27,"479, Sathe Circle, Motihari-017247",Mizoram,+918806674926,Ambarnath,rajunitara@tank.com,Payment Paid,2021-02-03
+"Tella, Andra and Grover",3839,Pickles,P018,227,245.39,"H.No. 754, Warrior Zila, Junagadh 099162",Manipur,09495852134,Tinsukia,nbarad@yahoo.com,Payment Pending,2023-06-28
+Swaminathan and Sons,5859,Chicken Nuggets,P010,288,295.19,"H.No. 256, Tandon Chowk, Tinsukia 390200",Telangana,4729368753,Gulbarga,oanand@hotmail.com,Payment Paid,2022-04-18
+Chana-Sankar,9425,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,190,335.52,"40, Walia Circle, Siwan 022342",Uttar Pradesh,2515843283,Yamunanagar,hridaansetty@gmail.com,Payment Pending,2023-09-09
+Sehgal and Sons,3035,"Frozen Berries (e.g., strawberries, blueberries)",P015,12,99.41,"94/078, Kuruvilla Nagar, Bhind-423502",Goa,7009934149,Nellore,heerkumar@gmail.com,Payment Pending,2020-05-01
+Ratta-Buch,5294,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,150,214.34,"798, Sarna Nagar, Bidhannagar-468198",Jharkhand,7298070688,Nashik,reyanshkota@balan.biz,Payment Paid,2022-01-17
+Bera-Dani,7940,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,336,347.71,"H.No. 661, Rana Road, Jorhat-021384",Madhya Pradesh,+911249189524,Bhubaneswar,nsinghal@hotmail.com,Payment Paid,2022-02-26
+Chana-Sankar,3234,Juice Concentrates (like orange or cranberry),P014,39,120.91,"H.No. 492, Dhar Chowk, Tezpur-780792",Maharashtra,+912848320568,Gandhidham,vardaniya65@dayal.biz,Payment Pending,2021-09-30
+Chana-Sankar,2734,Chicken Nuggets,P010,87,50.06,"679, Wadhwa Zila, Bhusawal 816729",Nagaland,05997818970,Gandhinagar,dghosh@yahoo.com,Payment Pending,2023-11-07
+Chana-Sankar,5961,Green Peas,P004,235,162.6,"H.No. 441, Bhasin, Ludhiana-104230",West Bengal,+912942904548,Junagadh,kray@krishnamurthy-shetty.com,Payment Paid,2021-09-21
+Chana-Sankar,7735,Rice or Pasta,P020,214,397.14,"914, Atwal, Jamshedpur-123454",Mizoram,1784836897,Jhansi,eshanimand@chander.info,Payment Paid,2020-10-02
+"Bali, Iyer and Lad",6467,Butter,P007,343,41.19,"H.No. 661, Gill Nagar, Sri Ganganagar-726533",Jharkhand,05392444659,Vijayanagaram,aniruddhdara@yahoo.com,Payment Paid,2022-08-16
+Ratta-Buch,3384,Butter,P007,139,132.46,"38/93, Mangal Street, Pallavaram-799698",Maharashtra,3281147016,Eluru,samihamangat@yahoo.com,Payment Paid,2022-09-03
+"Grover, Sidhu and Varma",2413,"Frozen Berries (e.g., strawberries, blueberries)",P015,214,178.13,"26/984, Sehgal Nagar, Nagercoil 346263",Rajasthan,7747700334,Sikar,kimaya69@gmail.com,Payment Pending,2023-07-05
+"Bali, Iyer and Lad",1148,Pickles,P018,466,109.14,"02, Mani Road, Maheshtala 660751",West Bengal,2274409725,Uluberia,arnav77@gour-trivedi.net,Payment Paid,2022-07-22
+"Grover, Sidhu and Varma",9159,Juice Concentrates (like orange or cranberry),P014,384,259.62,"35/608, Kashyap Street, Alappuzha 854171",Mizoram,+913829558787,Kharagpur,zoyabir@dutt-comar.com,Payment Paid,2023-06-30
+Swaminathan and Sons,3130,Chicken Nuggets,P010,461,386.78,"H.No. 33, Bains Zila, Thrissur-390084",Chhattisgarh,+913748697726,Chennai,taimurkorpal@rege.com,Payment Pending,2020-06-01
+Sehgal and Sons,1390,"Pulp (e.g., mango, guava, or tomato pulp)",P003,500,40.2,"H.No. 492, Kant Chowk, Jamalpur-570217",Chhattisgarh,00528698251,Gwalior,dhanush38@gmail.com,Payment Pending,2023-09-27
+Deo Ltd,2051,Frozen French Fries,P005,437,366.61,"H.No. 728, Samra Marg, Chinsurah-162719",Chhattisgarh,06935910024,Noida,veer34@yahoo.com,Payment Paid,2022-03-14
+Ratta-Buch,7890,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,232,251.36,"H.No. 552, Goswami Ganj, Gandhinagar 278959",West Bengal,3128254115,Ahmednagar,sanabalay@basak-chadha.com,Payment Paid,2023-02-07
+"Grover, Sidhu and Varma",7683,Milk or Milk Powder,P013,359,263.86,"H.No. 314, Dutt Street, Singrauli-026620",Mizoram,01188538145,Rohtak,godaaarav@hotmail.com,Payment Paid,2020-01-11
+Deo Ltd,1778,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,219,39.86,"13/992, Gill Marg, Jammu 489019",Manipur,9262773461,Nandyal,indrans11@yahoo.com,Payment Paid,2020-04-28
+Sehgal and Sons,3794,Ice Cream,P002,91,285.16,"H.No. 03, Srinivas Chowk, Coimbatore-144328",Arunachal Pradesh,7856859397,Jaunpur,bakshibiju@mannan.com,Payment Pending,2023-07-06
+Sehgal and Sons,6954,Pickles,P018,467,104.13,"19/07, Biswas Ganj, Kirari Suleman Nagar 385671",Nagaland,6078839183,Machilipatnam,ira53@gmail.com,Payment Pending,2022-11-03
+"Bali, Iyer and Lad",9259,Whipping Cream,P016,396,365.77,"H.No. 51, Ratta Street, Muzaffarpur-956171",Meghalaya,+916374015998,Sambhal,tarajivika@banik.com,Payment Paid,2023-08-27
+Sehgal and Sons,7205,Frozen Mixed Vegetables,P009,371,101.92,"503, Bandi Nagar, Satna 762528",Assam,6472415094,Bhagalpur,heer79@gmail.com,Payment Pending,2023-10-31
+"Sem, Mann and Karnik",2657,Frozen French Fries,P005,48,227.07,"390, Ramaswamy Nagar, Khora -474733",Manipur,09128724105,Indore,fateh37@gmail.com,Payment Pending,2020-07-25
+"Tella, Andra and Grover",8531,Yogurt or Curd,P012,348,89.53,"59/017, Suri Road, Raebareli 147474",Jharkhand,+916646319873,Guwahati,madanonkar@jain-grover.com,Payment Paid,2020-11-22
+"Tella, Andra and Grover",3444,Green Peas,P004,436,144.17,"541, Dara Marg, Durgapur-588324",Assam,+913878089550,Dibrugarh,oorja26@gmail.com,Payment Paid,2020-06-01
+Sehgal and Sons,1008,Frozen Mixed Vegetables,P009,383,322.09,"96/256, Kaur Chowk, Thanjavur-555657",Arunachal Pradesh,+914635352062,Thiruvananthapuram,akarshmangat@hotmail.com,Payment Paid,2022-05-03
+Sehgal and Sons,4563,Chicken Nuggets,P010,304,289.84,"39, Talwar Road, Karimnagar-571915",Sikkim,05555628231,Ambala,vigyuvaan@yahoo.com,Payment Paid,2023-10-25
+Swaminathan and Sons,3830,Cheese Slices or Blocks,P006,483,197.92,"886, Boase Road, Gwalior-099167",Rajasthan,+916492965514,Mau,darshitdesai@gmail.com,Payment Pending,2023-05-22
+Bera-Dani,6148,Whipping Cream,P016,482,486.72,"61/897, Chadha Chowk, Jammu-261240",Assam,+919017941054,Barasat,advik65@chakraborty-loyal.com,Payment Paid,2022-06-13
+Bera-Dani,8574,Ice Cream,P002,445,490.03,"472, Srinivas Ganj, North Dumdum-529347",Maharashtra,+915752151918,Vadodara,kakaraayush@badami.info,Payment Pending,2021-05-05
+Chana-Sankar,7684,Cheese Slices or Blocks,P006,417,339.94,"H.No. 406, Varkey Circle, Bokaro-368682",Tamil Nadu,05907966880,Bhiwandi,doshimiraya@ramachandran-sankar.net,Payment Paid,2020-03-22
+"Tella, Andra and Grover",1401,Chicken Nuggets,P010,350,131.85,"H.No. 345, Ratta, Amaravati 397971",Telangana,+913171313584,Saharanpur,myrakulkarni@kala.com,Payment Pending,2020-01-23
+Sehgal and Sons,3560,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,135,362.09,"22, Srinivasan Path, Nizamabad 219779",Chhattisgarh,+919298758857,Narasaraopet,aradhya01@kannan.com,Payment Pending,2022-05-08
+"Bali, Iyer and Lad",4262,Ice Cream,P002,41,183.79,"48, Sha Chowk, Hubli–Dharwad-840632",Andhra Pradesh,8052518927,Kolhapur,idass@gmail.com,Payment Paid,2021-07-04
+"Sem, Mann and Karnik",5571,Frozen Mixed Vegetables,P009,191,142.06,"H.No. 218, Kibe Marg, Bardhaman 112644",Punjab,7832472150,Hyderabad,ishita32@yahoo.com,Payment Pending,2022-04-05
+Chana-Sankar,5981,Ice Cream,P002,128,449.79,"67/625, Dugal, Proddatur 616039",Madhya Pradesh,03084601996,Chapra,kiaan18@yahoo.com,Payment Paid,2021-09-03
+"Grover, Sidhu and Varma",4824,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,160,139.47,"H.No. 35, Khanna Street, Sagar-642590",Tripura,+913176107570,Gandhidham,tarinijohal@hotmail.com,Payment Paid,2022-07-16
+"Grover, Sidhu and Varma",8548,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,103,25.74,"H.No. 564, Sharaf Path, Gorakhpur-526243",Assam,05746974364,Sri Ganganagar,samarthhari@dash-sama.biz,Payment Pending,2022-03-30
+Ratta-Buch,7110,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,213,93.17,"H.No. 61, Yogi Marg, Warangal-524350",Telangana,4163886598,Begusarai,saurora@manne.biz,Payment Paid,2020-10-05
+Bera-Dani,7002,Cheese Slices or Blocks,P006,116,465.62,"49/994, Khare, Haridwar-669092",Bihar,08681877283,Khammam,dixitnirvaan@yahoo.com,Payment Pending,2021-12-20
+"Tella, Andra and Grover",5286,Butter,P007,427,324.7,"H.No. 033, Grover Chowk, Malegaon-695502",Chhattisgarh,01252925601,Bhubaneswar,alisha98@dara.org,Payment Pending,2022-09-29
+"Bali, Iyer and Lad",3424,Green Peas,P004,394,197.11,"H.No. 058, Uppal Nagar, Hapur 388658",West Bengal,1750988651,Avadi,bijumandal@gmail.com,Payment Paid,2023-07-21
+"Grover, Sidhu and Varma",4159,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,121,257.8,"H.No. 198, Thaker Circle, Kurnool-152066",Maharashtra,6625186979,Faridabad,lahuja@chakrabarti.com,Payment Pending,2023-12-15
+Deo Ltd,8692,Whipping Cream,P016,441,211.96,"H.No. 49, Ramachandran Street, Bhiwani 212579",Meghalaya,+916259911391,Amravati,bchacko@shere-mallick.com,Payment Pending,2023-10-25
+Deo Ltd,9325,Frozen Fish Fillets,P011,15,84.7,"H.No. 05, Tata Street, Pudukkottai 386490",Bihar,04492479139,Sonipat,sarrafzain@yahoo.com,Payment Paid,2022-01-26
+Ratta-Buch,5046,Chicken Nuggets,P010,278,148.48,"H.No. 465, Dash Zila, Ahmednagar-934595",Tripura,06787026821,Mirzapur,renee62@yahoo.com,Payment Pending,2022-11-08
+"Grover, Sidhu and Varma",4568,Frozen Fish Fillets,P011,316,330.88,"348, Anne Chowk, Rohtak-514494",Assam,07750731412,Amroha,sastryfateh@yahoo.com,Payment Pending,2022-03-26
+"Grover, Sidhu and Varma",3601,Butter,P007,40,227.58,"90/51, Dutta Road, Tiruchirappalli-029785",Gujarat,1802661189,Hyderabad,siyakar@garg.com,Payment Paid,2021-10-20
+"Tella, Andra and Grover",8882,Rice or Pasta,P020,411,216.65,"H.No. 043, Swaminathan Chowk, Burhanpur-524735",Punjab,+919879657954,Lucknow,pbalakrishnan@hotmail.com,Payment Paid,2021-09-20
+Sehgal and Sons,8068,Frozen Mixed Vegetables,P009,113,460.84,"88/729, Biswas Road, Raichur-607404",Manipur,02791214413,Chapra,devisaanvi@ramaswamy.com,Payment Pending,2023-11-15
+"Grover, Sidhu and Varma",8624,Milk or Milk Powder,P013,254,18.52,"81/819, Borde Nagar, Jamshedpur-683074",Telangana,07843224684,Sambalpur,kotashlok@gmail.com,Payment Paid,2023-11-28
+Ratta-Buch,6954,Pickles,P018,413,150.86,"40/148, Das Path, Sangli-Miraj & Kupwad-407822",Arunachal Pradesh,06759200509,Secunderabad,obandi@comar.com,Payment Pending,2021-02-09
+Swaminathan and Sons,3997,Green Peas,P004,487,406.46,"H.No. 586, Wali Marg, Secunderabad 776504",Odisha,+915779924564,Bijapur,doraaniruddh@gmail.com,Payment Pending,2023-03-10
+Sehgal and Sons,8806,Ice Cream,P002,213,274.33,"H.No. 554, Comar Path, Satna 984196",Mizoram,06468246924,Avadi,keyakohli@malhotra-batta.org,Payment Paid,2020-12-16
+"Sem, Mann and Karnik",3334,"Pulp (e.g., mango, guava, or tomato pulp)",P003,221,357.88,"082, Mallick, Kurnool 783903",Jharkhand,+919515680737,Tumkur,karaaaryahi@gmail.com,Payment Paid,2023-07-26
+"Grover, Sidhu and Varma",3865,Juice Concentrates (like orange or cranberry),P014,335,422.65,"H.No. 87, Tara Ganj, Katihar 810963",Nagaland,4638567527,Amroha,vreddy@yahoo.com,Payment Pending,2020-10-13
+Ratta-Buch,2919,Sweet Corn,P001,40,20.73,"919, Dutt Street, Khammam-502636",Gujarat,+919604335959,Chinsurah,eshani53@rana-bawa.info,Payment Pending,2022-01-16
+"Grover, Sidhu and Varma",7517,Yogurt or Curd,P012,41,254.03,"H.No. 83, Guha Circle, Raiganj-993786",Himachal Pradesh,3289757023,Etawah,nvaidya@gmail.com,Payment Pending,2023-06-06
+Deo Ltd,2474,Paneer (Cottage Cheese),P008,340,331.76,"H.No. 15, Singh Chowk, Kamarhati-521762",Tripura,02233582105,Siwan,fagate@kohli.com,Payment Paid,2020-09-21
+Ratta-Buch,8981,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,229,224.8,"87/827, Kalla Street, Proddatur 135572",Madhya Pradesh,8471695053,Amravati,borajayant@hotmail.com,Payment Pending,2020-09-16
+"Sem, Mann and Karnik",5322,Frozen French Fries,P005,90,314.0,"H.No. 47, Rege Chowk, Etawah-755504",West Bengal,04887773500,Hindupur,golaritvik@chada.com,Payment Paid,2020-06-08
+Ratta-Buch,9418,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,94,257.35,"88/40, Baria Road, Thiruvananthapuram-953688",Punjab,3254374939,Berhampore,wbath@venkataraman.org,Payment Pending,2021-01-24
+Chana-Sankar,3443,Whipping Cream,P016,127,465.54,"70/86, Soman Chowk, Anantapur 386433",Telangana,1364596413,Bally,hansuthkarsh@ratti.info,Payment Paid,2022-10-22
+Ratta-Buch,4096,Cheese Slices or Blocks,P006,71,430.11,"948, Walla Road, Dibrugarh-830535",Nagaland,+913904685421,Tirunelveli,anviwarrior@yahoo.com,Payment Pending,2021-10-16
+Chana-Sankar,3183,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,345,358.48,"34/151, Kapadia Street, Karawal Nagar-666370",Chhattisgarh,07642176927,Shahjahanpur,emirsoman@yahoo.com,Payment Pending,2022-05-08
+Chana-Sankar,6260,Yogurt or Curd,P012,408,69.52,"40, Apte Street, Ludhiana 215842",Gujarat,3628660826,Shahjahanpur,madhavsekhon@mann.net,Payment Paid,2021-07-19
+"Grover, Sidhu and Varma",1921,Rice or Pasta,P020,315,157.93,"53, Ramakrishnan Chowk, Kirari Suleman Nagar-569022",Bihar,04547190708,Bhatpara,urvi79@gmail.com,Payment Pending,2020-08-06
+Chana-Sankar,4014,Chicken Nuggets,P010,208,72.18,"84/202, Sarna Street, Varanasi-234394",Manipur,9738314172,Kanpur,aniruddhshenoy@barad.net,Payment Paid,2020-07-21
+"Tella, Andra and Grover",9196,Pickles,P018,313,135.1,"35/985, De Nagar, Sri Ganganagar-647906",Haryana,7980197175,Latur,kavyakashyap@sood-bahri.biz,Payment Paid,2020-09-12
+"Sem, Mann and Karnik",9657,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,135,17.57,"46/99, Sankar, Ludhiana 226100",Jharkhand,5821541719,Jaunpur,oratti@badal.org,Payment Paid,2020-12-19
+Deo Ltd,9368,Juice Concentrates (like orange or cranberry),P014,219,334.19,"39/600, Raman Chowk, Hajipur 413569",Goa,+915200037050,Surendranagar Dudhrej,gopalkiaan@atwal.org,Payment Pending,2023-03-04
+"Bali, Iyer and Lad",2947,Yogurt or Curd,P012,439,375.25,"H.No. 87, Dutt Nagar, Adoni-530576",Manipur,6902171750,Kharagpur,eshani17@saxena.com,Payment Pending,2023-02-14
+"Bali, Iyer and Lad",2354,Juice Concentrates (like orange or cranberry),P014,204,435.08,"59/83, Seth Zila, Mehsana 392286",Uttarakhand,3269644897,Nanded,eswamy@gmail.com,Payment Paid,2021-05-31
+"Grover, Sidhu and Varma",9019,Juice Concentrates (like orange or cranberry),P014,379,75.51,"68/62, Dani Zila, Khammam 921836",Andhra Pradesh,07151360124,Kolhapur,sarkarvardaniya@yahoo.com,Payment Paid,2022-07-19
+Deo Ltd,1093,Frozen Fish Fillets,P011,121,265.31,"28, Shanker Marg, Bilaspur 538766",Telangana,0972038051,Haridwar,jainamira@jain.com,Payment Paid,2020-08-11
+"Grover, Sidhu and Varma",9498,Sweet Corn,P001,281,471.19,"971, Gola Path, Etawah 595040",Assam,9482283314,Erode,nitarasani@gmail.com,Payment Pending,2023-09-18
+"Tella, Andra and Grover",8630,"Frozen Berries (e.g., strawberries, blueberries)",P015,128,220.0,"538, Swaminathan Ganj, Jabalpur-214099",Manipur,1524861519,Pudukkottai,rajananvi@hotmail.com,Payment Paid,2021-06-15
+Sehgal and Sons,7719,Yogurt or Curd,P012,250,334.81,"H.No. 06, Dash Circle, Ranchi 203300",Madhya Pradesh,08554909669,Chandigarh,settyshray@gmail.com,Payment Pending,2022-02-20
+Chana-Sankar,7303,Paneer (Cottage Cheese),P008,49,215.56,"H.No. 500, Chander, Jammu 737891",Chhattisgarh,00950204120,Ujjain,lakshayborah@hotmail.com,Payment Paid,2023-02-17
+"Bali, Iyer and Lad",1603,Paneer (Cottage Cheese),P008,382,42.74,"22, Chadha Road, Tinsukia 315556",Maharashtra,6829848312,Darbhanga,shahfateh@hotmail.com,Payment Paid,2021-11-16
+"Bali, Iyer and Lad",9854,"Pulp (e.g., mango, guava, or tomato pulp)",P003,431,43.46,"H.No. 83, Kale Road, Gorakhpur 801384",Assam,06612141527,Jehanabad,vaibhav88@sharma-agarwal.net,Payment Pending,2020-01-11
+Bera-Dani,3866,Butter,P007,426,308.0,"H.No. 79, Sandhu Street, Karaikudi 726077",Tripura,04129752997,Asansol,jayantbajaj@hotmail.com,Payment Pending,2020-05-02
+Ratta-Buch,1430,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,323,40.27,"56/37, Badami Street, Nandyal 743202",Haryana,08324181593,Raiganj,nwadhwa@yahoo.com,Payment Paid,2022-07-16
+Chana-Sankar,7585,Juice Concentrates (like orange or cranberry),P014,223,495.41,"H.No. 68, Mallick Marg, Tirupati 508934",Sikkim,3549319440,Sangli-Miraj & Kupwad,zainbutala@hotmail.com,Payment Paid,2020-07-30
+Swaminathan and Sons,7479,Frozen French Fries,P005,160,438.94,"932, Sem Ganj, Aurangabad-644907",Uttar Pradesh,0634928967,Thiruvananthapuram,gkara@shukla.com,Payment Pending,2023-01-01
+Chana-Sankar,1287,Juice Concentrates (like orange or cranberry),P014,203,39.94,"44/853, Reddy Ganj, Dharmavaram 343056",Gujarat,04012840323,Serampore,vanya73@yahoo.com,Payment Pending,2023-06-18
+"Grover, Sidhu and Varma",6109,Whipping Cream,P016,323,376.62,"741, Kumar Nagar, Orai-659674",Gujarat,8986971487,Darbhanga,akarshkar@goyal.com,Payment Pending,2020-11-27
+Bera-Dani,1687,Rice or Pasta,P020,337,260.1,"H.No. 775, Balasubramanian Circle, Mysore-752343",Punjab,09135838018,Rampur,nitarachandra@gmail.com,Payment Pending,2022-11-01
+Deo Ltd,1515,Paneer (Cottage Cheese),P008,384,289.67,"H.No. 564, Sampath Circle, Gaya-289725",Arunachal Pradesh,8772758564,Dindigul,arhaan76@yahoo.com,Payment Paid,2023-12-30
+Ratta-Buch,3691,Ice Cream,P002,331,311.72,"72/62, Saran Zila, Anand-595933",Nagaland,6387416277,Nagercoil,kashvibassi@doctor-varty.com,Payment Paid,2022-05-24
+Ratta-Buch,5229,Yogurt or Curd,P012,242,35.44,"62, Bhalla Street, Eluru-727208",Odisha,+915385295432,Kakinada,chahalshlok@varty-bera.com,Payment Pending,2021-07-31
+"Bali, Iyer and Lad",3790,Chicken Nuggets,P010,321,375.42,"H.No. 72, Chaudhary Road, Bangalore 602095",Manipur,09495058343,Katni,gdate@balay-sunder.com,Payment Paid,2023-06-01
+"Grover, Sidhu and Varma",7638,Ice Cream,P002,254,147.49,"43/082, Kar Street, Saharanpur-242294",Tripura,3012130630,Hazaribagh,sathelavanya@badal.biz,Payment Paid,2023-08-28
+Deo Ltd,3710,Butter,P007,38,444.44,"H.No. 84, Buch Nagar, Varanasi-533202",Odisha,+919584345955,Ongole,uandra@rama-karan.com,Payment Paid,2020-11-08
+Ratta-Buch,1123,"Frozen Berries (e.g., strawberries, blueberries)",P015,446,399.32,"44/477, Dada, Shivpuri-623123",Tamil Nadu,5811319905,Anantapur,hridaan19@gmail.com,Payment Paid,2021-05-15
+Deo Ltd,3003,Frozen Mixed Vegetables,P009,403,39.4,"165, Lata Marg, Fatehpur 871769",West Bengal,09481895960,Ballia,shayakray@gmail.com,Payment Paid,2022-10-16
+Ratta-Buch,8722,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,328,364.5,"57/28, Varughese Street, Muzaffarpur 226884",Meghalaya,7615705222,Mahbubnagar,pari96@kumar.com,Payment Pending,2021-05-03
+Sehgal and Sons,6125,Frozen Mixed Vegetables,P009,384,334.52,"56/17, Agate Street, Burhanpur 159862",Mizoram,02311031431,Panvel,ksen@kashyap.com,Payment Pending,2022-06-22
+"Tella, Andra and Grover",9243,Frozen Fish Fillets,P011,205,54.66,"H.No. 37, Varma, Karawal Nagar-305205",Mizoram,+910245076712,Kurnool,berazara@mand.info,Payment Pending,2020-05-01
+Sehgal and Sons,2700,Milk or Milk Powder,P013,483,109.76,"83/74, Chander Ganj, Rewa 837924",West Bengal,9906897899,Medininagar,qbhakta@gmail.com,Payment Paid,2021-01-27
+Chana-Sankar,5673,Butter,P007,299,141.85,"83, Malhotra Street, Junagadh-517952",Meghalaya,+912040490611,Ludhiana,jkapur@sathe-balasubramanian.net,Payment Paid,2020-07-31
+"Bali, Iyer and Lad",4870,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,401,299.38,"H.No. 76, Comar Road, Bahraich-329382",Kerala,+912061142407,Suryapet,qandra@soman-vaidya.com,Payment Paid,2021-06-11
+Ratta-Buch,9618,Frozen French Fries,P005,226,477.55,"H.No. 85, Sankaran Circle, Ludhiana 540935",Sikkim,05692838749,Gandhidham,sarinjayesh@rama.com,Payment Pending,2022-03-01
+"Grover, Sidhu and Varma",9465,Frozen Mixed Vegetables,P009,278,53.14,"H.No. 843, Verma Road, Surendranagar Dudhrej-856414",Uttar Pradesh,06944886365,Ranchi,kavya62@bhalla-gole.org,Payment Paid,2020-06-21
+Chana-Sankar,1459,Yogurt or Curd,P012,275,496.97,"41, Bhardwaj Circle, Muzaffarpur-687380",Mizoram,+917453681620,Surat,veerkota@ray.info,Payment Pending,2023-05-31
+Deo Ltd,6096,"Frozen Berries (e.g., strawberries, blueberries)",P015,203,471.17,"28, Chandra Path, Kottayam-480123",Haryana,+911100232015,Salem,ishaan45@chand-dyal.info,Payment Paid,2021-12-17
+"Grover, Sidhu and Varma",4423,Whipping Cream,P016,47,104.19,"H.No. 139, Zacharia Path, Mathura 780519",Assam,+911981291543,Gangtok,nbala@hotmail.com,Payment Pending,2020-05-10
+Deo Ltd,7646,Pickles,P018,397,37.07,"59/237, Keer Path, Srikakulam-057949",Mizoram,+915190590953,Jamalpur,umangwali@datta-dhingra.com,Payment Paid,2021-04-10
+Bera-Dani,9354,"Pulp (e.g., mango, guava, or tomato pulp)",P003,399,262.3,"H.No. 542, Char Marg, Coimbatore 450083",Telangana,+914514493634,Medininagar,hiranhora@yahoo.com,Payment Paid,2022-03-05
+Swaminathan and Sons,6650,Rice or Pasta,P020,420,442.96,"H.No. 37, Gole Zila, Sangli-Miraj & Kupwad 142401",Odisha,01835265525,Danapur,lbatta@sarin.info,Payment Pending,2021-03-24
+Sehgal and Sons,4310,Rice or Pasta,P020,20,334.35,"89/237, Khanna Nagar, Surat-659816",Punjab,05443722178,Nashik,fcherian@yahoo.com,Payment Pending,2021-02-23
+Deo Ltd,6790,"Pulp (e.g., mango, guava, or tomato pulp)",P003,397,237.1,"H.No. 854, Ravel Street, Gulbarga 910091",Sikkim,4145083959,Malegaon,hridaanbuch@gmail.com,Payment Pending,2021-01-15
+Ratta-Buch,9674,Paneer (Cottage Cheese),P008,125,27.92,"H.No. 918, Chada Circle, Motihari 668051",Assam,+913901579256,Medininagar,mishti88@sahota.com,Payment Paid,2020-07-01
+"Bali, Iyer and Lad",9628,Ice Cream,P002,488,15.24,"28/477, D’Alia Chowk, Ramgarh 030277",Chhattisgarh,9232103197,Jhansi,dadamamooty@walla.com,Payment Pending,2023-10-23
+"Grover, Sidhu and Varma",2003,Frozen Fish Fillets,P011,280,174.52,"H.No. 393, Zachariah Zila, Khora -879928",West Bengal,07124414531,Bahraich,dharmajanbabu@yahoo.com,Payment Paid,2023-02-18
+"Bali, Iyer and Lad",3297,"Frozen Berries (e.g., strawberries, blueberries)",P015,390,179.33,"278, Srivastava Circle, Amaravati 759744",Uttarakhand,+915677481468,Durgapur,heer86@solanki.com,Payment Paid,2021-02-07
+"Sem, Mann and Karnik",6742,Paneer (Cottage Cheese),P008,165,12.18,"12/27, Sachar, Lucknow-244157",Odisha,2371077229,Panchkula,fkonda@hotmail.com,Payment Pending,2023-03-25
+"Sem, Mann and Karnik",7091,Yogurt or Curd,P012,178,97.64,"81/44, Kade Chowk, Tezpur 886805",Chhattisgarh,07498329954,Bijapur,azadkhosla@bose.com,Payment Pending,2020-08-21
+"Grover, Sidhu and Varma",2052,Frozen French Fries,P005,210,151.22,"H.No. 929, Loke, Anand-386727",Jharkhand,+918670578023,Gangtok,divanjayant@jhaveri.biz,Payment Pending,2022-11-24
+Ratta-Buch,1180,"Pulp (e.g., mango, guava, or tomato pulp)",P003,58,11.55,"H.No. 87, Dara Zila, Akola-399841",Chhattisgarh,+914940751746,Rampur,ganeshtejas@setty.com,Payment Paid,2023-12-23
+"Sem, Mann and Karnik",8189,Cheese Slices or Blocks,P006,349,154.27,"97/515, Shankar Ganj, Karawal Nagar-523001",Tamil Nadu,09912403894,Sultan Pur Majra,zeeshan83@chanda-jain.com,Payment Paid,2023-04-12
+Chana-Sankar,2174,"Pulp (e.g., mango, guava, or tomato pulp)",P003,144,400.12,"34/147, Savant Street, Bathinda-164133",Chhattisgarh,+913943434954,Kurnool,bhavinkaur@char.com,Payment Paid,2022-01-30
+"Tella, Andra and Grover",3943,Yogurt or Curd,P012,15,43.43,"83/874, Krish Path, Jalgaon 533009",Uttarakhand,+911024158902,Hyderabad,ksridhar@kar.com,Payment Paid,2020-08-05
+"Sem, Mann and Karnik",2379,Yogurt or Curd,P012,241,30.14,"H.No. 923, Ghose Circle, Haldia 936816",Jharkhand,04492509508,Jaipur,dmallick@krishnamurthy.org,Payment Paid,2021-05-26
+Sehgal and Sons,6448,Frozen French Fries,P005,231,360.21,"H.No. 436, Master Street, Gorakhpur-981015",Mizoram,08244023543,Rohtak,mannanahana@gala.com,Payment Pending,2021-07-13
+Ratta-Buch,2794,Frozen French Fries,P005,319,495.93,"25, Bala Road, Unnao 211906",Mizoram,+919668877832,Dehri,shlok79@gola.com,Payment Paid,2022-07-25
+Ratta-Buch,8216,Whipping Cream,P016,165,301.61,"H.No. 72, Ray Ganj, Jhansi 064790",Himachal Pradesh,09800077814,Dharmavaram,veerkanda@yahoo.com,Payment Paid,2020-09-19
+Swaminathan and Sons,7992,Butter,P007,156,433.84,"H.No. 22, Sachdeva Marg, Arrah 680289",Kerala,05286296507,Udupi,aainarajagopalan@yahoo.com,Payment Pending,2023-05-06
+"Grover, Sidhu and Varma",4861,Cheese Slices or Blocks,P006,174,97.87,"H.No. 923, Khosla Road, Satna-747242",Maharashtra,+919034430850,Sasaram,balasubramanianvidur@krishnan.com,Payment Paid,2021-09-19
+Chana-Sankar,6991,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,356,340.7,"21/984, Varma Ganj, Mango 757228",Jharkhand,7986032088,Jorhat,zara72@gmail.com,Payment Pending,2021-02-14
+Chana-Sankar,4186,Paneer (Cottage Cheese),P008,92,247.69,"241, Shere Street, Medininagar-259931",Chhattisgarh,0833626685,Jhansi,sarkartaimur@hotmail.com,Payment Pending,2023-12-13
+Bera-Dani,4567,Butter,P007,73,400.26,"H.No. 103, Batra Nagar, Darbhanga 078461",Manipur,3725922517,Darbhanga,ramaaniruddh@yahoo.com,Payment Paid,2020-11-24
+Swaminathan and Sons,2051,Green Peas,P004,211,179.66,"73, Aurora Zila, Bokaro 547851",Jharkhand,00822751898,Raiganj,achad@yahoo.com,Payment Paid,2020-12-30
+"Grover, Sidhu and Varma",5666,Yogurt or Curd,P012,127,221.63,"02/175, Chaudry Road, Bhind-860841",Uttarakhand,+914695506487,Secunderabad,dasanvi@kaur.com,Payment Paid,2020-01-22
+Swaminathan and Sons,2845,Sweet Corn,P001,366,267.72,"16/96, Batta Ganj, Anand 977606",Andhra Pradesh,4188760239,Morena,agarwalanvi@hotmail.com,Payment Pending,2023-11-04
+Bera-Dani,4969,Butter,P007,163,138.66,"H.No. 30, Lata Road, Nadiad-923409",Sikkim,+918892953595,Guwahati,bbava@gmail.com,Payment Pending,2020-03-21
+"Bali, Iyer and Lad",6495,Frozen French Fries,P005,495,338.5,"11/192, Sane Zila, Maheshtala 322185",Andhra Pradesh,06483118403,Ghaziabad,guptabhavin@gmail.com,Payment Paid,2022-07-25
+"Sem, Mann and Karnik",5065,"Frozen Berries (e.g., strawberries, blueberries)",P015,65,462.58,"78, Swaminathan Chowk, Asansol 441046",Punjab,03020232542,Guwahati,adira75@yahoo.com,Payment Pending,2023-08-13
+Ratta-Buch,9825,"Frozen Berries (e.g., strawberries, blueberries)",P015,242,494.65,"H.No. 209, Sidhu Road, South Dumdum-051829",Chhattisgarh,05718799048,Raipur,zaindhar@yahoo.com,Payment Pending,2020-02-02
+"Tella, Andra and Grover",6879,Frozen French Fries,P005,65,398.43,"H.No. 57, Kapoor, Bhind 628107",Jharkhand,+919806267178,Rampur,yasminkari@lal.org,Payment Paid,2023-01-29
+Ratta-Buch,9477,Frozen French Fries,P005,352,182.32,"35/99, Chander Nagar, Nandyal-262408",West Bengal,05275717736,Pallavaram,srinivasrania@hotmail.com,Payment Paid,2020-09-29
+Sehgal and Sons,9293,Green Peas,P004,29,387.62,"16/75, Chada Street, Rajahmundry-494877",West Bengal,+910606262806,Kadapa,xkar@yahoo.com,Payment Paid,2022-09-14
+Deo Ltd,9757,Sweet Corn,P001,215,36.67,"45, Dave Marg, Anantapur-327081",Odisha,+914056243918,Hindupur,benriya@choudhury.com,Payment Pending,2021-10-31
+Sehgal and Sons,7202,Chicken Nuggets,P010,130,242.76,"H.No. 083, Khalsa Path, Jamalpur 725624",Jharkhand,8819419027,Jaunpur,kondayuvraj@hotmail.com,Payment Paid,2020-01-05
+Deo Ltd,5674,Sweet Corn,P001,463,255.63,"79/570, Vaidya Circle, Indore-138544",Tripura,7610150210,Hindupur,gangulymisha@dar.com,Payment Pending,2023-08-08
+Ratta-Buch,9995,Paneer (Cottage Cheese),P008,404,12.17,"H.No. 532, Atwal Ganj, Ambattur 202035",Himachal Pradesh,+918168556266,Bhiwani,vritika39@warrior.info,Payment Pending,2022-05-18
+Ratta-Buch,9852,Frozen Mixed Vegetables,P009,228,303.88,"H.No. 941, Varughese Nagar, Korba-410609",Tripura,6689935723,Rohtak,umang73@gmail.com,Payment Pending,2020-12-29
+"Bali, Iyer and Lad",9725,Cheese Slices or Blocks,P006,482,238.59,"34/392, Varma Street, Vijayanagaram-712589",Bihar,03490150938,Gurgaon,parinaazgoyal@tank-ghose.com,Payment Paid,2021-08-23
+Swaminathan and Sons,1849,Juice Concentrates (like orange or cranberry),P014,109,89.24,"63, Yogi Nagar, Tinsukia-492897",Tripura,02451269106,Anantapur,mandalagan@bhatt.biz,Payment Pending,2020-02-27
+Swaminathan and Sons,3163,Frozen Fish Fillets,P011,292,320.77,"93/970, Deshpande Chowk, North Dumdum-833878",Mizoram,4367267133,Jalgaon,hdoshi@wali.org,Payment Pending,2023-01-04
+Deo Ltd,9886,"Pulp (e.g., mango, guava, or tomato pulp)",P003,53,204.25,"H.No. 482, Ben Nagar, Dhule 003250",Punjab,01770541586,Solapur,jayan94@yahoo.com,Payment Paid,2021-08-19
+"Tella, Andra and Grover",6747,Sweet Corn,P001,142,22.5,"48, Thaker Circle, Bidar-578494",Rajasthan,+916150474001,Thiruvananthapuram,aarnawadhwa@ganguly-grover.com,Payment Pending,2021-11-06
+Bera-Dani,6852,Whipping Cream,P016,15,311.46,"44/48, Kulkarni Circle, Tezpur 115614",Nagaland,3339829491,Nagpur,tarabhatia@kashyap.info,Payment Pending,2020-04-14
+Chana-Sankar,7695,Yogurt or Curd,P012,2,348.72,"H.No. 697, Srinivasan Ganj, Jaipur 423838",Madhya Pradesh,+910953723200,Anantapuram,itoor@bora.biz,Payment Paid,2020-06-06
+Ratta-Buch,2242,Sweet Corn,P001,228,344.53,"H.No. 289, Sama Circle, Kolhapur-734879",West Bengal,5290399721,Visakhapatnam,baijudora@sachdeva-tella.org,Payment Paid,2020-12-17
+Ratta-Buch,4702,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,63,47.06,"646, Ben Road, Raichur-087671",Telangana,00134246954,Karnal,aniruddh60@yahoo.com,Payment Paid,2020-09-27
+"Bali, Iyer and Lad",5913,Green Peas,P004,426,195.7,"80, Aurora Road, Gangtok 593127",West Bengal,2672942071,Raipur,sbhandari@yahoo.com,Payment Paid,2022-04-28
+"Tella, Andra and Grover",9949,Paneer (Cottage Cheese),P008,146,365.45,"57/44, Dara Chowk, Pimpri-Chinchwad 911563",Tripura,+919073909608,Jalgaon,vkuruvilla@hotmail.com,Payment Paid,2020-10-04
+Sehgal and Sons,3023,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,400,246.34,"H.No. 99, Mall Path, Gangtok-675249",Uttarakhand,+916032220804,Agartala,pluthra@gmail.com,Payment Pending,2022-12-22
+Bera-Dani,7086,Ice Cream,P002,12,257.07,"H.No. 225, Varughese Road, Durg 689639",Goa,6166735142,Ghaziabad,advikagoswami@gade.com,Payment Pending,2021-12-08
+"Bali, Iyer and Lad",1702,Yogurt or Curd,P012,212,99.28,"22/251, Dani Circle, Akola-078669",Tamil Nadu,09414289798,Agra,kallatara@hotmail.com,Payment Pending,2023-08-22
+Chana-Sankar,3377,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,250,348.83,"03/101, Gade Road, Rourkela 833707",Kerala,+917185529368,Silchar,sgaba@lall.net,Payment Paid,2021-09-11
+Sehgal and Sons,7662,Chicken Nuggets,P010,493,481.62,"360, Kuruvilla Path, Mumbai 454370",Himachal Pradesh,5610672619,Sri Ganganagar,mandaehsaan@yahoo.com,Payment Pending,2023-10-11
+Chana-Sankar,8212,"Pulp (e.g., mango, guava, or tomato pulp)",P003,23,496.61,"476, Rege Path, Jalgaon 795955",Himachal Pradesh,+919792863341,Berhampur,kanttiya@gmail.com,Payment Paid,2023-11-12
+Ratta-Buch,3284,Frozen French Fries,P005,239,419.39,"962, Bhakta Chowk, Anantapuram 315995",Meghalaya,+914349053640,Ramagundam,tara68@saini-bhattacharyya.biz,Payment Pending,2021-08-30
+Swaminathan and Sons,8949,"Frozen Berries (e.g., strawberries, blueberries)",P015,118,433.2,"H.No. 234, Raman Path, Jalgaon-968198",Madhya Pradesh,07450133229,Rohtak,ritvik87@gmail.com,Payment Paid,2021-10-28
+Ratta-Buch,4907,Chicken Nuggets,P010,459,157.28,"97, Tailor Nagar, Ozhukarai 989163",Madhya Pradesh,2731954965,Srikakulam,shaan40@dua-sibal.biz,Payment Paid,2022-12-27
+Bera-Dani,9164,Pickles,P018,258,68.43,"00/94, Chatterjee Ganj, Hosur 356003",Punjab,02496035054,Saharsa,jsrivastava@kashyap-shenoy.com,Payment Paid,2021-04-27
+Chana-Sankar,2288,Butter,P007,65,165.63,"68/081, Char Path, Haldia 701926",Punjab,+919704235656,Saharsa,akumar@dyal.com,Payment Pending,2021-04-04
+"Bali, Iyer and Lad",5638,Whipping Cream,P016,171,152.64,"07/86, Varghese Street, Pondicherry-898022",Karnataka,+911084030064,Madhyamgram,ranamyra@gmail.com,Payment Pending,2023-02-27
+"Bali, Iyer and Lad",3192,Frozen Fish Fillets,P011,383,158.46,"H.No. 07, Bir Road, Junagadh 405286",Nagaland,1943052541,Berhampore,anahi17@hotmail.com,Payment Paid,2022-05-12
+"Grover, Sidhu and Varma",6284,Frozen Fish Fillets,P011,296,493.82,"H.No. 86, Hegde Road, Jodhpur 674215",Assam,1050892216,Bellary,vivaanmahal@hotmail.com,Payment Pending,2020-12-11
+"Sem, Mann and Karnik",3118,Pickles,P018,210,209.98,"13/16, Master Nagar, Bangalore 795281",Uttar Pradesh,+919111355644,Erode,purabsant@hotmail.com,Payment Paid,2023-12-30
+Ratta-Buch,1463,Frozen Mixed Vegetables,P009,468,56.64,"41/025, Sanghvi Street, Ambarnath-746282",Goa,+918235270759,Parbhani,glal@yahoo.com,Payment Pending,2021-01-06
+"Bali, Iyer and Lad",5490,Sweet Corn,P001,464,293.21,"44/614, Zacharia Nagar, Mehsana 595274",Kerala,06972737639,Rewa,hunar77@yahoo.com,Payment Paid,2020-08-08
+Ratta-Buch,7613,Ice Cream,P002,117,257.23,"H.No. 270, Ranganathan Street, Hajipur 282162",Goa,8382826774,Amroha,sairashankar@yahoo.com,Payment Pending,2021-09-25
+Sehgal and Sons,9771,Rice or Pasta,P020,431,96.16,"36, Buch Path, Avadi 651861",Uttar Pradesh,07337036054,Jhansi,lavanyamammen@chakraborty-das.com,Payment Paid,2020-03-24
+"Sem, Mann and Karnik",9901,Frozen French Fries,P005,38,362.5,"H.No. 217, Gokhale Street, Firozabad-176924",Mizoram,+919541577191,Agra,asoni@devi.com,Payment Pending,2023-02-08
+"Sem, Mann and Karnik",3917,Pickles,P018,242,203.93,"498, Kapoor Nagar, Bellary-261760",Haryana,07807722004,Tiruchirappalli,zaina05@yahoo.com,Payment Paid,2021-12-13
+"Tella, Andra and Grover",6089,Rice or Pasta,P020,227,327.21,"82/831, Kakar, Ujjain 929244",Kerala,07350327866,Chennai,ngill@sani.com,Payment Pending,2023-02-01
+"Grover, Sidhu and Varma",5379,"Pulp (e.g., mango, guava, or tomato pulp)",P003,285,188.43,"63, Tata, Patna-836484",Madhya Pradesh,1817673064,Nagaon,pborra@gmail.com,Payment Pending,2020-02-25
+Sehgal and Sons,6141,Sweet Corn,P001,10,130.45,"120, Bail Zila, Khammam-901674",Gujarat,5078774076,Bulandshahr,ranbir36@yahoo.com,Payment Pending,2022-10-28
+Deo Ltd,3047,Cheese Slices or Blocks,P006,306,149.31,"29/59, Sule Circle, Ahmednagar-148014",Meghalaya,+911212757615,Khora ,kbains@khurana-seth.com,Payment Pending,2023-07-05
+"Sem, Mann and Karnik",1790,Juice Concentrates (like orange or cranberry),P014,245,317.44,"H.No. 30, Bajwa Circle, Shimoga-726591",Sikkim,7000204091,Dewas,swamypiya@hotmail.com,Payment Pending,2021-08-13
+"Bali, Iyer and Lad",8343,Frozen Mixed Vegetables,P009,362,232.38,"H.No. 84, Gaba Road, Darbhanga 647046",Uttarakhand,07985615634,New Delhi,kandaraghav@yahoo.com,Payment Paid,2022-01-05
+"Bali, Iyer and Lad",9275,"Frozen Berries (e.g., strawberries, blueberries)",P015,464,62.46,"20/702, Venkatesh Road, Chittoor 755800",Uttar Pradesh,+910272270412,Shimoga,neelofar62@kothari.com,Payment Paid,2021-12-03
+Bera-Dani,4638,Chicken Nuggets,P010,477,443.89,"54/803, Chaudhry Street, Buxar-895095",Karnataka,03598135528,Dehri,talwardarshit@kibe-bora.com,Payment Pending,2020-08-15
+Bera-Dani,2207,Ice Cream,P002,490,417.17,"15/78, Date Street, Raipur-451455",Bihar,01907485558,Bharatpur,kulkarnijayesh@madan.com,Payment Paid,2023-05-01
+Deo Ltd,8409,Pickles,P018,395,460.22,"74/16, Devi, Haldia 175758",Meghalaya,03116324574,Naihati,samraveer@gmail.com,Payment Pending,2020-12-06
+"Grover, Sidhu and Varma",9969,Cheese Slices or Blocks,P006,191,189.46,"439, Das Road, Dehri-020682",Nagaland,+914249903005,Sasaram,xraj@borde.com,Payment Paid,2022-01-09
+"Grover, Sidhu and Varma",8634,Milk or Milk Powder,P013,163,395.86,"31, Rajagopal Road, Giridih-039455",Manipur,+913730790959,Bhagalpur,subramanianzaina@hotmail.com,Payment Pending,2022-04-19
+"Sem, Mann and Karnik",2595,Whipping Cream,P016,80,312.12,"H.No. 661, Dhingra Road, Naihati-132007",Himachal Pradesh,6778527897,Udupi,zramakrishnan@singh.com,Payment Pending,2021-06-16
+Bera-Dani,1519,Juice Concentrates (like orange or cranberry),P014,460,116.54,"13/256, Wagle Chowk, Srikakulam-129686",Uttar Pradesh,04172999969,Bhagalpur,tlata@loke-bumb.org,Payment Pending,2021-02-13
+Sehgal and Sons,6910,Juice Concentrates (like orange or cranberry),P014,48,200.54,"H.No. 579, Ahuja Street, Siliguri-355482",Jharkhand,08524752881,Kishanganj,qkakar@hotmail.com,Payment Paid,2021-08-27
+Ratta-Buch,4088,Milk or Milk Powder,P013,214,442.54,"82/97, Lalla Zila, Vasai-Virar 884725",Assam,4398114326,Durg,anika74@yahoo.com,Payment Paid,2022-03-01
+Deo Ltd,7933,Rice or Pasta,P020,347,129.29,"08/68, Raja Circle, Malda 841875",Goa,08851993900,Aurangabad,vorahunar@keer-bali.com,Payment Paid,2022-07-13
+Swaminathan and Sons,5836,Cheese Slices or Blocks,P006,327,17.16,"87/451, Batta Ganj, Faridabad 100897",Rajasthan,05826462173,Tadepalligudem,yashvidalia@yahoo.com,Payment Paid,2023-04-09
+Ratta-Buch,2642,Rice or Pasta,P020,206,420.72,"57/289, Kapoor Street, Jorhat-527840",Telangana,04047646259,Bettiah,xsachdeva@hotmail.com,Payment Pending,2023-03-10
+Sehgal and Sons,8269,Frozen Mixed Vegetables,P009,100,259.12,"81, Dey Path, Kozhikode 034457",Uttar Pradesh,2084479685,Tumkur,tdalia@krish.com,Payment Pending,2021-02-11
+"Grover, Sidhu and Varma",2452,Frozen Mixed Vegetables,P009,360,351.24,"81/65, Bala Street, Chandrapur-369012",Tripura,7696365023,Kanpur,comarmehul@yahoo.com,Payment Paid,2022-01-02
+Swaminathan and Sons,1067,Sweet Corn,P001,402,443.58,"142, Devi Chowk, Bareilly-869293",Himachal Pradesh,01398204166,Panvel,johalnayantara@bhat.com,Payment Paid,2023-10-15
+"Grover, Sidhu and Varma",2612,Yogurt or Curd,P012,438,493.75,"33, Kannan Nagar, Chennai 601573",Odisha,+918646385608,Aurangabad,tanyadugal@gmail.com,Payment Pending,2020-05-13
+"Bali, Iyer and Lad",2644,Juice Concentrates (like orange or cranberry),P014,248,136.98,"09/383, Issac Road, New Delhi 191355",Sikkim,03719409408,Bangalore,davekiaan@chandra.com,Payment Paid,2021-06-24
+"Tella, Andra and Grover",2582,Yogurt or Curd,P012,192,398.09,"41, Madan Chowk, Nizamabad-237725",Haryana,7430543242,Ujjain,cvohra@sarin.com,Payment Paid,2023-09-21
+Ratta-Buch,3321,Ice Cream,P002,313,41.48,"492, Bassi Path, Dewas-505989",Karnataka,0891126746,Anantapur,anahi04@aggarwal-rao.com,Payment Paid,2021-08-04
+Chana-Sankar,4875,Cheese Slices or Blocks,P006,86,473.6,"H.No. 64, Raman Circle, Raichur 196178",Haryana,01461341522,Bhind,oorja36@bora-venkataraman.info,Payment Paid,2023-06-17
+Ratta-Buch,5723,"Frozen Berries (e.g., strawberries, blueberries)",P015,120,150.61,"319, Virk, Secunderabad-048043",Telangana,01298624955,Malda,chadaadvika@date-lall.com,Payment Pending,2021-10-16
+Ratta-Buch,9301,Pickles,P018,17,59.68,"79/77, Arora Zila, Lucknow 793449",West Bengal,09919468468,Navi Mumbai,itata@yahoo.com,Payment Paid,2020-11-14
+Deo Ltd,5203,Ice Cream,P002,1,338.06,"H.No. 96, Bhargava Nagar, Bidhannagar 634735",Himachal Pradesh,+917930463569,Siwan,suripriyansh@krish-kohli.com,Payment Pending,2022-07-14
+"Bali, Iyer and Lad",8248,Cheese Slices or Blocks,P006,361,335.96,"H.No. 09, Amble Path, Madurai 649381",Mizoram,+911846462321,Arrah,swason@yahoo.com,Payment Pending,2020-01-01
+Bera-Dani,9722,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,94,337.91,"71/955, Gaba Chowk, Kavali 112692",Odisha,03402520343,Kalyan-Dombivli,godasaanvi@hotmail.com,Payment Paid,2022-07-08
+Swaminathan and Sons,4337,Ice Cream,P002,473,317.81,"H.No. 23, Dutta Ganj, Agra-197998",Nagaland,3201749731,Thoothukudi,vaibhavsengupta@magar.info,Payment Pending,2023-02-11
+"Sem, Mann and Karnik",5193,Green Peas,P004,49,97.7,"73/12, Lalla Street, Tiruppur-912461",Himachal Pradesh,8421935896,Mahbubnagar,amira79@kumar-gopal.com,Payment Pending,2020-11-06
+Chana-Sankar,2775,Frozen Mixed Vegetables,P009,315,200.67,"25/71, Raval Circle, Bhind-299822",Gujarat,5129878992,Bijapur,vsama@khare-mani.com,Payment Pending,2023-02-01
+Deo Ltd,7510,Frozen Mixed Vegetables,P009,233,254.43,"58, Devan Street, Ambala-045947",Mizoram,3290529672,Noida,vedikarandhawa@yahoo.com,Payment Paid,2021-08-24
+Swaminathan and Sons,7484,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,177,194.37,"35/77, Ravi Zila, Panihati 514584",Andhra Pradesh,+912731160593,Raiganj,canne@sidhu.biz,Payment Paid,2020-11-21
+Chana-Sankar,7692,Sweet Corn,P001,308,418.37,"H.No. 20, Dugar Path, Sri Ganganagar 343844",Uttarakhand,3806386280,Machilipatnam,dhruv53@yahoo.com,Payment Paid,2023-01-29
+"Tella, Andra and Grover",5651,Chicken Nuggets,P010,437,247.16,"02, Chakraborty Road, Mehsana 555736",Maharashtra,04878801235,Gorakhpur,yasmin27@de-bansal.com,Payment Pending,2023-09-04
+"Bali, Iyer and Lad",7828,Frozen French Fries,P005,64,271.62,"61/71, Sethi Path, Tirunelveli 158824",Tripura,03980377601,Moradabad,badalnitya@gmail.com,Payment Pending,2023-12-14
+Sehgal and Sons,6178,Whipping Cream,P016,236,215.24,"51/92, Keer Marg, Malda 453123",Arunachal Pradesh,+911753190565,Ambarnath,anikasoman@bera.info,Payment Pending,2020-10-05
+Swaminathan and Sons,5647,Ice Cream,P002,307,97.18,"H.No. 30, Sem Street, Ahmedabad-927515",Punjab,2644170302,Latur,parinaazhayer@yahoo.com,Payment Pending,2023-03-29
+Sehgal and Sons,7201,Juice Concentrates (like orange or cranberry),P014,256,239.71,"23/97, Gera Nagar, Chittoor-072357",Haryana,7339672293,Sri Ganganagar,zeeshan27@yahoo.com,Payment Pending,2021-04-04
+Deo Ltd,1896,"Pulp (e.g., mango, guava, or tomato pulp)",P003,243,99.52,"72, Roy Road, Visakhapatnam 850366",Tripura,9990346837,Bhilwara,rvenkataraman@krishnan-tailor.info,Payment Pending,2022-06-26
+Chana-Sankar,2793,Sweet Corn,P001,458,283.44,"837, Barad, Mahbubnagar-646869",Jharkhand,9608306305,Delhi,priyansh37@raman.com,Payment Paid,2020-01-28
+Sehgal and Sons,2607,Green Peas,P004,401,173.08,"H.No. 428, Soman, Chandigarh 266633",Chhattisgarh,4513782203,Hajipur,djohal@hotmail.com,Payment Pending,2023-07-03
+Ratta-Buch,8503,Yogurt or Curd,P012,328,240.62,"H.No. 48, Gupta Zila, Nagaon-688918",Arunachal Pradesh,+910990018890,Mirzapur,ishaan64@hotmail.com,Payment Paid,2023-10-02
+Bera-Dani,5857,Green Peas,P004,386,420.59,"264, Tiwari Circle, Parbhani-525491",West Bengal,+910256042924,Malda,riaanmajumdar@datta.com,Payment Paid,2021-10-23
+Bera-Dani,7175,Pickles,P018,249,80.49,"H.No. 942, Tank Chowk, Dharmavaram 879837",Bihar,00593285369,Hubli–Dharwad,sibalindranil@hotmail.com,Payment Paid,2023-06-08
+"Bali, Iyer and Lad",7781,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,272,297.01,"35, Kohli, Amroha-308755",Punjab,08063155726,Nadiad,yuvraj-tata@srivastava.com,Payment Pending,2023-05-20
+Swaminathan and Sons,9325,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,450,493.97,"H.No. 808, Bumb Marg, Srikakulam 200551",Madhya Pradesh,6055875705,Hyderabad,tailorjiya@gmail.com,Payment Paid,2021-08-06
+Ratta-Buch,1456,Frozen Fish Fillets,P011,309,260.08,"H.No. 06, Banik Chowk, Guna 738633",Uttar Pradesh,+919702104741,Solapur,anikadevan@hotmail.com,Payment Pending,2020-02-09
+Ratta-Buch,3545,Butter,P007,309,429.42,"51/266, Dutt Ganj, Rampur-014144",Manipur,3178799134,Karaikudi,kartik76@hotmail.com,Payment Paid,2023-06-11
+"Grover, Sidhu and Varma",9620,Frozen Fish Fillets,P011,204,495.26,"H.No. 39, Solanki Road, Kurnool-490593",Odisha,+915848287118,Kanpur,yakshitmanne@yahoo.com,Payment Paid,2020-11-10
+Ratta-Buch,8679,Frozen French Fries,P005,387,147.79,"29/25, Sharma Zila, Nagpur-572154",West Bengal,+915558897187,Sikar,umangsachar@gmail.com,Payment Pending,2023-05-06
+Bera-Dani,7379,Pickles,P018,289,157.57,"75/732, Suri Road, Mumbai 100845",Uttarakhand,+914798275725,Jaipur,lakshit18@cheema-suri.info,Payment Paid,2020-08-23
+Ratta-Buch,7523,Rice or Pasta,P020,173,195.31,"78/47, Samra, Darbhanga 553964",Manipur,+910260449313,Amravati,agarwalkiaan@hotmail.com,Payment Pending,2023-05-23
+Deo Ltd,2685,"Frozen Berries (e.g., strawberries, blueberries)",P015,23,382.93,"86, Garde Marg, Thane-474405",Goa,5915748563,Bangalore,vaibhav42@manda.org,Payment Pending,2023-04-28
+"Bali, Iyer and Lad",9487,Ice Cream,P002,114,88.09,"253, Tank Ganj, Sasaram 393668",Manipur,+913529943547,Tirunelveli,bandikashvi@kota-chauhan.com,Payment Paid,2023-12-01
+Chana-Sankar,3684,Rice or Pasta,P020,472,88.1,"16/23, Sekhon, Bhubaneswar-070728",Arunachal Pradesh,09067148493,Deoghar,lkeer@bose.com,Payment Pending,2020-07-26
+Swaminathan and Sons,2982,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,244,154.47,"181, Doctor Nagar, Fatehpur-534979",Mizoram,5675956578,Moradabad,vivaanbal@chopra.com,Payment Paid,2021-03-03
+Sehgal and Sons,9334,Whipping Cream,P016,363,125.88,"17, Balakrishnan Nagar, Rohtak 413906",Rajasthan,+919325674841,Orai,itripathi@mani.info,Payment Paid,2023-08-03
+"Grover, Sidhu and Varma",4096,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,168,55.71,"H.No. 13, Gill Nagar, Firozabad 662517",Meghalaya,+913244576888,Singrauli,shanyasmin@gmail.com,Payment Paid,2023-03-18
+Sehgal and Sons,8493,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,121,114.55,"29/781, Chad Path, Kamarhati 060423",Arunachal Pradesh,5484411345,Guntakal,deepnishith@madan.com,Payment Paid,2020-04-19
+"Sem, Mann and Karnik",7782,Frozen Fish Fillets,P011,406,292.39,"498, Kanda Road, Mangalore-654611",Jharkhand,01779139335,Eluru,lbarman@vig.net,Payment Paid,2022-12-31
+Ratta-Buch,4979,Chicken Nuggets,P010,360,140.35,"H.No. 38, Goyal Circle, Tumkur 338539",Andhra Pradesh,6808758665,Malda,siyadass@kala.com,Payment Pending,2022-09-21
+Sehgal and Sons,6757,Ice Cream,P002,248,252.17,"272, Balay Street, Ahmedabad 739334",Sikkim,+919115564617,Kamarhati,ravalvanya@gade-ratti.com,Payment Paid,2021-10-27
+Sehgal and Sons,7901,Chicken Nuggets,P010,46,482.7,"H.No. 690, Dugar Path, Buxar-523372",Uttar Pradesh,8567698517,Haridwar,rajuhridaan@hotmail.com,Payment Pending,2023-11-16
+Ratta-Buch,1096,Cheese Slices or Blocks,P006,347,411.57,"H.No. 450, Hayre Zila, Anantapuram 471877",Punjab,02681907759,Dehri,ivanmane@yahoo.com,Payment Paid,2023-08-22
+Ratta-Buch,2642,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,159,346.88,"830, Karan Nagar, Saharsa-119567",Gujarat,+913796045186,Pimpri-Chinchwad,jayesh50@mangat.com,Payment Pending,2021-06-05
+Sehgal and Sons,6938,Butter,P007,96,88.35,"78/571, Yohannan Chowk, Raipur 327776",Assam,+912527696911,Loni,zkhosla@taneja.com,Payment Paid,2020-12-29
+"Sem, Mann and Karnik",3805,Whipping Cream,P016,341,399.67,"H.No. 582, Mander Path, Nellore 516722",West Bengal,3733675895,Silchar,saanvi46@kurian.info,Payment Pending,2023-10-17
+"Bali, Iyer and Lad",7319,"Pulp (e.g., mango, guava, or tomato pulp)",P003,25,330.74,"06, Raj Path, Surendranagar Dudhrej 611110",Uttarakhand,+916281579274,Jaunpur,osrinivas@mangal.net,Payment Paid,2020-06-27
+Sehgal and Sons,2817,Frozen Fish Fillets,P011,443,323.76,"H.No. 61, Dhar Chowk, Ambattur-915492",Telangana,03306485884,Kadapa,siyamaharaj@bumb.info,Payment Pending,2022-09-25
+Sehgal and Sons,4923,Rice or Pasta,P020,348,483.62,"673, Krishnamurthy Ganj, Kochi-259834",Chhattisgarh,01718560974,Agartala,emirsandal@choudhury.info,Payment Pending,2021-02-05
+Swaminathan and Sons,8393,Ice Cream,P002,127,129.85,"H.No. 87, Sane, Indore-955964",Tripura,9839780173,Tezpur,biju12@hotmail.com,Payment Pending,2021-11-12
+Sehgal and Sons,5539,Frozen Mixed Vegetables,P009,268,420.18,"H.No. 835, Srinivasan Circle, Mangalore-314684",Nagaland,1749578943,Darbhanga,zainbanik@kara.net,Payment Pending,2023-03-26
+"Grover, Sidhu and Varma",6118,Chicken Nuggets,P010,180,400.31,"H.No. 59, Shah Path, Siliguri-790971",Bihar,05074261871,Raichur,wtalwar@anand-krish.com,Payment Paid,2022-04-24
+Chana-Sankar,6483,Juice Concentrates (like orange or cranberry),P014,334,320.96,"48, Ramachandran Circle, Kottayam 836328",Tripura,00923732713,Ghaziabad,chirag79@balakrishnan.com,Payment Pending,2022-01-10
+"Sem, Mann and Karnik",5662,Green Peas,P004,180,373.0,"98/967, Dubey Road, Katni-055029",Rajasthan,06904958181,Kamarhati,jsrinivas@gmail.com,Payment Paid,2022-03-04
+"Tella, Andra and Grover",1630,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,286,243.5,"H.No. 741, Zacharia Street, Phusro-996978",Kerala,04874943552,Purnia,nirvaan55@sachdev.net,Payment Pending,2023-01-25
+"Tella, Andra and Grover",1003,Ice Cream,P002,363,219.42,"123, Rege, Mirzapur-366451",Odisha,+912659087366,Kollam,taggarwal@yahoo.com,Payment Paid,2020-12-13
+"Grover, Sidhu and Varma",9807,Milk or Milk Powder,P013,482,428.16,"96/15, Sem Marg, Solapur 895137",Madhya Pradesh,3766210791,Ghaziabad,hridaan29@gmail.com,Payment Paid,2021-11-28
+"Tella, Andra and Grover",2909,Juice Concentrates (like orange or cranberry),P014,287,475.41,"H.No. 097, Upadhyay Marg, Karawal Nagar-150625",Gujarat,+913667569814,Tiruvottiyur,raghav79@hotmail.com,Payment Paid,2021-12-20
+Sehgal and Sons,7812,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,346,81.33,"23, Bir Chowk, Kolhapur-587232",Arunachal Pradesh,+918602572250,Mau,ramavedika@gmail.com,Payment Paid,2021-12-09
+"Bali, Iyer and Lad",9166,Cheese Slices or Blocks,P006,468,107.34,"03/81, Boase Circle, Singrauli 937680",Punjab,03946055238,Nadiad,settyyakshit@barad-bhatia.org,Payment Pending,2022-10-29
+Bera-Dani,5276,Yogurt or Curd,P012,253,133.33,"908, Mane Chowk, Agra 931401",Tripura,09317765066,Firozabad,rasha41@kashyap-sampath.org,Payment Pending,2023-02-09
+Bera-Dani,9450,Milk or Milk Powder,P013,105,164.74,"911, Manda Zila, Siwan 664707",Telangana,06368847205,Dharmavaram,krishkari@barad.info,Payment Pending,2022-06-06
+"Bali, Iyer and Lad",3056,Frozen Fish Fillets,P011,37,225.03,"08/13, Datta Ganj, Danapur-870925",Madhya Pradesh,08511628505,Narasaraopet,zeeshan67@dash.com,Payment Paid,2023-02-12
+"Sem, Mann and Karnik",5554,Paneer (Cottage Cheese),P008,14,103.44,"62/14, Joshi Ganj, Rajahmundry-893891",Punjab,9299622874,Mirzapur,hridaan62@hotmail.com,Payment Pending,2021-06-02
+Chana-Sankar,2633,Whipping Cream,P016,225,95.25,"686, Sibal Circle, Bharatpur-860291",Madhya Pradesh,09185688688,Kollam,zaragandhi@khalsa-sha.com,Payment Paid,2023-06-19
+Chana-Sankar,9648,Butter,P007,71,357.11,"H.No. 48, Samra Chowk, Raiganj 304235",Haryana,05156564566,Sambhal,ayesha93@gmail.com,Payment Pending,2021-02-28
+"Tella, Andra and Grover",2645,Pickles,P018,310,282.66,"H.No. 65, Halder Path, Karimnagar-180367",Karnataka,00822206484,Gopalpur,aayush63@dhillon.net,Payment Pending,2021-07-19
+Chana-Sankar,8462,Juice Concentrates (like orange or cranberry),P014,394,63.07,"77/936, Shere Nagar, Mira-Bhayandar 676237",Nagaland,03459616720,Katni,tanya96@yahoo.com,Payment Pending,2023-08-25
+"Sem, Mann and Karnik",5205,Rice or Pasta,P020,282,264.7,"61/13, Sarraf Chowk, Orai 020650",Uttarakhand,+916973095340,Ahmednagar,advikjani@yahoo.com,Payment Pending,2023-06-12
+"Tella, Andra and Grover",5147,Juice Concentrates (like orange or cranberry),P014,45,282.7,"H.No. 23, Jani Road, Anand-551666",Sikkim,09993285067,Hajipur,inaaya-ghosh@yahoo.com,Payment Paid,2023-05-21
+"Grover, Sidhu and Varma",7102,Green Peas,P004,360,254.35,"58, Mammen, Katihar 897749",Rajasthan,07517188064,Bhimavaram,zara65@hotmail.com,Payment Pending,2021-07-21
+"Grover, Sidhu and Varma",9872,Pickles,P018,335,258.45,"93/699, Jaggi Nagar, Bijapur 071313",Maharashtra,+912199525325,Sri Ganganagar,sureshdishani@chad.com,Payment Pending,2021-12-23
+Chana-Sankar,6537,Chicken Nuggets,P010,188,377.69,"79/96, Ravi Chowk, Hyderabad-072972",Maharashtra,00413452968,Raichur,mohanlalchandran@hotmail.com,Payment Pending,2022-07-28
+Swaminathan and Sons,2174,"Pulp (e.g., mango, guava, or tomato pulp)",P003,435,41.14,"71/59, Suresh, Bardhaman-580718",Haryana,04132971030,Secunderabad,jivin45@gmail.com,Payment Paid,2022-07-14
+Ratta-Buch,4319,"Frozen Berries (e.g., strawberries, blueberries)",P015,70,302.32,"349, Gill Ganj, Jalgaon 733987",Assam,+910312402713,Guwahati,cheemapriyansh@yahoo.com,Payment Pending,2022-01-11
+"Tella, Andra and Grover",7124,Paneer (Cottage Cheese),P008,363,491.69,"H.No. 779, Dar Nagar, Thanjavur 425812",Odisha,07102222644,Howrah,xbhagat@andra.com,Payment Pending,2023-12-09
+"Bali, Iyer and Lad",4347,Yogurt or Curd,P012,480,150.33,"19/10, Sur Chowk, Tiruvottiyur 980215",Punjab,4635903119,Eluru,khannatrisha@kothari.com,Payment Pending,2022-08-28
+Chana-Sankar,2106,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,217,119.13,"96/43, Sarna Zila, Amaravati-657485",Haryana,05158091081,Ahmedabad,alishacomar@mane-chandran.com,Payment Pending,2021-10-18
+"Grover, Sidhu and Varma",9392,Frozen French Fries,P005,239,295.24,"38, Babu Road, Raiganj 498257",Himachal Pradesh,+914462070522,Bhilwara,yashvithakur@bhalla.com,Payment Paid,2021-12-15
+Sehgal and Sons,5600,Juice Concentrates (like orange or cranberry),P014,124,343.93,"H.No. 339, Goswami Zila, Guntakal 395045",Assam,+910301200980,Coimbatore,veer96@yahoo.com,Payment Pending,2022-08-24
+"Grover, Sidhu and Varma",3918,Green Peas,P004,376,89.38,"H.No. 73, Mallick Road, Sonipat-434607",Himachal Pradesh,8168429154,Gandhidham,hazel23@madan.com,Payment Pending,2020-08-11
+"Grover, Sidhu and Varma",5754,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,282,42.32,"804, Talwar Road, Tirunelveli-647686",Bihar,8016385258,Katihar,thakurehsaan@yahoo.com,Payment Pending,2022-08-27
+Bera-Dani,5052,"Frozen Berries (e.g., strawberries, blueberries)",P015,435,230.96,"H.No. 936, Ramesh Street, Bikaner 383260",Nagaland,02299488124,Miryalaguda,ikata@yahoo.com,Payment Paid,2021-02-17
+Bera-Dani,6737,"Pulp (e.g., mango, guava, or tomato pulp)",P003,499,349.31,"H.No. 916, Bir, Ludhiana 355393",Rajasthan,+914127573375,Kharagpur,nishithsekhon@gmail.com,Payment Paid,2020-10-02
+"Grover, Sidhu and Varma",1466,Cheese Slices or Blocks,P006,19,290.23,"93/921, Jha, Gandhinagar-210606",Karnataka,+917479072060,Morbi,devanshkapadia@hotmail.com,Payment Pending,2021-08-29
+"Sem, Mann and Karnik",4051,Milk or Milk Powder,P013,482,438.07,"187, Chada Marg, Kolkata-241210",Rajasthan,04178617756,Alappuzha,miraan34@bahl-shroff.com,Payment Paid,2022-02-24
+"Grover, Sidhu and Varma",8431,Green Peas,P004,162,271.61,"84, Choudhary Zila, Dehri 584468",Maharashtra,7763553102,Bally,shalvwalia@behl.com,Payment Pending,2021-07-20
+Ratta-Buch,9226,"Pulp (e.g., mango, guava, or tomato pulp)",P003,474,309.42,"02, Walla Zila, Buxar-857482",Meghalaya,+915821096038,Jamshedpur,chakrabortyanvi@yahoo.com,Payment Pending,2022-10-29
+Deo Ltd,6341,Whipping Cream,P016,166,384.66,"85, Basu Marg, Indore 082672",Jharkhand,05061841813,Chandigarh,yasmintandon@kibe.com,Payment Pending,2021-09-13
+Bera-Dani,3399,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,87,289.35,"073, Anne Zila, Bellary 998034",Goa,01645009818,Rourkela,armaanjoshi@maharaj-barad.com,Payment Paid,2023-02-09
+Deo Ltd,6277,Frozen Mixed Vegetables,P009,491,30.0,"40, Doshi Chowk, Munger 242325",Manipur,00006692784,Hubli–Dharwad,arnav40@gmail.com,Payment Pending,2022-12-01
+Ratta-Buch,8174,Frozen Mixed Vegetables,P009,182,363.21,"96/720, Mammen Chowk, Chandrapur 392874",Nagaland,02094057989,Udaipur,mishtikulkarni@gmail.com,Payment Pending,2020-06-13
+Sehgal and Sons,7405,Sweet Corn,P001,277,97.48,"68, Wason Ganj, Cuttack-545353",Meghalaya,+911555231491,Thanjavur,jgupta@yahoo.com,Payment Paid,2023-10-05
+Chana-Sankar,3926,Butter,P007,315,193.64,"66/24, Dani Ganj, Kottayam 825340",West Bengal,9856150895,Noida,bahrinishith@balakrishnan.com,Payment Paid,2020-04-26
+Ratta-Buch,8687,Rice or Pasta,P020,410,484.88,"558, Hari Zila, Nadiad 719867",Tamil Nadu,+910334952815,Jamalpur,umang75@gmail.com,Payment Paid,2020-12-10
+Bera-Dani,4448,Ice Cream,P002,271,151.12,"92/99, Khosla Chowk, Tiruppur-605659",Punjab,1895251284,Erode,kkara@hotmail.com,Payment Paid,2023-11-01
+"Tella, Andra and Grover",4345,Chicken Nuggets,P010,176,251.0,"H.No. 395, Khurana Marg, Nellore 703345",Jharkhand,05119577942,Raebareli,kiara50@dora.com,Payment Paid,2022-11-26
+"Sem, Mann and Karnik",4090,Paneer (Cottage Cheese),P008,71,87.76,"59, Korpal Path, Bhusawal 224184",Nagaland,+911706239523,Yamunanagar,sarafeshani@hotmail.com,Payment Paid,2022-04-27
+Bera-Dani,8544,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,314,144.16,"H.No. 24, Mane Path, Gwalior 091479",Andhra Pradesh,09703184717,Munger,kdube@gmail.com,Payment Pending,2021-08-23
+"Bali, Iyer and Lad",7787,Frozen Fish Fillets,P011,477,167.87,"19, Shroff Circle, Ichalkaranji-182461",Sikkim,05407297194,Tadipatri,zbhavsar@yahoo.com,Payment Paid,2023-08-13
+Bera-Dani,6326,Juice Concentrates (like orange or cranberry),P014,67,121.04,"H.No. 536, Borah Ganj, Aligarh-848046",Manipur,02582021434,Amritsar,vanyasamra@gmail.com,Payment Paid,2020-12-28
+Deo Ltd,7601,Frozen Fish Fillets,P011,300,410.28,"04, Dube Zila, Bhilai 501148",Telangana,0574649136,Ranchi,shalv43@mand.com,Payment Paid,2022-08-12
+"Grover, Sidhu and Varma",7361,"Frozen Berries (e.g., strawberries, blueberries)",P015,129,252.92,"45/72, Kadakia, Ozhukarai-427409",Himachal Pradesh,+912951798401,Bareilly,trishakalla@gmail.com,Payment Paid,2021-09-08
+Bera-Dani,5762,Frozen Mixed Vegetables,P009,10,461.49,"84/754, Dhillon Path, Akola 664215",Maharashtra,8245935157,Ajmer,yuvraj-58@hayer-khalsa.biz,Payment Pending,2022-08-26
+Chana-Sankar,4049,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,56,372.06,"56, Mangat Road, Howrah 436965",Nagaland,04784418303,Amaravati,pranayborah@brahmbhatt.biz,Payment Paid,2021-05-07
+"Sem, Mann and Karnik",9252,Pickles,P018,222,204.19,"55, Kanda Circle, Kakinada-424351",Madhya Pradesh,02632273546,Bhind,vsandal@goda-doshi.com,Payment Pending,2023-08-29
+Swaminathan and Sons,4876,Butter,P007,459,353.0,"H.No. 49, Tank Road, Agra-094306",Bihar,06706055131,Akola,lakshay05@yahoo.com,Payment Paid,2022-10-17
+Sehgal and Sons,7307,Milk or Milk Powder,P013,87,343.4,"H.No. 605, Grewal Circle, Danapur-808790",Nagaland,+914378438484,Jaunpur,pkapur@dua.net,Payment Pending,2023-08-15
+"Tella, Andra and Grover",7158,Sweet Corn,P001,54,131.15,"38, Maharaj Circle, Raurkela Industrial Township 523385",Assam,7170091234,Phagwara,daveojas@mallick.org,Payment Pending,2023-05-16
+Bera-Dani,9166,Green Peas,P004,233,148.47,"29/05, Bhakta Marg, Rajkot 620087",Goa,01401149564,Alwar,nirvisridhar@yahoo.com,Payment Pending,2023-02-18
+Swaminathan and Sons,3825,Butter,P007,327,364.21,"23/50, Sarna Circle, Dindigul-340424",Rajasthan,08652492330,Dharmavaram,pranay88@yahoo.com,Payment Paid,2021-02-06
+"Grover, Sidhu and Varma",3317,Yogurt or Curd,P012,335,425.73,"H.No. 597, Ratti Circle, Gudivada 016319",Bihar,06539492010,Chandrapur,akata@hotmail.com,Payment Paid,2023-09-01
+Chana-Sankar,3646,Rice or Pasta,P020,412,488.96,"28/81, Chatterjee Zila, Hosur 822292",Telangana,+918596923823,Madhyamgram,mahikamammen@gmail.com,Payment Paid,2021-08-28
+Sehgal and Sons,7422,Green Peas,P004,385,482.36,"H.No. 56, Johal Marg, Jamshedpur-318463",Tripura,+910768154246,Eluru,rati73@hotmail.com,Payment Paid,2020-07-31
+Ratta-Buch,7855,Butter,P007,115,440.68,"61/42, Chokshi Path, Berhampur 629165",Odisha,8803314157,Hospet,nehmatsrivastava@yahoo.com,Payment Pending,2020-06-18
+Ratta-Buch,5636,Milk or Milk Powder,P013,259,234.34,"12, Ramachandran Circle, Amravati-031427",Tamil Nadu,01462046749,Dewas,rrastogi@sani-kakar.com,Payment Pending,2023-08-11
+Bera-Dani,9424,Rice or Pasta,P020,443,275.11,"564, Wadhwa Ganj, Muzaffarnagar 719736",Bihar,+915695611638,New Delhi,nrama@gmail.com,Payment Paid,2022-06-08
+Ratta-Buch,1385,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,371,432.03,"H.No. 964, Bains Street, Allahabad 916138",Gujarat,+910950292949,Katni,yakshit90@chand-goda.info,Payment Pending,2023-05-18
+"Grover, Sidhu and Varma",5694,Juice Concentrates (like orange or cranberry),P014,458,26.73,"H.No. 93, Chada Street, Thiruvananthapuram-228051",Punjab,01010584996,Kamarhati,neelofarsarma@gmail.com,Payment Paid,2020-04-26
+Bera-Dani,4500,Ice Cream,P002,181,345.73,"56, Dara Road, Ahmedabad-531536",Uttarakhand,03545665244,Ahmednagar,advik70@chacko-sekhon.org,Payment Paid,2020-04-29
+Bera-Dani,3971,Juice Concentrates (like orange or cranberry),P014,22,394.07,"35/79, Kanda Street, Sonipat-714170",Manipur,9599952570,Arrah,badalsura@gmail.com,Payment Pending,2020-05-08
+"Grover, Sidhu and Varma",6658,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,117,422.21,"H.No. 11, Balay Ganj, Srinagar 337892",Karnataka,4316945304,Patiala,varmashray@goswami.com,Payment Paid,2020-11-01
+Chana-Sankar,5683,Milk or Milk Powder,P013,141,449.7,"278, Jain Street, Kharagpur 350994",Uttar Pradesh,01636824295,Hospet,aissac@swamy.com,Payment Pending,2021-02-11
+Ratta-Buch,4698,Frozen French Fries,P005,194,348.84,"61/16, Deshpande Path, Guna 654133",Nagaland,09814953133,Kota,sarawagle@hotmail.com,Payment Pending,2022-09-09
+Sehgal and Sons,1052,Ice Cream,P002,335,117.97,"H.No. 81, Lal Ganj, Medininagar-141272",Tripura,+913758811447,Phagwara,riyaramanathan@gmail.com,Payment Paid,2021-05-14
+Deo Ltd,3467,Green Peas,P004,8,458.65,"62/32, Malhotra Street, Karnal 065689",Maharashtra,6409721155,Agra,neelofar36@yahoo.com,Payment Pending,2020-07-21
+Deo Ltd,4160,Pickles,P018,233,447.57,"11/82, Balasubramanian Zila, Raurkela Industrial Township-620418",West Bengal,6208348884,Lucknow,vivaan92@krishnamurthy.net,Payment Pending,2022-07-08
+Ratta-Buch,2431,Sweet Corn,P001,154,268.22,"63/510, Dass Zila, Mirzapur-061367",Arunachal Pradesh,09433993561,Begusarai,elakshisrinivas@dara.net,Payment Pending,2020-09-19
+Chana-Sankar,1611,Frozen Mixed Vegetables,P009,44,12.13,"58/603, Manne Marg, Navi Mumbai 588602",Uttarakhand,+911066941972,Madurai,hridaan84@amble-baral.com,Payment Paid,2020-03-23
+Bera-Dani,6399,Yogurt or Curd,P012,92,283.33,"99, Bora Street, Sasaram-090098",Goa,+916823670514,Jehanabad,dhaliwalprerak@chakraborty.com,Payment Paid,2023-07-18
+Chana-Sankar,7193,Frozen French Fries,P005,162,369.29,"H.No. 648, Loke Street, Raichur-544607",Arunachal Pradesh,02956692352,Bhusawal,riya92@yahoo.com,Payment Paid,2023-10-22
+Bera-Dani,9483,Paneer (Cottage Cheese),P008,379,53.26,"85/68, Ahuja Zila, Mira-Bhayandar-442901",Uttar Pradesh,+916265134844,Kollam,ghoseprerak@sem.com,Payment Pending,2023-01-10
+Sehgal and Sons,2671,Ice Cream,P002,155,279.44,"820, Ratta Road, Singrauli 546753",Himachal Pradesh,5857762742,Faridabad,zarabhardwaj@mani.com,Payment Paid,2021-10-22
+Sehgal and Sons,6600,Chicken Nuggets,P010,441,206.66,"71/43, Mahajan Marg, Sambalpur 102290",Andhra Pradesh,0795696116,Firozabad,sjoshi@hotmail.com,Payment Paid,2020-10-08
+Deo Ltd,5047,Ice Cream,P002,12,399.37,"02/525, Gaba Path, Srinagar 228949",Karnataka,09998968013,Sikar,advikadalal@mani.com,Payment Paid,2021-10-15
+Chana-Sankar,9029,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,208,121.16,"29/30, Shan Ganj, Ratlam 466730",Jharkhand,+912105084262,Chapra,shanayaaggarwal@gmail.com,Payment Pending,2020-04-14
+Deo Ltd,7637,"Frozen Berries (e.g., strawberries, blueberries)",P015,376,435.55,"H.No. 279, Chokshi Marg, Vijayawada 249038",Punjab,07231779761,Salem,ehsaantripathi@korpal.biz,Payment Paid,2021-10-13
+Deo Ltd,9206,Milk or Milk Powder,P013,22,335.4,"97/88, Issac Road, South Dumdum-777018",Telangana,+913141410039,Loni,sulearmaan@yahoo.com,Payment Paid,2020-11-23
+"Grover, Sidhu and Varma",2737,Frozen Fish Fillets,P011,399,315.94,"275, Wali Chowk, Bhalswa Jahangir Pur 598788",Assam,7079342577,Mahbubnagar,yasmin15@yahoo.com,Payment Paid,2020-03-25
+"Sem, Mann and Karnik",4235,Juice Concentrates (like orange or cranberry),P014,122,20.24,"95/04, Chowdhury Circle, Bardhaman 762890",Gujarat,7066419103,Barasat,tiya59@issac-bhattacharyya.info,Payment Paid,2020-11-01
+Ratta-Buch,2465,Rice or Pasta,P020,428,58.81,"933, Anne Zila, Patiala 478638",Uttarakhand,9377696169,Howrah,myra82@gmail.com,Payment Paid,2022-02-13
+"Grover, Sidhu and Varma",9034,Green Peas,P004,170,496.02,"H.No. 77, Sama Nagar, Karawal Nagar 966761",Tripura,0222219582,Hajipur,ggala@gmail.com,Payment Paid,2023-08-22
+Sehgal and Sons,6596,Juice Concentrates (like orange or cranberry),P014,112,427.9,"H.No. 41, Sangha Zila, Munger 894582",Karnataka,6923207462,Nanded,nanne@desai.com,Payment Pending,2021-09-03
+Swaminathan and Sons,2267,Frozen French Fries,P005,144,200.75,"H.No. 37, Dasgupta Zila, Thane 328282",Rajasthan,08301334575,Ambattur,khannaumang@hotmail.com,Payment Paid,2023-04-13
+"Grover, Sidhu and Varma",9069,Butter,P007,281,275.51,"13/36, Ramakrishnan Ganj, Tenali-635460",Maharashtra,+912293296550,Bettiah,qanand@yahoo.com,Payment Paid,2020-12-05
+Ratta-Buch,2199,Sweet Corn,P001,350,106.98,"40/971, Rajan Marg, Amaravati-165154",Haryana,02913681649,Belgaum,atwalpurab@dua.com,Payment Paid,2022-01-28
+"Sem, Mann and Karnik",6024,Juice Concentrates (like orange or cranberry),P014,496,451.93,"24/912, Kibe, Bhubaneswar 030591",Bihar,6784641200,Latur,ranbir81@krish.info,Payment Paid,2023-01-07
+"Bali, Iyer and Lad",8295,Juice Concentrates (like orange or cranberry),P014,291,83.85,"33/11, Sathe Nagar, Shimoga-715556",Meghalaya,+916925680058,Bharatpur,qzachariah@hotmail.com,Payment Pending,2023-03-21
+"Bali, Iyer and Lad",9867,Whipping Cream,P016,287,481.99,"H.No. 06, Bawa Path, Bikaner 745423",Odisha,7567795555,Kochi,pranay78@yahoo.com,Payment Pending,2023-06-03
+"Bali, Iyer and Lad",9942,Frozen Fish Fillets,P011,31,60.11,"H.No. 46, Rajagopalan Path, Miryalaguda 571685",Andhra Pradesh,09857774346,Mango,kimayashroff@gmail.com,Payment Pending,2020-08-08
+Ratta-Buch,6974,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,359,303.3,"H.No. 706, Wali Road, Gopalpur 845474",Haryana,8611226455,Dhanbad,hthakkar@balay.info,Payment Pending,2022-02-24
+Deo Ltd,2339,Sweet Corn,P001,177,343.66,"H.No. 62, Mand Circle, Pallavaram-802119",Odisha,04869771315,Haridwar,anvikulkarni@kade.biz,Payment Paid,2022-04-27
+Bera-Dani,3449,Frozen Fish Fillets,P011,281,458.9,"88/370, Sani, Delhi 855468",Meghalaya,+910409239875,Ghaziabad,anya70@kota.com,Payment Paid,2020-07-11
+"Bali, Iyer and Lad",1734,Whipping Cream,P016,350,11.17,"812, Handa Chowk, Munger-061419",Telangana,+911930748619,Bhimavaram,wkurian@yahoo.com,Payment Pending,2023-03-15
+Deo Ltd,9829,Juice Concentrates (like orange or cranberry),P014,154,93.58,"67/541, Doctor, Kalyan-Dombivli-135942",Madhya Pradesh,+919977679635,Varanasi,uthkarshgara@yahoo.com,Payment Pending,2021-08-05
+"Grover, Sidhu and Varma",7825,Cheese Slices or Blocks,P006,431,95.32,"43/886, Malhotra Zila, Nizamabad-903092",Kerala,07948675367,Karimnagar,chiragsachdeva@ben.com,Payment Paid,2022-04-25
+"Sem, Mann and Karnik",5067,Ice Cream,P002,68,431.14,"012, Dasgupta Marg, Haridwar 132921",Bihar,+912050577152,Loni,wmahal@sarma.info,Payment Paid,2023-05-04
+"Tella, Andra and Grover",9142,Milk or Milk Powder,P013,295,136.07,"H.No. 37, Handa Nagar, Purnia-757667",Nagaland,09443808629,Aurangabad,zara73@yahoo.com,Payment Paid,2020-07-05
+"Grover, Sidhu and Varma",2789,Cheese Slices or Blocks,P006,204,128.37,"H.No. 33, Sibal Ganj, Thoothukudi-091906",Bihar,04578163957,Bally,subramanianvihaan@hotmail.com,Payment Pending,2023-11-24
+"Grover, Sidhu and Varma",2993,"Pulp (e.g., mango, guava, or tomato pulp)",P003,51,44.5,"342, Kadakia Marg, Erode 417482",Rajasthan,+915951222276,Dehri,vedika70@yahoo.com,Payment Pending,2023-04-15
+Ratta-Buch,3302,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,217,77.25,"28, Kapadia Chowk, Jalgaon-390758",Madhya Pradesh,+919243550925,Gulbarga,vidurdugar@khatri-malhotra.com,Payment Paid,2021-12-27
+"Bali, Iyer and Lad",6925,Paneer (Cottage Cheese),P008,472,474.5,"H.No. 10, Gill Ganj, Rampur-642110",Punjab,1014886768,Tezpur,wsami@kalla-savant.com,Payment Pending,2022-10-17
+Sehgal and Sons,1307,Sweet Corn,P001,375,350.36,"91/73, Mani Path, Bulandshahr 073490",Tamil Nadu,+914490143851,Khammam,hmangat@mall.com,Payment Paid,2023-03-03
+"Grover, Sidhu and Varma",4490,Frozen Fish Fillets,P011,128,100.42,"34/78, Jayaraman Chowk, Jaipur 906009",Assam,0201646377,Pudukkottai,taimursura@hari.com,Payment Pending,2023-06-05
+Chana-Sankar,8884,Yogurt or Curd,P012,379,86.91,"H.No. 93, Vasa Zila, Avadi-914875",Karnataka,+914106536752,Bangalore,dhanuk54@hotmail.com,Payment Pending,2022-06-17
+Swaminathan and Sons,9617,Frozen Fish Fillets,P011,483,382.85,"H.No. 286, Balakrishnan Marg, Raurkela Industrial Township 230634",Telangana,04290704502,Akola,golesana@hotmail.com,Payment Pending,2023-11-21
+"Grover, Sidhu and Varma",7452,Green Peas,P004,263,97.69,"H.No. 118, Tailor Circle, Tiruchirappalli-749572",Chhattisgarh,6838091525,Anantapur,jiyacheema@sur-gala.com,Payment Pending,2020-08-28
+Chana-Sankar,9706,Frozen Fish Fillets,P011,149,112.98,"H.No. 419, Bansal Street, Jehanabad-295680",Sikkim,6633936024,Latur,wsama@gmail.com,Payment Paid,2022-07-20
+Deo Ltd,3922,Milk or Milk Powder,P013,432,342.97,"H.No. 854, Gokhale Path, Darbhanga-546513",Maharashtra,06996591172,Bihar Sharif,vritika65@hotmail.com,Payment Pending,2022-12-04
+"Sem, Mann and Karnik",9628,Rice or Pasta,P020,482,85.16,"83/212, Garde Nagar, Noida 893679",Karnataka,+914463928787,Ujjain,zdey@gmail.com,Payment Pending,2021-07-11
+Bera-Dani,8526,Chicken Nuggets,P010,20,73.89,"08/036, Bava Zila, Warangal-539247",Meghalaya,02280423730,Sasaram,amira86@mand-bal.com,Payment Pending,2020-08-23
+Deo Ltd,2730,Pickles,P018,333,311.03,"182, Acharya Chowk, Bhiwandi-741493",Tamil Nadu,01572085512,Ulhasnagar,santnavya@bhatti-wable.org,Payment Pending,2021-01-29
+Sehgal and Sons,7991,Pickles,P018,293,499.3,"H.No. 02, Dash Circle, Secunderabad 733132",Nagaland,01574067886,Jalandhar,madhup74@date-koshy.com,Payment Pending,2022-11-03
+Deo Ltd,5341,Rice or Pasta,P020,335,332.59,"56/32, Jani Path, Vijayanagaram 702521",Kerala,7434380339,Bhalswa Jahangir Pur,rtrivedi@arora-varughese.com,Payment Pending,2020-11-28
+"Tella, Andra and Grover",1746,Rice or Pasta,P020,403,134.57,"633, Ben Path, Kakinada 546951",Mizoram,+919444101442,Panvel,jiya79@yahoo.com,Payment Paid,2022-01-17
+Deo Ltd,3756,Juice Concentrates (like orange or cranberry),P014,120,38.07,"H.No. 143, Dora, Mysore 646839",Tripura,2705937390,Satara,chandrapurab@varkey.biz,Payment Paid,2020-02-25
+Bera-Dani,2512,Ice Cream,P002,313,268.36,"31, Deep Road, Hubli–Dharwad-872657",Sikkim,5083528784,Firozabad,lanne@gmail.com,Payment Pending,2022-08-01
+Swaminathan and Sons,4118,Rice or Pasta,P020,58,156.11,"67, Karpe Road, Thoothukudi 417716",Bihar,00190313738,Ramgarh,kulkarnifarhan@hotmail.com,Payment Paid,2022-06-16
+Swaminathan and Sons,3256,Ice Cream,P002,109,297.7,"H.No. 84, Kumar Nagar, Jamnagar-036662",Andhra Pradesh,3724557096,Jamshedpur,himmatsarkar@char.com,Payment Paid,2020-02-23
+Chana-Sankar,5362,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,492,346.72,"H.No. 029, Kakar Marg, Allahabad-681223",Sikkim,8141171637,Panipat,aradhyatank@sen.net,Payment Pending,2022-10-02
+Chana-Sankar,5217,Yogurt or Curd,P012,489,166.19,"290, Zachariah Nagar, Vasai-Virar 820273",Chhattisgarh,01476719343,Bathinda,bhavinkashyap@gmail.com,Payment Paid,2023-04-17
+Swaminathan and Sons,5585,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,430,393.38,"49, Gupta Road, Eluru-750649",Uttarakhand,+912609715010,New Delhi,zeeshanrattan@jani-balasubramanian.biz,Payment Paid,2022-02-27
+Chana-Sankar,9245,Juice Concentrates (like orange or cranberry),P014,462,299.9,"H.No. 814, Luthra Chowk, Raiganj-934812",Uttarakhand,+910167424595,Bhagalpur,urvisabharwal@dewan-dar.biz,Payment Paid,2022-10-11
+Deo Ltd,1661,Rice or Pasta,P020,380,321.37,"184, Lalla Path, Ludhiana-902826",West Bengal,07159631267,Ratlam,desaisamaira@sami.org,Payment Paid,2023-06-15
+Chana-Sankar,8992,Chicken Nuggets,P010,176,399.78,"48/553, Barad, Hospet 972695",Uttar Pradesh,6729157936,Panipat,dhanush61@yahoo.com,Payment Pending,2022-04-09
+"Sem, Mann and Karnik",6222,"Pulp (e.g., mango, guava, or tomato pulp)",P003,57,444.11,"10/59, Sahota Marg, Sirsa-935802",Assam,+910587023394,Vadodara,charvibrar@yahoo.com,Payment Pending,2023-09-01
+"Bali, Iyer and Lad",3801,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,364,142.06,"H.No. 937, Arya Marg, Thoothukudi-800701",Maharashtra,06205276540,Noida,pari32@bahri-dhar.com,Payment Pending,2022-07-24
+Bera-Dani,2392,Cheese Slices or Blocks,P006,259,487.1,"77/411, Dhaliwal Road, Singrauli-405169",Himachal Pradesh,08309603007,Bidhannagar,manikya42@yahoo.com,Payment Paid,2020-11-13
+"Bali, Iyer and Lad",5466,Frozen Mixed Vegetables,P009,75,472.57,"H.No. 540, Arora Ganj, Gorakhpur-389686",Uttar Pradesh,2357401823,Ghaziabad,anahidate@yahoo.com,Payment Pending,2021-06-03
+Ratta-Buch,9592,Milk or Milk Powder,P013,397,499.84,"88/80, Kade Marg, Nadiad-327478",Manipur,01824160144,Agartala,abram28@hotmail.com,Payment Pending,2020-08-14
+Sehgal and Sons,7683,Yogurt or Curd,P012,292,227.56,"H.No. 975, Karan Zila, Tiruppur-603447",Uttar Pradesh,+919801077841,Visakhapatnam,abram68@kala.biz,Payment Pending,2023-01-14
+Swaminathan and Sons,9291,Sweet Corn,P001,331,211.07,"22/88, Ganguly Path, Ajmer 477801",Sikkim,+910741452408,Panihati,cwalla@kaul-vora.com,Payment Pending,2023-04-06
+Swaminathan and Sons,8615,Milk or Milk Powder,P013,95,353.71,"06/237, Bala Circle, Haldia-305936",Andhra Pradesh,03234434395,Varanasi,vidur24@hotmail.com,Payment Paid,2021-04-09
+"Bali, Iyer and Lad",3428,Pickles,P018,278,410.78,"47, Dhawan Marg, Siliguri 701164",Assam,8388669928,Farrukhabad,uppalmamooty@hotmail.com,Payment Pending,2020-09-04
+Ratta-Buch,6088,Frozen Fish Fillets,P011,63,302.94,"58/074, Chakraborty Nagar, Jalgaon-895599",Gujarat,+911060924400,Ghaziabad,parinaaz54@loke.biz,Payment Paid,2021-08-31
+Ratta-Buch,2689,Ice Cream,P002,154,473.46,"H.No. 90, Ganguly Road, Bareilly 391207",Uttar Pradesh,5923639462,Dehri,waliakiaan@kurian.org,Payment Paid,2021-11-30
+Deo Ltd,5796,Butter,P007,489,55.36,"09/043, Raja Road, Ongole-972858",Assam,7723927405,Mango,neysa35@varty-suresh.net,Payment Paid,2020-10-29
+"Bali, Iyer and Lad",9805,Ice Cream,P002,420,434.13,"99/942, Badami Marg, Sambhal-574589",Telangana,2788948485,Baranagar,indransdeol@gala.com,Payment Paid,2022-10-28
+Swaminathan and Sons,9246,Cheese Slices or Blocks,P006,155,117.66,"02, Gill Nagar, Aurangabad-199688",Mizoram,04155638886,Bhavnagar,manjari16@acharya-gade.com,Payment Pending,2020-11-24
+"Bali, Iyer and Lad",7786,Paneer (Cottage Cheese),P008,398,299.66,"14/451, Bhatnagar Nagar, Bhilai 628630",Mizoram,+919888818651,Phusro,xramachandran@hotmail.com,Payment Paid,2020-12-05
+Deo Ltd,6641,Juice Concentrates (like orange or cranberry),P014,435,131.95,"H.No. 779, Badami Circle, Bathinda-509392",Madhya Pradesh,06183304506,Thiruvananthapuram,krish33@devan.com,Payment Pending,2022-08-13
+"Bali, Iyer and Lad",5570,Butter,P007,297,283.85,"H.No. 866, Bera Street, Ludhiana 650828",Bihar,7044930373,Tenali,ztata@mand.com,Payment Pending,2021-09-17
+Sehgal and Sons,9795,Ice Cream,P002,316,216.6,"553, Sibal Path, Bally 250587",Uttarakhand,04035667138,Mysore,xkumer@dalal.com,Payment Paid,2020-12-13
+Bera-Dani,6653,Butter,P007,406,155.74,"20/880, Badami Ganj, Dewas 738511",Karnataka,+914603546017,Berhampore,jhaalia@mani.com,Payment Pending,2020-02-16
+Ratta-Buch,5738,Rice or Pasta,P020,271,109.52,"H.No. 382, Rau Nagar, Erode 540673",Bihar,00166072463,Kozhikode,bhamini09@devi.biz,Payment Pending,2020-11-30
+"Bali, Iyer and Lad",7834,Ice Cream,P002,44,196.97,"52, Sharma Marg, Bellary-040621",Tripura,00201786304,Delhi,ibali@bandi.com,Payment Pending,2020-03-05
+Deo Ltd,7657,Milk or Milk Powder,P013,342,145.38,"438, Rana Path, Thanjavur 338801",Andhra Pradesh,03443725880,Jamnagar,esachar@yahoo.com,Payment Paid,2023-06-17
+Swaminathan and Sons,5219,Ice Cream,P002,413,261.87,"501, Singh Nagar, Vijayanagaram-913475",Andhra Pradesh,04511382830,Panipat,santjivin@gmail.com,Payment Paid,2021-01-08
+Sehgal and Sons,5817,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,42,421.36,"H.No. 81, Batta Road, Naihati-833251",Punjab,05071877118,Mango,gganguly@yahoo.com,Payment Paid,2021-06-24
+"Sem, Mann and Karnik",7325,Milk or Milk Powder,P013,19,246.04,"H.No. 726, Madan Circle, Jammu-263540",Uttarakhand,+911014204887,Kolhapur,fgoyal@yahoo.com,Payment Paid,2022-10-31
+"Bali, Iyer and Lad",3547,"Pulp (e.g., mango, guava, or tomato pulp)",P003,99,167.54,"H.No. 050, Sangha Path, Kishanganj-263354",Rajasthan,+917384794569,Madurai,agatezain@kashyap.com,Payment Paid,2020-04-06
+Chana-Sankar,9740,Frozen French Fries,P005,353,283.0,"54/13, Sur Circle, Bellary 044329",Nagaland,09551014988,Hubli–Dharwad,rkorpal@chahal.com,Payment Pending,2022-02-22
+"Sem, Mann and Karnik",7978,Sweet Corn,P001,130,455.65,"H.No. 49, Jani Ganj, Coimbatore 499048",Sikkim,03667796850,Durg,piyagoswami@yahoo.com,Payment Paid,2020-11-03
+"Tella, Andra and Grover",1899,Frozen French Fries,P005,361,180.24,"236, Vig Path, Varanasi-673473",Rajasthan,+915019306418,Sambalpur,ktara@yahoo.com,Payment Pending,2021-07-10
+Swaminathan and Sons,1591,Cheese Slices or Blocks,P006,448,281.49,"H.No. 881, Sem Nagar, Mumbai-080764",Sikkim,3865521231,Dehradun,kumeraniruddh@gmail.com,Payment Pending,2021-11-07
+Deo Ltd,8509,Milk or Milk Powder,P013,412,276.86,"248, Krishnamurthy Zila, Bettiah 635968",Assam,8062020630,Bettiah,kiaragarg@yahoo.com,Payment Paid,2023-04-25
+Chana-Sankar,5773,Yogurt or Curd,P012,139,202.43,"26/94, Grewal Marg, Meerut 320665",Madhya Pradesh,+919973498707,Parbhani,msankar@yahoo.com,Payment Pending,2020-06-21
+"Bali, Iyer and Lad",6440,Frozen Fish Fillets,P011,127,349.15,"77/447, Sampath Circle, Korba-461836",Haryana,2080562218,Solapur,lakshay34@butala.com,Payment Pending,2022-05-06
+Chana-Sankar,5347,Sweet Corn,P001,35,151.43,"77/775, Brahmbhatt Circle, Tiruppur-538526",Uttar Pradesh,06600211134,Bidhannagar,ehsaandugar@hotmail.com,Payment Paid,2022-10-25
+Sehgal and Sons,3617,Juice Concentrates (like orange or cranberry),P014,342,319.97,"74, Sandhu Marg, Raipur-370346",West Bengal,7391942307,Dhanbad,daliaarnav@gmail.com,Payment Pending,2020-10-15
+Sehgal and Sons,2807,Frozen Fish Fillets,P011,69,96.19,"962, Mander Nagar, Visakhapatnam-516127",Punjab,4098121498,Kulti,kapadiasumer@gmail.com,Payment Pending,2020-06-24
+Deo Ltd,3747,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,110,28.72,"H.No. 165, Yohannan Chowk, Unnao 510252",Haryana,+918899831301,Nangloi Jat,ehsaanramaswamy@yahoo.com,Payment Pending,2020-07-24
+"Sem, Mann and Karnik",7666,Cheese Slices or Blocks,P006,478,422.81,"238, Tara Path, Tadepalligudem-102261",Uttarakhand,+917600585934,Malegaon,oahuja@sandhu.com,Payment Paid,2023-02-06
+"Tella, Andra and Grover",2980,Whipping Cream,P016,98,419.99,"11, Talwar Path, Bikaner 721572",Punjab,09800134708,Bhiwandi,mandra@gmail.com,Payment Paid,2022-03-18
+Chana-Sankar,1740,Whipping Cream,P016,171,487.35,"H.No. 11, Singhal Chowk, Sambhal-837443",Rajasthan,00516508833,Allahabad,hazel59@kulkarni.com,Payment Paid,2023-10-16
+"Grover, Sidhu and Varma",3270,Juice Concentrates (like orange or cranberry),P014,498,84.73,"39/006, Thakur Chowk, Mangalore 859485",Maharashtra,8294468907,Pudukkottai,kandapiya@gmail.com,Payment Pending,2021-03-27
+Deo Ltd,2899,Sweet Corn,P001,108,273.27,"87, Thaman Chowk, Rampur-259944",Kerala,01414650998,Morena,jsastry@rama.com,Payment Pending,2023-12-11
+Sehgal and Sons,2650,Frozen Fish Fillets,P011,331,219.08,"H.No. 48, Yogi Circle, Meerut 781323",Odisha,+912187066930,Gandhinagar,yuvaan62@banerjee.com,Payment Paid,2021-03-07
+"Sem, Mann and Karnik",7844,Frozen Fish Fillets,P011,230,154.25,"758, Sankaran Nagar, Tirupati 596112",Uttar Pradesh,+918782248069,Kozhikode,bavaaarav@roy.com,Payment Pending,2021-11-08
+Sehgal and Sons,9229,Ice Cream,P002,311,473.53,"60/227, Trivedi Marg, Akola 309328",Goa,3488209449,Junagadh,bsarin@chopra.org,Payment Paid,2023-07-07
+"Grover, Sidhu and Varma",9999,Sweet Corn,P001,384,214.61,"16/509, Som Ganj, Ghaziabad 006491",Tripura,+917389284181,Tiruppur,ugokhale@malhotra.org,Payment Pending,2022-11-20
+"Bali, Iyer and Lad",7298,"Pulp (e.g., mango, guava, or tomato pulp)",P003,391,387.33,"32/98, Wali, Unnao-596332",Telangana,+919356351620,Jalandhar,bhatarnav@yahoo.com,Payment Pending,2020-05-15
+"Grover, Sidhu and Varma",4093,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,386,333.49,"03/461, Hegde Chowk, Mehsana-834265",Rajasthan,9009740187,Coimbatore,vihaanbatra@hotmail.com,Payment Paid,2020-02-24
+"Grover, Sidhu and Varma",2865,"Pulp (e.g., mango, guava, or tomato pulp)",P003,337,113.45,"26, Sama Path, Indore 055135",Rajasthan,0477680547,Jammu,madhavgopal@baria.com,Payment Pending,2020-12-07
+Bera-Dani,1049,Frozen Mixed Vegetables,P009,46,22.91,"H.No. 092, Shah, Ratlam-774433",Odisha,+912906160921,Tadipatri,rsodhi@kant-doshi.com,Payment Paid,2022-03-16
+Deo Ltd,6662,Yogurt or Curd,P012,288,265.28,"H.No. 74, Uppal Circle, Mangalore 049475",Himachal Pradesh,4395791352,South Dumdum,dayalahana@dixit.com,Payment Paid,2022-08-30
+Chana-Sankar,8467,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,54,492.21,"753, Manne Street, Bhavnagar 562151",Odisha,03366707401,Bhusawal,hrishitagade@hotmail.com,Payment Pending,2022-12-19
+Swaminathan and Sons,4954,Butter,P007,66,423.16,"13/72, Kurian Street, Aurangabad 226493",Kerala,+917947738556,Narasaraopet,faiyazchahal@bhat.com,Payment Paid,2020-03-25
+Chana-Sankar,3322,Cheese Slices or Blocks,P006,499,258.33,"H.No. 243, Sule Nagar, Hajipur 182226",Nagaland,8305596721,Mehsana,yuvraj-varghese@gmail.com,Payment Pending,2022-03-07
+"Bali, Iyer and Lad",8654,Butter,P007,80,111.12,"H.No. 05, Tak Ganj, Warangal-832183",Mizoram,05724092656,Dehradun,jjha@hotmail.com,Payment Pending,2021-02-05
+Sehgal and Sons,7959,Juice Concentrates (like orange or cranberry),P014,223,161.04,"80/058, Aggarwal Road, Mehsana 242702",Rajasthan,5697589303,Raichur,parinaazray@brahmbhatt.info,Payment Paid,2022-04-04
+Sehgal and Sons,2306,Frozen French Fries,P005,292,133.22,"H.No. 256, Master Ganj, Bhagalpur-394433",Madhya Pradesh,+915430999122,Tinsukia,kondajivin@yahoo.com,Payment Pending,2022-06-21
+Sehgal and Sons,6290,Frozen French Fries,P005,395,58.49,"H.No. 72, Varghese Marg, Gaya-751157",Jharkhand,01529610161,Sonipat,suhanaloyal@yahoo.com,Payment Paid,2021-04-27
+Bera-Dani,3174,Juice Concentrates (like orange or cranberry),P014,62,179.9,"H.No. 85, Vasa, Thanjavur-193958",Maharashtra,9444711204,Pudukkottai,ssachdeva@hotmail.com,Payment Pending,2020-09-06
+Ratta-Buch,2656,Paneer (Cottage Cheese),P008,358,380.43,"88/08, Sastry Circle, Pune 540370",Madhya Pradesh,03494829835,Ghaziabad,nchokshi@hotmail.com,Payment Pending,2023-05-01
+Bera-Dani,8945,Cheese Slices or Blocks,P006,326,235.65,"H.No. 791, Batta Chowk, Alwar-641970",Tamil Nadu,+910884706708,Khammam,arhaangulati@gmail.com,Payment Pending,2022-01-06
+"Tella, Andra and Grover",2348,Ice Cream,P002,185,259.09,"24, Biswas Nagar, Faridabad-747057",Haryana,04057142446,Gandhidham,choprasuhana@yahoo.com,Payment Paid,2021-08-20
+Bera-Dani,6496,Milk or Milk Powder,P013,111,352.41,"44/128, Korpal Road, Amroha 886125",Arunachal Pradesh,00241106431,Munger,nsethi@sagar-dutta.com,Payment Paid,2023-01-12
+Chana-Sankar,4898,"Frozen Berries (e.g., strawberries, blueberries)",P015,231,151.89,"58/721, Char Zila, Raebareli-893701",Nagaland,6939612783,Faridabad,kiarakarnik@hotmail.com,Payment Paid,2020-11-26
+Deo Ltd,3995,Milk or Milk Powder,P013,186,423.92,"16/301, Kurian Marg, Ambattur 540580",Tamil Nadu,+911490291092,Coimbatore,eva75@gmail.com,Payment Pending,2022-06-20
+Deo Ltd,5231,Frozen Mixed Vegetables,P009,60,160.07,"75/14, Taneja Marg, Allahabad 603516",Punjab,+916967450579,Jaunpur,taran57@hotmail.com,Payment Paid,2020-10-28
+Deo Ltd,4127,"Frozen Berries (e.g., strawberries, blueberries)",P015,134,457.02,"H.No. 263, Sheth Nagar, Khora -570829",Tripura,04112036051,Jamshedpur,elaben@kapadia.com,Payment Paid,2021-09-21
+Chana-Sankar,4726,Frozen French Fries,P005,442,199.99,"63, Loyal Nagar, Vellore-605180",Gujarat,+915059686085,Anand,vihaan46@handa-goswami.info,Payment Paid,2020-02-03
+"Sem, Mann and Karnik",3770,Frozen French Fries,P005,162,97.95,"917, Dhawan Street, Guntur 094009",Karnataka,08897119334,Navi Mumbai,badal03@gmail.com,Payment Pending,2020-10-11
+Chana-Sankar,7638,Juice Concentrates (like orange or cranberry),P014,333,158.07,"H.No. 221, Lalla Path, Belgaum 150824",Haryana,07559094574,Jaipur,daradarshit@sane.info,Payment Paid,2022-07-02
+"Bali, Iyer and Lad",7358,Frozen French Fries,P005,105,143.08,"59, Hegde Ganj, Pondicherry 315045",Bihar,+917918253135,Bhilwara,manjaridin@yahoo.com,Payment Pending,2021-08-17
+"Bali, Iyer and Lad",3876,"Frozen Berries (e.g., strawberries, blueberries)",P015,49,344.01,"09, Deo Nagar, Sagar-533489",Gujarat,04445660233,Asansol,takzain@swamy-vala.com,Payment Paid,2020-03-27
+Ratta-Buch,2860,Pickles,P018,254,285.37,"H.No. 919, Goda Road, Machilipatnam-397051",Andhra Pradesh,+915220984634,Jalna,dhanuktalwar@yahoo.com,Payment Pending,2021-06-15
+"Bali, Iyer and Lad",6831,Cheese Slices or Blocks,P006,247,484.33,"06, Chawla, Junagadh 122123",Karnataka,+913481148570,Tezpur,saraftrisha@dhar.net,Payment Paid,2023-03-27
+"Sem, Mann and Karnik",8032,Ice Cream,P002,140,206.9,"44/542, Keer Zila, Jammu 918408",Mizoram,0479649177,Bhusawal,nityamallick@yahoo.com,Payment Paid,2020-01-03
+Bera-Dani,7921,Sweet Corn,P001,474,130.62,"H.No. 38, Ghosh Road, Kakinada-061498",Bihar,+917093980466,Meerut,lokeahana@yahoo.com,Payment Paid,2023-02-26
+Chana-Sankar,5700,Frozen Fish Fillets,P011,119,180.25,"12, Sarkar Road, Ajmer-738494",Gujarat,06502265914,Rewa,zsamra@keer.com,Payment Paid,2023-02-18
+Chana-Sankar,2814,Paneer (Cottage Cheese),P008,243,212.81,"74/384, Bhattacharyya Path, Srinagar-466513",Haryana,02722096650,Kolkata,gopalprerak@gmail.com,Payment Pending,2020-09-22
+Bera-Dani,9800,"Pulp (e.g., mango, guava, or tomato pulp)",P003,357,316.49,"563, Dara Path, Navi Mumbai-446797",Jharkhand,09354281518,Udupi,yanand@sundaram-jhaveri.net,Payment Paid,2020-08-25
+Ratta-Buch,4296,Pickles,P018,71,495.6,"23/872, Bedi Chowk, Akola 366853",Uttar Pradesh,+918189533512,Eluru,rattanayantara@goyal.com,Payment Paid,2022-07-29
+"Bali, Iyer and Lad",2990,Paneer (Cottage Cheese),P008,95,27.8,"H.No. 193, Rattan Street, Ujjain 717603",Manipur,+911490769979,Mangalore,darshit91@tailor.biz,Payment Pending,2020-01-30
+"Tella, Andra and Grover",3474,Ice Cream,P002,191,85.51,"H.No. 35, Dayal Road, Gudivada-511790",Mizoram,1644979038,Sonipat,vidur26@yahoo.com,Payment Pending,2020-12-31
+"Tella, Andra and Grover",8180,"Pulp (e.g., mango, guava, or tomato pulp)",P003,475,451.52,"H.No. 712, Zacharia Zila, Hazaribagh 877330",Nagaland,+911360307468,Hazaribagh,elaray@ravi.com,Payment Pending,2023-09-27
+Deo Ltd,3556,Juice Concentrates (like orange or cranberry),P014,279,467.27,"H.No. 686, Chaudhary Circle, Raichur-027523",Mizoram,5805280751,Bellary,rborra@rastogi.info,Payment Pending,2023-07-18
+Ratta-Buch,9880,Cheese Slices or Blocks,P006,316,322.09,"59/384, Sen Road, Bareilly-710337",Sikkim,3446045501,Kollam,dharindrajit@hotmail.com,Payment Paid,2022-09-30
+Ratta-Buch,7870,Whipping Cream,P016,38,194.79,"02, Taneja Ganj, Bhubaneswar-625486",Maharashtra,02711318566,Kottayam,himmat79@mani-vig.com,Payment Pending,2020-11-28
+Swaminathan and Sons,1542,Ice Cream,P002,129,293.78,"676, Loke Zila, Kota-717073",Madhya Pradesh,+916111163189,Durg,miraanmagar@gmail.com,Payment Pending,2021-07-02
+"Sem, Mann and Karnik",2669,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,343,474.73,"224, Kaur Street, Thoothukudi-600920",Meghalaya,02441877339,Alwar,nehmat44@krish.org,Payment Pending,2020-04-15
+"Sem, Mann and Karnik",5821,Frozen Mixed Vegetables,P009,168,289.28,"69, Gera, Malegaon 156158",Jharkhand,+919673226445,Bahraich,ranbirrout@saini.net,Payment Pending,2023-05-08
+Sehgal and Sons,7123,Pickles,P018,367,118.36,"14/423, Dugar Circle, Sikar-533230",Punjab,04490797403,Ludhiana,ivana04@gmail.com,Payment Paid,2022-07-20
+Bera-Dani,3115,Frozen French Fries,P005,137,364.88,"71, Singhal Path, Anantapuram-301119",Mizoram,02260578638,Anantapuram,boranitara@batta.biz,Payment Pending,2021-09-06
+"Grover, Sidhu and Varma",1997,Whipping Cream,P016,285,380.82,"H.No. 777, Wadhwa Marg, Yamunanagar-305137",Manipur,06353809872,Bhilwara,rchanda@seshadri-cherian.net,Payment Paid,2021-06-04
+"Grover, Sidhu and Varma",3243,Pickles,P018,24,266.66,"37/731, Rout Zila, Jamalpur-871204",Andhra Pradesh,5878031715,Ambala,akarsh98@yahoo.com,Payment Pending,2022-01-15
+"Bali, Iyer and Lad",7918,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,460,457.73,"H.No. 68, Korpal Nagar, Tadepalligudem-867521",Kerala,+912455078375,Guwahati,dchada@kapur.com,Payment Pending,2022-08-14
+Sehgal and Sons,2790,Milk or Milk Powder,P013,92,254.82,"19, Hari Street, Muzaffarnagar-602614",Assam,5836212880,Siliguri,saanvi69@hegde.com,Payment Paid,2021-12-10
+Ratta-Buch,2089,Rice or Pasta,P020,482,301.62,"H.No. 78, Agarwal Ganj, Panipat-900813",Punjab,4566536418,Patna,ranbir51@yahoo.com,Payment Pending,2022-05-16
+Deo Ltd,1563,"Pulp (e.g., mango, guava, or tomato pulp)",P003,466,183.79,"31/920, Barman Chowk, Adoni 576729",Nagaland,00061426702,Kolkata,neelofarrau@hotmail.com,Payment Paid,2022-08-11
+Swaminathan and Sons,4055,Butter,P007,210,495.06,"142, Madan Circle, Jalna-590876",Meghalaya,7591231461,Karawal Nagar,ramachandrankeya@bhatia.com,Payment Paid,2021-11-26
+Ratta-Buch,7169,Chicken Nuggets,P010,431,264.17,"07/66, Wable Chowk, Kurnool 320032",Himachal Pradesh,+918113805927,Singrauli,zoyaaurora@hotmail.com,Payment Paid,2022-06-10
+"Tella, Andra and Grover",5036,Yogurt or Curd,P012,27,458.52,"80, Rege, Panihati-124631",Haryana,+915787243153,Vijayawada,jiyaramaswamy@hotmail.com,Payment Pending,2020-08-15
+Chana-Sankar,2509,Rice or Pasta,P020,109,19.2,"78/159, Edwin, Bikaner-707646",Goa,0862904154,Firozabad,saira31@hotmail.com,Payment Pending,2021-09-03
+"Sem, Mann and Karnik",5718,Juice Concentrates (like orange or cranberry),P014,318,55.4,"H.No. 550, Deshmukh Chowk, Salem-198645",Karnataka,07318353483,Ghaziabad,jchatterjee@kata.com,Payment Pending,2020-06-10
+Bera-Dani,4448,Rice or Pasta,P020,133,166.54,"H.No. 43, Gour Road, Ratlam-127098",Bihar,03667357999,Bhatpara,chandsaira@yahoo.com,Payment Pending,2020-06-29
+Chana-Sankar,4751,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,22,431.16,"H.No. 385, Sangha Road, Jehanabad 473457",Andhra Pradesh,9713985135,Bellary,ratibarad@mahal-doctor.com,Payment Paid,2022-10-16
+"Sem, Mann and Karnik",6223,"Frozen Berries (e.g., strawberries, blueberries)",P015,374,287.67,"99/06, Mane Road, Pallavaram-611096",Gujarat,3964450526,Avadi,nitarabala@hotmail.com,Payment Pending,2020-01-20
+Bera-Dani,1979,Sweet Corn,P001,311,451.68,"46/711, Baral Road, Pallavaram-941459",Haryana,7475157014,Avadi,rhea97@hotmail.com,Payment Pending,2021-03-04
+Swaminathan and Sons,4979,Paneer (Cottage Cheese),P008,321,397.32,"H.No. 241, Buch Marg, Bilaspur-612995",Andhra Pradesh,01525776135,Kollam,reyanshsaini@tak.net,Payment Pending,2023-07-22
+Chana-Sankar,5931,"Frozen Berries (e.g., strawberries, blueberries)",P015,125,474.35,"H.No. 41, Baral Marg, Mirzapur 880588",Arunachal Pradesh,07448239505,Nangloi Jat,mgarde@wadhwa.net,Payment Pending,2022-09-26
+"Sem, Mann and Karnik",2787,Milk or Milk Powder,P013,429,268.02,"311, Ravi Marg, Bhilwara-138462",Nagaland,2129017718,Medininagar,sonitara@sampath.com,Payment Paid,2022-12-14
+"Grover, Sidhu and Varma",8743,Cheese Slices or Blocks,P006,434,206.92,"96, Goel Marg, Giridih-683686",Kerala,2642023718,Loni,zwason@gmail.com,Payment Paid,2022-10-02
+"Tella, Andra and Grover",2012,Pickles,P018,357,97.24,"H.No. 285, Buch Ganj, Suryapet-102490",Haryana,+911267869341,Kollam,ykarnik@raval-mallick.org,Payment Pending,2023-03-11
+Sehgal and Sons,3315,Butter,P007,22,420.98,"88/32, Bhavsar Road, Katni 403050",Telangana,+910809295020,Nizamabad,achaudhry@sharaf.com,Payment Pending,2022-11-13
+Ratta-Buch,4483,Frozen Mixed Vegetables,P009,365,400.43,"72/31, Lad Path, Ichalkaranji-253931",Karnataka,01363439958,Deoghar,heerhans@hotmail.com,Payment Paid,2021-12-26
+Chana-Sankar,9420,Butter,P007,431,357.9,"33/68, Halder Zila, Panipat-812400",Himachal Pradesh,06227039771,Rajkot,sanaseshadri@gmail.com,Payment Paid,2021-03-31
+"Bali, Iyer and Lad",5552,Butter,P007,241,362.98,"H.No. 05, Rau Road, Rajpur Sonarpur-693174",Jharkhand,02204756214,Hapur,lavanya62@walla.com,Payment Pending,2021-10-10
+Swaminathan and Sons,4745,Rice or Pasta,P020,167,83.63,"183, Bala Path, Chapra-993078",Uttar Pradesh,05764743326,Udupi,shamik84@wagle.com,Payment Paid,2023-04-06
+"Grover, Sidhu and Varma",9662,Yogurt or Curd,P012,395,493.15,"H.No. 43, Ray Circle, Chittoor 878797",Jharkhand,+917291205609,Ozhukarai,nirvaan20@halder.com,Payment Paid,2020-03-13
+"Grover, Sidhu and Varma",6374,Rice or Pasta,P020,290,154.78,"857, Sarin Road, Yamunanagar-196701",West Bengal,6786579141,Arrah,kiara85@batra.net,Payment Paid,2021-01-02
+Deo Ltd,9241,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,353,139.24,"H.No. 67, Rastogi Street, Sambhal-556465",Arunachal Pradesh,+915985150881,Amroha,jhanvi77@hotmail.com,Payment Paid,2022-11-19
+Bera-Dani,2164,Ice Cream,P002,125,20.36,"243, Mani Path, Salem 221520",Nagaland,3109097288,Adoni,kumargatik@singh.com,Payment Pending,2023-04-07
+"Sem, Mann and Karnik",5410,Frozen French Fries,P005,473,483.31,"431, Khatri Street, Ambarnath-180445",Himachal Pradesh,+915072576093,Medininagar,obora@balan.net,Payment Paid,2022-08-10
+Sehgal and Sons,8125,Chicken Nuggets,P010,152,317.37,"H.No. 441, Kaur Path, Malegaon-178170",Tripura,+913831228260,Deoghar,boaseraunak@grewal.biz,Payment Paid,2023-09-15
+Bera-Dani,8718,Yogurt or Curd,P012,306,49.81,"26, Raju Road, Firozabad-146532",Nagaland,09556454358,Phagwara,cbir@hotmail.com,Payment Pending,2020-05-14
+"Sem, Mann and Karnik",7928,Milk or Milk Powder,P013,364,302.0,"H.No. 30, Gade Zila, Amaravati 915130",Maharashtra,4870659594,Malegaon,achopra@gmail.com,Payment Pending,2023-04-26
+"Tella, Andra and Grover",9539,Paneer (Cottage Cheese),P008,58,12.01,"H.No. 749, Chaudhuri Circle, Karimnagar 931806",Meghalaya,01430453684,Amroha,farhan46@luthra.com,Payment Pending,2020-02-24
+Bera-Dani,2608,Green Peas,P004,220,338.8,"625, Bakshi Path, Dhule 682277",Haryana,09484539496,Farrukhabad,ivanagandhi@yahoo.com,Payment Pending,2021-06-27
+Chana-Sankar,5605,Frozen Mixed Vegetables,P009,342,421.48,"H.No. 59, Samra Marg, Bhubaneswar 176423",West Bengal,05917857623,Tadipatri,bsehgal@gmail.com,Payment Paid,2023-07-21
+Swaminathan and Sons,6883,Frozen Mixed Vegetables,P009,385,467.6,"H.No. 432, Aurora Ganj, Kakinada 964291",Karnataka,+914765697204,Panvel,vartyoorja@bora.info,Payment Pending,2020-05-23
+Ratta-Buch,3504,Yogurt or Curd,P012,413,130.66,"02/50, Jain Zila, Medininagar-166570",Kerala,0093324943,Agra,arnav63@gmail.com,Payment Paid,2023-07-09
+"Bali, Iyer and Lad",6617,Whipping Cream,P016,165,318.46,"H.No. 40, Ramaswamy Circle, Ongole-251479",Uttarakhand,4198567199,Moradabad,rkala@kumar.com,Payment Paid,2021-08-09
+Bera-Dani,8644,Pickles,P018,248,46.88,"38, Sarraf, Chandigarh-271634",Tripura,9313428373,Panvel,navyakibe@hotmail.com,Payment Pending,2022-05-15
+Deo Ltd,6025,Frozen Fish Fillets,P011,171,473.15,"H.No. 862, Upadhyay Nagar, Kadapa-810475",Himachal Pradesh,05470694539,Hindupur,edevi@yahoo.com,Payment Paid,2023-06-09
+Ratta-Buch,8085,Pickles,P018,373,167.81,"H.No. 77, Tella Marg, Noida-911195",Uttarakhand,08452831222,Burhanpur,rdin@hotmail.com,Payment Pending,2023-01-06
+"Sem, Mann and Karnik",6707,Cheese Slices or Blocks,P006,364,490.58,"H.No. 930, Shukla Ganj, Mysore-566100",Andhra Pradesh,1547668977,Sambalpur,damini25@rao-yohannan.biz,Payment Pending,2023-05-01
+Swaminathan and Sons,7828,Sweet Corn,P001,61,403.46,"16/983, Johal Path, Rewa 118256",Nagaland,03592858520,Navi Mumbai,kartik47@hotmail.com,Payment Paid,2022-04-01
+Sehgal and Sons,9823,"Pulp (e.g., mango, guava, or tomato pulp)",P003,333,13.18,"949, Bal Street, Nagaon 826646",Haryana,8508934726,Asansol,lsachdev@yahoo.com,Payment Paid,2023-10-10
+Sehgal and Sons,3450,Green Peas,P004,196,259.55,"H.No. 19, Ahluwalia, Tezpur 070191",Arunachal Pradesh,06751669215,Gaya,samar27@swaminathan-krishnan.com,Payment Pending,2023-09-18
+Deo Ltd,1580,Juice Concentrates (like orange or cranberry),P014,9,414.85,"33/600, Din Street, Sikar-442697",Arunachal Pradesh,03065440015,Jaunpur,hunar64@bhatti.com,Payment Paid,2022-05-09
+Ratta-Buch,7740,Ice Cream,P002,12,363.64,"65/043, D’Alia Marg, Kota-024111",Himachal Pradesh,05010731610,Warangal,mdas@gour-sur.com,Payment Paid,2023-01-30
+Sehgal and Sons,2464,Paneer (Cottage Cheese),P008,174,383.44,"H.No. 20, Swaminathan Circle, Fatehpur-068449",Manipur,+916707719932,Begusarai,shalv53@hotmail.com,Payment Pending,2022-05-14
+"Grover, Sidhu and Varma",3006,Sweet Corn,P001,481,397.77,"56/220, Mandal, Bulandshahr 864177",Nagaland,5572773243,Amravati,nayantarajohal@gmail.com,Payment Paid,2022-11-01
+Sehgal and Sons,4048,Paneer (Cottage Cheese),P008,378,165.71,"72/071, Kothari Zila, Hajipur-427767",Rajasthan,6190713211,Shimoga,miraya84@bawa-kurian.info,Payment Pending,2020-07-01
+"Sem, Mann and Karnik",4779,Cheese Slices or Blocks,P006,269,69.29,"712, Lad, Gwalior 032207",Manipur,02610896516,Bhavnagar,nakulkari@gopal.org,Payment Paid,2020-04-09
+"Grover, Sidhu and Varma",1832,Butter,P007,476,424.17,"634, Kapadia Marg, Etawah 299623",Goa,05336427290,Bettiah,vermaurvi@chopra.com,Payment Paid,2023-12-14
+Ratta-Buch,7063,Pickles,P018,367,111.9,"90/370, Bhat Zila, Deoghar-432731",Himachal Pradesh,2892712044,Udaipur,ivansibal@devi-golla.biz,Payment Pending,2021-07-09
+Deo Ltd,9885,Cheese Slices or Blocks,P006,282,353.83,"H.No. 32, Ramakrishnan Path, Bathinda 538404",Uttarakhand,+917149584240,Saharanpur,tgade@badal-shetty.com,Payment Pending,2022-09-14
+Sehgal and Sons,9826,Pickles,P018,133,219.35,"H.No. 996, Kunda Path, Akola 447127",Assam,1598591060,Visakhapatnam,divit35@chanda.com,Payment Pending,2021-11-18
+"Tella, Andra and Grover",5014,Sweet Corn,P001,108,237.84,"H.No. 499, Gala Street, Amravati-618601",Nagaland,+919625910433,Noida,divyansh61@mani-de.com,Payment Paid,2022-11-17
+Ratta-Buch,8382,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,155,337.48,"502, Savant Road, Durgapur-355825",Arunachal Pradesh,9597493326,Gandhidham,khannadiya@boase.com,Payment Paid,2020-03-29
+Chana-Sankar,5756,Frozen French Fries,P005,304,136.04,"79, Varkey Zila, Bangalore 552712",Uttarakhand,+919042872699,Ujjain,soodtaran@goel.com,Payment Paid,2021-05-03
+Chana-Sankar,7613,Whipping Cream,P016,31,123.32,"166, Deep Marg, Aurangabad 517071",Karnataka,7107349593,Baranagar,deolelakshi@hotmail.com,Payment Paid,2020-07-10
+Chana-Sankar,4265,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,364,370.34,"33, Mandal Ganj, Pune 129753",Mizoram,09245820729,Amroha,vidur26@johal.com,Payment Paid,2020-12-16
+Sehgal and Sons,8182,Butter,P007,445,131.5,"43/044, Sundaram Marg, Bihar Sharif 034743",Andhra Pradesh,+916020361636,Kakinada,bawadevansh@basu.biz,Payment Pending,2022-04-17
+"Tella, Andra and Grover",9907,Sweet Corn,P001,219,242.34,"H.No. 99, Khosla Path, Vasai-Virar-753744",Punjab,+917503321489,Ratlam,khatridivyansh@yahoo.com,Payment Paid,2023-05-04
+"Grover, Sidhu and Varma",5862,Ice Cream,P002,354,302.51,"H.No. 27, Saraf Path, Anantapuram-401753",Sikkim,2432454351,Jamshedpur,prerakdas@hotmail.com,Payment Pending,2020-04-29
+"Bali, Iyer and Lad",3289,"Frozen Berries (e.g., strawberries, blueberries)",P015,290,267.21,"05, Ranganathan Zila, Gandhinagar-169944",West Bengal,6825477684,Ozhukarai,khareyuvraj@baral.com,Payment Paid,2021-02-01
+"Sem, Mann and Karnik",2855,Green Peas,P004,161,127.47,"91/14, Sane, Warangal 781038",Telangana,7461665635,Dibrugarh,kaira57@yahoo.com,Payment Pending,2021-04-06
+Ratta-Buch,7712,Butter,P007,149,266.44,"36, Rau Nagar, Sri Ganganagar-225763",Himachal Pradesh,5652630334,Tiruppur,sathevanya@hotmail.com,Payment Pending,2022-08-24
+Deo Ltd,3671,Pickles,P018,285,328.32,"09/509, Chad Path, Gopalpur-805142",Manipur,+910358955728,Shimoga,yashvi50@yahoo.com,Payment Pending,2020-07-27
+Sehgal and Sons,3888,Paneer (Cottage Cheese),P008,332,359.8,"15, Choudhury Street, Jabalpur 843948",Tripura,+918984301739,Sagar,ugulati@hotmail.com,Payment Pending,2020-06-18
+Sehgal and Sons,6264,Sweet Corn,P001,222,279.53,"H.No. 629, Sabharwal Street, Bangalore-332273",Madhya Pradesh,3998710999,Nanded,yasminkarpe@yahoo.com,Payment Pending,2023-10-29
+"Bali, Iyer and Lad",8777,Green Peas,P004,230,464.56,"H.No. 249, Shetty Marg, Shahjahanpur 397044",Haryana,4106476322,Katihar,sara91@chakraborty.org,Payment Pending,2020-01-02
+Deo Ltd,1607,Frozen French Fries,P005,211,120.94,"01/25, Apte Nagar, Saharanpur-775215",Arunachal Pradesh,+918554780659,Mysore,karanhazel@seth-bobal.com,Payment Pending,2021-07-24
+Deo Ltd,7533,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,329,162.06,"09, Bail Path, Sultan Pur Majra-722726",West Bengal,+914407699398,Ludhiana,sbhagat@gmail.com,Payment Paid,2020-03-07
+Chana-Sankar,1981,Green Peas,P004,476,188.83,"56/23, Sahota Chowk, Nandyal-372736",Uttarakhand,0603663807,Hajipur,kavyakapadia@chana.com,Payment Pending,2021-02-04
+"Grover, Sidhu and Varma",7399,Cheese Slices or Blocks,P006,74,303.88,"807, Dyal Circle, Tadepalligudem 532036",Nagaland,02049596336,Khammam,kiara29@hotmail.com,Payment Paid,2020-05-29
+Bera-Dani,9789,"Pulp (e.g., mango, guava, or tomato pulp)",P003,477,264.14,"33/78, Ravi, Bhusawal-639092",Bihar,+917858382766,Silchar,navya31@suri.com,Payment Pending,2023-12-11
+"Tella, Andra and Grover",7243,Butter,P007,146,306.57,"26, Ravi Road, Asansol 996384",Chhattisgarh,02127206304,Gulbarga,sainiahana@yahoo.com,Payment Pending,2022-04-06
+Sehgal and Sons,1109,Milk or Milk Powder,P013,495,322.3,"848, Lad Marg, Thoothukudi 609747",Sikkim,00186559539,Danapur,devanryan@dube.com,Payment Paid,2022-12-26
+Bera-Dani,7108,Cheese Slices or Blocks,P006,8,253.03,"H.No. 734, Goyal Chowk, Agartala-736156",Uttar Pradesh,+915778054790,Mira-Bhayandar,gbrahmbhatt@sachar-warrior.com,Payment Pending,2023-11-01
+Bera-Dani,1433,Frozen Mixed Vegetables,P009,104,300.14,"831, Choudhry, Karimnagar 068703",Karnataka,08449849139,Ujjain,planka@khalsa.com,Payment Paid,2023-03-22
+Ratta-Buch,7237,Sweet Corn,P001,365,151.17,"90, Kaul, Sonipat-881169",Arunachal Pradesh,05146446351,Jabalpur,tmann@randhawa-shere.com,Payment Paid,2021-04-14
+"Sem, Mann and Karnik",7472,Paneer (Cottage Cheese),P008,31,367.6,"87, Sachdev Ganj, Hosur 430176",Telangana,2318888323,Mirzapur,uhans@hotmail.com,Payment Paid,2023-12-24
+"Sem, Mann and Karnik",6347,Butter,P007,90,273.07,"H.No. 249, Yohannan Ganj, Nellore-618805",Manipur,1876361204,Jalandhar,shahmadhav@yahoo.com,Payment Pending,2020-08-21
+Bera-Dani,1728,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,346,178.17,"12/06, Mallick Street, Bhilai 489990",Odisha,0214526872,Proddatur,odugar@basak.com,Payment Paid,2020-08-04
+Swaminathan and Sons,1317,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,168,378.46,"67/09, Madan Nagar, Parbhani 882637",Himachal Pradesh,4347867721,Morbi,bawazara@gmail.com,Payment Paid,2023-11-18
+Ratta-Buch,7791,Ice Cream,P002,184,482.17,"44, Sama Chowk, Vasai-Virar-412093",Mizoram,02519169519,Motihari,ritvikkaul@hotmail.com,Payment Pending,2022-06-06
+Chana-Sankar,7890,Butter,P007,113,86.7,"65/62, Goda Street, Patiala 301421",Himachal Pradesh,7954152570,Thane,veerkhosla@hotmail.com,Payment Pending,2021-12-14
+"Sem, Mann and Karnik",2782,"Frozen Berries (e.g., strawberries, blueberries)",P015,406,452.06,"50, Cheema Path, Madanapalle 007226",Madhya Pradesh,07708722947,Raichur,anikagandhi@saini.com,Payment Paid,2021-04-01
+Swaminathan and Sons,3950,Ice Cream,P002,450,400.85,"166, Sidhu Chowk, Dindigul-236341",Manipur,+911007922781,Gwalior,nirvi98@mann-shah.com,Payment Paid,2020-05-27
+Bera-Dani,1532,Yogurt or Curd,P012,436,374.17,"37/845, Talwar Zila, Asansol-575956",Telangana,02795835326,Hazaribagh,kapadiataimur@hotmail.com,Payment Pending,2022-02-14
+"Bali, Iyer and Lad",7082,Frozen French Fries,P005,58,20.18,"933, Sarna Road, Hazaribagh 274109",Goa,9933453077,Gulbarga,ybakshi@hotmail.com,Payment Paid,2021-12-08
+"Bali, Iyer and Lad",9350,Butter,P007,216,366.25,"29/55, Zacharia Marg, Raurkela Industrial Township-423019",Madhya Pradesh,+913277314812,Amaravati,mirayagrover@vyas-rastogi.biz,Payment Pending,2020-11-07
+"Bali, Iyer and Lad",7432,Paneer (Cottage Cheese),P008,24,40.05,"88/761, Gill Marg, Raipur-460130",Goa,+916139742963,Ujjain,sawhneytushar@yahoo.com,Payment Pending,2020-04-03
+Deo Ltd,1874,Frozen Mixed Vegetables,P009,25,404.02,"H.No. 92, Butala, Mangalore 085450",Bihar,+918079152330,Berhampore,madhup40@yahoo.com,Payment Pending,2021-01-06
+Chana-Sankar,8430,Chicken Nuggets,P010,414,53.6,"84/61, Guha Road, Khora -862555",West Bengal,05227097860,Surendranagar Dudhrej,rhea79@ratti.info,Payment Pending,2021-05-11
+"Tella, Andra and Grover",1140,Chicken Nuggets,P010,238,484.45,"82/151, Goyal Circle, Vijayanagaram-386043",Telangana,+910768631294,Gorakhpur,chiragsahni@kashyap-gala.com,Payment Paid,2022-06-29
+Chana-Sankar,7865,Ice Cream,P002,147,409.02,"H.No. 499, Tailor, Fatehpur 785048",Tripura,1880251403,Proddatur,vedikatiwari@bansal.com,Payment Paid,2020-07-02
+Sehgal and Sons,1431,Pickles,P018,240,350.7,"02, Bhatti Road, Dibrugarh 380172",Manipur,04863729975,Berhampur,indranilkaran@yahoo.com,Payment Pending,2023-12-01
+"Sem, Mann and Karnik",2204,Butter,P007,122,359.08,"51/648, Basu Chowk, Anand 383345",Meghalaya,03866098401,Narasaraopet,mdoctor@gmail.com,Payment Paid,2023-12-15
+"Tella, Andra and Grover",2090,Whipping Cream,P016,104,105.14,"46/692, Bhandari Path, Miryalaguda-896550",Gujarat,4755270289,Proddatur,ramaswamydrishya@hotmail.com,Payment Pending,2021-01-06
+Swaminathan and Sons,9341,Yogurt or Curd,P012,9,251.69,"H.No. 425, Bhatnagar Marg, Jabalpur-371860",Goa,3398669272,Saharanpur,lakshitmahajan@char-kunda.biz,Payment Paid,2022-10-19
+Chana-Sankar,7972,Frozen Mixed Vegetables,P009,417,171.92,"H.No. 28, Gokhale Road, Howrah 840488",Mizoram,+912340099905,Kanpur,bariainaaya@sant.biz,Payment Paid,2021-10-10
+Sehgal and Sons,8665,"Frozen Berries (e.g., strawberries, blueberries)",P015,159,166.13,"49/033, Wali Circle, Salem 355806",Meghalaya,+911488807007,Hindupur,yakshitbhalla@yahoo.com,Payment Paid,2023-10-21
+"Sem, Mann and Karnik",5341,Pickles,P018,54,36.33,"39/93, Saha Street, Bihar Sharif 691776",Maharashtra,3666810874,Bhusawal,mkaran@hotmail.com,Payment Pending,2022-04-07
+"Bali, Iyer and Lad",6426,Ice Cream,P002,427,362.52,"255, Handa Nagar, Ongole-998071",Maharashtra,+916174425185,Sikar,asankaran@yahoo.com,Payment Paid,2023-06-17
+"Bali, Iyer and Lad",7701,Paneer (Cottage Cheese),P008,451,166.34,"H.No. 79, Grewal, Pimpri-Chinchwad 181314",Punjab,03621357253,Gopalpur,drishya63@hotmail.com,Payment Paid,2023-04-07
+Sehgal and Sons,1139,Juice Concentrates (like orange or cranberry),P014,142,464.65,"088, Mane Zila, Ozhukarai 647662",Uttar Pradesh,+911732204311,Ranchi,rsarkar@toor.com,Payment Pending,2021-07-24
+Sehgal and Sons,3636,Milk or Milk Powder,P013,400,339.8,"H.No. 638, Hayre Zila, Madanapalle 558584",Tripura,+910007064310,Satara,mehulrajagopalan@hotmail.com,Payment Pending,2021-01-25
+Deo Ltd,2295,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,202,309.27,"299, Shroff Marg, Raipur 870280",Arunachal Pradesh,08879980513,Bellary,onkarvohra@amble-comar.biz,Payment Paid,2022-08-08
+Deo Ltd,5224,Butter,P007,324,417.69,"H.No. 263, Chopra Zila, Rewa-925642",Assam,0637902592,Machilipatnam,drishya32@agrawal.com,Payment Pending,2022-08-26
+Deo Ltd,3399,Green Peas,P004,4,423.4,"79/57, Vaidya Circle, Thrissur-620452",Nagaland,2670573379,Darbhanga,sawhneyneysa@gmail.com,Payment Pending,2023-01-28
+Ratta-Buch,4130,Milk or Milk Powder,P013,165,180.68,"H.No. 576, Borah Nagar, Ahmedabad-002896",Nagaland,0042500970,Tadepalligudem,hariraghav@borde.net,Payment Pending,2023-11-15
+Bera-Dani,4470,Chicken Nuggets,P010,14,475.89,"26/157, Srivastava Ganj, Tinsukia-150244",Uttarakhand,8916242746,Allahabad,bhavinbahri@sahni.info,Payment Paid,2021-04-06
+Bera-Dani,9048,Frozen Fish Fillets,P011,113,74.58,"12/45, Solanki Nagar, Kulti-732066",Goa,3860082525,Morena,rashachoudhary@malhotra-borde.info,Payment Pending,2020-03-12
+Sehgal and Sons,2407,Ice Cream,P002,430,426.88,"084, Magar Circle, Motihari 602879",Tripura,9842919210,Farrukhabad,mandamannat@yahoo.com,Payment Pending,2021-07-23
+"Sem, Mann and Karnik",5051,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,161,33.07,"H.No. 85, Dhillon Nagar, Surendranagar Dudhrej-762550",Uttar Pradesh,+917622988584,Tinsukia,kadelakshay@basak.org,Payment Paid,2023-08-19
+Ratta-Buch,5151,Chicken Nuggets,P010,450,346.18,"H.No. 42, Krish Zila, Bihar Sharif-746449",Sikkim,+914090027673,Kottayam,anya42@lall.com,Payment Paid,2022-06-18
+Sehgal and Sons,4093,Chicken Nuggets,P010,250,127.13,"H.No. 73, Agrawal Road, Adoni-896746",Punjab,09824311431,Guntakal,ubabu@shah.biz,Payment Pending,2022-08-19
+Sehgal and Sons,8843,Chicken Nuggets,P010,360,319.33,"H.No. 32, Rattan Circle, Asansol 279873",Kerala,+917793754953,Hubli–Dharwad,kiaradave@rama.biz,Payment Pending,2022-03-23
+Swaminathan and Sons,4848,Paneer (Cottage Cheese),P008,120,339.78,"H.No. 452, Gola Road, Mangalore-558869",Uttarakhand,02539893151,Muzaffarnagar,diyadate@taneja.com,Payment Paid,2023-12-31
+Deo Ltd,5914,Frozen Mixed Vegetables,P009,369,366.55,"07, Chandra Road, Raipur 986085",Uttarakhand,+916427194777,Chinsurah,samarth83@hotmail.com,Payment Pending,2020-09-04
+Bera-Dani,6749,"Frozen Berries (e.g., strawberries, blueberries)",P015,185,424.3,"90/105, Gola Nagar, Bilaspur 204317",Chhattisgarh,09744329879,Vellore,darshit75@gmail.com,Payment Pending,2021-01-19
+Swaminathan and Sons,7024,"Sauces (like tomato ketchup, chili sauce, or soy sauce)",P019,191,185.46,"98/117, Bhargava Path, Dehradun-889218",Madhya Pradesh,+911017219017,Aurangabad,chirag26@yahoo.com,Payment Pending,2021-09-27
+Ratta-Buch,4177,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,40,470.86,"H.No. 32, Brar Road, Arrah-960003",Karnataka,1428913353,Silchar,gmahal@yahoo.com,Payment Pending,2021-08-25
+"Grover, Sidhu and Varma",5872,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,471,356.17,"19/61, Banik Ganj, Dharmavaram 620358",Mizoram,4794331068,Pimpri-Chinchwad,wdey@hotmail.com,Payment Pending,2021-03-29
+Bera-Dani,1794,Cheese Slices or Blocks,P006,283,52.06,"H.No. 60, Varghese Path, Jalna 708204",Nagaland,09129463153,Madanapalle,indranskaul@srinivas.org,Payment Pending,2021-03-23
+Ratta-Buch,7116,Cheese Slices or Blocks,P006,206,464.79,"854, Rattan, Aurangabad-222234",Goa,08971296963,Darbhanga,bhardwajnirvi@hotmail.com,Payment Paid,2021-06-28
+Sehgal and Sons,9466,Pickles,P018,311,226.24,"368, Krishnan Nagar, Moradabad-189061",Karnataka,+912875514939,Adoni,baiju89@hegde.biz,Payment Paid,2023-01-14
+Sehgal and Sons,3994,Butter,P007,220,167.31,"H.No. 54, Suri Marg, Morbi-136166",Andhra Pradesh,+918404404883,Aurangabad,uthkarshdin@sant.com,Payment Paid,2021-02-13
+Bera-Dani,5709,Butter,P007,470,353.87,"H.No. 801, Krishna Road, Mangalore-173041",West Bengal,4869286275,Gandhinagar,jayeshseth@gmail.com,Payment Pending,2022-01-24
+Swaminathan and Sons,9670,"Dry Fruits (e.g., almonds, cashews, raisins)",P017,247,187.2,"H.No. 70, Din, Mathura 029146",Telangana,4672749149,Visakhapatnam,ramanshamik@agrawal-goel.com,Payment Paid,2023-02-19
+"Tella, Andra and Grover",4926,Frozen Mixed Vegetables,P009,403,164.85,"20/405, Rout Path, Jalgaon-927408",Himachal Pradesh,04265238962,Hospet,zgarde@yahoo.com,Payment Pending,2020-01-13
