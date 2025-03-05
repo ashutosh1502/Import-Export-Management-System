@@ -244,7 +244,7 @@ public class ImportController {
         addProduct.setMinWidth(100);
         addProduct.setOnAction(e -> addProductInEntry());
         updateProduct.setMinWidth(100);
-        updateProduct.setOnAction(e -> updateProductInEntry());
+        updateProduct.setOnAction(e -> updateProductInEntry(txtInvoiceNumber.getText()));
         deleteProduct.setMinWidth(100);
         deleteProduct.setOnAction(e -> deleteProductFromEntry());
         VBox btnVBox=new VBox(5);
@@ -493,16 +493,16 @@ public class ImportController {
         popupStage.show();
     }
 
-    public void updateProductInEntry(){
+    public void updateProductInEntry(String invoiceNumber){
         Product selected=tblProducts.getSelectionModel().getSelectedItem();
         if(selected!=null){
-            launchEntryProductUpdateWindow(selected.getSrNo(), selected.getProductID(),selected.getProductName(),selected.getQuantity(),selected.getPrice());
+            launchEntryProductUpdateWindow(selected.getSrNo(), selected.getProductID(),selected.getProductName(),selected.getQuantity(),selected.getPrice(),invoiceNumber);
         }else{
             AlertUtils.showAlert(Alert.AlertType.INFORMATION,"Unable to update.","Please select a row to update!");
         }
     }
 
-    public void launchEntryProductUpdateWindow(String selectedSrRo, String selectedPrId, String selectedPrName, int selectedQty, double selectedPrice){
+    public void launchEntryProductUpdateWindow(String selectedSrRo, String selectedPrId, String selectedPrName, int selectedQty, double selectedPrice,String invoiceNumber){
         Stage popupStage = new Stage();
         popupStage.setTitle("Update Product");
         popupStage.initModality(Modality.APPLICATION_MODAL);
@@ -540,25 +540,39 @@ public class ImportController {
             }
 
             try {
-                int quantity = Integer.parseInt(quantityText);
-                double price = Double.parseDouble(priceText);
-
-                Product updatedProduct = new Product(Integer.parseInt(selectedSrRo.substring(0,selectedSrRo.length()-1)),productId, productName, quantity, price);
-
-                int selectedIndex = tblProducts.getSelectionModel().getSelectedIndex();
-                if (selectedIndex >= 0) {
+                Product updatedProduct = null;
+                int quantity = 0;
+                double price = 0.0;
+                try{
+                    quantity = Integer.parseInt(quantityText);
+                    price = Double.parseDouble(priceText);
+                    updatedProduct = new Product(Integer.parseInt(selectedSrRo.substring(0,selectedSrRo.length()-1)),productId, productName, quantity, price);
+                }catch (NumberFormatException nfe){
+                    nfe.printStackTrace();
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Quantity and Price must be valid numbers!", ButtonType.OK);
+                    alert.showAndWait();
+                }
+                String updateProductQuery = "UPDATE import_products SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ?";
+                PreparedStatement updateProductStmt = conn.prepareStatement(updateProductQuery);
+                updateProductStmt.setString(1,productName);
+                updateProductStmt.setString(2,productId);
+                updateProductStmt.setInt(3,quantity);
+                updateProductStmt.setDouble(4,price);
+                updateProductStmt.setString(5,invoiceNumber);
+                int rowsAffected = updateProductStmt.executeUpdate();
+                if(rowsAffected > 0){
+                    int selectedIndex = tblProducts.getSelectionModel().getSelectedIndex();
                     tblProducts.getItems().set(selectedIndex, updatedProduct);
                     AlertUtils.showMsg("Product updated successfully!");
                     calculateSubTotal();
                     popupStage.close();
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to update the product. No row selected.", ButtonType.OK);
-                    alert.showAndWait();
+                }else{
+                    AlertUtils.showMsg("Failed to update product!");
+                    calculateSubTotal();
+                    popupStage.close();
                 }
-
-            } catch (NumberFormatException ex) {
-                ex.printStackTrace();
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Quantity and Price must be valid numbers!", ButtonType.OK);
+            } catch (Exception ex) {
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Something went wrong!", ButtonType.OK);
                 alert.showAndWait();
             }
         });
@@ -738,7 +752,7 @@ public class ImportController {
         addProduct.setMinWidth(100);
         addProduct.setOnAction(e -> addProductInEntry());
         updateProduct.setMinWidth(100);
-        updateProduct.setOnAction(e -> updateProductInEntry());
+        updateProduct.setOnAction(e -> updateProductInEntry(selectedInvoiceNumber));
         deleteProduct.setMinWidth(100);
         deleteProduct.setOnAction(e -> deleteProductFromEntry());
         VBox btnVBox = new VBox(5);
@@ -772,9 +786,7 @@ public class ImportController {
         btnUpdate.setOnAction(e -> {
             try {
                 String updateImportsQuery = "UPDATE imports SET supplier_id = ?, supplier_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = ?, invoice_date = ?, sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
-                String updateProductsQuery = "UPDATE import_products SET invoice_number = ?, product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ? AND product_id = ?";
                 PreparedStatement updateStmt = conn.prepareStatement(updateImportsQuery);
-                PreparedStatement updateProductStmt = conn.prepareStatement(updateProductsQuery);
                 updateStmt.setString(1, txtSupplierId.getText());
                 updateStmt.setString(2, txtSupplierName.getText());
                 updateStmt.setString(3, txtAddress.getText());
@@ -793,47 +805,21 @@ public class ImportController {
                 int rowsAffected = updateStmt.executeUpdate();
                 // Create a nested table for the products column
                 if(rowsAffected > 0){
-                    updateProductStmt.setString(1,txtInvoiceNumber.getText());
-                    updateProductStmt.setString(6,selectedInvoiceNumber);
-                    for (Product product : tblProducts.getItems()) {
-                        updateProductStmt.setString(2, product.getProductName());
-                        updateProductStmt.setString(3, product.getProductID());
-                        updateProductStmt.setInt(4, product.getQuantity());
-                        updateProductStmt.setDouble(5, product.getPrice());
-                        updateProductStmt.setString(7, product.getProductID());
-                        String checkQuery = "SELECT * FROM IMPORT_PRODUCTS WHERE invoice_number = ? AND product_id = ?";
-                        PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
-                        checkStmt.setString(1,selectedInvoiceNumber);
-                        checkStmt.setString(2,product.getProductID());
-                        ResultSet rs = checkStmt.executeQuery();
-                        if (rs.next()){
-                            rowsAffected = 0;
-                            rowsAffected = updateProductStmt.executeUpdate();
-                            if (rowsAffected <= 0) {
-                                AlertUtils.showMsg("Failed to update product details!");
-                                popupStage.close();
-                                loadImportsData();
-                            }
-                        }else{
-                            PreparedStatement preparedStmtProducts = conn.prepareStatement("INSERT INTO import_products (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)");
-                            preparedStmtProducts.setString(1,txtInvoiceNumber.getText());
-                            preparedStmtProducts.setString(2,product.getProductName());
-                            preparedStmtProducts.setString(3,product.getProductID());
-                            preparedStmtProducts.setInt(4,product.getQuantity());
-                            preparedStmtProducts.setDouble(5,product.getPrice());
-                            rowsAffected = 0;
-                            rowsAffected = preparedStmtProducts.executeUpdate();
-                            if(rowsAffected <= 0){
-                                AlertUtils.showMsg("Failed to update product details!");
-                                popupStage.close();
-                                loadImportsData();
-                            }
-                        }
+                    PreparedStatement invoiceNumberUpdate = conn.prepareStatement("UPDATE import_products SET invoice_number =? WHERE invoice_number = ?");
+                    invoiceNumberUpdate.setString(1,txtInvoiceNumber.getText());
+                    invoiceNumberUpdate.setString(2,selectedInvoiceNumber);
+                    rowsAffected = 0;
+                    rowsAffected = invoiceNumberUpdate.executeUpdate();
+                    if(rowsAffected > 0){
+                        AlertUtils.showMsg("Entry updated successfully!");
+                        popupStage.close();
+                        loadImportsData();
+                    }else{
+                        AlertUtils.showMsg("Failed to update entry!");
+                        popupStage.close();
+                        loadImportsData();
                     }
                 }
-                AlertUtils.showMsg("Entry updated successfully!");
-                popupStage.close();
-                loadImportsData();
             } catch (Exception ex) {
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Update Failed", "Error updating record: " + ex.getMessage());
             }
