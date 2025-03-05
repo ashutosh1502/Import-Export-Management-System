@@ -1,0 +1,10 @@
+*.java linguist-detectable=true
+*.fxml linguist-detectable=true
+*.xml linguist-detectable =true
+*.sql linguist-detectable=true
+*.c linguist-detectable=false
+*.cpp linguist-detectable=false
+*.h linguist-detectable=false
+*.dll linguist-detectable=false
+*.o linguist-detectable=false
+*.a linguist-detectable=false
