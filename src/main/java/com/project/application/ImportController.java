@@ -46,7 +46,7 @@ public class ImportController {
         col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(String.join(", ", cellData.getValue().getProducts())));
         col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getTotalQuantity()).asObject());
         DecimalFormat df = new DecimalFormat("##,##,###");
-        col6.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(df.format(cellData.getValue().getSubTotal())));
+        col6.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. "+df.format(cellData.getValue().getSubTotal())));
         col7.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPaymentStatus()));
         col8.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceDate()));
 
@@ -62,13 +62,13 @@ public class ImportController {
     }
 
     public void resizeColumns(){
-        importsTable.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
+        importsTable.setColumnResizePolicy(importsTable.CONSTRAINED_RESIZE_POLICY);
 //        col1.setPrefWidth(30);
 //        col1.setMinWidth(20);
 //        col1.setResizable(true);
 //        col2.setPrefWidth(80);
 //        col2.setMinWidth(50);
-
+//
 //        importsTable.widthProperty().addListener((observable, oldWidth, newWidth) -> {
 //            double totalWidth = newWidth.doubleValue() - col1.getWidth();
 //            double remainingColumnCount = importsTable.getColumns().size() - 1;
@@ -218,6 +218,8 @@ public class ImportController {
         col1.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSrNo()));
         col2.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductID()));
         col3.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductName()));
+        col3.setMinWidth(60);
+        col3.setPrefWidth(80);
         col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
         col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
         tblProducts.getColumns().addAll(col1,col2,col3,col4,col5);
@@ -716,10 +718,10 @@ public class ImportController {
         TableColumn<Product, Integer> col4;
         TableColumn<Product, Double> col5;
         col1 = new TableColumn<>("SrNo.");
-        col1.setPrefWidth(40);
+//        col1.setPrefWidth(40);
         col2 = new TableColumn<>("Product ID");
         col3 = new TableColumn<>("Product Name");
-        col3.setPrefWidth(120);
+//        col3.setMinWidth(65);
         col4 = new TableColumn<>("Qty");
         col5 = new TableColumn<>("Price");
         col1.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(String.valueOf(cellData.getValue().getSrNo())));
@@ -728,6 +730,7 @@ public class ImportController {
         col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
         col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
         tblProducts.getColumns().addAll(col1, col2, col3, col4, col5);
+        tblProducts.setColumnResizePolicy(tblProducts.CONSTRAINED_RESIZE_POLICY);
         tblProducts.setPrefWidth(400);
         tblProducts.setMaxHeight(250);
 
