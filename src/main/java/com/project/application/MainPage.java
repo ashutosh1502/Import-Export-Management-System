@@ -38,6 +38,7 @@ public class MainPage{
     private ImportController importController=new ImportController();
     private ExportController exportController=new ExportController();
     private StockController stockController=new StockController();
+    private StatementController statementController = new StatementController();
     private VBox optionsPane;
     private Button[] options;
     private Font currFont;
@@ -223,6 +224,11 @@ public class MainPage{
                     operationsPane.getChildren().add(btn);
             }else if(index==2){
                 scrollPane.setContent(stockController.loadStocks(conn));
+                operationsPane.getChildren().clear();
+                for(Button btn:operations[index])
+                    operationsPane.getChildren().add(btn);
+            }else if(index==3){
+                scrollPane.setContent(statementController.loadContent(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
