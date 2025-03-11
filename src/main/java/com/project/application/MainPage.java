@@ -256,15 +256,16 @@ public class MainPage{
         operations[0].get(2).setOnAction(e -> importController.deleteEntry());
 
         operations[1].add(new Button("Add Entry"));
+        operations[1].getFirst().setOnAction(e -> exportController.addEntry(scrollPane));
         operations[1].add(new Button("View/Update Entry"));
+        operations[1].getFirst().setOnAction(e -> exportController.viewUpdateEntry(scrollPane));
         operations[1].add(new Button("Delete Entry"));
+        operations[1].getFirst().setOnAction(e -> exportController.deleteEntry());
 
         operations[2].add(new Button("Add New Stock"));
         operations[2].getFirst().setOnAction(e ->{stockController.addStock();scrollPane.setContent(stockController.loadStocks(conn));});
-        
         operations[2].add(new Button("Update Stock"));
         operations[2].get(1).setOnAction(e ->{stockController.updateStock();scrollPane.setContent(stockController.loadStocks(conn));});
-
         operations[2].add(new Button("Delete Stock"));
         operations[2].get(2).setOnAction(e ->{stockController.deleteStock();scrollPane.setContent(stockController.loadStocks(conn));});
 
