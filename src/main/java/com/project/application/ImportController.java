@@ -1,6 +1,7 @@
 package com.project.application;
 
 import com.project.utils.AlertUtils;
+import com.project.utils.AutoCompleteUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -16,7 +17,6 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ImportController {
     private static TableView<Imports> importsTable;
@@ -430,9 +430,16 @@ public class ImportController {
 
         Label lblProductName = new Label("Product Name:");
         TextField txtProductName = new TextField();
+        ListView<String> suggestionList = new ListView<>();
+        VBox prBox = new VBox();
+        VBox.setMargin(txtProductName,new Insets(20,0,0,0));
+        prBox.getChildren().addAll(txtProductName,suggestionList);
 
         Label lblProductId = new Label("Product ID:");
         TextField txtProductId = new TextField();
+
+        AutoCompleteUtils autoCompleteUtils = new AutoCompleteUtils();
+        autoCompleteUtils.setupAutoCompleteProductName(conn,txtProductName,txtProductId,suggestionList);
 
         Label lblQuantity = new Label("Quantity:");
         TextField txtQuantity = new TextField();
@@ -477,7 +484,7 @@ public class ImportController {
         });
 
         productForm.add(lblProductName, 0, 0);
-        productForm.add(txtProductName, 1, 0);
+        productForm.add(prBox, 1, 0);
         productForm.add(lblProductId, 0, 1);
         productForm.add(txtProductId, 1, 1);
         productForm.add(lblPrice, 0, 2);
@@ -487,7 +494,7 @@ public class ImportController {
         productForm.add(btnAddItem, 0, 4);
         productForm.add(btnClose, 1, 4);
 
-        Scene scene = new Scene(productForm, 350, 250);
+        Scene scene = new Scene(productForm, 350, 350);
         popupStage.setScene(scene);
 
 
