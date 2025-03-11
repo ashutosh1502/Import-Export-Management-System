@@ -12,6 +12,8 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 
 public class StatementController {
@@ -24,11 +26,13 @@ public class StatementController {
     private Region spacer;
     private TableView<StatementEntity> stmtTable;
     private TableColumn<StatementEntity,Integer> colSrno,colTotalQty;
-    private TableColumn<StatementEntity,String> colType,colInvoiceNo,colSCName,colSCId,colPaymentStatus,colSubTotal;
+    private TableColumn<StatementEntity,String> colType,colInvoiceNo,colSCName,colSCId,colPaymentStatus,colSubTotal,colInvoiceDate;
     private DecimalFormat df;
+    private Connection conn;
 
 
-    public VBox loadContent(Connection conn){
+    public VBox loadComponents(Connection connection){
+        conn = connection;
         title = new Label("Statements");
 
         searchPane = new HBox();
@@ -96,26 +100,51 @@ public class StatementController {
         colInvoiceNo = new TableColumn<>("Invoice No");
         colSCName = new TableColumn<>("Supplier/Customer Name");
         colSCId = new TableColumn<>("Supplier/Customer Id");
-        colTotalQty = new TableColumn<>("Total Qty.");
         colSubTotal = new TableColumn<>("Subtotal");
         colPaymentStatus = new TableColumn<>("Payment Status");
+        colInvoiceDate = new TableColumn<>("Invoice Date");
 
         colSrno.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getSrno()).asObject());
         colType.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getType()));
         colInvoiceNo.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceNo()));
         colSCName.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSCName()));
         colSCId.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSCId()));
-        colTotalQty.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getTotalQty()).asObject());
+        colInvoiceDate.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceDate()));
+
         df = new DecimalFormat("##,##,###");
         colSubTotal.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. "+df.format(cellData.getValue().getSubTotal())));
         colPaymentStatus.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPaymentStatus()));
         colSrno.setPrefWidth(20);
         colType.setPrefWidth(70);
         colInvoiceNo.setPrefWidth(70);
-        colTotalQty.setPrefWidth(50);
         colSubTotal.setPrefWidth(50);
 
-        stmtTable.getColumns().addAll(colSrno,colType,colInvoiceNo,colSCName,colSCId,colTotalQty,colSubTotal,colPaymentStatus);
+        stmtTable.getColumns().addAll(colSrno,colType,colInvoiceNo,colSCName,colSCId,colSubTotal,colPaymentStatus,colInvoiceDate);
+
+        loadStatementsData();
+    }
+
+    private void loadStatementsData(){
+        stmtTable.getItems().clear();
+        String query = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM imports "
+                + "UNION ALL "
+                + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM exports "
+                + "ORDER BY invoice_date";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            int srno = 1;
+            while(rs.next()){
+                StatementEntity stmtEntity = new StatementEntity(srno,rs.getString("type"),
+                        rs.getString("invoice_number"), rs.getString("party_name"),
+                        rs.getString("party_id"), rs.getDouble("sub_total"),
+                        rs.getString("payment_status"), rs.getString("invoice_date"));
+                stmtTable.getItems().add(stmtEntity);
+                srno+=1;
+            }
+        }catch (Exception ex){
+            System.out.println("StatementController:135 \n"+ex);
+        }
     }
 }
 

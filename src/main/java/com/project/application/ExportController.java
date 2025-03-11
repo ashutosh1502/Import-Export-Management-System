@@ -22,7 +22,6 @@ import java.util.ArrayList;
 public class ExportController {
     private TableView<Exports> exportsTable;
     private TableView<Product> tblProducts;
-    private static final ObservableList<String> productNames = FXCollections.observableArrayList();
     private TableColumn<Exports,String> col1,col2,col3,col4,col7,col8;
     private TableColumn<Exports,Integer> col5;
     private TableColumn<Exports,Double> col6;
@@ -112,8 +111,6 @@ public class ExportController {
     //OPERATIONS BUTTON ACTIONS--------------------------------------------------------------------------------------
     @SuppressWarnings("unchecked")
     public void addEntry(ScrollPane scrollPane) {
-        loadProductsFromDatabase();
-
         Stage popupStage = new Stage();
         popupStage.setTitle("Add Entry");
 
@@ -218,13 +215,13 @@ public class ExportController {
         btnSubmit.setOnAction(e -> {
             try {
 //                 Prepare SQL INSERT query
-                String insertQuery = "INSERT INTO imports (" +
-                        "supplier_name, supplier_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
+                String insertQuery = "INSERT INTO exports (" +
+                        "customer_name, customer_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
                         ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
-                String insertProductQuery = "INSERT INTO import_products (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
+                String insertProductQuery = "INSERT INTO export_products (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
                 // Retrieve values from the form
-                String supplierIdEntered = txtCustomerId.getText();
-                String supplierNameEntered = txtCustomerName.getText();
+                String customerIdEntered = txtCustomerId.getText();
+                String customerNameEntered = txtCustomerName.getText();
                 String addressEntered = txtAddress.getText();
                 String cityEntered = txtCity.getText();
                 String stateEntered = txtState.getText();
@@ -241,21 +238,21 @@ public class ExportController {
                 try {
 //                    Object[] productsArray = new Object[tblProducts.getItems().size()];
 //                    int index = 0;
-                    PreparedStatement preparedStatementImports = conn.prepareStatement(insertQuery);
-                    preparedStatementImports.setString(1,supplierNameEntered);
-                    preparedStatementImports.setString(2,supplierIdEntered);
-                    preparedStatementImports.setString(3, addressEntered);
-                    preparedStatementImports.setString(4,cityEntered);
-                    preparedStatementImports.setString(5,stateEntered);
-                    preparedStatementImports.setString(6,phoneEntered);
-                    preparedStatementImports.setString(7,emailEntered);
-                    preparedStatementImports.setString(8,invoiceNumberEntered);
-                    preparedStatementImports.setDate(9, new java.sql.Date(orderDate.getTime()));
-                    preparedStatementImports.setDate(10, new java.sql.Date(invoiceDate.getTime()));
-                    preparedStatementImports.setDouble(11, subTotalEntered);
-                    preparedStatementImports.setString(12, paymentModeEntered);
-                    preparedStatementImports.setString(13, paymentStatusEntered);
-                    int rowsAffected = preparedStatementImports.executeUpdate();
+                    PreparedStatement preparedStmtExports = conn.prepareStatement(insertQuery);
+                    preparedStmtExports.setString(1,customerNameEntered);
+                    preparedStmtExports.setString(2,customerIdEntered);
+                    preparedStmtExports.setString(3, addressEntered);
+                    preparedStmtExports.setString(4,cityEntered);
+                    preparedStmtExports.setString(5,stateEntered);
+                    preparedStmtExports.setString(6,phoneEntered);
+                    preparedStmtExports.setString(7,emailEntered);
+                    preparedStmtExports.setString(8,invoiceNumberEntered);
+                    preparedStmtExports.setDate(9, new java.sql.Date(orderDate.getTime()));
+                    preparedStmtExports.setDate(10, new java.sql.Date(invoiceDate.getTime()));
+                    preparedStmtExports.setDouble(11, subTotalEntered);
+                    preparedStmtExports.setString(12, paymentModeEntered);
+                    preparedStmtExports.setString(13, paymentStatusEntered);
+                    int rowsAffected = preparedStmtExports.executeUpdate();
                     if(rowsAffected > 0){
                         for (Product product : tblProducts.getItems()) {
                             PreparedStatement preparedStatementProducts = conn.prepareStatement(insertProductQuery);
@@ -272,6 +269,7 @@ public class ExportController {
                                 alert.setHeaderText(null);
                                 alert.setContentText("Entry added successfully!");
                                 alert.showAndWait();
+                                updateStocks();
                                 // Reload the data (refresh table)
                                 scrollPane.setContent(loadHistory(conn));
                             }
@@ -344,22 +342,6 @@ public class ExportController {
         btnCancel.setOnAction(e -> scrollPane.setContent(loadHistory(conn)));
     }
 
-
-    private void loadProductsFromDatabase() {
-//        System.out.println("Loading product names from DB.");   //test.
-        String query = "SELECT product_name FROM products";
-        try{
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                productNames.add(rs.getString("product_name"));
-//                System.out.println(productNames);     //test.
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void addProductInEntry(){
         Stage popupStage = new Stage();
         popupStage.setTitle("Add Product");
@@ -380,14 +362,14 @@ public class ExportController {
         Label lblProductId = new Label("Product ID:");
         TextField txtProductId = new TextField();
 
-        AutoCompleteUtils autoCompleteUtils = new AutoCompleteUtils();
-        autoCompleteUtils.setupAutoCompleteProductName(conn,txtProductName,txtProductId,suggestionList);
-
-        Label lblQuantity = new Label("Quantity:");
-        TextField txtQuantity = new TextField();
 
         Label lblPrice = new Label("Price:");
         TextField txtPrice = new TextField();
+        AutoCompleteUtils autoCompleteUtils = new AutoCompleteUtils();
+        autoCompleteUtils.setupAutoCompleteProductName(conn,txtProductName,txtProductId,txtPrice,suggestionList);
+
+        Label lblQuantity = new Label("Quantity:");
+        TextField txtQuantity = new TextField();
 
         Button btnAddItem = new Button("Add item to Entry");
         Button btnClose = new Button("Close");
@@ -407,8 +389,12 @@ public class ExportController {
             try {
                 int quantity = Integer.parseInt(quantityText);
                 float price = Float.parseFloat(priceText);
-
                 Product newProduct = new Product(srno,productId, productName, quantity, price);
+                if (!checkAvailableQty(productId,quantity)) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Insufficient Stock!", ButtonType.OK);
+                    alert.showAndWait();
+                    return;
+                }
                 tblProducts.getItems().add(newProduct);
 //                System.out.println("Product added: " + newProduct);
                 srno++;
@@ -868,6 +854,36 @@ public class ExportController {
         } catch (SQLException ex) {
             AlertUtils.showAlert(Alert.AlertType.ERROR,
                     "Database Error", "Error occurred while deleting entry: " + ex.getMessage());
+        }
+    }
+
+    public boolean checkAvailableQty(String prId,int enteredQty){
+        try{
+            String selectQuery = "SELECT qty FROM products WHERE product_id = '"+prId+"'";
+            Statement selectStmt = conn.createStatement();
+            ResultSet rs = selectStmt.executeQuery(selectQuery);
+            if(rs.next()){
+                return rs.getInt("qty") >= enteredQty;
+            }
+        }catch (Exception e){
+            System.out.println("ExportController: 865 \n"+e);
+        }
+        return false;
+    }
+
+    public void updateStocks(){
+        try{
+            String updateQuery = "UPDATE products SET qty = qty - ? WHERE product_id = ?";
+            PreparedStatement updateStmt = conn.prepareStatement(updateQuery);
+            for(Product pr:tblProducts.getItems()){
+                updateStmt.setInt(1,pr.getQuantity());
+                updateStmt.setString(2,pr.getProductID());
+                if(!(updateStmt.executeUpdate()>0)){
+                    AlertUtils.showAlert(Alert.AlertType.ERROR,"Stock Update Failed","Failed to update stock in inventory!");
+                }
+            }
+        }catch (Exception e){
+            System.out.println("ExportController: 888 \n"+e);
         }
     }
 }
