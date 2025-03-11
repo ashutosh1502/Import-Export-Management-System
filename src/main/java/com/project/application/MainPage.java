@@ -258,9 +258,9 @@ public class MainPage{
         operations[1].add(new Button("Add Entry"));
         operations[1].getFirst().setOnAction(e -> exportController.addEntry(scrollPane));
         operations[1].add(new Button("View/Update Entry"));
-        operations[1].getFirst().setOnAction(e -> exportController.viewUpdateEntry(scrollPane));
+        operations[1].get(1).setOnAction(e -> exportController.viewUpdateEntry(scrollPane));
         operations[1].add(new Button("Delete Entry"));
-        operations[1].getFirst().setOnAction(e -> exportController.deleteEntry());
+        operations[1].get(2).setOnAction(e -> exportController.deleteEntry());
 
         operations[2].add(new Button("Add New Stock"));
         operations[2].getFirst().setOnAction(e ->{stockController.addStock();scrollPane.setContent(stockController.loadStocks(conn));});
