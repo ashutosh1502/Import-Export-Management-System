@@ -49,8 +49,8 @@ public class ImportController {
         col6.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. "+df.format(cellData.getValue().getSubTotal())));
         col7.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPaymentStatus()));
         col8.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceDate()));
+        importsTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        resizeColumns();
         try{
             importsTable.getColumns().addAll(col1, col2, col3, col4, col5, col6,col7,col8);
         }catch (Exception e){
@@ -59,32 +59,6 @@ public class ImportController {
         loadImportsData();
 //        System.out.println(importsTable);   //debug-test.
         return importsTable;
-    }
-
-    public void resizeColumns(){
-        importsTable.setColumnResizePolicy(importsTable.CONSTRAINED_RESIZE_POLICY);
-//        col1.setPrefWidth(30);
-//        col1.setMinWidth(20);
-//        col1.setResizable(true);
-//        col2.setPrefWidth(80);
-//        col2.setMinWidth(50);
-//
-//        importsTable.widthProperty().addListener((observable, oldWidth, newWidth) -> {
-//            double totalWidth = newWidth.doubleValue() - col1.getWidth();
-//            double remainingColumnCount = importsTable.getColumns().size() - 1;
-//
-//            if (remainingColumnCount > 0) {
-//                double columnWidth = totalWidth / remainingColumnCount;
-//
-//                for (TableColumn<?, ?> col : importsTable.getColumns()) {
-//                    if (col != col1 && col!=col2) {
-//                        col.setPrefWidth(columnWidth);
-//                        col.setMinWidth(50);
-//                        col.setResizable(true);
-//                    }
-//                }
-//            }
-//        });
     }
 
     public void loadImportsData(){
@@ -107,9 +81,6 @@ public class ImportController {
                 String invoiceNo=rs.getString("invoice_number");
                 String orderDate = rs.getString("order_date");
                 String invoiceDate = rs.getString("invoice_date");
-//                Array productsArray =rs.getArray("products");
-//                ArrayList<String> productsList=getProductsList(productsArray);
-//                int totalQty=getTotalProductQty(productsArray);
                 double subTotal = rs.getDouble("sub_total");
                 String paymentMode = rs.getString("payment_mode");
                 String paymentStatus = rs.getString("payment_status");
