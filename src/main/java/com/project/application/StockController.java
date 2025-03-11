@@ -146,7 +146,7 @@ public class StockController {
             } catch (NumberFormatException ex) {
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Invalid Input", "Quantity and Price must be numeric.");
             } catch (SQLException ex) {
-                AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to add the product: " + ex.getMessage());
+                AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Product ID already exists!");
             }
         });
 
