@@ -6,20 +6,63 @@ public class Exports {
     private final String SrNo;
     private final String invoiceNo;
     private final String customerName;
+    private final String customerId;
     private final ArrayList<String> products;
-    private final int quantity;
-    private final double price;
-    private final String invoiceDate;
+    private final int totalQuantity;
+    private final double subTotal;
+    private final String address,city,state,phno,email,orderDate,invoiceDate,paymentMode,paymentStatus;
 
-    public Exports(int srno,String invoiceNo,String supplierName, ArrayList<String> products, int quantity, float price, String date) {
+    public Exports(int srno, String invoiceNo, String customerId, String customerName, ArrayList<String> products, int totalQuantity, double subTotal, String address, String city, String state, String phno, String email, String orderDate, String invoiceDate, String paymentMode, String paymentStatus) {
         this.SrNo=srno+".";
         this.invoiceNo=invoiceNo;
-        this.customerName = supplierName;
+        this.customerName = customerName;
+        this.customerId = customerId;
         this.products = products;
-        this.quantity = quantity;
-        this.price = price;
-        this.invoiceDate = date;
+        this.totalQuantity = totalQuantity;
+        this.subTotal = subTotal;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.phno = phno;
+        this.email = email;
+        this.orderDate = orderDate;
+        this.invoiceDate = invoiceDate;
+        this.paymentMode = paymentMode;
+        this.paymentStatus = paymentStatus;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getPhno() {
+        return phno;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public String getPaymentMode() {
+        return paymentMode;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
 
     public String getSrNo(){ return SrNo; }
 
@@ -37,11 +80,11 @@ public class Exports {
         return invoiceDate;
     }
 
-    public double getPrice() {
-        return price;
+    public double getSubTotal() {
+        return subTotal;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getTotalQuantity() {
+        return totalQuantity;
     }
 }
