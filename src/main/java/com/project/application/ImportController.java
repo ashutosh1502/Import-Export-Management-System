@@ -295,16 +295,24 @@ public class ImportController {
                             preparedStatementProducts.setDouble(5,product.getPrice());
                             rowsAffected = 0;
                             rowsAffected = preparedStatementProducts.executeUpdate();
-                            if (rowsAffected > 0){
+                            if (!(rowsAffected > 0)){
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                alert.setTitle("Success");
+                                alert.setTitle("Failed");
                                 alert.setHeaderText(null);
-                                alert.setContentText("Entry added successfully!");
+                                alert.setContentText("Failed to add products!");
                                 alert.showAndWait();
                                 // Reload the data (refresh table)
                                 scrollPane.setContent(loadHistory(conn));
+                                return;
                             }
                         }
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Success");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Entry added successfully!");
+                        alert.showAndWait();
+                        // Reload the data (refresh table)
+                        scrollPane.setContent(loadHistory(conn));
                     }
                 } catch (Exception sqlException) {
                     System.out.println(sqlException);
