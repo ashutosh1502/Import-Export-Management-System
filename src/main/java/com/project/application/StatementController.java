@@ -1,5 +1,6 @@
 package com.project.application;
 
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -10,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,9 +19,9 @@ import java.sql.Statement;
 import java.text.DecimalFormat;
 
 public class StatementController {
-    private VBox main;
+    private VBox main,v1;
     private HBox h1,h2,searchPane;
-    private Label title,from,to;
+    private Label title,from,to, totalImportsAmountLbl = new Label(), totalExportsAmountLbl = new Label();
     private DatePicker fromDate,toDate;
     private TextField searchText;
     private Button searchBtn,processBtn,clearBtn,printBtn;
@@ -29,7 +31,12 @@ public class StatementController {
     private TableColumn<StatementEntity,String> colType,colInvoiceNo,colSCName,colSCId,colPaymentStatus,colSubTotal,colInvoiceDate;
     private DecimalFormat df;
     private Connection conn;
-
+    private double totalImportsAmount,totalExportsAmount;
+    private String loadDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM imports "
+            + "UNION ALL "
+            + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM exports "
+            + "ORDER BY invoice_date";
+    private String rangeBasedDataQuery;
 
     public VBox loadComponents(Connection connection){
         conn = connection;
@@ -51,6 +58,7 @@ public class StatementController {
         to = new Label("To: ");
         toDate = new DatePicker();
         processBtn = new Button("Process");
+        setProcessBtnAction();
         clearBtn = new Button("Clear");
         spacer = new Region();
         HBox.setHgrow(spacer,Priority.ALWAYS);
@@ -61,8 +69,13 @@ public class StatementController {
 
         setStmtTable();
 
+        v1 = new VBox();
+        totalImportsAmountLbl.setText("Total Imports(Rs.): ");
+        totalExportsAmountLbl.setText("Total Export(Rs.): ");
+        v1.getChildren().addAll(totalImportsAmountLbl, totalExportsAmountLbl);
+
         main = new VBox();
-        main.getChildren().addAll(h1,h2,stmtTable);
+        main.getChildren().addAll(h1,h2,stmtTable, v1);
 
         addStyles();
         return main;
@@ -89,6 +102,10 @@ public class StatementController {
         h1.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
         h2.setPadding(new Insets(5,0,0,10));
         h2.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
+        totalImportsAmountLbl.setStyle("-fx-font-size:16px;-fx-font-weight:bold;-fx-text-fill:blue;");
+        totalExportsAmountLbl.setStyle("-fx-font-size:16px;-fx-font-weight:bold;-fx-text-fill:green;");
+        VBox.setMargin(totalImportsAmountLbl,new Insets(0,0,0,10));
+        VBox.setMargin(totalExportsAmountLbl,new Insets(0,0,0,10));
     }
 
     private void setStmtTable(){
@@ -118,18 +135,18 @@ public class StatementController {
         colType.setPrefWidth(70);
         colInvoiceNo.setPrefWidth(70);
         colSubTotal.setPrefWidth(50);
+        setColumnDataColors();
 
         stmtTable.getColumns().addAll(colSrno,colType,colInvoiceNo,colSCName,colSCId,colSubTotal,colPaymentStatus,colInvoiceDate);
 
-        loadStatementsData();
+        loadStatementsData(loadDataQuery);
     }
 
-    private void loadStatementsData(){
+    private void loadStatementsData(String query){
         stmtTable.getItems().clear();
-        String query = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM imports "
-                + "UNION ALL "
-                + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM exports "
-                + "ORDER BY invoice_date";
+        totalImportsAmount = 0;
+        totalExportsAmount = 0;
+
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -140,11 +157,94 @@ public class StatementController {
                         rs.getString("party_id"), rs.getDouble("sub_total"),
                         rs.getString("payment_status"), rs.getString("invoice_date"));
                 stmtTable.getItems().add(stmtEntity);
+                if(rs.getString("type").equalsIgnoreCase("exports")){
+                    totalExportsAmount += rs.getDouble("sub_total");
+                }else{
+                    totalImportsAmount += rs.getDouble("sub_total");
+                }
                 srno+=1;
             }
+            Platform.runLater(() -> {
+                DecimalFormat df = new DecimalFormat("##,##,###.##");
+                totalImportsAmountLbl.setText("Total Imports(Rs.): " + df.format(totalImportsAmount)+"/-");
+                totalExportsAmountLbl.setText("Total Exports(Rs.): " + df.format(totalExportsAmount)+"/-");
+            });
         }catch (Exception ex){
-            System.out.println("StatementController:135 \n"+ex);
+            System.out.println("StatementController:173 \n"+ex);
+            System.out.println(ex.getCause());
         }
+    }
+
+    private void setColumnDataColors(){
+        colType.setCellFactory(column -> new TableCell<>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    setText(item);
+                    if (item.equalsIgnoreCase("imports")) {
+                        setTextFill(Color.BLUE);
+                    } else if (item.equalsIgnoreCase("exports")) {
+                        setTextFill(Color.GREEN);
+                    } else {
+                        // Default color if not "imports" or "exports"
+                        setTextFill(Color.BLACK);
+                    }
+                }
+            }
+        });
+        colPaymentStatus.setCellFactory(column -> new TableCell<>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    setText(item);
+                    if (item.equalsIgnoreCase("pending")) {
+                        setTextFill(Color.RED);
+                    } else if (item.equalsIgnoreCase("paid")) {
+                        setTextFill(Color.GREEN);
+                    } else {
+                        // Default color if not "imports" or "exports"
+                        setTextFill(Color.BLACK);
+                    }
+                }
+            }
+        });
+    }
+
+    private void setProcessBtnAction(){
+        processBtn.setOnAction(event->{
+            if(fromDate.getValue()==null || toDate.getValue()==null){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Please select date range!",ButtonType.OK);
+                alert.showAndWait();
+                return;
+            }
+            if(fromDate.getValue().isAfter(toDate.getValue())){
+                Alert alert = new Alert(Alert.AlertType.WARNING,"Invalid Date Range!",ButtonType.OK);
+                alert.showAndWait();
+                return;
+            }
+            String fromDateStr = fromDate.getValue().toString();
+            String toDateStr = toDate.getValue().toString();
+            System.out.println(fromDateStr+" "+toDateStr);
+            rangeBasedDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
+                    "sub_total, payment_status, invoice_date FROM imports " +
+                    "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
+                    "UNION ALL " +
+                    "SELECT 'Exports' AS type, invoice_number, customer_name AS party_name, customer_id AS party_id, " +
+                    "sub_total, payment_status, invoice_date FROM exports " +
+                    "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
+                    "ORDER BY invoice_date";
+            loadStatementsData(rangeBasedDataQuery);
+        });
     }
 }
 
