@@ -24,7 +24,7 @@ public class StatementController {
     private Label title,from,to, totalImportsAmountLbl = new Label(), totalExportsAmountLbl = new Label();
     private DatePicker fromDate,toDate;
     private TextField searchText;
-    private Button searchBtn,processBtn,clearBtn,printBtn;
+    private Button searchBtn,processBtn, resetBtn,printBtn;
     private Region spacer;
     private TableView<StatementEntity> stmtTable;
     private TableColumn<StatementEntity,Integer> colSrno,colTotalQty;
@@ -32,11 +32,11 @@ public class StatementController {
     private DecimalFormat df;
     private Connection conn;
     private double totalImportsAmount,totalExportsAmount;
+    private String fromDateStr,toDateStr;
     private String loadDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM imports "
             + "UNION ALL "
             + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM exports "
             + "ORDER BY invoice_date";
-    private String rangeBasedDataQuery;
 
     public VBox loadComponents(Connection connection){
         conn = connection;
@@ -59,13 +59,14 @@ public class StatementController {
         toDate = new DatePicker();
         processBtn = new Button("Process");
         setProcessBtnAction();
-        clearBtn = new Button("Clear");
+        resetBtn = new Button("Reset");
+        setResetBtnAction();
         spacer = new Region();
         HBox.setHgrow(spacer,Priority.ALWAYS);
         printBtn = new Button("Print");
 //        printBtn.setAlignment(Pos.CENTER_RIGHT);
         h2 = new HBox();
-        h2.getChildren().addAll(from,fromDate,to,toDate,processBtn,clearBtn,spacer,printBtn);
+        h2.getChildren().addAll(from,fromDate,to,toDate,processBtn, resetBtn,spacer,printBtn);
 
         setStmtTable();
 
@@ -87,7 +88,7 @@ public class StatementController {
         HBox.setMargin(from,new Insets(5,0,0,0));
         HBox.setMargin(to,new Insets(5,0,0,20));
         HBox.setMargin(processBtn,new Insets(0,0,0,20));
-        HBox.setMargin(clearBtn,new Insets(0,0,0,10));
+        HBox.setMargin(resetBtn,new Insets(0,0,0,10));
         HBox.setMargin(printBtn,new Insets(0,10,5,0));
         from.setStyle("-fx-font-weight:bold;");
         to.setStyle("-fx-font-weight:bold;");
@@ -96,7 +97,7 @@ public class StatementController {
                 "-fx-background-repeat: no-repeat; " +
                 "-fx-background-position: center;");
         processBtn.setPrefWidth(150);
-        clearBtn.setPrefWidth(150);
+        resetBtn.setPrefWidth(150);
         printBtn.setPrefWidth(150);
         h1.setPadding(new Insets(5,0,5,10));
         h1.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
@@ -170,8 +171,8 @@ public class StatementController {
                 totalExportsAmountLbl.setText("Total Exports(Rs.): " + df.format(totalExportsAmount)+"/-");
             });
         }catch (Exception ex){
-            System.out.println("StatementController:173 \n"+ex);
-            System.out.println(ex.getCause());
+            System.out.println("StatementController.loadStatementsData:182 \n"+ex);
+            ex.printStackTrace();
         }
     }
 
@@ -232,10 +233,10 @@ public class StatementController {
                 alert.showAndWait();
                 return;
             }
-            String fromDateStr = fromDate.getValue().toString();
-            String toDateStr = toDate.getValue().toString();
+            fromDateStr = fromDate.getValue().toString();
+            toDateStr = toDate.getValue().toString();
             System.out.println(fromDateStr+" "+toDateStr);
-            rangeBasedDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
+            String rangeBasedDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
                     "sub_total, payment_status, invoice_date FROM imports " +
                     "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
                     "UNION ALL " +
@@ -244,6 +245,15 @@ public class StatementController {
                     "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
                     "ORDER BY invoice_date";
             loadStatementsData(rangeBasedDataQuery);
+        });
+    }
+
+    private void setResetBtnAction(){
+        resetBtn.setOnAction(event->{
+            fromDate.setValue(null);
+            toDate.setValue(null);
+            searchText.setText("");
+            loadStatementsData(loadDataQuery);
         });
     }
 }
