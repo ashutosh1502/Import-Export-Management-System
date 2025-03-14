@@ -137,7 +137,7 @@ public class MainPage{
 
         //BODY (DISPLAY) PART------------------------------------------------------------------------------
         ImportController importController=new ImportController();
-        scrollPane=new ScrollPane(importController.loadHistory(conn));
+        scrollPane=new ScrollPane(importController.initializeImportsTable(conn));
         scrollPane.setId("scroll-pane");
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
@@ -213,7 +213,7 @@ public class MainPage{
         options[index].setOnAction(e ->{
             selectOption(index);
             if(index==0){
-                scrollPane.setContent(importController.loadHistory(conn));
+                scrollPane.setContent(importController.initializeImportsTable(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
