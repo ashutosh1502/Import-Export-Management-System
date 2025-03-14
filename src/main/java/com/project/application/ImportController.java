@@ -16,6 +16,8 @@ import java.sql.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 
 public class ImportController {
@@ -79,8 +81,8 @@ public class ImportController {
                 String phno = rs.getString("phone_number");
                 String email = rs.getString("email");
                 String invoiceNo = rs.getString("invoice_number");
-                String orderDate = new java.util.Date(rs.getString("order_date")).toString();
-                String invoiceDate = rs.getString("invoice_date");
+                String orderDate = processDateString(rs.getString("order_date"));
+                String invoiceDate = processDateString(rs.getString("invoice_date"));
                 double subTotal = rs.getDouble("sub_total");
                 String paymentMode = rs.getString("payment_mode");
                 String paymentStatus = rs.getString("payment_status");
@@ -586,8 +588,8 @@ public class ImportController {
                 String state = rs.getString("state");
                 String phone = rs.getString("phone_number");
                 String email = rs.getString("email");
-                LocalDate orderDate = rs.getDate("order_date").toLocalDate();
-                LocalDate invoiceDate = rs.getDate("invoice_date").toLocalDate();
+                String orderDate = processDateString(rs.getString("order_date"));
+                String invoiceDate = processDateString(rs.getString("invoice_date"));
                 String subTotal = rs.getString("sub_total");
                 String paymentMode = rs.getString("payment_mode");
                 String status = rs.getString("payment_status");
@@ -626,7 +628,7 @@ public class ImportController {
 
     @SuppressWarnings("unchecked")
     private void updateEntryForm(String selectedSupplierId, String selectedSupplierName, String selectedAddress, String selectedCity, String selectedState, String selectedPhone, String selectedEmail,
-                                 LocalDate selectedOrderDate, LocalDate selectedInvoiceDate, String selectedSubTotal, String selectedPaymentMode, String selectedStatus, ArrayList<Product> selectedProductList, String selectedInvoiceNumber, ScrollPane scrollPane) {
+                                 String selectedOrderDate, String selectedInvoiceDate, String selectedSubTotal, String selectedPaymentMode, String selectedStatus, ArrayList<Product> selectedProductList, String selectedInvoiceNumber, ScrollPane scrollPane) {
 
         Stage popupStage = new Stage();
         popupStage.setTitle("Update Entry");
@@ -690,11 +692,12 @@ public class ImportController {
         txtInvoiceNumber.setText(selectedInvoiceNumber);
         txtInvoiceNumber.setEditable(false);
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         Label lblOrderDate = new Label("Order Date:");
-        DatePicker dpOrderDate = new DatePicker(selectedOrderDate);
+        DatePicker dpOrderDate = new DatePicker(LocalDate.parse(selectedOrderDate,dtf));
 
         Label lblInvoiceDate = new Label("Invoice Date:");
-        DatePicker dpInvoiceDate = new DatePicker(selectedInvoiceDate);
+        DatePicker dpInvoiceDate = new DatePicker(LocalDate.parse(selectedInvoiceDate,dtf));
 
         Button addProduct = new Button("Add Product");
         Button updateProduct = new Button("Update Product");
@@ -922,6 +925,12 @@ public class ImportController {
         }catch (Exception e){
             System.out.println("ImportController: 922 \n"+e);
         }
+    }
+
+    private String processDateString(String date){
+        String processedDate;
+        processedDate = date.substring(date.lastIndexOf('-')+1,date.lastIndexOf('-')+3) + "-" + date.substring(date.indexOf('-')+1,date.indexOf('-')+3) + "-" + "20" + date.substring(2,4);
+        return processedDate;
     }
 }
 
