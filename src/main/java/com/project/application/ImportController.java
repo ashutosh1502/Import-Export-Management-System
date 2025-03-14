@@ -79,7 +79,7 @@ public class ImportController {
                 String phno = rs.getString("phone_number");
                 String email = rs.getString("email");
                 String invoiceNo = rs.getString("invoice_number");
-                String orderDate = rs.getString("order_date");
+                String orderDate = new java.util.Date(rs.getString("order_date")).toString();
                 String invoiceDate = rs.getString("invoice_date");
                 double subTotal = rs.getDouble("sub_total");
                 String paymentMode = rs.getString("payment_mode");
@@ -240,6 +240,9 @@ public class ImportController {
         statusLayout.getChildren().addAll(paid, pending);
 
         Button btnSubmit = new Button("Submit");
+//        System.out.println("dpOrderDate: "+dpOrderDate);
+//        System.out.println("dpOrderDate.getValue(): "+dpOrderDate.getValue());
+//        System.out.println("java util date: "+Date.from(dpOrderDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()));
 
         btnSubmit.setOnAction(e -> {
             try {
@@ -260,13 +263,9 @@ public class ImportController {
                 String paymentModeEntered = payment.getValue();
                 String paymentStatusEntered = paid.isSelected() ? "Paid" : "Pending";
                 String invoiceNumberEntered = txtInvoiceNumber.getText();
-                LocalDate orderDateEntered = dpOrderDate.getValue();
-                java.util.Date orderDate = Date.from(orderDateEntered.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                LocalDate invoiceDateEntered = dpInvoiceDate.getValue();
-                java.util.Date invoiceDate = Date.from(invoiceDateEntered.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                String orderDateEntered = dpOrderDate.getValue().toString();
+                String invoiceDateEntered = dpInvoiceDate.getValue().toString();
                 try {
-//                    Object[] productsArray = new Object[tblProducts.getItems().size()];
-//                    int index = 0;
                     PreparedStatement preparedStatementImports = conn.prepareStatement(insertQuery);
                     preparedStatementImports.setString(1, supplierNameEntered);
                     preparedStatementImports.setString(2, supplierIdEntered);
@@ -276,8 +275,8 @@ public class ImportController {
                     preparedStatementImports.setString(6, phoneEntered);
                     preparedStatementImports.setString(7, emailEntered);
                     preparedStatementImports.setString(8, invoiceNumberEntered);
-                    preparedStatementImports.setDate(9, new java.sql.Date(orderDate.getTime()));
-                    preparedStatementImports.setDate(10, new java.sql.Date(invoiceDate.getTime()));
+                    preparedStatementImports.setString(9, orderDateEntered);
+                    preparedStatementImports.setString(10, invoiceDateEntered);
                     preparedStatementImports.setDouble(11, subTotalEntered);
                     preparedStatementImports.setString(12, paymentModeEntered);
                     preparedStatementImports.setString(13, paymentStatusEntered);
@@ -564,25 +563,6 @@ public class ImportController {
         popupStage.show();
     }
 
-    public void deleteProductFromEntry() {
-        Product selected = tblProducts.getSelectionModel().getSelectedItem();
-        if (selected != null) {
-            tblProducts.getItems().remove(selected);
-            AlertUtils.showMsg("Product delete successfully!");
-            calculateSubTotal();
-        } else {
-            AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
-        }
-    }
-
-    public void calculateSubTotal() {
-        double subTotal = 0.0;
-        for (Product product : tblProducts.getItems()) {
-            subTotal += product.getPrice() * product.getQuantity();
-        }
-        txtSubTotal.setText(String.format("%.2f", subTotal));
-    }
-
     public void viewUpdateEntry(ScrollPane scrollPane) {
         System.out.println(importsTable);   //debug-test
         if (importsTable == null || importsTable.getItems().isEmpty() || importsTable.getSelectionModel().getSelectedItem() == null) {
@@ -755,7 +735,7 @@ public class ImportController {
         Button btnUpdate = new Button("Update");
         btnUpdate.setOnAction(e -> {
             try {
-                String updateImportsQuery = "UPDATE imports SET supplier_id = ?, supplier_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = ?, invoice_date = ?, sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
+                String updateImportsQuery = "UPDATE imports SET supplier_id = ?, supplier_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?,'YYYY-MM-DD'), invoice_date = TO_DATE(?,'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
                 PreparedStatement updateStmt = conn.prepareStatement(updateImportsQuery);
                 updateStmt.setString(1, txtSupplierId.getText());
                 updateStmt.setString(2, txtSupplierName.getText());
@@ -764,8 +744,8 @@ public class ImportController {
                 updateStmt.setString(5, txtState.getText());
                 updateStmt.setString(6, txtPhone.getText());
                 updateStmt.setString(7, txtEmail.getText());
-                updateStmt.setDate(8, java.sql.Date.valueOf(dpOrderDate.getValue()));
-                updateStmt.setDate(9, java.sql.Date.valueOf(dpInvoiceDate.getValue()));
+                updateStmt.setString(8, dpOrderDate.getValue().toString());
+                updateStmt.setString(9, dpInvoiceDate.getValue().toString());
                 updateStmt.setString(10, txtSubTotal.getText());
                 updateStmt.setString(11, payment.getValue());
                 updateStmt.setString(12, paid.isSelected() ? "Paid" : "Pending");
@@ -888,6 +868,25 @@ public class ImportController {
             AlertUtils.showAlert(Alert.AlertType.ERROR,
                     "Database Error", "Error occurred while deleting entry: " + ex.getMessage());
         }
+    }
+
+    public void deleteProductFromEntry() {
+        Product selected = tblProducts.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            tblProducts.getItems().remove(selected);
+            AlertUtils.showMsg("Product delete successfully!");
+            calculateSubTotal();
+        } else {
+            AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
+        }
+    }
+
+    public void calculateSubTotal() {
+        double subTotal = 0.0;
+        for (Product product : tblProducts.getItems()) {
+            subTotal += product.getPrice() * product.getQuantity();
+        }
+        txtSubTotal.setText(String.format("%.2f", subTotal));
     }
 
     public void updateStocks(){
