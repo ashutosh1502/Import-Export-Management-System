@@ -8,9 +8,6 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +40,6 @@ public class MainPage{
     private Button[] options;
     private Font currFont;
     private String[] btnTexts=new String[]{"Imports","Exports","Stocks","Statements","Report"};
-//    private static final Logger LOGGER= LoggerFactory.getLogger(MainPage.class);
 
     //database
     String url="jdbc:oracle:thin:@localhost:1521:xe";
@@ -56,20 +52,18 @@ public class MainPage{
     @SuppressWarnings("unchecked")
     public MainPage(String sectionName){
         this.sectionName=sectionName;
-//        LOGGER.info("User selected section: {}", sectionName);
         primaryStage=new Stage();
         connectDatabase();
 
     //HEADING BAR PART ----------------------------------------------------------------------
         heading=new Label();
-        heading.setStyle("-fx-font-size: 20;");
+        heading.setStyle("-fx-font-size: 20;-fx-text-fill:white;");
         switchBtn.setText("Switch Section");
         switchBtn.setStyle("-fx-background-color:#1a5276;-fx-border-color:#2980b9;-fx-border-width:2px;-fx-text-fill:white;-fx-font-weight:bold;");
         switchBtn.setPrefHeight(35);
         switchBtn.setFocusTraversable(false);
         switchBtn.setOnAction(e ->{
             String newSectionName = sectionName.equals(UNITECH_INDUSTRIES) ? SURYA_INDUSTRIES : UNITECH_INDUSTRIES;
-//            LOGGER.info("User switched to section: {}",newSectionName);
             new MainPage(newSectionName);
             primaryStage.close();
         });
@@ -83,6 +77,7 @@ public class MainPage{
         rightHeadingPane.getChildren().add(switchBtn);
         headingPane.setAlignment(Pos.CENTER_LEFT);
         headingPane.getChildren().addAll(leftHeadingPane,rightHeadingPane);
+        headingPane.setStyle("-fx-background-color:#1a5276;");
         //--------------------------------------------------------------------------------------------------
 
 
