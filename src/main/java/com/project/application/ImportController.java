@@ -35,6 +35,8 @@ public class ImportController {
     private static final String INSERT_IMPORT_PRODUCTS_QUERY = "INSERT INTO import_products (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
     private static final String UPDATE_IMPORT_PRODUCTS = "UPDATE import_products SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ?";
 
+    //-------------------------------------------------------------------------------
+
     @SuppressWarnings("unchecked")
     public TableView<Imports> initializeImportsTable(Connection connection) {
         conn = connection;
@@ -68,6 +70,8 @@ public class ImportController {
         colInvoiceDate.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getInvoiceDate()));
         importsTable.getColumns().addAll(colSrNo, colInvoiceNo, colSupplierName, colProducts, colTotalQty, colAmount, colPaymentStatus, colInvoiceDate);
     }
+
+    //-------------------------------------------------------------------------------
 
     public void loadImportsData() {
         importsTable.getItems().clear();
@@ -341,7 +345,6 @@ public class ImportController {
 
                 Product newProduct = new Product(srno, productId, productName, quantity, price);
                 tblProducts.getItems().add(newProduct);
-//                System.out.println("Product added: " + newProduct);
                 srno++;
                 AlertUtils.showMsg("Product added successfully!");
                 calculateSubTotal();
@@ -444,7 +447,7 @@ public class ImportController {
         }
     }
 
-
+    //-------------------------------------------------------------------------------
 
     public void updateProductInEntry(String invoiceNumber) {
         Product selected = tblProducts.getSelectionModel().getSelectedItem();
