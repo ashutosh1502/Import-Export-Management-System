@@ -675,7 +675,6 @@ public class ImportController {
         Label lblInvoiceNumber = new Label("Invoice Number:");
         TextField txtInvoiceNumber = new TextField();
         txtInvoiceNumber.setText(selectedInvoiceNumber);
-        txtInvoiceNumber.setEditable(false);
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         Label lblOrderDate = new Label("Order Date:");
