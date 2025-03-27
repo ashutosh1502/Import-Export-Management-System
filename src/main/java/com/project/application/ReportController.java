@@ -21,7 +21,7 @@ public class ReportController {
 //        System.out.println("Fetched report controller"); // Debug-test
 
         String pythonExecutable = "python";
-        String pythonScriptPath="";
+        String pythonScriptPath;
 
         if(sectionName.equals("Unitech Industries")){
             pythonScriptPath="src/main/resources/scripts/unitech_ind_imports_data_analysis.py";
@@ -101,8 +101,6 @@ public class ReportController {
 //                    System.err.println("\nPython script exited with an error (code " + exitCode + "):");
                     System.err.println(errorOutput);
                     Platform.runLater(() -> loading.setText("An error occurred during report generation."));
-                } else {
-//                    System.out.println("\nPython script executed successfully.");
                 }
             } catch (Exception e) {
 //                System.err.println("An error occurred while running the Python script:");

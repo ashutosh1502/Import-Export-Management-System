@@ -745,7 +745,6 @@ public class ImportController {
                     PreparedStatement invoiceNumberUpdate = conn.prepareStatement("UPDATE import_products SET invoice_number =? WHERE invoice_number = ?");
                     invoiceNumberUpdate.setString(1, txtInvoiceNumber.getText());
                     invoiceNumberUpdate.setString(2, selectedInvoiceNumber);
-                    rowsAffected = 0;
                     rowsAffected = invoiceNumberUpdate.executeUpdate();
                     if (rowsAffected > 0) {
                         AlertUtils.showMsg("Entry updated successfully!");

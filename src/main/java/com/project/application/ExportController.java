@@ -261,7 +261,6 @@ public class ExportController {
                             preparedStatementProducts.setString(3,product.getProductID());
                             preparedStatementProducts.setInt(4,product.getQuantity());
                             preparedStatementProducts.setDouble(5,product.getPrice());
-                            rowsAffected = 0;
                             rowsAffected = preparedStatementProducts.executeUpdate();
                             if (rowsAffected > 0){
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -745,7 +744,6 @@ public class ExportController {
                     PreparedStatement invoiceNumberUpdate = conn.prepareStatement("UPDATE export_products SET invoice_number =? WHERE invoice_number = ?");
                     invoiceNumberUpdate.setString(1,txtInvoiceNumber.getText());
                     invoiceNumberUpdate.setString(2,selectedInvoiceNumber);
-                    rowsAffected = 0;
                     rowsAffected = invoiceNumberUpdate.executeUpdate();
                     if(rowsAffected > 0){
                         AlertUtils.showMsg("Entry updated successfully!");
