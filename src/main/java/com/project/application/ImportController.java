@@ -426,6 +426,7 @@ public class ImportController {
             return false;
         }
     }
+
     private boolean insertImportProducts(String invoiceNumber) {
         try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_IMPORT_PRODUCTS_QUERY)) {
             for (Product product : tblProducts.getItems()) {
