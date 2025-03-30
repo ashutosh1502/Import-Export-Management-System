@@ -2,8 +2,8 @@ package com.project.application;
 
 import com.project.utils.AlertUtils;
 import com.project.utils.AutoCompleteUtils;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,62 +15,69 @@ import javafx.stage.Stage;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 
 public class ImportController {
     private static TableView<Imports> importsTable;
     private TableView<Product> tblProducts;
-    private TableColumn<Imports, String> col1, col2;
-    private static final ObservableList<String> productNames = FXCollections.observableArrayList();
+    private TableColumn<Imports, String> colSrNo, colInvoiceNo, colSupplierName, colProducts, colAmount, colPaymentStatus, colInvoiceDate;
+    private TableColumn<Imports, Integer> colTotalQty;
     private static Connection conn;
     private int srno = 1;
     private Label txtSubTotal;
+    private static final DecimalFormat CURRENCY_FORMAT = new DecimalFormat("##,##,###");
+    private static final String FETCH_IMPORTS_QUERY = "SELECT * FROM IMPORTS";
+    private static final String FETCH_IMPORT_PRODUCTS_QUERY = "SELECT * FROM IMPORT_PRODUCTS WHERE INVOICE_NUMBER = ?";
+    private static final String INSERT_IMPORTS_QUERY = "INSERT INTO imports (" +
+            "supplier_name, supplier_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
+            ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
+    private static final String INSERT_IMPORT_PRODUCTS_QUERY = "INSERT INTO import_products (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
+    private static final String UPDATE_IMPORT_PRODUCTS = "UPDATE import_products SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ?";
+
+    //-------------------------------------------------------------------------------
 
     @SuppressWarnings("unchecked")
-    public TableView<Imports> loadHistory(Connection connection) {
+    public TableView<Imports> initializeImportsTable(Connection connection) {
         conn = connection;
-//        System.out.println("Called import controller:loadHistory");
+
         importsTable = new TableView<>();
-        col1 = new TableColumn<>("SrNo.");
-        col2 = new TableColumn<>("Invoice No.");
-        TableColumn<Imports, String> col3 = new TableColumn<>("Supplier Name");
-        TableColumn<Imports, String> col4 = new TableColumn<>("Products");
-        TableColumn<Imports, Integer> col5 = new TableColumn<>("Total Qty");
-        TableColumn<Imports, String> col6 = new TableColumn<>("Amount");
-        TableColumn<Imports, String> col7 = new TableColumn<>("Payment Status");
-        TableColumn<Imports, String> col8 = new TableColumn<>("Invoice Date");
-        col1.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSrNo()));
-        col2.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceNo()));
-        col3.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSupplierName()));
-        col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(String.join(", ", cellData.getValue().getProducts())));
-        col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getTotalQuantity()).asObject());
-        DecimalFormat df = new DecimalFormat("##,##,###");
-        col6.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. " + df.format(cellData.getValue().getSubTotal())));
-        col7.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPaymentStatus()));
-        col8.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceDate()));
+        initializeImportsTableColumns();
         importsTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        try {
-            importsTable.getColumns().addAll(col1, col2, col3, col4, col5, col6, col7, col8);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
         loadImportsData();
-//        System.out.println(importsTable);   //debug-test.
+        handleImportsTableDoubleClick();
+
         return importsTable;
     }
 
+    private void initializeImportsTableColumns(){
+        colSrNo = new TableColumn<>("SrNo.");
+        colInvoiceNo = new TableColumn<>("Invoice No.");
+        colSupplierName = new TableColumn<>("Supplier Name");
+        colProducts = new TableColumn<>("Products");
+        colTotalQty = new TableColumn<>("Total Qty");
+        colAmount = new TableColumn<>("Amount");
+        colPaymentStatus = new TableColumn<>("Payment Status");
+        colInvoiceDate = new TableColumn<>("Invoice Date");
+        colSrNo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSrNo()));
+        colInvoiceNo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getInvoiceNo()));
+        colSupplierName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSupplierName()));
+        colProducts.setCellValueFactory(cellData -> new SimpleStringProperty(String.join(", ", cellData.getValue().getProducts())));
+        colTotalQty.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getTotalQuantity()).asObject());
+        colAmount.setCellValueFactory(cellData -> new SimpleStringProperty("Rs. " + CURRENCY_FORMAT.format(cellData.getValue().getSubTotal())));
+        colPaymentStatus.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPaymentStatus()));
+        colInvoiceDate.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getInvoiceDate()));
+        importsTable.getColumns().addAll(colSrNo, colInvoiceNo, colSupplierName, colProducts, colTotalQty, colAmount, colPaymentStatus, colInvoiceDate);
+    }
+
+    //-------------------------------------------------------------------------------
+
     public void loadImportsData() {
-//        System.out.println("called loadImportsData in ImportController.java."); //debug-test.
-        String query = "SELECT * FROM IMPORTS";
+        importsTable.getItems().clear();
 
-        importsTable.getItems().clear(); // Clear existing items before loading new data
-
-        try (Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(query)) {
+        try (Statement fetchImportsStmt = conn.createStatement();
+             ResultSet rs = fetchImportsStmt.executeQuery(FETCH_IMPORTS_QUERY)) {
             int srNo = 1;
             while (rs.next()) {
                 String supplierName = rs.getString("supplier_name");
@@ -87,56 +94,27 @@ public class ImportController {
                 String paymentMode = rs.getString("payment_mode");
                 String paymentStatus = rs.getString("payment_status");
 
-                //Fetching products related to specific invoice number...
-                String importProductQuery = "SELECT * FROM IMPORT_PRODUCTS WHERE INVOICE_NUMBER = '" + invoiceNo + "'";
-                Statement stmt2 = conn.createStatement();
-                ResultSet iprs = stmt2.executeQuery(importProductQuery);
-                ArrayList<String> productList = new ArrayList<>();
                 int totalQty = 0;
-                while (iprs.next()) {
-                    productList.add(iprs.getString("product_name"));
-                    totalQty += iprs.getInt("quantity");
+                ArrayList<String> productList = new ArrayList<>();
+                try(PreparedStatement fetchImportProductsStmt = conn.prepareStatement(FETCH_IMPORT_PRODUCTS_QUERY)){
+                    fetchImportProductsStmt.setString(1,invoiceNo);
+                    try(ResultSet iprs = fetchImportProductsStmt.executeQuery()){
+                        while (iprs.next()) {
+                            productList.add(iprs.getString("product_name"));
+                            totalQty += iprs.getInt("quantity");
+                        }
+                    }
                 }
-
-                Imports importItem = new Imports(srNo++, invoiceNo, supplierId, supplierName, productList, totalQty, subTotal, address, city, state, phno, email, orderDate, invoiceDate, paymentMode, paymentStatus);
-//                System.out.println("item added");   //debug-test.
+                Imports importItem = new Imports(
+                        srNo++, invoiceNo, supplierId, supplierName, productList, totalQty,
+                        subTotal, address, city, state, phno, email, orderDate, invoiceDate,
+                        paymentMode, paymentStatus
+                );
                 importsTable.getItems().add(importItem);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            DatabaseErrorHandler.handleDatabaseError(e);
         }
-    }
-
-    public ArrayList<String> getProductsList(Array productsArray) {
-        ArrayList<String> productsList = new ArrayList<>();
-        try {
-            Object[] products = (Object[]) productsArray.getArray();
-            for (Object productObj : products) {
-                Struct productStruct = (Struct) productObj;
-                Object[] productAttributes = productStruct.getAttributes();
-                String productName = (String) productAttributes[1];
-                productsList.add(productName);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-//        System.out.println(productsList);   //test.
-        return productsList;
-    }
-
-    public int getTotalProductQty(Array productsArray) {
-        int totalQuantity = 0;
-        try {
-            Object[] products = (Object[]) productsArray.getArray();
-            for (Object productObj : products) {
-                Struct productStruct = (Struct) productObj;
-                Object[] productAttributes = productStruct.getAttributes();
-                totalQuantity += ((Number) productAttributes[2]).intValue();
-            }
-        } catch (SQLException e) {
-            System.out.println("Error calculating total quantity: " + e.getMessage());
-        }
-        return totalQuantity;
     }
 
     //OPERATIONS BUTTON ACTIONS--------------------------------------------------------------------------------------
@@ -152,6 +130,7 @@ public class ImportController {
 
         Label supplierDetails = new Label("Supplier Details:");
         supplierDetails.setStyle("-fx-font-weight:bold;");
+
         Label supplierName = new Label("Supplier Name:");
         TextField txtSupplierName = new TextField();
 
@@ -174,35 +153,10 @@ public class ImportController {
         TextField txtEmail = new TextField();
         txtEmail.setMinWidth(200);
 
-        tblProducts = new TableView<>();
-        TableColumn<Product, String> col1, col2, col3;
-        TableColumn<Product, Integer> col4;
-        TableColumn<Product, Double> col5;
-        col1 = new TableColumn<>("SrNo.");
-        col1.setPrefWidth(40);
-        col2 = new TableColumn<>("Product ID");
-        col3 = new TableColumn<>("Product Name");
-        col3.setPrefWidth(120);
-        col4 = new TableColumn<>("Qty");
-        col5 = new TableColumn<>("Price");
-        col1.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSrNo()));
-        col2.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductID()));
-        col3.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductName()));
-        col3.setMinWidth(60);
-        col3.setPrefWidth(80);
-        col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
-        col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
-        tblProducts.getColumns().addAll(col1, col2, col3, col4, col5);
-        tblProducts.setPrefWidth(400);
-        tblProducts.setMaxHeight(250);
+        setupProductsTable();
 
         Label lblInvoiceNumber = new Label("Invoice Number:");
-        TextField txtInvoiceNumber = new TextField();
-        int invoiceNum = 1;
-        if (importsTable != null && importsTable.getItems() != null) {
-            invoiceNum = importsTable.getItems().size() + 1;
-        }
-        txtInvoiceNumber.setText(String.format("%04d", invoiceNum));
+        TextField txtInvoiceNumber = new TextField(String.format("%04d",generateInvoiceNumber()));
 
         Label lblOrderDate = new Label("Order Date:");
         DatePicker dpOrderDate = new DatePicker(java.time.LocalDate.now());
@@ -242,18 +196,10 @@ public class ImportController {
         statusLayout.getChildren().addAll(paid, pending);
 
         Button btnSubmit = new Button("Submit");
-//        System.out.println("dpOrderDate: "+dpOrderDate);
-//        System.out.println("dpOrderDate.getValue(): "+dpOrderDate.getValue());
-//        System.out.println("java util date: "+Date.from(dpOrderDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()));
-
+        btnSubmit.setMinHeight(30);
+        btnSubmit.setMinWidth(100);
         btnSubmit.setOnAction(e -> {
             try {
-//                 Prepare SQL INSERT query
-                String insertQuery = "INSERT INTO imports (" +
-                        "supplier_name, supplier_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
-                        ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
-                String insertProductQuery = "INSERT INTO import_products (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
-                // Retrieve values from the form
                 String supplierIdEntered = txtSupplierId.getText();
                 String supplierNameEntered = txtSupplierName.getText();
                 String addressEntered = txtAddress.getText();
@@ -267,70 +213,42 @@ public class ImportController {
                 String invoiceNumberEntered = txtInvoiceNumber.getText();
                 String orderDateEntered = dpOrderDate.getValue().toString();
                 String invoiceDateEntered = dpInvoiceDate.getValue().toString();
-                try {
-                    PreparedStatement preparedStatementImports = conn.prepareStatement(insertQuery);
-                    preparedStatementImports.setString(1, supplierNameEntered);
-                    preparedStatementImports.setString(2, supplierIdEntered);
-                    preparedStatementImports.setString(3, addressEntered);
-                    preparedStatementImports.setString(4, cityEntered);
-                    preparedStatementImports.setString(5, stateEntered);
-                    preparedStatementImports.setString(6, phoneEntered);
-                    preparedStatementImports.setString(7, emailEntered);
-                    preparedStatementImports.setString(8, invoiceNumberEntered);
-                    preparedStatementImports.setString(9, orderDateEntered);
-                    preparedStatementImports.setString(10, invoiceDateEntered);
-                    preparedStatementImports.setDouble(11, subTotalEntered);
-                    preparedStatementImports.setString(12, paymentModeEntered);
-                    preparedStatementImports.setString(13, paymentStatusEntered);
-                    int rowsAffected = preparedStatementImports.executeUpdate();
-                    if (rowsAffected > 0) {
-                        for (Product product : tblProducts.getItems()) {
-                            PreparedStatement preparedStatementProducts = conn.prepareStatement(insertProductQuery);
-                            preparedStatementProducts.setString(1, invoiceNumberEntered);
-                            preparedStatementProducts.setString(2, product.getProductName());
-                            preparedStatementProducts.setString(3, product.getProductID());
-                            preparedStatementProducts.setInt(4, product.getQuantity());
-                            preparedStatementProducts.setDouble(5, product.getPrice());
-                            rowsAffected = 0;
-                            rowsAffected = preparedStatementProducts.executeUpdate();
-                            if (!(rowsAffected > 0)) {
-                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                alert.setTitle("Failed");
-                                alert.setHeaderText(null);
-                                alert.setContentText("Failed to add products!");
-                                alert.showAndWait();
-                                // Reload the data (refresh table)
-                                scrollPane.setContent(loadHistory(conn));
-                                return;
-                            }
-                        }
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Success");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Entry added successfully!");
-                        alert.showAndWait();
-                        updateStocks();
-                        // Reload the data (refresh table)
-                        scrollPane.setContent(loadHistory(conn));
-                    }
-                } catch (Exception sqlException) {
-                    System.out.println(sqlException);
+
+                conn.setAutoCommit(false);
+
+                if (!insertImport(supplierNameEntered, supplierIdEntered, addressEntered, cityEntered, stateEntered, phoneEntered, emailEntered, invoiceNumberEntered, orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered, paymentStatusEntered)) {
+                    conn.rollback();
+                    return;
                 }
+                if (!insertImportProducts(invoiceNumberEntered)) {
+                    conn.rollback();
+                    return;
+                }
+                conn.commit();
+                AlertUtils.showAlert(Alert.AlertType.INFORMATION,"Success","Entry added successfully!");
+                updateStocks();
+                scrollPane.setContent(initializeImportsTable(conn));
             } catch (Exception ex) {
+                try {
+                    conn.rollback();
+                } catch (SQLException rollbackEx) {
+                    rollbackEx.printStackTrace();
+                }
                 ex.printStackTrace();
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Failed to add entry: " + ex.getMessage());
-                alert.showAndWait();
+                AlertUtils.showAlert(Alert.AlertType.ERROR, "Error", "Failed to add entry: " + ex.getMessage());
+            }finally {
+                try {
+                    conn.setAutoCommit(true);
+                } catch (SQLException sqlEx) {
+                    sqlEx.printStackTrace();
+                }
             }
         });
 
         Button btnCancel = new Button("Cancel");
-        btnSubmit.setMinHeight(30);
-        btnSubmit.setMinWidth(100);
         btnCancel.setMinHeight(30);
         btnCancel.setMinWidth(100);
+        btnCancel.setOnAction(e -> scrollPane.setContent(initializeImportsTable(conn)));
 
         formLayout.add(supplierDetails, 0, 0);
         formLayout.add(supplierName, 0, 1);
@@ -376,8 +294,6 @@ public class ImportController {
         vBox.getChildren().addAll(formLayout, hBox);
 
         scrollPane.setContent(vBox);
-
-        btnCancel.setOnAction(e -> scrollPane.setContent(loadHistory(conn)));
     }
 
     public void addProductInEntry() {
@@ -429,7 +345,6 @@ public class ImportController {
 
                 Product newProduct = new Product(srno, productId, productName, quantity, price);
                 tblProducts.getItems().add(newProduct);
-//                System.out.println("Product added: " + newProduct);
                 srno++;
                 AlertUtils.showMsg("Product added successfully!");
                 calculateSubTotal();
@@ -462,6 +377,78 @@ public class ImportController {
         btnClose.setOnAction(e -> popupStage.close());
         popupStage.show();
     }
+
+    private void setupProductsTable(){
+        tblProducts = new TableView<>();
+        TableColumn<Product, String> colSrNo, colProductId, colProductName;
+        TableColumn<Product, Integer> colQty;
+        TableColumn<Product, Double> colPrice;
+        colSrNo = new TableColumn<>("SrNo.");
+        colSrNo.setPrefWidth(40);
+        colProductId = new TableColumn<>("Product ID");
+        colProductName = new TableColumn<>("Product Name");
+        colProductName.setPrefWidth(120);
+        colQty = new TableColumn<>("Qty");
+        colPrice = new TableColumn<>("Price");
+        colSrNo.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSrNo()));
+        colProductId.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductID()));
+        colProductName.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductName()));
+        colProductName.setMinWidth(60);
+        colProductName.setPrefWidth(80);
+        colQty.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
+        colPrice.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
+        tblProducts.getColumns().addAll(colSrNo, colProductId, colProductName, colQty, colPrice);
+        tblProducts.setPrefWidth(400);
+        tblProducts.setMaxHeight(250);
+    }
+
+    private boolean insertImport(String supplierName, String supplierId, String address, String city, String state,
+                                 String phone, String email, String invoiceNumber, String orderDate, String invoiceDate,
+                                 double subTotal, String paymentMode, String paymentStatus) {
+        try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_IMPORTS_QUERY)) {
+            preparedStatement.setString(1, supplierName);
+            preparedStatement.setString(2, supplierId);
+            preparedStatement.setString(3, address);
+            preparedStatement.setString(4, city);
+            preparedStatement.setString(5, state);
+            preparedStatement.setString(6, phone);
+            preparedStatement.setString(7, email);
+            preparedStatement.setString(8, invoiceNumber);
+            preparedStatement.setString(9, orderDate);
+            preparedStatement.setString(10, invoiceDate);
+            preparedStatement.setDouble(11, subTotal);
+            preparedStatement.setString(12, paymentMode);
+            preparedStatement.setString(13, paymentStatus);
+
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert import entry: " + e.getMessage());
+            return false;
+        }
+    }
+
+    private boolean insertImportProducts(String invoiceNumber) {
+        try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_IMPORT_PRODUCTS_QUERY)) {
+            for (Product product : tblProducts.getItems()) {
+                preparedStatement.setString(1, invoiceNumber);
+                preparedStatement.setString(2, product.getProductName());
+                preparedStatement.setString(3, product.getProductID());
+                preparedStatement.setInt(4, product.getQuantity());
+                preparedStatement.setDouble(5, product.getPrice());
+
+                if (preparedStatement.executeUpdate() <= 0) {
+                    AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert product: " + product.getProductName());
+                    return false;
+                }
+            }
+            return true;
+        } catch (SQLException e) {
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert products: " + e.getMessage());
+            return false;
+        }
+    }
+
+    //-------------------------------------------------------------------------------
 
     public void updateProductInEntry(String invoiceNumber) {
         Product selected = tblProducts.getSelectionModel().getSelectedItem();
@@ -522,8 +509,7 @@ public class ImportController {
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Quantity and Price must be valid numbers!", ButtonType.OK);
                     alert.showAndWait();
                 }
-                String updateProductQuery = "UPDATE import_products SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ?";
-                PreparedStatement updateProductStmt = conn.prepareStatement(updateProductQuery);
+                PreparedStatement updateProductStmt = conn.prepareStatement(UPDATE_IMPORT_PRODUCTS);
                 updateProductStmt.setString(1, productName);
                 updateProductStmt.setString(2, productId);
                 updateProductStmt.setInt(3, quantity);
@@ -690,7 +676,6 @@ public class ImportController {
         Label lblInvoiceNumber = new Label("Invoice Number:");
         TextField txtInvoiceNumber = new TextField();
         txtInvoiceNumber.setText(selectedInvoiceNumber);
-        txtInvoiceNumber.setEditable(false);
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         Label lblOrderDate = new Label("Order Date:");
@@ -761,7 +746,6 @@ public class ImportController {
                     PreparedStatement invoiceNumberUpdate = conn.prepareStatement("UPDATE import_products SET invoice_number =? WHERE invoice_number = ?");
                     invoiceNumberUpdate.setString(1, txtInvoiceNumber.getText());
                     invoiceNumberUpdate.setString(2, selectedInvoiceNumber);
-                    rowsAffected = 0;
                     rowsAffected = invoiceNumberUpdate.executeUpdate();
                     if (rowsAffected > 0) {
                         AlertUtils.showMsg("Entry updated successfully!");
@@ -828,7 +812,7 @@ public class ImportController {
 
         scrollPane.setContent(vBox);
 
-        btnCancel.setOnAction(e -> scrollPane.setContent(loadHistory(conn)));
+        btnCancel.setOnAction(e -> scrollPane.setContent(initializeImportsTable(conn)));
     }
 
     public void deleteEntry() {
@@ -931,6 +915,26 @@ public class ImportController {
         String processedDate;
         processedDate = date.substring(date.lastIndexOf('-')+1,date.lastIndexOf('-')+3) + "-" + date.substring(date.indexOf('-')+1,date.indexOf('-')+3) + "-" + "20" + date.substring(2,4);
         return processedDate;
+    }
+
+    private void handleImportsTableDoubleClick(){
+        importsTable.setRowFactory(it ->{
+            TableRow<Imports> row = new TableRow<>();
+            row.setOnMouseClicked(mouseEvent -> {
+                if(mouseEvent.getClickCount()==2 && !row.isEmpty()){
+                    viewUpdateEntry(new ScrollPane());
+                }
+            });
+            return row;
+        });
+    }
+
+    private int generateInvoiceNumber(){
+        int invoiceNum = 1;
+        if (importsTable != null && importsTable.getItems() != null) {
+            invoiceNum = importsTable.getItems().size() + 1;
+        }
+        return invoiceNum;
     }
 }
 

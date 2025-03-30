@@ -1,5 +1,6 @@
 package com.project.application;
 
+import com.project.utils.AlertUtils;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,68 +9,84 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainPage{
-    //Declarations.
-    protected Stage primaryStage;
+    //Section Constants
     private static final String UNITECH_INDUSTRIES = "Unitech Industries";
     private static final String SURYA_INDUSTRIES = "Surya Industries";
-    private String sectionName;
+
+    //UI Components
+    protected Stage primaryStage;
     protected Scene mainScene;
-    private VBox mainPane=new VBox();
     private HBox headingPane=new HBox(10);
+    protected Label heading;
     private HBox leftHeadingPane=new HBox();
     private HBox rightHeadingPane=new HBox();
     private Button switchBtn=new Button();
-    protected Label heading;
+    private VBox mainPane=new VBox();
     private SplitPane bodyPane;
-    private HBox footerPane;
-    private HBox printOptionPane;
-    private HBox operationsPane;
-    private Button printBtn;
-    private List<Button>[] operations;
-    private ScrollPane scrollPane;
-    private ImportController importController=new ImportController();
-    private ExportController exportController=new ExportController();
-    private StockController stockController=new StockController();
-    private StatementController statementController = new StatementController();
     private VBox optionsPane;
     private Button[] options;
+    private HBox operationsPane;
+    private ScrollPane scrollPane;
+    private HBox footerPane;
+    private HBox printOptionPane;
+    private Button printBtn;
+    private List<Button>[] operations;
+
+    //Controllers
+    private ImportController importController;
+    private ExportController exportController;
+    private StockController stockController;
+    private StatementController statementController;
     private Font currFont;
     private String[] btnTexts=new String[]{"Imports","Exports","Stocks","Statements","Report"};
-//    private static final Logger LOGGER= LoggerFactory.getLogger(MainPage.class);
 
-    //database
-    String url="jdbc:oracle:thin:@localhost:1521:xe";
-    String username1="unitech_admin";
-    String password1="unitech@1234";
-    String username2="surya_ind_admin";
-    String password2="surya@1234";
-    Connection conn;
+    //Database
+    private Connection conn;
+    private final String sectionName;
+    private static final String DB_URL ="jdbc:oracle:thin:@localhost:1521:xe";
+    private static final String UNITECH_USERNAME ="unitech_admin";
+    private static final String UNITECH_PASSWORD ="unitech@1234";
+    private static final String SURYA_USERNAME ="surya_ind_admin";
+    private static final String SURYA_PASSWORD ="surya@1234";
 
     @SuppressWarnings("unchecked")
     public MainPage(String sectionName){
-        this.sectionName=sectionName;
-//        LOGGER.info("User selected section: {}", sectionName);
-        primaryStage=new Stage();
-        connectDatabase();
+        this.sectionName=sectionName.toLowerCase();
+        this.primaryStage=new Stage();
+        this.importController = new ImportController();
+        this.exportController = new ExportController();
+        this.stockController = new StockController();
+        this.statementController = new StatementController();
 
-    //HEADING BAR PART ----------------------------------------------------------------------
+        connectDatabase();
+        initializeUI();
+
+        this.mainScene=new Scene(mainPane);
+        launchPrimaryStage(primaryStage,mainScene,heading);
+    }
+
+    private void initializeUI(){
+        createHeaderPane();
+        createOptionsPane();
+        createBodyPane();
+        createFooterPane();
+        setUpMainPane();
+    }
+
+    private void createHeaderPane(){
         heading=new Label();
-        heading.setStyle("-fx-font-size: 20;");
+        heading.setStyle("-fx-font-size: 20;-fx-text-fill:white;");
         switchBtn.setText("Switch Section");
         switchBtn.setStyle("-fx-background-color:#1a5276;-fx-border-color:#2980b9;-fx-border-width:2px;-fx-text-fill:white;-fx-font-weight:bold;");
         switchBtn.setPrefHeight(35);
         switchBtn.setFocusTraversable(false);
         switchBtn.setOnAction(e ->{
             String newSectionName = sectionName.equals(UNITECH_INDUSTRIES) ? SURYA_INDUSTRIES : UNITECH_INDUSTRIES;
-//            LOGGER.info("User switched to section: {}",newSectionName);
             new MainPage(newSectionName);
             primaryStage.close();
         });
@@ -83,10 +100,10 @@ public class MainPage{
         rightHeadingPane.getChildren().add(switchBtn);
         headingPane.setAlignment(Pos.CENTER_LEFT);
         headingPane.getChildren().addAll(leftHeadingPane,rightHeadingPane);
-        //--------------------------------------------------------------------------------------------------
+        headingPane.setStyle("-fx-background-color:#1a5276;");
+    }
 
-
-        //OPTIONS SIDE BAR PART ---------------------------------------------------------------------------
+    private void createOptionsPane(){
         bodyPane=new SplitPane();
         optionsPane=new VBox();
         options=new Button[5];
@@ -96,7 +113,6 @@ public class MainPage{
         options[2]=new Button(btnTexts[2]);
         options[3]=new Button(btnTexts[3]);
         options[4]=new Button(btnTexts[4]);
-//        #1a5276
         optionsPane.setStyle("-fx-background-color:#1f618d;-fx-border-color:#2980b9;");
         optionsPane.setPrefWidth(140);
         optionsPane.setMaxWidth(140);
@@ -133,11 +149,10 @@ public class MainPage{
         options[0].setFont(Font.font(currFont.getFamily(), FontWeight.BOLD,16));
         selectOption(0);
         bodyPane.getItems().add(optionsPane);
-        //-------------------------------------------------------------------------------------------------
+    }
 
-        //BODY (DISPLAY) PART------------------------------------------------------------------------------
-        ImportController importController=new ImportController();
-        scrollPane=new ScrollPane(importController.loadHistory(conn));
+    private void createBodyPane(){
+        scrollPane=new ScrollPane(importController.initializeImportsTable(conn));
         scrollPane.setId("scroll-pane");
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
@@ -145,9 +160,9 @@ public class MainPage{
         HBox.setHgrow(scrollPane, Priority.ALWAYS);
         VBox.setVgrow(scrollPane, Priority.ALWAYS);
         bodyPane.getItems().add(scrollPane);
-        //-------------------------------------------------------------------------------------------------
+    }
 
-        //FOOTER PART--------------------------------------------------------------------------------------
+    private void createFooterPane(){
         footerPane=new HBox();
         footerPane.setStyle("-fx-background-color:#1a5276;");
         footerPane.setMinHeight(50);
@@ -172,20 +187,17 @@ public class MainPage{
             operationsPane.getChildren().add(btn);
         operationsPane.setAlignment(Pos.CENTER_RIGHT);
         footerPane.getChildren().addAll(printOptionPane,operationsPane);
-        //-------------------------------------------------------------------------------------------------
-
-        mainPane.getChildren().addAll(headingPane,bodyPane,footerPane);
-        VBox.setVgrow(mainPane,Priority.ALWAYS);
-        mainScene=new Scene(mainPane);
-
-//        if(!sectionName.isEmpty()){
-            launchPrimaryStage(primaryStage,mainScene,heading);
-//        }
     }
 
+    private void setUpMainPane(){
+        mainPane.getChildren().addAll(headingPane,bodyPane,footerPane);
+        VBox.setVgrow(mainPane,Priority.ALWAYS);
+    }
+
+    //------------------------------------------------------------------------------
     public void launchPrimaryStage(Stage primaryStage,Scene mainScene,Label heading){
         primaryStage.setTitle(sectionName +" section");
-        heading.setText((sectionName.equals(UNITECH_INDUSTRIES) ? UNITECH_INDUSTRIES+": Cold Storage" : SURYA_INDUSTRIES+": Agriculture Equipments"));
+        heading.setText((sectionName.equalsIgnoreCase(UNITECH_INDUSTRIES) ? UNITECH_INDUSTRIES+": Cold Storage" : SURYA_INDUSTRIES+": Agriculture Equipments"));
         primaryStage.setScene(mainScene);
         primaryStage.setMaximized(true);
         primaryStage.centerOnScreen();
@@ -195,7 +207,7 @@ public class MainPage{
                     conn.close();
                 }
             } catch (SQLException e) {
-//                LOGGER.error("Error closing database connection", e);
+                AlertUtils.showAlert(Alert.AlertType.WARNING,"Connection Closure!","Failed to close the connection!");
             }
         });
         primaryStage.show();
@@ -213,7 +225,7 @@ public class MainPage{
         options[index].setOnAction(e ->{
             selectOption(index);
             if(index==0){
-                scrollPane.setContent(importController.loadHistory(conn));
+                scrollPane.setContent(importController.initializeImportsTable(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
@@ -236,8 +248,7 @@ public class MainPage{
                 try{
                     new ReportController(sectionName);
                 } catch (Exception ex) {
-//                    LOGGER.info("Failed to start Report Generation");
-//                    LOGGER.error(String.valueOf(ex.getCause()));
+                    AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong!","Unable to start Report Generation!");
                 }
             }
         });
@@ -284,17 +295,14 @@ public class MainPage{
     public void connectDatabase(){
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            if(sectionName.equals(UNITECH_INDUSTRIES)){
-                conn= DriverManager.getConnection(url,username1,password1);
+            if(sectionName.equalsIgnoreCase(UNITECH_INDUSTRIES)){
+                conn= DriverManager.getConnection(DB_URL, UNITECH_USERNAME, UNITECH_PASSWORD);
             }
-            if(sectionName.equals(SURYA_INDUSTRIES)){
-                conn= DriverManager.getConnection(url,username2,password2);
+            if(sectionName.equalsIgnoreCase(SURYA_INDUSTRIES)){
+                conn= DriverManager.getConnection(DB_URL, SURYA_USERNAME, SURYA_PASSWORD);
             }
-            System.out.println("Connected to "+sectionName+" database...");
-        } catch (ClassNotFoundException e) {
-            System.out.println("JDBC Driver not found: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Unexpected Error: " + e.getMessage());
+            AlertUtils.showAlert(Alert.AlertType.ERROR,"Database Error","Failed to connect to database: "+ e.getMessage());
         }
     }
 }
