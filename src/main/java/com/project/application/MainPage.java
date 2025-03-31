@@ -240,7 +240,7 @@ public class MainPage{
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==3){
-                scrollPane.setContent(statementController.loadComponents(conn));
+                scrollPane.setContent(statementController.initializeStatementSection(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);

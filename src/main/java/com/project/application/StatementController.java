@@ -19,40 +19,61 @@ import java.sql.Statement;
 import java.text.DecimalFormat;
 
 public class StatementController {
-    private VBox main,v1;
+
+    private HBox summaryPane;
     private HBox h1,h2,searchPane;
-    private Label title,from,to, totalImportsAmountLbl = new Label(), totalExportsAmountLbl = new Label();
+    private Label title;
+    private Label from;
+    private Label to;
+    private final Label totalImportsAmountLbl = new Label();
+    private final Label totalExportsAmountLbl = new Label();
     private DatePicker fromDate,toDate;
-    private TextField searchText;
+    private TextField searchField;
     private Button searchBtn,processBtn, resetBtn,printBtn;
-    private Region spacer;
     private TableView<StatementEntity> stmtTable;
-    private TableColumn<StatementEntity,Integer> colSrno,colTotalQty;
-    private TableColumn<StatementEntity,String> colType,colInvoiceNo,colSCName,colSCId,colPaymentStatus,colSubTotal,colInvoiceDate;
+    private TableColumn<StatementEntity,String> colType;
+    private TableColumn<StatementEntity,String> colPaymentStatus;
     private DecimalFormat df;
     private Connection conn;
     private double totalImportsAmount,totalExportsAmount;
     private String fromDateStr,toDateStr;
-    private String loadDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM imports "
+    private static final String FETCH_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM IMPORTS "
             + "UNION ALL "
-            + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM exports "
+            + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM EXPORTS "
             + "ORDER BY invoice_date";
 
-    public VBox loadComponents(Connection connection){
+    public VBox initializeStatementSection(Connection connection){
         conn = connection;
-        title = new Label("Statements");
 
+        initializeUI();
+        VBox main = new VBox();
+        main.getChildren().addAll(h1,h2,stmtTable,summaryPane);
+        addStyles();
+
+        return main;
+    }
+
+    private void initializeUI(){
+        createHeadingPane();
+        setupFilterSection();
+        setupStatementsTable();
+        setupSummarySection();
+    }
+
+    private void createHeadingPane(){
+        title = new Label("Statements");
         searchPane = new HBox();
-        searchText = new TextField();
-        searchText.setPrefWidth(200);
+        searchField = new TextField();
+        searchField.setPrefWidth(200);
         searchBtn = new Button();
         searchBtn.setPrefWidth(25);
         searchPane.setAlignment(Pos.CENTER);
-        searchPane.getChildren().addAll(searchText,searchBtn);
-
+        searchPane.getChildren().addAll(searchField,searchBtn);
         h1 = new HBox();
         h1.getChildren().addAll(title,searchPane);
+    }
 
+    private void setupFilterSection(){
         from = new Label("From: ");
         fromDate = new DatePicker();
         to = new Label("To: ");
@@ -61,25 +82,60 @@ public class StatementController {
         setProcessBtnAction();
         resetBtn = new Button("Reset");
         setResetBtnAction();
-        spacer = new Region();
+        Region spacer = new Region();
         HBox.setHgrow(spacer,Priority.ALWAYS);
         printBtn = new Button("Print");
-//        printBtn.setAlignment(Pos.CENTER_RIGHT);
         h2 = new HBox();
-        h2.getChildren().addAll(from,fromDate,to,toDate,processBtn, resetBtn,spacer,printBtn);
+        h2.getChildren().addAll(from,fromDate,to,toDate,processBtn, resetBtn, spacer,printBtn);
+    }
 
-        setStmtTable();
+    private void setupStatementsTable(){
+        stmtTable = new TableView<>();
+        stmtTable.setMaxHeight(450);
+        stmtTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        TableColumn<StatementEntity, Integer> colSrno = new TableColumn<>("Sr No.");
+        colType = new TableColumn<>("Transaction Type");
+        TableColumn<StatementEntity, String> colInvoiceNo = new TableColumn<>("Invoice No");
+        TableColumn<StatementEntity, String> colSCName = new TableColumn<>("Supplier/Customer Name");
+        TableColumn<StatementEntity, String> colSCId = new TableColumn<>("Supplier/Customer Id");
+        TableColumn<StatementEntity, String> colSubTotal = new TableColumn<>("Subtotal");
+        colPaymentStatus = new TableColumn<>("Payment Status");
+        TableColumn<StatementEntity, String> colInvoiceDate = new TableColumn<>("Invoice Date");
 
-        v1 = new VBox();
-        totalImportsAmountLbl.setText("Total Imports(Rs.): ");
-        totalExportsAmountLbl.setText("Total Export(Rs.): ");
-        v1.getChildren().addAll(totalImportsAmountLbl, totalExportsAmountLbl);
+        colSrno.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getSrno()).asObject());
+        colType.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getType()));
+        colInvoiceNo.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceNo()));
+        colSCName.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSCName()));
+        colSCId.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSCId()));
+        colInvoiceDate.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceDate()));
 
-        main = new VBox();
-        main.getChildren().addAll(h1,h2,stmtTable, v1);
+        df = new DecimalFormat("##,##,###");
+        colSubTotal.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. "+df.format(cellData.getValue().getSubTotal())));
+        colPaymentStatus.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPaymentStatus()));
+        colSrno.setPrefWidth(20);
+        colType.setPrefWidth(70);
+        colInvoiceNo.setPrefWidth(70);
+        colSubTotal.setPrefWidth(50);
+        setColumnDataColors();
 
-        addStyles();
-        return main;
+        stmtTable.getColumns().addAll(colSrno,colType, colInvoiceNo, colSCName, colSCId, colSubTotal,colPaymentStatus, colInvoiceDate);
+        loadStatementsData(FETCH_DATA_QUERY);
+    }
+
+    private void setupSummarySection(){
+        summaryPane = new HBox();
+        VBox leftPart = new VBox() , rightPart = new VBox();
+        Label[] stats = new Label[7];
+        stats[0] = new Label("Total Transactions: -");
+        stats[1] = new Label("Top Supplier: -");
+        stats[2] = new Label("Top Customer: -");
+        stats[3] = new Label("Net Profit: -");
+        stats[4] = new Label("Pending Payments: -");
+        stats[5] = new Label("Highest Import: -");
+        stats[6] = new Label("Highest Export: -");
+        leftPart.getChildren().addAll(stats[0],stats[1],stats[2]);
+        rightPart.getChildren().addAll(stats[3],stats[4],stats[5],stats[6]);
+        summaryPane.getChildren().addAll(leftPart,rightPart);
     }
 
     public void addStyles(){
@@ -109,39 +165,7 @@ public class StatementController {
         VBox.setMargin(totalExportsAmountLbl,new Insets(0,0,0,10));
     }
 
-    private void setStmtTable(){
-        stmtTable = new TableView<>();
-        stmtTable.setMaxHeight(450);
-        stmtTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        colSrno = new TableColumn<>("Sr No.");
-        colType = new TableColumn<>("Transaction Type");
-        colInvoiceNo = new TableColumn<>("Invoice No");
-        colSCName = new TableColumn<>("Supplier/Customer Name");
-        colSCId = new TableColumn<>("Supplier/Customer Id");
-        colSubTotal = new TableColumn<>("Subtotal");
-        colPaymentStatus = new TableColumn<>("Payment Status");
-        colInvoiceDate = new TableColumn<>("Invoice Date");
 
-        colSrno.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getSrno()).asObject());
-        colType.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getType()));
-        colInvoiceNo.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceNo()));
-        colSCName.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSCName()));
-        colSCId.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSCId()));
-        colInvoiceDate.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceDate()));
-
-        df = new DecimalFormat("##,##,###");
-        colSubTotal.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. "+df.format(cellData.getValue().getSubTotal())));
-        colPaymentStatus.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPaymentStatus()));
-        colSrno.setPrefWidth(20);
-        colType.setPrefWidth(70);
-        colInvoiceNo.setPrefWidth(70);
-        colSubTotal.setPrefWidth(50);
-        setColumnDataColors();
-
-        stmtTable.getColumns().addAll(colSrno,colType,colInvoiceNo,colSCName,colSCId,colSubTotal,colPaymentStatus,colInvoiceDate);
-
-        loadStatementsData(loadDataQuery);
-    }
 
     private void loadStatementsData(String query){
         stmtTable.getItems().clear();
@@ -171,7 +195,6 @@ public class StatementController {
                 totalExportsAmountLbl.setText("Total Exports(Rs.): " + df.format(totalExportsAmount)+"/-");
             });
         }catch (Exception ex){
-            System.out.println("StatementController.loadStatementsData:182 \n"+ex);
             ex.printStackTrace();
         }
     }
@@ -192,7 +215,6 @@ public class StatementController {
                     } else if (item.equalsIgnoreCase("exports")) {
                         setTextFill(Color.GREEN);
                     } else {
-                        // Default color if not "imports" or "exports"
                         setTextFill(Color.BLACK);
                     }
                 }
@@ -252,8 +274,8 @@ public class StatementController {
         resetBtn.setOnAction(event->{
             fromDate.setValue(null);
             toDate.setValue(null);
-            searchText.setText("");
-            loadStatementsData(loadDataQuery);
+            searchField.setText("");
+            loadStatementsData(FETCH_DATA_QUERY);
         });
     }
 }
