@@ -19,6 +19,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ImportController {
+
     private static TableView<Imports> importsTable;
     private TableView<Product> tblProducts;
     private static Connection conn;
