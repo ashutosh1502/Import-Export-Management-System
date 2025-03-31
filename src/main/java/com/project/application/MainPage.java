@@ -230,7 +230,7 @@ public class MainPage{
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==1){
-                scrollPane.setContent(exportController.loadHistory(conn));
+                scrollPane.setContent(exportController.initializeExportsTable(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
