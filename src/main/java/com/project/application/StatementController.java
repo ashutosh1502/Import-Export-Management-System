@@ -21,12 +21,12 @@ import java.text.DecimalFormat;
 public class StatementController {
 
     private HBox summaryPane;
+    private VBox leftPart,rightPart;
+    private Label[] stats = new Label[7];
     private HBox h1,h2,searchPane;
     private Label title;
     private Label from;
     private Label to;
-    private final Label totalImportsAmountLbl = new Label();
-    private final Label totalExportsAmountLbl = new Label();
     private DatePicker fromDate,toDate;
     private TextField searchField;
     private Button searchBtn,processBtn, resetBtn,printBtn;
@@ -124,8 +124,8 @@ public class StatementController {
 
     private void setupSummarySection(){
         summaryPane = new HBox();
-        VBox leftPart = new VBox() , rightPart = new VBox();
-        Label[] stats = new Label[7];
+        leftPart = new VBox(10);
+        rightPart = new VBox(10);
         stats[0] = new Label("Total Transactions: -");
         stats[1] = new Label("Top Supplier: -");
         stats[2] = new Label("Top Customer: -");
@@ -159,13 +159,15 @@ public class StatementController {
         h1.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
         h2.setPadding(new Insets(5,0,0,10));
         h2.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
-        totalImportsAmountLbl.setStyle("-fx-font-size:16px;-fx-font-weight:bold;-fx-text-fill:blue;");
-        totalExportsAmountLbl.setStyle("-fx-font-size:16px;-fx-font-weight:bold;-fx-text-fill:green;");
-        VBox.setMargin(totalImportsAmountLbl,new Insets(0,0,0,10));
-        VBox.setMargin(totalExportsAmountLbl,new Insets(0,0,0,10));
+
+        HBox.setHgrow(leftPart,Priority.ALWAYS);
+        HBox.setHgrow(rightPart,Priority.ALWAYS);
+        leftPart.setPadding(new Insets(10,10,10,10));
+        rightPart.setPadding(new Insets(10,10,10,10));
+        for(Label stat: stats){
+            stat.setStyle("-fx-font-size:12px;-fx-font-weight:bold;");
+        }
     }
-
-
 
     private void loadStatementsData(String query){
         stmtTable.getItems().clear();
@@ -191,8 +193,6 @@ public class StatementController {
             }
             Platform.runLater(() -> {
                 DecimalFormat df = new DecimalFormat("##,##,###.##");
-                totalImportsAmountLbl.setText("Total Imports(Rs.): " + df.format(totalImportsAmount)+"/-");
-                totalExportsAmountLbl.setText("Total Exports(Rs.): " + df.format(totalExportsAmount)+"/-");
             });
         }catch (Exception ex){
             ex.printStackTrace();
