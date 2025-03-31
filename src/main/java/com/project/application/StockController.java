@@ -227,6 +227,7 @@ public class StockController {
                 updateProductStmt.setString(2,productName);
                 updateProductStmt.setInt(3,quantity);
                 updateProductStmt.setDouble(4,price);
+                updateProductStmt.setString(5,selectedPrId);
                 updateProductStmt.executeUpdate();
                 AlertUtils.showMsg("Product updated successfully!");
                 popupStage.close();
