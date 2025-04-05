@@ -10,60 +10,61 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
 import java.util.Optional;
 
 public class StockController {
+
     private TableView<Product> stocksTable;
-    private int SrNoCounter;
-    private TableColumn<Product,String> col1,col2,col3;
-    private TableColumn<Product,Integer> col4;
-    private TableColumn<Product,Double> col5;
-    private Statement stmt;
-    private String selectQuery="SELECT * FROM products";
-    private ResultSet resultSet;
+    private static final String FETCH_PRODUCTS_QUERY ="SELECT * FROM PRODUCTS";
+    private static final String INSERT_PRODUCT_QUERY = "INSERT INTO PRODUCTS (product_id, product_name, qty, price) VALUES (?, ?, ?, ?)";
+    private static final String FETCH_PRODUCT_BY_ID_QUERY="SELECT * FROM PRODUCTS WHERE product_id= ?";
+    private static final String UPDATE_PRODUCT_QUERY = "UPDATE PRODUCTS SET product_id= ?, product_name= ?, qty= ?, price= ? WHERE product_id= ?";
+    private static final String DELETE_PRODUCT_QUERY="DELETE FROM PRODUCTS WHERE product_id= ?";
     private static Connection conn;
 
-    @SuppressWarnings("unchecked")
-    public TableView<Product> loadStocks(Connection connection){
+    public TableView<Product> initializeStocksTable(Connection connection){
         conn=connection;
-//        System.out.println("Called stock controller");
+
         stocksTable = new TableView<>();
-        stocksTable.setId("stocks-table");
-        col1=new TableColumn<>("SrNo.");
-        col2 = new TableColumn<>("Product ID");
-        col3= new TableColumn<>("Product Name");
-        col4= new TableColumn<>("Available Qty");
-        col5= new TableColumn<>("Price");
+        initializeStocksTableColumns();
+        stocksTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        col1.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSrNo()));
-        col2.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductID()));
-        col3.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductName()));
-        col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
-        col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
-
-        resizeColumns();
-        stocksTable.getColumns().addAll(col1,col2,col3,col4,col5);
-        loadData();
+        loadStockData();
 
         return stocksTable;
     }
 
-    public void loadData(){
+    private void initializeStocksTableColumns(){
+        TableColumn<Product, String> colSrNo = new TableColumn<>("SrNo.");
+        TableColumn<Product, String> colProductId = new TableColumn<>("Product ID");
+        TableColumn<Product, String> colProductName = new TableColumn<>("Product Name");
+        TableColumn<Product, Integer> colQty = new TableColumn<>("Available Qty");
+        TableColumn<Product, Double> colPrice = new TableColumn<>("Price");
+
+        colSrNo.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getSrNo()));
+        colProductId.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductID()));
+        colProductName.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProductName()));
+        colQty.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
+        colPrice.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
+
+        stocksTable.getColumns().addAll(colSrNo, colProductId, colProductName, colQty, colPrice);
+
+    }
+
+    public void loadStockData(){
         ObservableList<Product> data= FXCollections.observableArrayList();
-        SrNoCounter=1;
+        int srNoCounter = 1;
         try{
-            stmt=conn.createStatement();
-            resultSet=stmt.executeQuery(selectQuery);
+            PreparedStatement fetchProductsStmt=conn.prepareStatement(FETCH_PRODUCTS_QUERY);
+            ResultSet resultSet = fetchProductsStmt.executeQuery();
             while(resultSet.next()){
-                String productID=resultSet.getString("product_id");
-                String productName=resultSet.getString("product_name");
-                int qty=resultSet.getInt("qty");
-                double price=resultSet.getDouble("price");
-                data.add(new Product(SrNoCounter++,productID,productName,qty,price));
+                String productID= resultSet.getString("product_id");
+                String productName= resultSet.getString("product_name");
+                int qty= resultSet.getInt("qty");
+                double price= resultSet.getDouble("price");
+                data.add(new Product(srNoCounter++,productID,productName,qty,price));
             }
         }catch (SQLException s){
             System.out.println("SQL Exception: "+s.getMessage());
@@ -74,29 +75,29 @@ public class StockController {
         stocksTable.setItems(data);
     }
 
-    public void resizeColumns(){
-        stocksTable.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
-        col1.setPrefWidth(50);
-        col1.setMinWidth(50);
-        col1.setResizable(true);
-
-        stocksTable.widthProperty().addListener((observable, oldWidth, newWidth) -> {
-            double totalWidth = newWidth.doubleValue() - col1.getWidth();
-            double remainingColumnCount = stocksTable.getColumns().size() - 1;
-
-            if (remainingColumnCount > 0) {
-                double columnWidth = totalWidth / remainingColumnCount;
-
-                for (TableColumn<?, ?> col : stocksTable.getColumns()) {
-                    if (col != col1) {
-                        col.setPrefWidth(columnWidth);
-                        col.setMinWidth(50);
-                        col.setResizable(true);
-                    }
-                }
-            }
-        });
-    }
+//    public void resizeColumns(){
+//        stocksTable.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
+//        colSrNo.setPrefWidth(50);
+//        colSrNo.setMinWidth(50);
+//        colSrNo.setResizable(true);
+//
+//        stocksTable.widthProperty().addListener((observable, oldWidth, newWidth) -> {
+//            double totalWidth = newWidth.doubleValue() - colSrNo.getWidth();
+//            double remainingColumnCount = stocksTable.getColumns().size() - 1;
+//
+//            if (remainingColumnCount > 0) {
+//                double columnWidth = totalWidth / remainingColumnCount;
+//
+//                for (TableColumn<?, ?> col : stocksTable.getColumns()) {
+//                    if (col != colSrNo) {
+//                        col.setPrefWidth(columnWidth);
+//                        col.setMinWidth(50);
+//                        col.setResizable(true);
+//                    }
+//                }
+//            }
+//        });
+//    }
 
     public void addStock() {
         Stage popupStage = new Stage();
@@ -133,19 +134,23 @@ public class StockController {
                 String productName = txtProductName.getText();
                 int quantity = Integer.parseInt(txtQty.getText());
                 double price = Double.parseDouble(txtPrice.getText());
-                String insertQuery = "INSERT INTO products (product_id, product_name, qty, price) " +
-                        "VALUES ('" + productId + "', '" + productName + "', " + quantity + ", " + price + ")";
 
                 if (productId.isEmpty() || productName.isEmpty() || quantity < 0 || price < 0) {
                     AlertUtils.showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please provide valid details.");
                     return;
                 }
-                stmt.executeUpdate(insertQuery);
+                PreparedStatement insertProductStmt = conn.prepareStatement(INSERT_PRODUCT_QUERY);
+                insertProductStmt.setString(1,productId);
+                insertProductStmt.setString(2,productName);
+                insertProductStmt.setInt(3,quantity);
+                insertProductStmt.setDouble(4,price);
+                insertProductStmt.executeUpdate();
                 AlertUtils.showMsg("Product added successfully");
                 popupStage.close();
             } catch (NumberFormatException ex) {
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Invalid Input", "Quantity and Price must be numeric.");
             } catch (SQLException ex) {
+                DatabaseErrorHandler.handleDatabaseError(ex);
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Product ID already exists!");
             }
         });
@@ -159,14 +164,18 @@ public class StockController {
     public void updateStock(){
         Product selected=stocksTable.getSelectionModel().getSelectedItem();
         if(selected!=null){
-            String selectQuery="SELECT * FROM PRODUCTS WHERE product_id='"+selected.getProductID()+"'";
             try{
-                ResultSet rs=stmt.executeQuery(selectQuery);
-                rs.next();
-                launchUpdateWindow(rs.getString("product_id"),rs.getString("product_name"),rs.getInt("qty"),rs.getDouble("price"));
+                PreparedStatement fetchProductByIdStmt = conn.prepareStatement(FETCH_PRODUCT_BY_ID_QUERY);
+                fetchProductByIdStmt.setString(1,selected.getProductID());
+                ResultSet rs=fetchProductByIdStmt.executeQuery();
+                if(rs.next()){
+                    launchUpdateWindow(rs.getString("product_id"),rs.getString("product_name"),rs.getInt("qty"),rs.getDouble("price"));
+                }else{
+                    AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Stock doesn't exists into database!");
+                }
             }catch (SQLException s){
-                AlertUtils.showAlert(Alert.AlertType.ERROR,"Unable to update.","Something went wrong!");
-                System.out.println("SQL Exception: "+s.getMessage()+"\nUnable to fetch data.");
+                DatabaseErrorHandler.handleDatabaseError(s);
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Unable to update!");
             }
         }else{
             AlertUtils.showAlert(Alert.AlertType.INFORMATION,"Unable to update.","Please select a row to update!");
@@ -207,19 +216,26 @@ public class StockController {
                 String productName = txtProductName.getText();
                 int quantity = Integer.parseInt(txtQty.getText());
                 double price = Double.parseDouble(txtPrice.getText());
-                String updateQuery = "UPDATE PRODUCTS SET product_id='"+productId+"', product_name='"+productName+"', qty="+quantity+", price="+price+" WHERE product_id='"+selectedPrId+"'";
 
                 if (productId.isEmpty() || productName.isEmpty() || quantity < 0 || price < 0) {
                     AlertUtils.showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please provide valid details.");
                     return;
                 }
-                stmt.executeUpdate(updateQuery);
-                AlertUtils.showMsg("Product updated successfully");
+
+                PreparedStatement updateProductStmt = conn.prepareStatement(UPDATE_PRODUCT_QUERY);
+                updateProductStmt.setString(1,productId);
+                updateProductStmt.setString(2,productName);
+                updateProductStmt.setInt(3,quantity);
+                updateProductStmt.setDouble(4,price);
+                updateProductStmt.setString(5,selectedPrId);
+                updateProductStmt.executeUpdate();
+                AlertUtils.showMsg("Product updated successfully!");
                 popupStage.close();
             } catch (NumberFormatException ex) {
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Invalid Input", "Quantity and Price must be numeric.");
             } catch (SQLException ex) {
-                AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to update the product: " + ex.getMessage());
+                DatabaseErrorHandler.handleDatabaseError(ex);
+                AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong", "Failed to update the product!");
             }
         });
 
@@ -232,25 +248,26 @@ public class StockController {
     public void deleteStock(){
         Product selected=stocksTable.getSelectionModel().getSelectedItem();
         if(selected!=null){
-            String deleteQuery="DELETE FROM products WHERE product_id='"+selected.getProductID()+"'";
             try{
                 Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
                 confirmationAlert.setTitle("Delete Confirmation");
-                confirmationAlert.setHeaderText("Delete Item");
-                confirmationAlert.setContentText("Do you really want to delete this item?");
+                confirmationAlert.setHeaderText("Delete Product");
+                confirmationAlert.setContentText("Do you really want to delete this product?");
                 ButtonType deleteButton = new ButtonType("Delete");
                 ButtonType cancelButton = new ButtonType("Cancel");
                 confirmationAlert.getButtonTypes().setAll(deleteButton, cancelButton);
 
                 Optional<ButtonType> result = confirmationAlert.showAndWait();
                 if (result.isPresent() && result.get() == deleteButton) {
-                    stmt.executeUpdate(deleteQuery);
-                    AlertUtils.showMsg("Item deleted successfully");
-                    System.out.println("Item deleted successfully.");
+                    PreparedStatement deleteStockStmt = conn.prepareStatement(DELETE_PRODUCT_QUERY);
+                    deleteStockStmt.setString(1,selected.getProductID());
+                    deleteStockStmt.executeUpdate();
+                    AlertUtils.showMsg("Product deleted successfully");
+                }else{
+                    AlertUtils.showAlert(Alert.AlertType.INFORMATION,"Deletion Failed","Unable to delete the product!");
                 }
             }catch (SQLException s){
-                AlertUtils.showAlert(Alert.AlertType.ERROR,"Unable to delete.","Something went wrong!");
-                System.out.println("SQL Exception: "+s.getMessage()+"\nUnable to delete data.");
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Unable to delete!");
             }
         }else{
             AlertUtils.showAlert(Alert.AlertType.INFORMATION,"Unable to delete.","Please select a row to delete!");

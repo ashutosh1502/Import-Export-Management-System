@@ -86,7 +86,7 @@ public class MainPage{
         switchBtn.setPrefHeight(35);
         switchBtn.setFocusTraversable(false);
         switchBtn.setOnAction(e ->{
-            String newSectionName = sectionName.equals(UNITECH_INDUSTRIES) ? SURYA_INDUSTRIES : UNITECH_INDUSTRIES;
+            String newSectionName = sectionName.equalsIgnoreCase(UNITECH_INDUSTRIES) ? SURYA_INDUSTRIES : UNITECH_INDUSTRIES;
             new MainPage(newSectionName);
             primaryStage.close();
         });
@@ -230,17 +230,17 @@ public class MainPage{
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==1){
-                scrollPane.setContent(exportController.loadHistory(conn));
+                scrollPane.setContent(exportController.initializeExportsTable(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==2){
-                scrollPane.setContent(stockController.loadStocks(conn));
+                scrollPane.setContent(stockController.initializeStocksTable(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==3){
-                scrollPane.setContent(statementController.loadComponents(conn));
+                scrollPane.setContent(statementController.initializeStatementSection(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
@@ -274,11 +274,11 @@ public class MainPage{
         operations[1].get(2).setOnAction(e -> exportController.deleteEntry());
 
         operations[2].add(new Button("Add New Stock"));
-        operations[2].getFirst().setOnAction(e ->{stockController.addStock();scrollPane.setContent(stockController.loadStocks(conn));});
+        operations[2].getFirst().setOnAction(e ->{stockController.addStock();scrollPane.setContent(stockController.initializeStocksTable(conn));});
         operations[2].add(new Button("Update Stock"));
-        operations[2].get(1).setOnAction(e ->{stockController.updateStock();scrollPane.setContent(stockController.loadStocks(conn));});
+        operations[2].get(1).setOnAction(e ->{stockController.updateStock();scrollPane.setContent(stockController.initializeStocksTable(conn));});
         operations[2].add(new Button("Delete Stock"));
-        operations[2].get(2).setOnAction(e ->{stockController.deleteStock();scrollPane.setContent(stockController.loadStocks(conn));});
+        operations[2].get(2).setOnAction(e ->{stockController.deleteStock();scrollPane.setContent(stockController.initializeStocksTable(conn));});
 
         for(List<Button> btnList:operations){
             for(Button btn:btnList){

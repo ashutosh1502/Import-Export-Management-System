@@ -19,25 +19,25 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ImportController {
+
     private static TableView<Imports> importsTable;
     private TableView<Product> tblProducts;
-    private TableColumn<Imports, String> colSrNo, colInvoiceNo, colSupplierName, colProducts, colAmount, colPaymentStatus, colInvoiceDate;
-    private TableColumn<Imports, Integer> colTotalQty;
     private static Connection conn;
     private int srno = 1;
     private Label txtSubTotal;
     private static final DecimalFormat CURRENCY_FORMAT = new DecimalFormat("##,##,###");
     private static final String FETCH_IMPORTS_QUERY = "SELECT * FROM IMPORTS";
-    private static final String FETCH_IMPORT_PRODUCTS_QUERY = "SELECT * FROM IMPORT_PRODUCTS WHERE INVOICE_NUMBER = ?";
-    private static final String INSERT_IMPORTS_QUERY = "INSERT INTO imports (" +
+    private static final String FETCH_IMPORT_PRODUCTS_QUERY = "SELECT * FROM IMPORT_PRODUCTS WHERE invoice_number = ?";
+    private static final String INSERT_IMPORTS_QUERY = "INSERT INTO IMPORTS (" +
             "supplier_name, supplier_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
             ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
-    private static final String INSERT_IMPORT_PRODUCTS_QUERY = "INSERT INTO import_products (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
-    private static final String UPDATE_IMPORT_PRODUCTS = "UPDATE import_products SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ?";
+    private static final String INSERT_IMPORT_PRODUCTS_QUERY = "INSERT INTO IMPORT_PRODUCTS (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
+    private static final String UPDATE_IMPORTS_QUERY = "UPDATE IMPORTS SET supplier_id = ?, supplier_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?,'YYYY-MM-DD'), invoice_date = TO_DATE(?,'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
+    private static final String UPDATE_IMPORT_PRODUCTS_QUERY = "UPDATE IMPORT_PRODUCTS SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ?";
+    private static final String DELETE_IMPORT_QUERY = "DELETE FROM IMPORTS WHERE invoice_number = ?";
 
     //-------------------------------------------------------------------------------
 
-    @SuppressWarnings("unchecked")
     public TableView<Imports> initializeImportsTable(Connection connection) {
         conn = connection;
 
@@ -52,6 +52,8 @@ public class ImportController {
     }
 
     private void initializeImportsTableColumns(){
+        TableColumn<Imports, String> colSrNo, colInvoiceNo, colSupplierName, colProducts, colAmount, colPaymentStatus, colInvoiceDate;
+        TableColumn<Imports, Integer> colTotalQty;
         colSrNo = new TableColumn<>("SrNo.");
         colInvoiceNo = new TableColumn<>("Invoice No.");
         colSupplierName = new TableColumn<>("Supplier Name");
@@ -118,7 +120,6 @@ public class ImportController {
     }
 
     //OPERATIONS BUTTON ACTIONS--------------------------------------------------------------------------------------
-    @SuppressWarnings("unchecked")
     public void addEntry(ScrollPane scrollPane) {
         Stage popupStage = new Stage();
         popupStage.setTitle("Add Entry");
@@ -216,7 +217,10 @@ public class ImportController {
 
                 conn.setAutoCommit(false);
 
-                if (!insertImport(supplierNameEntered, supplierIdEntered, addressEntered, cityEntered, stateEntered, phoneEntered, emailEntered, invoiceNumberEntered, orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered, paymentStatusEntered)) {
+                if (!insertImport(supplierNameEntered, supplierIdEntered, addressEntered, cityEntered,
+                        stateEntered, phoneEntered, emailEntered, invoiceNumberEntered,
+                        orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered,
+                        paymentStatusEntered)) {
                     conn.rollback();
                     return;
                 }
@@ -422,7 +426,8 @@ public class ImportController {
 
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert import entry: " + e.getMessage());
+            DatabaseErrorHandler.handleDatabaseError(e);
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert import entry: ");
             return false;
         }
     }
@@ -443,7 +448,8 @@ public class ImportController {
             }
             return true;
         } catch (SQLException e) {
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert products: " + e.getMessage());
+            DatabaseErrorHandler.handleDatabaseError(e);
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert products: ");
             return false;
         }
     }
@@ -509,7 +515,7 @@ public class ImportController {
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Quantity and Price must be valid numbers!", ButtonType.OK);
                     alert.showAndWait();
                 }
-                PreparedStatement updateProductStmt = conn.prepareStatement(UPDATE_IMPORT_PRODUCTS);
+                PreparedStatement updateProductStmt = conn.prepareStatement(UPDATE_IMPORT_PRODUCTS_QUERY);
                 updateProductStmt.setString(1, productName);
                 updateProductStmt.setString(2, productId);
                 updateProductStmt.setInt(3, quantity);
@@ -552,14 +558,12 @@ public class ImportController {
     }
 
     public void viewUpdateEntry(ScrollPane scrollPane) {
-        System.out.println(importsTable);   //debug-test
         if (importsTable == null || importsTable.getItems().isEmpty() || importsTable.getSelectionModel().getSelectedItem() == null) {
             AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to update.", "Please select a row to update!");
             return;
         }
 
         String invoiceNumber = importsTable.getSelectionModel().getSelectedItem().getInvoiceNo();
-//        System.out.println(invoiceNumber);  //debug-test.
         try {
             String query = "SELECT * FROM IMPORTS WHERE invoice_number = ?";
             PreparedStatement pstmt = conn.prepareStatement(query);
@@ -583,8 +587,7 @@ public class ImportController {
                 // fetch product data .........
                 ArrayList<Product> productList = new ArrayList<>();
                 try {
-                    String productsQuery = "SELECT * FROM IMPORT_PRODUCTS WHERE invoice_number = ?";
-                    PreparedStatement prstmt = conn.prepareStatement(productsQuery);
+                    PreparedStatement prstmt = conn.prepareStatement(FETCH_IMPORT_PRODUCTS_QUERY);
                     prstmt.setString(1, invoiceNumber);
                     ResultSet prrs = prstmt.executeQuery();
                     int srno = 1;
@@ -597,22 +600,22 @@ public class ImportController {
                         srno += 1;
                     }
                 } catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                    e.printStackTrace();
+                    DatabaseErrorHandler.handleDatabaseError(e);
+                    AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Failed to load products");
                 }
-
                 // Pre-fill the form and allow updates
                 updateEntryForm(supplierId, supplierName, address, city, state, phone, email, orderDate, invoiceDate, subTotal, paymentMode, status, productList, invoiceNumber, scrollPane);
+
             } else {
                 AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Not Found", "The selected invoice does not exist in the database.");
             }
 
         } catch (SQLException e) {
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Error", "Error retrieving entry details: " + e.getMessage() + "\n" + e.getCause());
+            DatabaseErrorHandler.handleDatabaseError(e);
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Error", "Error retrieving entry details: ");
         }
     }
 
-    @SuppressWarnings("unchecked")
     private void updateEntryForm(String selectedSupplierId, String selectedSupplierName, String selectedAddress, String selectedCity, String selectedState, String selectedPhone, String selectedEmail,
                                  String selectedOrderDate, String selectedInvoiceDate, String selectedSubTotal, String selectedPaymentMode, String selectedStatus, ArrayList<Product> selectedProductList, String selectedInvoiceNumber, ScrollPane scrollPane) {
 
@@ -653,10 +656,8 @@ public class ImportController {
         TableColumn<Product, Integer> col4;
         TableColumn<Product, Double> col5;
         col1 = new TableColumn<>("SrNo.");
-//        col1.setPrefWidth(40);
         col2 = new TableColumn<>("Product ID");
         col3 = new TableColumn<>("Product Name");
-//        col3.setMinWidth(65);
         col4 = new TableColumn<>("Qty");
         col5 = new TableColumn<>("Price");
         col1.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(String.valueOf(cellData.getValue().getSrNo())));
@@ -665,7 +666,7 @@ public class ImportController {
         col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
         col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
         tblProducts.getColumns().addAll(col1, col2, col3, col4, col5);
-        tblProducts.setColumnResizePolicy(tblProducts.CONSTRAINED_RESIZE_POLICY);
+        tblProducts.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         tblProducts.setPrefWidth(400);
         tblProducts.setMaxHeight(250);
 
@@ -723,8 +724,7 @@ public class ImportController {
         Button btnUpdate = new Button("Update");
         btnUpdate.setOnAction(e -> {
             try {
-                String updateImportsQuery = "UPDATE imports SET supplier_id = ?, supplier_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?,'YYYY-MM-DD'), invoice_date = TO_DATE(?,'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
-                PreparedStatement updateStmt = conn.prepareStatement(updateImportsQuery);
+                PreparedStatement updateStmt = conn.prepareStatement(UPDATE_IMPORTS_QUERY);
                 updateStmt.setString(1, txtSupplierId.getText());
                 updateStmt.setString(2, txtSupplierName.getText());
                 updateStmt.setString(3, txtAddress.getText());
@@ -815,6 +815,17 @@ public class ImportController {
         btnCancel.setOnAction(e -> scrollPane.setContent(initializeImportsTable(conn)));
     }
 
+    public void deleteProductFromEntry() {
+        Product selected = tblProducts.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            tblProducts.getItems().remove(selected);
+            AlertUtils.showMsg("Product delete successfully!");
+            calculateSubTotal();
+        } else {
+            AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
+        }
+    }
+
     public void deleteEntry() {
         if (importsTable == null || importsTable.getItems().isEmpty() || importsTable.getSelectionModel().getSelectedItem() == null) {
             AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
@@ -838,8 +849,7 @@ public class ImportController {
         String invoiceNumber = selectedEntry.getInvoiceNo();
 
         // Delete from the database
-        String deleteQuery = "DELETE FROM imports WHERE invoice_number = ?";
-        try (PreparedStatement pstmt = conn.prepareStatement(deleteQuery)) {
+        try (PreparedStatement pstmt = conn.prepareStatement(DELETE_IMPORT_QUERY)) {
             pstmt.setString(1, invoiceNumber);
 
             int rowsAffected = pstmt.executeUpdate();
@@ -852,19 +862,9 @@ public class ImportController {
                         "Deletion Failed", "Failed to delete the entry. Please try again.");
             }
         } catch (SQLException ex) {
+            DatabaseErrorHandler.handleDatabaseError(ex);
             AlertUtils.showAlert(Alert.AlertType.ERROR,
-                    "Database Error", "Error occurred while deleting entry: " + ex.getMessage());
-        }
-    }
-
-    public void deleteProductFromEntry() {
-        Product selected = tblProducts.getSelectionModel().getSelectedItem();
-        if (selected != null) {
-            tblProducts.getItems().remove(selected);
-            AlertUtils.showMsg("Product delete successfully!");
-            calculateSubTotal();
-        } else {
-            AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
+                    "Database Error", "Error occurred while deleting entry: ");
         }
     }
 
@@ -906,8 +906,9 @@ public class ImportController {
                     }
                 }
             }
-        }catch (Exception e){
-            System.out.println("ImportController: 922 \n"+e);
+        }catch (SQLException e){
+            DatabaseErrorHandler.handleDatabaseError(e);
+            AlertUtils.showAlert(Alert.AlertType.ERROR,"Stock Update Failed","Failed to add stock in inventory!");
         }
     }
 
