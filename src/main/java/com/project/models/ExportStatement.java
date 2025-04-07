@@ -1,6 +1,6 @@
-package com.project.application;
+package com.project.models;
 
 public class ExportStatement {
-    private String industryName,address,phoneNumber;
-    private String customerName,customerAddress,customerPhoneNumber;
+    public String industryName,address,phoneNumber;
+    public String customerName,customerAddress,customerPhoneNumber;
 }

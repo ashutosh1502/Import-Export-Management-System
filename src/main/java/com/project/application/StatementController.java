@@ -1,6 +1,8 @@
 package com.project.application;
 
 import com.project.utils.AlertUtils;
+import com.project.models.StatementEntity;
+import com.project.utils.DatabaseErrorHandler;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

@@ -1,4 +1,4 @@
-package com.project.application;
+package com.project.utils;
 
 import java.sql.SQLException;
 
