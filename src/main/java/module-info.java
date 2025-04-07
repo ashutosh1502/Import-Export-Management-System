@@ -15,4 +15,5 @@ module com.project.application {
 
     exports com.project.application;
     exports com.project.utils;
+    exports com.project.models;
 }
