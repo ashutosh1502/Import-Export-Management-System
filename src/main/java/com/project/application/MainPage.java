@@ -226,7 +226,7 @@ public class MainPage{
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==3){
-                scrollPane.setContent(statementController.initializeStatementSection(conn,sectionName));
+                scrollPane.setContent(statementController.initializeStatementSection(conn));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
