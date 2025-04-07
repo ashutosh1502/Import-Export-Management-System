@@ -927,7 +927,7 @@ public class ExportController {
             TableRow<Exports> row = new TableRow<>();
             row.setOnMouseClicked(mouseEvent -> {
                 if (mouseEvent.getClickCount() == 2 && !row.isEmpty()) {
-                    viewUpdateEntry(new ScrollPane());
+                    viewUpdateEntry(MainPage.scrollPane);
                 }
             });
             return row;
