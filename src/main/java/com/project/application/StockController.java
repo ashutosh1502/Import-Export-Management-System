@@ -1,6 +1,8 @@
 package com.project.application;
 
+import com.project.models.Product;
 import com.project.utils.AlertUtils;
+import com.project.utils.DatabaseErrorHandler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;

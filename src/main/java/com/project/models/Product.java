@@ -1,4 +1,4 @@
-package com.project.application;
+package com.project.models;
 
 public class Product {
     private final String SrNo;
