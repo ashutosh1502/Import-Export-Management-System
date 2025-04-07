@@ -31,10 +31,8 @@ public class MainPage{
     private VBox optionsPane;
     private Button[] options;
     private HBox operationsPane;
-    private ScrollPane scrollPane;
+    protected static ScrollPane scrollPane;
     private HBox footerPane;
-    private HBox printOptionPane;
-    private Button printBtn;
     private List<Button>[] operations;
 
     //Controllers
@@ -54,7 +52,6 @@ public class MainPage{
     private static final String SURYA_USERNAME ="surya_ind_admin";
     private static final String SURYA_PASSWORD ="surya@1234";
 
-    @SuppressWarnings("unchecked")
     public MainPage(String sectionName){
         this.sectionName=sectionName.toLowerCase();
         this.primaryStage=new Stage();
@@ -167,18 +164,6 @@ public class MainPage{
         footerPane.setStyle("-fx-background-color:#1a5276;");
         footerPane.setMinHeight(50);
 
-        printBtn=new Button();
-        printBtn.setStyle("-fx-font-weight:bold;-fx-background-color:#d4e6f1;");
-        printBtn.setOnMouseEntered(m -> printBtn.setStyle("-fx-background-color:#a9cce3;"));
-        printBtn.setOnMouseExited(m -> printBtn.setStyle("-fx-font-weight:bold;-fx-background-color:#d4e6f1;"));
-        printBtn.setText("Print");
-        printBtn.setPrefSize(120,30);
-        HBox.setMargin(printBtn,new Insets(0,0,0,10));
-        printOptionPane=new HBox();
-        printOptionPane.getChildren().add(printBtn);
-        printOptionPane.setAlignment(Pos.CENTER_LEFT);
-        HBox.setHgrow(printOptionPane,Priority.ALWAYS);
-
         operationsPane=new HBox();
         operations=new ArrayList[options.length];
         initializeOperations();
@@ -186,7 +171,8 @@ public class MainPage{
         for(Button btn:operations[0])
             operationsPane.getChildren().add(btn);
         operationsPane.setAlignment(Pos.CENTER_RIGHT);
-        footerPane.getChildren().addAll(printOptionPane,operationsPane);
+        HBox.setHgrow(operationsPane,Priority.ALWAYS);
+        footerPane.getChildren().add(operationsPane);
     }
 
     private void setUpMainPane(){
@@ -240,7 +226,7 @@ public class MainPage{
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==3){
-                scrollPane.setContent(statementController.initializeStatementSection(conn));
+                scrollPane.setContent(statementController.initializeStatementSection(conn,sectionName));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
