@@ -216,7 +216,7 @@ public class MainPage{
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==1){
-                scrollPane.setContent(exportController.initializeExportsTable(conn));
+                scrollPane.setContent(exportController.initializeExportsTable(conn,sectionName));
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
