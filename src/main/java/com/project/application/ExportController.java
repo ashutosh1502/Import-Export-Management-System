@@ -1,7 +1,7 @@
 package com.project.application;
 
-import com.project.models.ExportStatement;
-import com.project.models.ExportStatementTableEntry;
+import com.project.models.ExportBill;
+import com.project.models.ExportBillTableEntry;
 import com.project.models.Exports;
 import com.project.models.Product;
 import com.project.utils.AlertUtils;
@@ -26,7 +26,6 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ExportController {
     private static TableView<Exports> exportsTable;
@@ -828,11 +827,11 @@ public class ExportController {
 
         Image printImage = new Image(getClass().getResourceAsStream("/print.png"));
         ImageView printImageView = new ImageView(printImage);
-        printImageView.setFitWidth(50);
-        printImageView.setFitHeight(50);
+        printImageView.setFitWidth(30);
+        printImageView.setFitHeight(25);
         printInvoiceBtn = new Button("",printImageView);
 
-        ArrayList<ExportStatementTableEntry> tableEntries = getTableEntries(dpInvoiceDate.getValue().toString());
+        ArrayList<ExportBillTableEntry> tableEntries = getTableEntries(dpInvoiceDate.getValue().toString());
         setPrintInvoiceBtnAction(txtCustomerName.getText(),txtAddress.getText(),txtPhone.getText(),txtInvoiceNumber.getText(),tableEntries, selectedStatus);
 
         hBox.getChildren().addAll(printInvoiceBtn, btnUpdate, btnCancel);
@@ -956,13 +955,13 @@ public class ExportController {
     }
 
     private void setPrintInvoiceBtnAction(String customerName, String customerAddress, String customerPhoneNumber, String invoiceNumber,
-                                          ArrayList<ExportStatementTableEntry> tableEntries, String paymentStatus){
+                                          ArrayList<ExportBillTableEntry> tableEntries, String paymentStatus){
         printInvoiceBtn.setOnAction( e-> {
             try{
                 String address,contact;
                 address = "Plot No-08, MIDC Urun Islampur- 415409, Tal-Walwa, Dist-Sangli.";
                 contact = "Contact: +91 8275057797, +91 9960013301.";
-                ExportStatement exportStatement = new ExportStatement(sectionName,address,contact,
+                ExportBill exportBill = new ExportBill(sectionName,address,contact,
                         customerName,customerAddress,customerPhoneNumber, invoiceNumber,
                         tableEntries, paymentStatus);
                 String filePath = PDFGenerator.getSaveLocation(refPrimaryStage);
@@ -970,7 +969,7 @@ public class ExportController {
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
                     return;
                 }
-                PDFGenerator.generateExportStatementPDF(filePath,exportStatement);
+                PDFGenerator.generateExportBillPDF(filePath,exportBill);
             }catch (Exception ex){
                 System.out.println(ex);
                 AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Unable to print!");
@@ -979,10 +978,10 @@ public class ExportController {
     }
 
     private ArrayList getTableEntries(String invoiceDate){
-        ArrayList<ExportStatementTableEntry> entries = new ArrayList<>();
-        ExportStatementTableEntry entry;
+        ArrayList<ExportBillTableEntry> entries = new ArrayList<>();
+        ExportBillTableEntry entry;
         for(Product pr : tblProducts.getItems()){
-            entry = new ExportStatementTableEntry(invoiceDate,pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity());
+            entry = new ExportBillTableEntry(invoiceDate,pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity());
             entries.add(entry);
         }
         return entries;

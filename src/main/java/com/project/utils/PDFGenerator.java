@@ -1,11 +1,11 @@
 package com.project.utils;
 
-import com.project.models.ExportStatement;
+import com.project.models.ExportBill;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.project.models.ExportStatementTableEntry;
+import com.project.models.ExportBillTableEntry;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -30,7 +30,7 @@ public class PDFGenerator {
         return null;
     }
 
-    public static void generateExportStatementPDF(String filePath, ExportStatement statement) throws Exception {
+    public static void generateExportBillPDF(String filePath, ExportBill bill) throws Exception {
         Document document = new Document(PageSize.A4, 50, 50, 50, 50);
         PdfWriter.getInstance(document, new FileOutputStream(filePath));
         document.open();
@@ -41,15 +41,15 @@ public class PDFGenerator {
         Font tableDataFont = FontFactory.getFont(FontFactory.HELVETICA, 11, BaseColor.BLACK);
         Font labelFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
 
-        Paragraph title = new Paragraph(statement.industryName.toUpperCase(), titleFont);
+        Paragraph title = new Paragraph(bill.industryName.toUpperCase(), titleFont);
         title.setAlignment(Element.ALIGN_CENTER);
         document.add(title);
 
-        Paragraph addressLine = new Paragraph(statement.address,normalFont);
+        Paragraph addressLine = new Paragraph(bill.address,normalFont);
         addressLine.setAlignment(Element.ALIGN_CENTER);
         document.add(addressLine);
 
-        Paragraph phoneNumberLine = new Paragraph(statement.contact,normalFont);
+        Paragraph phoneNumberLine = new Paragraph(bill.contact,normalFont);
         phoneNumberLine.setAlignment(Element.ALIGN_CENTER);
         document.add(phoneNumberLine);
         document.add(Chunk.NEWLINE);
@@ -58,11 +58,11 @@ public class PDFGenerator {
         customerInfo.setWidthPercentage(100);
         customerInfo.setWidths(new float[]{2, 2});
 
-        customerInfo.addCell(getLabelCell("Customer Name: "+statement.customerName, labelFont));
-        customerInfo.addCell(getLabelCell("Address: "+statement.customerAddress, labelFont));
-        customerInfo.addCell(getLabelCell("Phone No: "+statement.customerPhoneNumber, labelFont));
+        customerInfo.addCell(getLabelCell("Customer Name: "+bill.customerName, labelFont));
+        customerInfo.addCell(getLabelCell("Address: "+bill.customerAddress, labelFont));
+        customerInfo.addCell(getLabelCell("Phone No: "+bill.customerPhoneNumber, labelFont));
         customerInfo.addCell(getLabelCell("Date: "+ LocalDate.now(), labelFont));
-        customerInfo.addCell(getLabelCell("Invoice No: "+ statement.invoiceNumber, labelFont));
+        customerInfo.addCell(getLabelCell("Invoice No: "+ bill.invoiceNumber, labelFont));
         customerInfo.addCell(getLabelCell("", labelFont));
 
         document.add(customerInfo);
@@ -79,7 +79,7 @@ public class PDFGenerator {
         table.addCell(getHeaderCell("Total Amt.", headerFont, BaseColor.BLACK));
 
         double grandTotalVal=0.0;
-        for (ExportStatementTableEntry entry: statement.tableEntries) {
+        for (ExportBillTableEntry entry: bill.tableEntries) {
             table.addCell(getValueCell(entry.date, tableDataFont));
             table.addCell(getValueCell(entry.productName, tableDataFont));
             table.addCell(getValueCell(entry.productId, tableDataFont));
@@ -92,7 +92,7 @@ public class PDFGenerator {
         document.add(Chunk.NEWLINE);
 
         double totalPaidVal = 0.0, totalPendingVal = 0.0;
-        if(statement.paymentStatus.equalsIgnoreCase("paid"))
+        if(bill.paymentStatus.equalsIgnoreCase("paid"))
                 totalPaidVal = grandTotalVal;
         else
                 totalPendingVal = grandTotalVal;
