@@ -1,15 +1,20 @@
 package com.project.application;
 
+import com.project.models.ExportStatement;
+import com.project.models.ExportStatementTableEntry;
 import com.project.models.Exports;
 import com.project.models.Product;
 import com.project.utils.AlertUtils;
 import com.project.utils.AutoCompleteUtils;
 import com.project.utils.DatabaseErrorHandler;
+import com.project.utils.PDFGenerator;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -21,6 +26,7 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExportController {
     private static TableView<Exports> exportsTable;
@@ -29,6 +35,9 @@ public class ExportController {
     private static Connection conn;
     private int srno = 1;
     private Label txtSubTotal;
+    private Button printInvoiceBtn;
+    private String sectionName;
+    private Stage refPrimaryStage;
     private static final DecimalFormat CURRENCY_FORMAT = new DecimalFormat("##,##,###");
     private static final String FETCH_EXPORTS_QUERY = "SELECT * FROM EXPORTS";
     private static final String FETCH_EXPORT_PRODUCTS_QUERY = "SELECT * FROM EXPORT_PRODUCTS WHERE invoice_number = ?";
@@ -42,9 +51,11 @@ public class ExportController {
 
     //-------------------------------------------------------------------------------
 
-    public TableView<Exports> initializeExportsTable(Connection connection) {
+    public TableView<Exports> initializeExportsTable(Connection connection, String sectionName, Stage refPrimaryStage) {
         conn = connection;
 
+        this.refPrimaryStage = refPrimaryStage;
+        this.sectionName = sectionName;
         exportsTable = new TableView<>();
         initializeExportsTableColumns();
         exportsTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -233,7 +244,7 @@ public class ExportController {
                 conn.commit();
                 AlertUtils.showAlert(Alert.AlertType.INFORMATION,"Success","Entry added successfully!");
                 updateStocks();
-                scrollPane.setContent(initializeExportsTable(conn));
+                scrollPane.setContent(initializeExportsTable(conn,sectionName,refPrimaryStage));
             } catch (Exception ex) {
                 try {
                     conn.rollback();
@@ -254,7 +265,7 @@ public class ExportController {
         Button btnCancel = new Button("Cancel");
         btnCancel.setMinHeight(30);
         btnCancel.setMinWidth(100);
-        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn)));
+        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn,sectionName,refPrimaryStage)));
 
         formLayout.add(customerDetails, 0, 0);
         formLayout.add(customerName, 0, 1);
@@ -814,14 +825,24 @@ public class ExportController {
         VBox vBox = new VBox(10);
         HBox hBox = new HBox(10);
         hBox.setStyle("-fx-border-color: gray;-fx-border-width: 1 0 0 0;");
-        hBox.getChildren().addAll(btnUpdate, btnCancel);
+
+        Image printImage = new Image(getClass().getResourceAsStream("/print.png"));
+        ImageView printImageView = new ImageView(printImage);
+        printImageView.setFitWidth(50);
+        printImageView.setFitHeight(50);
+        printInvoiceBtn = new Button("",printImageView);
+
+        ArrayList<ExportStatementTableEntry> tableEntries = getTableEntries(dpInvoiceDate.getValue().toString());
+        setPrintInvoiceBtnAction(txtCustomerName.getText(),txtAddress.getText(),txtPhone.getText(),txtInvoiceNumber.getText(),tableEntries, selectedStatus);
+
+        hBox.getChildren().addAll(printInvoiceBtn, btnUpdate, btnCancel);
         hBox.setPadding(new Insets(10));
         VBox.setVgrow(formLayout, javafx.scene.layout.Priority.ALWAYS);
         vBox.getChildren().addAll(formLayout, hBox);
 
         scrollPane.setContent(vBox);
 
-        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn)));
+        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn,sectionName,refPrimaryStage)));
     }
     public void deleteProductFromEntry() {
         Product selected = tblProducts.getSelectionModel().getSelectedItem();
@@ -932,6 +953,39 @@ public class ExportController {
             });
             return row;
         });
+    }
+
+    private void setPrintInvoiceBtnAction(String customerName, String customerAddress, String customerPhoneNumber, String invoiceNumber,
+                                          ArrayList<ExportStatementTableEntry> tableEntries, String paymentStatus){
+        printInvoiceBtn.setOnAction( e-> {
+            try{
+                String address,contact;
+                address = "Plot No-08, MIDC Urun Islampur- 415409, Tal-Walwa, Dist-Sangli.";
+                contact = "Contact: +91 8275057797, +91 9960013301.";
+                ExportStatement exportStatement = new ExportStatement(sectionName,address,contact,
+                        customerName,customerAddress,customerPhoneNumber, invoiceNumber,
+                        tableEntries, paymentStatus);
+                String filePath = PDFGenerator.getSaveLocation(refPrimaryStage);
+                if (filePath==null){
+                    AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
+                    return;
+                }
+                PDFGenerator.generateExportStatementPDF(filePath,exportStatement);
+            }catch (Exception ex){
+                System.out.println(ex);
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Unable to print!");
+            }
+        });
+    }
+
+    private ArrayList getTableEntries(String invoiceDate){
+        ArrayList<ExportStatementTableEntry> entries = new ArrayList<>();
+        ExportStatementTableEntry entry;
+        for(Product pr : tblProducts.getItems()){
+            entry = new ExportStatementTableEntry(invoiceDate,pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity());
+            entries.add(entry);
+        }
+        return entries;
     }
 
     private int generateInvoiceNumber() {
