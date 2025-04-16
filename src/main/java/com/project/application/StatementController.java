@@ -52,7 +52,7 @@ public class StatementController {
             ") " +
             "WHERE ROWNUM = 1";
     private static final String FETCH_TOP_CUSTOMER = "SELECT * FROM ( " +
-            "SELECT e.customer_id, e.customer_name, SUM(ep.price) as total_purchase FROM exports e " +
+            "SELECT e.customer_id, e.customer_name, SUM(ep.price * ep.quantity) as total_purchase FROM exports e " +
             "JOIN export_products ep ON e.invoice_number = ep.invoice_number " +
             "GROUP BY e.customer_id,e.customer_name " +
             "ORDER BY total_purchase DESC " +
