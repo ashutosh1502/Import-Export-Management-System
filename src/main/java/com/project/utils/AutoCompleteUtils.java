@@ -11,16 +11,16 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class AutoCompleteUtils {
-    private final ObservableList<String> productSuggestions = FXCollections.observableArrayList();
-    private final ArrayList<String> suggestedProductId = new ArrayList<>();
-    private final ArrayList<Double> suggestedProductPrice = new ArrayList<>();
+    private static final ObservableList<String> productSuggestions = FXCollections.observableArrayList();
+    private static final ArrayList<String> suggestedProductId = new ArrayList<>();
+    private static final ArrayList<Double> suggestedProductPrice = new ArrayList<>();
 
-    public void setupAutoCompleteProductName(Connection conn, TextField txtProductName,TextField txtProductId,TextField txtProductPrice, ListView<String> suggestionList) {
+    public static void setAutoCompleteProductName(Connection conn, TextField productName, TextField productId, TextField productPrice, ListView<String> suggestionList) {
         suggestionList.setVisible(false);
         suggestionList.setMaxHeight(100); // Set max height for dropdown
 
-        txtProductName.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-            String input = txtProductName.getText().trim();
+        productName.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+            String input = productName.getText().trim();
 //            System.out.println("Input: "+input);
             if (!input.isEmpty()) {
                 fetchMatchingProducts(conn, input,suggestionList);
@@ -36,12 +36,12 @@ public class AutoCompleteUtils {
             String selectedProductId = suggestedProductId.get(suggestionList.getSelectionModel().getSelectedIndex());
             double selectedProductPrice = suggestedProductPrice.get(suggestionList.getSelectionModel().getSelectedIndex());
             if (selectedProduct != null) {
-                txtProductName.clear();
-                txtProductName.setText(selectedProduct);
-                txtProductId.clear();
-                txtProductId.setText(selectedProductId);
-                txtProductPrice.clear();
-                txtProductPrice.setText(Double.toString(selectedProductPrice));
+                productName.clear();
+                productName.setText(selectedProduct);
+                productId.clear();
+                productId.setText(selectedProductId);
+                productPrice.clear();
+                productPrice.setText(Double.toString(selectedProductPrice));
                 suggestionList.setVisible(false);
             }
         });
@@ -51,19 +51,19 @@ public class AutoCompleteUtils {
                 String selectedProductId = suggestedProductId.get(suggestionList.getSelectionModel().getSelectedIndex());
                 double selectedProductPrice = suggestedProductPrice.get(suggestionList.getSelectionModel().getSelectedIndex());
                 if (selectedProduct != null) {
-                    txtProductName.clear();
-                    txtProductName.setText(selectedProduct);
-                    txtProductId.clear();
-                    txtProductId.setText(selectedProductId);
-                    txtProductPrice.clear();
-                    txtProductPrice.setText(Double.toString(selectedProductPrice));
+                    productName.clear();
+                    productName.setText(selectedProduct);
+                    productId.clear();
+                    productId.setText(selectedProductId);
+                    productPrice.clear();
+                    productPrice.setText(Double.toString(selectedProductPrice));
                     suggestionList.setVisible(false);
                 }
             }
         });
     }
 
-    private void fetchMatchingProducts(Connection conn, String input, ListView<String> suggestionList) {
+    private static void fetchMatchingProducts(Connection conn, String input, ListView<String> suggestionList) {
         productSuggestions.clear();
         suggestedProductId.clear();
         String query = "SELECT product_name,product_id,price FROM products WHERE LOWER(product_name) LIKE LOWER(?)";
