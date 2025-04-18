@@ -5,6 +5,7 @@ import com.project.models.Product;
 import com.project.utils.AlertUtils;
 import com.project.utils.AutoCompleteUtils;
 import com.project.utils.DatabaseErrorHandler;
+import com.project.utils.StateAutoComplete;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
@@ -149,6 +150,7 @@ public class ImportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField();
+        StateAutoComplete.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField();
@@ -325,8 +327,7 @@ public class ImportController {
 
         Label lblPrice = new Label("Price:");
         TextField txtPrice = new TextField();
-        AutoCompleteUtils autoCompleteUtils = new AutoCompleteUtils();
-        autoCompleteUtils.setupAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
+        AutoCompleteUtils.setAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
 
         Label lblQuantity = new Label("Quantity:");
         TextField txtQuantity = new TextField();
@@ -646,6 +647,7 @@ public class ImportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField(selectedState);
+        StateAutoComplete.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField(selectedPhone);
