@@ -272,7 +272,6 @@ public class StatementController {
                     } else if (item.equalsIgnoreCase("paid")) {
                         setTextFill(Color.GREEN);
                     } else {
-                        // Default color if not "imports" or "exports"
                         setTextFill(Color.BLACK);
                     }
                 }

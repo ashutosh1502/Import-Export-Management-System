@@ -2,10 +2,7 @@ package com.project.application;
 
 import com.project.models.Imports;
 import com.project.models.Product;
-import com.project.utils.AlertUtils;
-import com.project.utils.AutoCompleteUtils;
-import com.project.utils.DatabaseErrorHandler;
-import com.project.utils.StateAutoComplete;
+import com.project.utils.*;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
@@ -123,7 +120,7 @@ public class ImportController {
         }
     }
 
-    //OPERATIONS BUTTON ACTIONS--------------------------------------------------------------------------------------
+    //INSERTION--------------------------------------------------------------------------------------
     public void addEntry(ScrollPane scrollPane) {
         Stage popupStage = new Stage();
         popupStage.setTitle("Add Entry");
@@ -150,7 +147,7 @@ public class ImportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField();
-        StateAutoComplete.setAutoCompleteStates(txtState);
+        AutoCompleteUtils.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField();
@@ -221,6 +218,18 @@ public class ImportController {
                 String invoiceDateEntered = dpInvoiceDate.getValue().toString();
 
                 conn.setAutoCommit(false);
+                if(!FormValidator.validatePhoneNumber(phoneEntered)){
+                    txtPhone.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtPhone.setStyle("-fx-border-width: 0px;");
+                }
+                if(!FormValidator.validateEmail(emailEntered)){
+                    txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtEmail.setStyle("-fx-border-width: 0px;");
+                }
                 if (!insertImport(supplierNameEntered, supplierIdEntered, addressEntered, cityEntered,
                         stateEntered, phoneEntered, emailEntered, invoiceNumberEntered,
                         orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered,
@@ -461,8 +470,10 @@ public class ImportController {
         }
     }
 
-    //-------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------
 
+    //UPDATION--------------------------------------------------------------------------------------
     public void updateProductInEntry(String invoiceNumber) {
         Product selected = tblProducts.getSelectionModel().getSelectedItem();
         if (selected != null) {
@@ -650,7 +661,7 @@ public class ImportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField(selectedState);
-        StateAutoComplete.setAutoCompleteStates(txtState);
+        AutoCompleteUtils.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField(selectedPhone);
@@ -823,7 +834,10 @@ public class ImportController {
 
         btnCancel.setOnAction(e -> scrollPane.setContent(initializeImportsTable(conn)));
     }
+    //---------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------
 
+    //DELETION--------------------------------------------------------------------------------------
     public void deleteProductFromEntry() {
         Product selected = tblProducts.getSelectionModel().getSelectedItem();
         if (selected != null) {
@@ -876,7 +890,10 @@ public class ImportController {
                     "Database Error", "Error occurred while deleting entry: ");
         }
     }
+    //---------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------
 
+    //HELPER FUNCTIONS--------------------------------------------------------------------------------------
     public void calculateSubTotal() {
         double subTotal = 0.0;
         for (Product product : tblProducts.getItems()) {
