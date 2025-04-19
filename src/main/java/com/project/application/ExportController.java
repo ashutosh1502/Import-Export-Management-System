@@ -167,7 +167,7 @@ public class ExportController {
         setUpProductsTable();
 
         Label lblInvoiceNumber = new Label("Invoice Number:");
-        TextField txtInvoiceNumber = new TextField(String.format("%04d", generateInvoiceNumber()));
+        TextField txtInvoiceNumber = new TextField(generateInvoiceNumber());
 
         Label lblOrderDate = new Label("Order Date:");
         DatePicker dpOrderDate = new DatePicker(java.time.LocalDate.now());
@@ -231,6 +231,10 @@ public class ExportController {
                         stateEntered, phoneEntered, emailEntered, invoiceNumberEntered,
                         orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered,
                         paymentStatusEntered)){
+                    conn.rollback();
+                    return;
+                }
+                if(!insertInvoiceNumber(invoiceNumberEntered)){
                     conn.rollback();
                     return;
                 }
@@ -442,7 +446,7 @@ public class ExportController {
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             DatabaseErrorHandler.handleDatabaseError(e);
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert export entry: ");
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Error", "Please fill all the details!");
             return false;
         }
     }
@@ -457,14 +461,14 @@ public class ExportController {
                 preparedStatement.setDouble(5, product.getPrice());
 
                 if (preparedStatement.executeUpdate() <= 0) {
-                    AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert product: " + product.getProductName());
+                    AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong", "Failed to insert product: " + product.getProductName());
                     return false;
                 }
             }
             return true;
         } catch (SQLException e) {
             DatabaseErrorHandler.handleDatabaseError(e);
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert products: ");
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong", "Failed to insert products");
             return false;
         }
     }
@@ -986,11 +990,37 @@ public class ExportController {
         return entries;
     }
 
-    private int generateInvoiceNumber() {
-        int invoiceNum = 1;
-        if (exportsTable != null && exportsTable.getItems() != null) {
-            invoiceNum = exportsTable.getItems().size() + 1;
+    private boolean insertInvoiceNumber(String invoiceNum){
+        String insertQuery = "INSERT INTO export_invoice_numbers (invoice_number) VALUES(?)";
+        String selectQuery = "SELECT * FROM export_invoice_numbers WHERE invoice_number = ?";
+        try{
+            PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+            selectStmt.setString(1,invoiceNum);
+            ResultSet res = selectStmt.executeQuery();
+            if(res.next()) {
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Cannot insert","The invoice number already exists, please try a different one!");
+                return false;
+            }
+            PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
+            insertStmt.setString(1,invoiceNum);
+            insertStmt.executeUpdate();
+        }catch (SQLException inv){
+            DatabaseErrorHandler.handleDatabaseError(inv);
+            AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Failed to insert the invoice number!");
+            return false;
         }
+        return true;
+    }
+
+    private String generateInvoiceNumber(){
+        int importsCount = 1;
+        String invoiceNum = "";
+        if (exportsTable != null && exportsTable.getItems() != null) {
+            importsCount = exportsTable.getItems().size() + 1;
+        }
+        invoiceNum = "EXP"+
+                (java.time.LocalDate.now()).toString().replace("-","").substring(2)+
+                String.format("%04d",importsCount);
         return invoiceNum;
     }
 }
