@@ -1,7 +1,11 @@
 package com.project.application;
 
+import com.project.models.Imports;
+import com.project.models.Product;
 import com.project.utils.AlertUtils;
 import com.project.utils.AutoCompleteUtils;
+import com.project.utils.DatabaseErrorHandler;
+import com.project.utils.StateAutoComplete;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
@@ -146,6 +150,7 @@ public class ImportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField();
+        StateAutoComplete.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField();
@@ -157,7 +162,7 @@ public class ImportController {
         setupProductsTable();
 
         Label lblInvoiceNumber = new Label("Invoice Number:");
-        TextField txtInvoiceNumber = new TextField(String.format("%04d",generateInvoiceNumber()));
+        TextField txtInvoiceNumber = new TextField(generateInvoiceNumber());
 
         Label lblOrderDate = new Label("Order Date:");
         DatePicker dpOrderDate = new DatePicker(java.time.LocalDate.now());
@@ -216,11 +221,14 @@ public class ImportController {
                 String invoiceDateEntered = dpInvoiceDate.getValue().toString();
 
                 conn.setAutoCommit(false);
-
                 if (!insertImport(supplierNameEntered, supplierIdEntered, addressEntered, cityEntered,
                         stateEntered, phoneEntered, emailEntered, invoiceNumberEntered,
                         orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered,
                         paymentStatusEntered)) {
+                    conn.rollback();
+                    return;
+                }
+                if(!insertInvoiceNumber(invoiceNumberEntered)){
                     conn.rollback();
                     return;
                 }
@@ -322,8 +330,7 @@ public class ImportController {
 
         Label lblPrice = new Label("Price:");
         TextField txtPrice = new TextField();
-        AutoCompleteUtils autoCompleteUtils = new AutoCompleteUtils();
-        autoCompleteUtils.setupAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
+        AutoCompleteUtils.setAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
 
         Label lblQuantity = new Label("Quantity:");
         TextField txtQuantity = new TextField();
@@ -427,7 +434,7 @@ public class ImportController {
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             DatabaseErrorHandler.handleDatabaseError(e);
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert import entry: ");
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Error", "Please fill all the details!");
             return false;
         }
     }
@@ -442,14 +449,14 @@ public class ImportController {
                 preparedStatement.setDouble(5, product.getPrice());
 
                 if (preparedStatement.executeUpdate() <= 0) {
-                    AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert product: " + product.getProductName());
+                    AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong", "Failed to insert product: " + product.getProductName());
                     return false;
                 }
             }
             return true;
         } catch (SQLException e) {
             DatabaseErrorHandler.handleDatabaseError(e);
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert products: ");
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong", "Failed to insert products");
             return false;
         }
     }
@@ -643,6 +650,7 @@ public class ImportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField(selectedState);
+        StateAutoComplete.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField(selectedPhone);
@@ -677,6 +685,7 @@ public class ImportController {
         Label lblInvoiceNumber = new Label("Invoice Number:");
         TextField txtInvoiceNumber = new TextField();
         txtInvoiceNumber.setText(selectedInvoiceNumber);
+        txtInvoiceNumber.setEditable(false);
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         Label lblOrderDate = new Label("Order Date:");
@@ -923,18 +932,44 @@ public class ImportController {
             TableRow<Imports> row = new TableRow<>();
             row.setOnMouseClicked(mouseEvent -> {
                 if(mouseEvent.getClickCount()==2 && !row.isEmpty()){
-                    viewUpdateEntry(new ScrollPane());
+                    viewUpdateEntry(MainPage.scrollPane);
                 }
             });
             return row;
         });
     }
 
-    private int generateInvoiceNumber(){
-        int invoiceNum = 1;
-        if (importsTable != null && importsTable.getItems() != null) {
-            invoiceNum = importsTable.getItems().size() + 1;
+    private boolean insertInvoiceNumber(String invoiceNum){
+        String insertQuery = "INSERT INTO import_invoice_numbers (invoice_number) VALUES(?)";
+        String selectQuery = "SELECT * FROM import_invoice_numbers WHERE invoice_number = ?";
+        try{
+            PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+            selectStmt.setString(1,invoiceNum);
+            ResultSet res = selectStmt.executeQuery();
+            if(res.next()) {
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Cannot insert","The invoice number already exists, please try a different one!");
+                return false;
+            }
+            PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
+            insertStmt.setString(1,invoiceNum);
+            insertStmt.executeUpdate();
+        }catch (SQLException inv){
+            DatabaseErrorHandler.handleDatabaseError(inv);
+            AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Failed to insert the invoice number!");
+            return false;
         }
+        return true;
+    }
+
+    private String generateInvoiceNumber(){
+        int importsCount = 1;
+        String invoiceNum = "";
+        if (importsTable != null && importsTable.getItems() != null) {
+            importsCount = importsTable.getItems().size() + 1;
+        }
+        invoiceNum = "IMP"+
+                (java.time.LocalDate.now()).toString().replace("-","").substring(2)+
+                String.format("%04d",importsCount);
         return invoiceNum;
     }
 }

@@ -1,12 +1,17 @@
 package com.project.application;
 
-import com.project.utils.AlertUtils;
-import com.project.utils.AutoCompleteUtils;
+import com.project.models.ExportBill;
+import com.project.models.ExportBillTableEntry;
+import com.project.models.Exports;
+import com.project.models.Product;
+import com.project.utils.*;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -26,6 +31,9 @@ public class ExportController {
     private static Connection conn;
     private int srno = 1;
     private Label txtSubTotal;
+    private Button printInvoiceBtn;
+    private String sectionName;
+    private Stage refPrimaryStage;
     private static final DecimalFormat CURRENCY_FORMAT = new DecimalFormat("##,##,###");
     private static final String FETCH_EXPORTS_QUERY = "SELECT * FROM EXPORTS";
     private static final String FETCH_EXPORT_PRODUCTS_QUERY = "SELECT * FROM EXPORT_PRODUCTS WHERE invoice_number = ?";
@@ -39,9 +47,11 @@ public class ExportController {
 
     //-------------------------------------------------------------------------------
 
-    public TableView<Exports> initializeExportsTable(Connection connection) {
+    public TableView<Exports> initializeExportsTable(Connection connection, String sectionName, Stage refPrimaryStage) {
         conn = connection;
 
+        this.refPrimaryStage = refPrimaryStage;
+        this.sectionName = sectionName;
         exportsTable = new TableView<>();
         initializeExportsTableColumns();
         exportsTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -145,6 +155,7 @@ public class ExportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField();
+        StateAutoComplete.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField();
@@ -156,7 +167,7 @@ public class ExportController {
         setUpProductsTable();
 
         Label lblInvoiceNumber = new Label("Invoice Number:");
-        TextField txtInvoiceNumber = new TextField(String.format("%04d", generateInvoiceNumber()));
+        TextField txtInvoiceNumber = new TextField(generateInvoiceNumber());
 
         Label lblOrderDate = new Label("Order Date:");
         DatePicker dpOrderDate = new DatePicker(java.time.LocalDate.now());
@@ -223,6 +234,10 @@ public class ExportController {
                     conn.rollback();
                     return;
                 }
+                if(!insertInvoiceNumber(invoiceNumberEntered)){
+                    conn.rollback();
+                    return;
+                }
                 if (!insertExportProducts(invoiceNumberEntered)){
                     conn.rollback();
                     return;
@@ -230,7 +245,7 @@ public class ExportController {
                 conn.commit();
                 AlertUtils.showAlert(Alert.AlertType.INFORMATION,"Success","Entry added successfully!");
                 updateStocks();
-                scrollPane.setContent(initializeExportsTable(conn));
+                scrollPane.setContent(initializeExportsTable(conn,sectionName,refPrimaryStage));
             } catch (Exception ex) {
                 try {
                     conn.rollback();
@@ -251,7 +266,7 @@ public class ExportController {
         Button btnCancel = new Button("Cancel");
         btnCancel.setMinHeight(30);
         btnCancel.setMinWidth(100);
-        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn)));
+        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn,sectionName,refPrimaryStage)));
 
         formLayout.add(customerDetails, 0, 0);
         formLayout.add(customerName, 0, 1);
@@ -323,7 +338,7 @@ public class ExportController {
         Label lblPrice = new Label("Price:");
         TextField txtPrice = new TextField();
         AutoCompleteUtils autoCompleteUtils = new AutoCompleteUtils();
-        autoCompleteUtils.setupAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
+        autoCompleteUtils.setAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
 
         Label lblQuantity = new Label("Quantity:");
         TextField txtQuantity = new TextField();
@@ -431,7 +446,7 @@ public class ExportController {
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             DatabaseErrorHandler.handleDatabaseError(e);
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert export entry: ");
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Error", "Please fill all the details!");
             return false;
         }
     }
@@ -446,14 +461,14 @@ public class ExportController {
                 preparedStatement.setDouble(5, product.getPrice());
 
                 if (preparedStatement.executeUpdate() <= 0) {
-                    AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert product: " + product.getProductName());
+                    AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong", "Failed to insert product: " + product.getProductName());
                     return false;
                 }
             }
             return true;
         } catch (SQLException e) {
             DatabaseErrorHandler.handleDatabaseError(e);
-            AlertUtils.showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to insert products: ");
+            AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong", "Failed to insert products");
             return false;
         }
     }
@@ -648,6 +663,7 @@ public class ExportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField(selectedState);
+        StateAutoComplete.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField(selectedPhone);
@@ -811,14 +827,24 @@ public class ExportController {
         VBox vBox = new VBox(10);
         HBox hBox = new HBox(10);
         hBox.setStyle("-fx-border-color: gray;-fx-border-width: 1 0 0 0;");
-        hBox.getChildren().addAll(btnUpdate, btnCancel);
+
+        Image printImage = new Image(getClass().getResourceAsStream("/print.png"));
+        ImageView printImageView = new ImageView(printImage);
+        printImageView.setFitWidth(30);
+        printImageView.setFitHeight(25);
+        printInvoiceBtn = new Button("",printImageView);
+
+        ArrayList<ExportBillTableEntry> tableEntries = getTableEntries(dpInvoiceDate.getValue().toString());
+        setPrintInvoiceBtnAction(txtCustomerName.getText(),txtAddress.getText(),txtPhone.getText(),txtInvoiceNumber.getText(),tableEntries, selectedStatus);
+
+        hBox.getChildren().addAll(printInvoiceBtn, btnUpdate, btnCancel);
         hBox.setPadding(new Insets(10));
         VBox.setVgrow(formLayout, javafx.scene.layout.Priority.ALWAYS);
         vBox.getChildren().addAll(formLayout, hBox);
 
         scrollPane.setContent(vBox);
 
-        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn)));
+        btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn,sectionName,refPrimaryStage)));
     }
     public void deleteProductFromEntry() {
         Product selected = tblProducts.getSelectionModel().getSelectedItem();
@@ -924,18 +950,77 @@ public class ExportController {
             TableRow<Exports> row = new TableRow<>();
             row.setOnMouseClicked(mouseEvent -> {
                 if (mouseEvent.getClickCount() == 2 && !row.isEmpty()) {
-                    viewUpdateEntry(new ScrollPane());
+                    viewUpdateEntry(MainPage.scrollPane);
                 }
             });
             return row;
         });
     }
 
-    private int generateInvoiceNumber() {
-        int invoiceNum = 1;
-        if (exportsTable != null && exportsTable.getItems() != null) {
-            invoiceNum = exportsTable.getItems().size() + 1;
+    private void setPrintInvoiceBtnAction(String customerName, String customerAddress, String customerPhoneNumber, String invoiceNumber,
+                                          ArrayList<ExportBillTableEntry> tableEntries, String paymentStatus){
+        printInvoiceBtn.setOnAction( e-> {
+            try{
+                String address,contact;
+                address = "Plot No-08, MIDC Urun Islampur- 415409, Tal-Walwa, Dist-Sangli.";
+                contact = "Contact: +91 8275057797, +91 9960013301.";
+                ExportBill exportBill = new ExportBill(sectionName,address,contact,
+                        customerName,customerAddress,customerPhoneNumber, invoiceNumber,
+                        tableEntries, paymentStatus);
+                String filePath = PDFGenerator.getSaveLocation(refPrimaryStage);
+                if (filePath==null){
+                    AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
+                    return;
+                }
+                PDFGenerator.generateExportBillPDF(filePath,exportBill);
+            }catch (Exception ex){
+                System.out.println(ex);
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Unable to print!");
+            }
+        });
+    }
+
+    private ArrayList getTableEntries(String invoiceDate){
+        ArrayList<ExportBillTableEntry> entries = new ArrayList<>();
+        ExportBillTableEntry entry;
+        for(Product pr : tblProducts.getItems()){
+            entry = new ExportBillTableEntry(invoiceDate,pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity());
+            entries.add(entry);
         }
+        return entries;
+    }
+
+    private boolean insertInvoiceNumber(String invoiceNum){
+        String insertQuery = "INSERT INTO export_invoice_numbers (invoice_number) VALUES(?)";
+        String selectQuery = "SELECT * FROM export_invoice_numbers WHERE invoice_number = ?";
+        try{
+            PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+            selectStmt.setString(1,invoiceNum);
+            ResultSet res = selectStmt.executeQuery();
+            if(res.next()) {
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Cannot insert","The invoice number already exists, please try a different one!");
+                return false;
+            }
+            PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
+            insertStmt.setString(1,invoiceNum);
+            insertStmt.executeUpdate();
+        }catch (SQLException inv){
+            DatabaseErrorHandler.handleDatabaseError(inv);
+            AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Failed to insert the invoice number!");
+            return false;
+        }
+        return true;
+    }
+
+    private String generateInvoiceNumber(){
+        int importsCount = 1;
+        String invoiceNum = "";
+        if (exportsTable != null && exportsTable.getItems() != null) {
+            importsCount = exportsTable.getItems().size() + 1;
+        }
+        invoiceNum = "EXP"+
+                (java.time.LocalDate.now()).toString().replace("-","").substring(2)+
+                String.format("%04d",importsCount);
         return invoiceNum;
     }
 }

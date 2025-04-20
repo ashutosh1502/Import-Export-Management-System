@@ -9,9 +9,11 @@ module com.project.application {
     requires java.desktop;
     requires java.sql;
     requires com.oracle.database.jdbc;
+    requires itextpdf;
 //    requires org.slf4j;
 //    requires ch.qos.logback.classic;
 
     exports com.project.application;
     exports com.project.utils;
+    exports com.project.models;
 }

@@ -1,6 +1,8 @@
 package com.project.application;
 
 import com.project.utils.AlertUtils;
+import com.project.models.StatementEntity;
+import com.project.utils.DatabaseErrorHandler;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -50,13 +52,13 @@ public class StatementController {
             ") " +
             "WHERE ROWNUM = 1";
     private static final String FETCH_TOP_CUSTOMER = "SELECT * FROM ( " +
-            "SELECT e.customer_id, e.customer_name, SUM(ep.price) as total_purchase FROM exports e " +
+            "SELECT e.customer_id, e.customer_name, SUM(ep.price * ep.quantity) as total_purchase FROM exports e " +
             "JOIN export_products ep ON e.invoice_number = ep.invoice_number " +
             "GROUP BY e.customer_id,e.customer_name " +
             "ORDER BY total_purchase DESC " +
             ") " +
             "WHERE ROWNUM = 1";
-    private static final String FETCH_NET_PROFIT = "SELECT (SELECT SUM(price) FROM export_products) - (SELECT SUM(price) FROM import_products) AS net_profit FROM dual";
+    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(price),0) FROM export_products) - (SELECT NVL(SUM(price),0) FROM import_products) AS net_profit FROM dual";
     private static final String FETCH_PENDING_PAYMENTS = "SELECT * FROM (" +
             "SELECT SUM(sub_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending'), " +
             "(SELECT SUM(sub_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending')";
