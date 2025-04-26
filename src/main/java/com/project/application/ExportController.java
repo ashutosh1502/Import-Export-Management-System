@@ -24,6 +24,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import static com.project.application.MainPage.scrollPane;
+
 public class ExportController {
     private static TableView<Exports> exportsTable;
     private TableView<Product> tblProducts;
@@ -129,7 +131,7 @@ public class ExportController {
     }
 
     //OPERATIONS BUTTON ACTIONS--------------------------------------------------------------------------------------
-    public void addEntry(ScrollPane scrollPane) {
+    public void addEntry() {
         Stage popupStage = new Stage();
         popupStage.setTitle("Add Entry");
 
@@ -155,7 +157,7 @@ public class ExportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField();
-        StateAutoComplete.setAutoCompleteStates(txtState);
+        AutoCompleteUtils.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField();
@@ -226,7 +228,18 @@ public class ExportController {
                 String invoiceDateEntered = dpInvoiceDate.getValue().toString();
 
                 conn.setAutoCommit(false);
-
+                if(!FormValidator.validatePhoneNumber(phoneEntered)){
+                    txtPhone.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtPhone.setStyle("-fx-border-width: 0px;");
+                }
+                if(!FormValidator.validateEmail(emailEntered)){
+                    txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtEmail.setStyle("-fx-border-width: 0px;");
+                }
                 if(!insertExport(customerNameEntered, customerIdEntered, addressEntered, cityEntered,
                         stateEntered, phoneEntered, emailEntered, invoiceNumberEntered,
                         orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered,
@@ -576,7 +589,7 @@ public class ExportController {
         popupStage.show();
     }
 
-    public void viewUpdateEntry(ScrollPane scrollPane) {
+    public void viewUpdateEntry() {
         if (exportsTable == null || exportsTable.getItems().isEmpty() || exportsTable.getSelectionModel().getSelectedItem() == null) {
             AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to update.", "Please select a row to update!");
             return;
@@ -663,7 +676,7 @@ public class ExportController {
 
         Label state = new Label("State:");
         TextField txtState = new TextField(selectedState);
-        StateAutoComplete.setAutoCompleteStates(txtState);
+        AutoCompleteUtils.setAutoCompleteStates(txtState);
 
         Label phone = new Label("Phone:");
         TextField txtPhone = new TextField(selectedPhone);
@@ -746,6 +759,18 @@ public class ExportController {
         Button btnUpdate = new Button("Update");
         btnUpdate.setOnAction(e -> {
             try {
+                if(!FormValidator.validatePhoneNumber(txtPhone.getText())){
+                    txtPhone.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtPhone.setStyle("-fx-border-width: 0px;");
+                }
+                if(!FormValidator.validateEmail(txtEmail.getText())){
+                    txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtEmail.setStyle("-fx-border-width: 0px;");
+                }
                 PreparedStatement updateStmt = conn.prepareStatement(UPDATE_EXPORTS_QUERY);
                 updateStmt.setString(1, txtCustomerId.getText());
                 updateStmt.setString(2, txtCustomerName.getText());
@@ -950,7 +975,7 @@ public class ExportController {
             TableRow<Exports> row = new TableRow<>();
             row.setOnMouseClicked(mouseEvent -> {
                 if (mouseEvent.getClickCount() == 2 && !row.isEmpty()) {
-                    viewUpdateEntry(MainPage.scrollPane);
+                    viewUpdateEntry();
                 }
             });
             return row;

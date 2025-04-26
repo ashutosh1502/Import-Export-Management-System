@@ -19,6 +19,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import static com.project.application.MainPage.scrollPane;
+
 public class ImportController {
 
     private static TableView<Imports> importsTable;
@@ -121,7 +123,7 @@ public class ImportController {
     }
 
     //INSERTION--------------------------------------------------------------------------------------
-    public void addEntry(ScrollPane scrollPane) {
+    public void addEntry() {
         Stage popupStage = new Stage();
         popupStage.setTitle("Add Entry");
 
@@ -575,7 +577,7 @@ public class ImportController {
         popupStage.show();
     }
 
-    public void viewUpdateEntry(ScrollPane scrollPane) {
+    public void viewUpdateEntry() {
         if (importsTable == null || importsTable.getItems().isEmpty() || importsTable.getSelectionModel().getSelectedItem() == null) {
             AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to update.", "Please select a row to update!");
             return;
@@ -744,6 +746,18 @@ public class ImportController {
         Button btnUpdate = new Button("Update");
         btnUpdate.setOnAction(e -> {
             try {
+                if(!FormValidator.validatePhoneNumber(txtPhone.getText())){
+                    txtPhone.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtPhone.setStyle("-fx-border-width: 0px;");
+                }
+                if(!FormValidator.validateEmail(txtEmail.getText())){
+                    txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtEmail.setStyle("-fx-border-width: 0px;");
+                }
                 PreparedStatement updateStmt = conn.prepareStatement(UPDATE_IMPORTS_QUERY);
                 updateStmt.setString(1, txtSupplierId.getText());
                 updateStmt.setString(2, txtSupplierName.getText());
@@ -878,7 +892,7 @@ public class ImportController {
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
                 // Update TableView by removing the deleted item
-                loadImportsData();
+                scrollPane.setContent(initializeImportsTable(conn));
                 AlertUtils.showMsg("Entry deleted successfully!");
             } else {
                 AlertUtils.showAlert(Alert.AlertType.ERROR,
@@ -949,7 +963,7 @@ public class ImportController {
             TableRow<Imports> row = new TableRow<>();
             row.setOnMouseClicked(mouseEvent -> {
                 if(mouseEvent.getClickCount()==2 && !row.isEmpty()){
-                    viewUpdateEntry(MainPage.scrollPane);
+                    viewUpdateEntry();
                 }
             });
             return row;
