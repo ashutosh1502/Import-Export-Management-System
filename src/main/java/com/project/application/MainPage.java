@@ -246,16 +246,16 @@ public class MainPage{
         }
 
         operations[0].add(new Button("Add Entry"));
-        operations[0].getFirst().setOnAction(e -> importController.addEntry(scrollPane));
+        operations[0].getFirst().setOnAction(e -> importController.addEntry());
         operations[0].add(new Button("View/Update Entry"));
-        operations[0].get(1).setOnAction(e -> importController.viewUpdateEntry(scrollPane));
+        operations[0].get(1).setOnAction(e -> importController.viewUpdateEntry());
         operations[0].add(new Button("Delete Entry"));
         operations[0].get(2).setOnAction(e -> importController.deleteEntry());
 
         operations[1].add(new Button("Add Entry"));
-        operations[1].getFirst().setOnAction(e -> exportController.addEntry(scrollPane));
+        operations[1].getFirst().setOnAction(e -> exportController.addEntry());
         operations[1].add(new Button("View/Update Entry"));
-        operations[1].get(1).setOnAction(e -> exportController.viewUpdateEntry(scrollPane));
+        operations[1].get(1).setOnAction(e -> exportController.viewUpdateEntry());
         operations[1].add(new Button("Delete Entry"));
         operations[1].get(2).setOnAction(e -> exportController.deleteEntry());
 

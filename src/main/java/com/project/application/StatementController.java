@@ -58,7 +58,7 @@ public class StatementController {
             "ORDER BY total_purchase DESC " +
             ") " +
             "WHERE ROWNUM = 1";
-    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(price),0) FROM export_products) - (SELECT NVL(SUM(price),0) FROM import_products) AS net_profit FROM dual";
+    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(price * quantity),0) FROM export_products) - (SELECT NVL(SUM(price * quantity),0) FROM import_products) AS net_profit FROM dual";
     private static final String FETCH_PENDING_PAYMENTS = "SELECT * FROM (" +
             "SELECT SUM(sub_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending'), " +
             "(SELECT SUM(sub_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending')";
@@ -272,7 +272,6 @@ public class StatementController {
                     } else if (item.equalsIgnoreCase("paid")) {
                         setTextFill(Color.GREEN);
                     } else {
-                        // Default color if not "imports" or "exports"
                         setTextFill(Color.BLACK);
                     }
                 }
