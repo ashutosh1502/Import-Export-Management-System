@@ -44,7 +44,7 @@ public class ExportController {
             ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
     private static final String INSERT_EXPORT_PRODUCTS_QUERY = "INSERT INTO EXPORT_PRODUCTS (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
     private static final String UPDATE_EXPORTS_QUERY = "UPDATE EXPORTS SET customer_id = ?, customer_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = ?, invoice_date = ?, sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
-    private static final String UPDATE_EXPORT_PRODUCTS_QUERY = "UPDATE EXPORT_PRODUCTS SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ?";
+    private static final String UPDATE_EXPORT_PRODUCTS_QUERY = "UPDATE EXPORT_PRODUCTS SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ? AND product_id =?";
     private static final String DELETE_EXPORT_QUERY = "DELETE FROM EXPORTS WHERE invoice_number = ?";
 
     //-------------------------------------------------------------------------------
@@ -553,6 +553,7 @@ public class ExportController {
                 updateProductStmt.setInt(3, quantity);
                 updateProductStmt.setDouble(4, price);
                 updateProductStmt.setString(5, invoiceNumber);
+                updateProductStmt.setString(6, productId);
                 int rowsAffected = updateProductStmt.executeUpdate();
                 if (rowsAffected > 0) {
                     int selectedIndex = tblProducts.getSelectionModel().getSelectedIndex();
