@@ -563,6 +563,11 @@ public class ImportController {
                     popupStage.close();
                 }
             } catch (SQLException ex) {
+                try{
+                    conn.rollback();
+                }catch (SQLException s){
+                    DatabaseErrorHandler.handleDatabaseError(s);
+                }
                 DatabaseErrorHandler.handleDatabaseError(ex);
                 Alert alert = new Alert(Alert.AlertType.WARNING, "Something went wrong!", ButtonType.OK);
                 alert.showAndWait();
@@ -813,7 +818,6 @@ public class ImportController {
                 }
             }
         });
-
         Button btnCancel = new Button("Cancel");
         btnUpdate.setMinHeight(30);
         btnUpdate.setMinWidth(100);
