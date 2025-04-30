@@ -29,7 +29,6 @@ import static com.project.application.MainPage.scrollPane;
 public class ExportController {
     private static TableView<Exports> exportsTable;
     private TableView<Product> tblProducts;
-
     private static Connection conn;
     private int srno = 1;
     private Label txtSubTotal;
@@ -350,8 +349,7 @@ public class ExportController {
 
         Label lblPrice = new Label("Price:");
         TextField txtPrice = new TextField();
-        AutoCompleteUtils autoCompleteUtils = new AutoCompleteUtils();
-        autoCompleteUtils.setAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
+        AutoCompleteUtils.setAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
 
         Label lblQuantity = new Label("Quantity:");
         TextField txtQuantity = new TextField();
@@ -554,21 +552,42 @@ public class ExportController {
                 updateProductStmt.setDouble(4, price);
                 updateProductStmt.setString(5, invoiceNumber);
                 updateProductStmt.setString(6, productId);
-                int rowsAffected = updateProductStmt.executeUpdate();
-                if (rowsAffected > 0) {
+
+                PreparedStatement stockQtyUpdateStmt = conn.prepareStatement("UPDATE PRODUCTS SET qty = qty - ? WHERE product_id = ?");
+                stockQtyUpdateStmt.setInt(1,(quantity-selectedQty));
+                stockQtyUpdateStmt.setString(2,selectedPrId);
+
+                boolean exportProductsUpdated = updateProductStmt.executeUpdate() > 0;
+                boolean stocksQtyUpdated = stockQtyUpdateStmt.executeUpdate() > 0;
+
+                conn.setAutoCommit(false);
+                if (exportProductsUpdated && stocksQtyUpdated) {
                     int selectedIndex = tblProducts.getSelectionModel().getSelectedIndex();
                     tblProducts.getItems().set(selectedIndex, updatedProduct);
                     AlertUtils.showMsg("Product updated successfully!");
                     calculateSubTotal();
                     popupStage.close();
                 } else {
+                    conn.rollback();
                     AlertUtils.showMsg("Failed to update product!");
                     calculateSubTotal();
                     popupStage.close();
                 }
-            } catch (Exception ex) {
+            } catch (SQLException ex) {
+                try{
+                    conn.rollback();
+                }catch (SQLException s){
+                    DatabaseErrorHandler.handleDatabaseError(s);
+                }
+                DatabaseErrorHandler.handleDatabaseError(ex);
                 Alert alert = new Alert(Alert.AlertType.WARNING, "Something went wrong!", ButtonType.OK);
                 alert.showAndWait();
+            }finally {
+                try {
+                    conn.setAutoCommit(true);
+                } catch (SQLException sqlEx) {
+                    sqlEx.printStackTrace();
+                }
             }
         });
 
@@ -701,7 +720,7 @@ public class ExportController {
         col4.setCellValueFactory(cellData -> new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
         col5.setCellValueFactory(cellData -> new javafx.beans.property.SimpleDoubleProperty(cellData.getValue().getPrice()).asObject());
         tblProducts.getColumns().addAll(col1, col2, col3, col4, col5);
-        tblProducts.setColumnResizePolicy(tblProducts.CONSTRAINED_RESIZE_POLICY);
+        tblProducts.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         tblProducts.setPrefWidth(400);
         tblProducts.setMaxHeight(250);
 
@@ -759,54 +778,57 @@ public class ExportController {
 
         Button btnUpdate = new Button("Update");
         btnUpdate.setOnAction(e -> {
-            try {
-                if(!FormValidator.validatePhoneNumber(txtPhone.getText())){
-                    txtPhone.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
-                    return;
-                }else{
-                    txtPhone.setStyle("-fx-border-width: 0px;");
-                }
-                if(!FormValidator.validateEmail(txtEmail.getText())){
-                    txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
-                    return;
-                }else{
-                    txtEmail.setStyle("-fx-border-width: 0px;");
-                }
-                PreparedStatement updateStmt = conn.prepareStatement(UPDATE_EXPORTS_QUERY);
-                updateStmt.setString(1, txtCustomerId.getText());
-                updateStmt.setString(2, txtCustomerName.getText());
-                updateStmt.setString(3, txtAddress.getText());
-                updateStmt.setString(4, txtCity.getText());
-                updateStmt.setString(5, txtState.getText());
-                updateStmt.setString(6, txtPhone.getText());
-                updateStmt.setString(7, txtEmail.getText());
-                updateStmt.setDate(8, java.sql.Date.valueOf(dpOrderDate.getValue()));
-                updateStmt.setDate(9, java.sql.Date.valueOf(dpInvoiceDate.getValue()));
-                updateStmt.setString(10, txtSubTotal.getText());
-                updateStmt.setString(11, payment.getValue());
-                updateStmt.setString(12, paid.isSelected() ? "Paid" : "Pending");
-                updateStmt.setString(13, txtInvoiceNumber.getText());
-                updateStmt.setString(14, selectedInvoiceNumber);
+            if(!FormValidator.validatePhoneNumber(txtPhone.getText())){
+                txtPhone.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                return;
+            }else{
+                txtPhone.setStyle("-fx-border-width: 0px;");
+            }
+            if(!FormValidator.validateEmail(txtEmail.getText())){
+                txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                return;
+            }else{
+                txtEmail.setStyle("-fx-border-width: 0px;");
+            }
 
-                int rowsAffected = updateStmt.executeUpdate();
+            try {
+                conn.setAutoCommit(false);
+
+                boolean updatedExport = updateExportsEntry(txtCustomerId.getText(),txtCustomerName.getText(),txtAddress.getText(),
+                        txtCity.getText(), txtState.getText(), txtPhone.getText(), txtEmail.getText(), dpOrderDate.getValue().toString(),
+                        dpInvoiceDate.getValue().toString(), txtSubTotal.getText(), payment.getValue(), paid.isSelected() ? "Paid" : "Pending",
+                        txtInvoiceNumber.getText(), selectedInvoiceNumber);
+
                 // Create a nested table for the products column
-                if (rowsAffected > 0) {
-                    PreparedStatement invoiceNumberUpdate = conn.prepareStatement("UPDATE export_products SET invoice_number =? WHERE invoice_number = ?");
-                    invoiceNumberUpdate.setString(1, txtInvoiceNumber.getText());
-                    invoiceNumberUpdate.setString(2, selectedInvoiceNumber);
-                    rowsAffected = invoiceNumberUpdate.executeUpdate();
-                    if (rowsAffected > 0) {
+                if (updatedExport) {
+                    boolean invoiceUpdated = updateInvoiceProductsEntry(txtInvoiceNumber.getText(),selectedInvoiceNumber);
+                    if (invoiceUpdated) {
                         AlertUtils.showMsg("Entry updated successfully!");
                         popupStage.close();
                         loadExportsData();
                     } else {
+                        conn.rollback();
                         AlertUtils.showMsg("Failed to update entry!");
                         popupStage.close();
                         loadExportsData();
                     }
+                }else{
+                    conn.rollback();
+                    AlertUtils.showMsg("Failed to update entry");
                 }
             } catch (Exception ex) {
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Update Failed", "Error updating record: " + ex.getMessage());
+                try {
+                    conn.rollback();
+                } catch (SQLException rollBackEx) {
+                    rollBackEx.printStackTrace();
+                }
+            }finally {
+                try{
+                    conn.setAutoCommit(true);
+                }catch (SQLException commitExp){
+                    commitExp.printStackTrace();
+                }
             }
         });
         Button btnCancel = new Button("Cancel");
@@ -872,17 +894,39 @@ public class ExportController {
 
         btnCancel.setOnAction(e -> scrollPane.setContent(initializeExportsTable(conn,sectionName,refPrimaryStage)));
     }
-    public void deleteProductFromEntry() {
-        Product selected = tblProducts.getSelectionModel().getSelectedItem();
-        if (selected != null) {
-            tblProducts.getItems().remove(selected);
-            AlertUtils.showMsg("Product delete successfully!");
-            calculateSubTotal();
-        } else {
-            AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
+    private boolean updateExportsEntry(String customerId, String customerName, String address, String city,
+                                       String state, String phone, String email, String orderDate, String invoiceDate,
+                                       String subtotal, String paymentMode, String paymentStatus, String invoiceNumber,
+                                       String selectedInvoiceNumber) throws SQLException{
+        try(PreparedStatement updateStmt = conn.prepareStatement(UPDATE_EXPORTS_QUERY)){
+            updateStmt.setString(1, customerId);
+            updateStmt.setString(2, customerName);
+            updateStmt.setString(3, address);
+            updateStmt.setString(4, city);
+            updateStmt.setString(5, state);
+            updateStmt.setString(6, phone);
+            updateStmt.setString(7, email);
+            updateStmt.setString(8, orderDate);
+            updateStmt.setString(9, invoiceDate);
+            updateStmt.setString(10, subtotal);
+            updateStmt.setString(11, paymentMode);
+            updateStmt.setString(12, paymentStatus);
+            updateStmt.setString(13, invoiceNumber);
+            updateStmt.setString(14, selectedInvoiceNumber);
+            return updateStmt.executeUpdate() > 0;
         }
     }
+    private boolean updateInvoiceProductsEntry(String invoiceNumber, String selectedInvoiceNumber) throws SQLException{
+        try(PreparedStatement invoiceNumberUpdate = conn.prepareStatement("UPDATE export_products SET invoice_number =? WHERE invoice_number = ?")){
+            invoiceNumberUpdate.setString(1, invoiceNumber);
+            invoiceNumberUpdate.setString(2, selectedInvoiceNumber);
+            return invoiceNumberUpdate.executeUpdate() > 0;
+        }
+    }
+    //---------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------
 
+    //DELETION--------------------------------------------------------------------------------------
     public void deleteEntry() {
         if (exportsTable == null || exportsTable.getItems().isEmpty() || exportsTable.getSelectionModel().getSelectedItem() == null) {
             AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
@@ -924,13 +968,27 @@ public class ExportController {
                     "Database Error", "Error occurred while deleting entry: ");
         }
     }
+    //---------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------
 
+    //HELPER FUNCTIONS--------------------------------------------------------------------------------------
     public void calculateSubTotal() {
         double subTotal = 0.0;
         for (Product product : tblProducts.getItems()) {
             subTotal += product.getPrice() * product.getQuantity();
         }
         txtSubTotal.setText(String.format("%.2f", subTotal));
+    }
+
+    public void deleteProductFromEntry() {
+        Product selected = tblProducts.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            tblProducts.getItems().remove(selected);
+            AlertUtils.showMsg("Product delete successfully!");
+            calculateSubTotal();
+        } else {
+            AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Unable to delete.", "Please select a row to delete!");
+        }
     }
 
     public boolean checkAvailableQty(String prId, int enteredQty) {
