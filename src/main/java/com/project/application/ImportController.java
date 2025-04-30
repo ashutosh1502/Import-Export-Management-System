@@ -542,9 +542,15 @@ public class ImportController {
                 updateProductStmt.setString(5, invoiceNumber);
                 updateProductStmt.setString(6,productId);
 
+                PreparedStatement stockQtyUpdateStmt = conn.prepareStatement("UPDATE PRODUCTS SET qty = qty + ? WHERE product_id = ?");
+                stockQtyUpdateStmt.setInt(1,(quantity-selectedQty));
+                stockQtyUpdateStmt.setString(2,selectedPrId);
+
+                boolean importProductsUpdated = updateProductStmt.executeUpdate() > 0;
+                boolean stocksQtyUpdated = stockQtyUpdateStmt.executeUpdate() > 0;
+
                 conn.setAutoCommit(false);
-                int rowsAffected = updateProductStmt.executeUpdate();
-                if (rowsAffected > 0) {
+                if (importProductsUpdated && stocksQtyUpdated) {
                     int selectedIndex = tblProducts.getSelectionModel().getSelectedIndex();
                     tblProducts.getItems().set(selectedIndex, updatedProduct);
                     AlertUtils.showMsg("Product updated successfully!");
@@ -556,7 +562,8 @@ public class ImportController {
                     calculateSubTotal();
                     popupStage.close();
                 }
-            } catch (Exception ex) {
+            } catch (SQLException ex) {
+                DatabaseErrorHandler.handleDatabaseError(ex);
                 Alert alert = new Alert(Alert.AlertType.WARNING, "Something went wrong!", ButtonType.OK);
                 alert.showAndWait();
             }finally {
