@@ -58,7 +58,7 @@ public class StatementController {
             "ORDER BY total_purchase DESC " +
             ") " +
             "WHERE ROWNUM = 1";
-    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(price * quantity),0) FROM export_products) - (SELECT NVL(SUM(price * quantity),0) FROM import_products) AS net_profit FROM dual";
+    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(sub_total),0) FROM exports) - (SELECT NVL(SUM(sub_total),0) FROM imports) AS net_profit FROM dual";
     private static final String FETCH_PENDING_PAYMENTS = "SELECT * FROM (" +
             "SELECT SUM(sub_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending'), " +
             "(SELECT SUM(sub_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending')";
