@@ -18,12 +18,13 @@ import java.time.LocalDate;
 public class PDFGenerator {
     public PDFGenerator(){}
 
-    public static String getSaveLocation(Stage stage){
+    public static String getSaveLocation(Stage stage, String defaultFilename){
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save PDF Statement");
 
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)","*.pdf");
         fileChooser.getExtensionFilters().add(extensionFilter);
+        fileChooser.setInitialFileName(defaultFilename);
         File selectedFile = fileChooser.showSaveDialog(stage);
 
         if(selectedFile!=null){

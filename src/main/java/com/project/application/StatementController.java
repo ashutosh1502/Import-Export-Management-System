@@ -44,7 +44,7 @@ public class StatementController {
     private TableColumn<StatementEntity, String> colPaymentStatus;
     private DecimalFormat df;
     private Connection conn;
-    private String fromDateStr, toDateStr, sectionName;
+    private String fromDateStr = "", toDateStr = "", sectionName;
     private Stage refStage;
     private static final String FETCH_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM IMPORTS "
             + "UNION ALL "
@@ -349,6 +349,7 @@ public class StatementController {
             String rangeBasedHighestExportQuery = "SELECT MAX(sub_total) AS highest_export FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
             setupSummarySection(rangeBasedNetProfitQuery,rangeBasedTopSuppQuery,rangeBasedTopCustQuery,rangeBasedPendingPaymentsQuery,rangeBasedHighestImportQuery,rangeBasedHighestExportQuery);
             addStyles();
+            setPrintStmtBtnAction();
         });
     }
 
@@ -476,7 +477,8 @@ public class StatementController {
                 contact = "Contact: +91 8275057797, +91 9960013301.";
 
                 StatementBill stmtBill = new StatementBill(sectionName,address,contact,fromDateStr+" to "+toDateStr, entries);
-                String filePath = PDFGenerator.getSaveLocation(refStage);
+                String defaultFilename = (fromDateStr.isEmpty() || toDateStr.isEmpty()) ? "" : fromDateStr+"-"+toDateStr+"-statement";
+                String filePath = PDFGenerator.getSaveLocation(refStage,defaultFilename);
                 if (filePath==null){
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
                     return;
