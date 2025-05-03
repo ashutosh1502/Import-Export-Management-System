@@ -5,6 +5,7 @@ import com.project.models.StatementEntity;
 import com.project.utils.DatabaseErrorHandler;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -28,6 +29,7 @@ public class StatementController {
     private VBox leftPart, rightPart;
     private Label[] stats = new Label[7];
     private HBox h1, h2, searchPane;
+    private SplitPane bodyPane;
     private Label title;
     private Label from;
     private Label to;
@@ -70,7 +72,10 @@ public class StatementController {
 
         initializeUI();
         VBox main = new VBox();
-        main.getChildren().addAll(h1, h2, stmtTable, summaryPane);
+        bodyPane = new SplitPane();
+        bodyPane.setOrientation(Orientation.VERTICAL);
+        bodyPane.getItems().addAll(stmtTable,summaryPane);
+        main.getChildren().addAll(h1, h2, bodyPane);
         addStyles();
 
         return main;
@@ -114,7 +119,7 @@ public class StatementController {
 
     private void setupStatementsTable() {
         stmtTable = new TableView<>();
-        stmtTable.setMaxHeight(450);
+        stmtTable.setMinHeight(300);
         stmtTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         TableColumn<StatementEntity, Integer> colSrno = new TableColumn<>("Sr No.");
         colType = new TableColumn<>("Transaction Type");
@@ -206,6 +211,9 @@ public class StatementController {
         }
         stats[5].setTextFill(Color.BLUEVIOLET);
         stats[6].setTextFill(Color.BLUEVIOLET);
+        summaryPane.setMaxHeight(140);
+        summaryPane.setMinHeight(50);
+        VBox.setVgrow(bodyPane,Priority.ALWAYS);
     }
 
     private void loadStatementsData(String query) {
