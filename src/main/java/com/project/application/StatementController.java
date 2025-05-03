@@ -24,7 +24,7 @@ import java.text.DecimalFormat;
 
 public class StatementController {
 
-    private HBox summaryPane;
+    private HBox summaryPane = new HBox();
     private VBox leftPart, rightPart;
     private Label[] stats = new Label[7];
     private HBox h1, h2, searchPane;
@@ -58,7 +58,7 @@ public class StatementController {
             "ORDER BY total_purchase DESC " +
             ") " +
             "WHERE ROWNUM = 1";
-    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(price * quantity),0) FROM export_products) - (SELECT NVL(SUM(price * quantity),0) FROM import_products) AS net_profit FROM dual";
+    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(sub_total),0) FROM exports) - (SELECT NVL(SUM(sub_total),0) FROM imports) AS net_profit FROM dual";
     private static final String FETCH_PENDING_PAYMENTS = "SELECT * FROM (" +
             "SELECT SUM(sub_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending'), " +
             "(SELECT SUM(sub_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending')";
@@ -80,7 +80,7 @@ public class StatementController {
         createHeadingPane();
         setupFilterSection();
         setupStatementsTable();
-        setupSummarySection();
+        setupSummarySection(FETCH_NET_PROFIT,FETCH_TOP_SUPPLIER,FETCH_TOP_CUSTOMER,FETCH_PENDING_PAYMENTS,FETCH_HIGHEST_IMPORT,FETCH_HIGHEST_EXPORT);
     }
 
     private void createHeadingPane() {
@@ -107,7 +107,7 @@ public class StatementController {
         setResetBtnAction();
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
-        printBtn = new Button("Print");
+        printBtn = new Button("Print Statement");
         h2 = new HBox();
         h2.getChildren().addAll(from, fromDate, to, toDate, processBtn, resetBtn, spacer, printBtn);
     }
@@ -145,8 +145,7 @@ public class StatementController {
         loadStatementsData(FETCH_DATA_QUERY);
     }
 
-    private void setupSummarySection() {
-        summaryPane = new HBox();
+    private void setupSummarySection(String netProfitQuery,String topSupplQuery, String topCustQuery, String pendingPaymentsQuery, String highestImportQuery, String highestExportQuery) {
         leftPart = new VBox(5);
         rightPart = new VBox(5);
         stats[0] = new Label("Total Transactions:  ");
@@ -156,21 +155,24 @@ public class StatementController {
         stats[4] = new Label("Pending Payments:  ");
         stats[5] = new Label("Highest Import:  ");
         stats[6] = new Label("Highest Export:  ");
-        setSummaryLabels();
+        setSummaryLabels(netProfitQuery,topSupplQuery,topCustQuery,pendingPaymentsQuery,highestImportQuery,highestExportQuery);
+        leftPart.getChildren().clear();
+        rightPart.getChildren().clear();
+        summaryPane.getChildren().clear();
         leftPart.getChildren().addAll(stats[0], stats[1], stats[2]);
         rightPart.getChildren().addAll(stats[3], stats[4], stats[5], stats[6]);
         summaryPane.getChildren().addAll(leftPart, rightPart);
     }
 
-    private void setSummaryLabels() {
+    private void setSummaryLabels(String netProfitQuery,String topSupplQuery, String topCustQuery, String pendingPaymentsQuery, String highestImportQuery, String highestExportQuery) {
         int totalTransactions = stmtTable.getItems().size();
         stats[0].setText(stats[0].getText() + totalTransactions);
-        stats[1].setText(stats[1].getText() + getTopSupplier());
-        stats[2].setText(stats[2].getText() + getTopCustomer());
-        stats[3].setText(stats[3].getText() + getNetProfit());
-        stats[4].setText(stats[4].getText() + getPendingPayments());
-        stats[5].setText(stats[5].getText() + getHighestImport());
-        stats[6].setText(stats[6].getText() + getHighestExport());
+        stats[1].setText(stats[1].getText() + getTopSupplier(topSupplQuery));
+        stats[2].setText(stats[2].getText() + getTopCustomer(topCustQuery));
+        stats[3].setText(stats[3].getText() + getNetProfit(netProfitQuery));
+        stats[4].setText(stats[4].getText() + getPendingPayments(pendingPaymentsQuery));
+        stats[5].setText(stats[5].getText() + getHighestImport(highestImportQuery));
+        stats[6].setText(stats[6].getText() + getHighestExport(highestExportQuery));
     }
 
     public void addStyles() {
@@ -303,6 +305,33 @@ public class StatementController {
                     "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
                     "ORDER BY invoice_date";
             loadStatementsData(rangeBasedDataQuery);
+            String rangeBasedTopSuppQuery = "SELECT * FROM ( " +
+                    "SELECT i.supplier_id, i.supplier_name, SUM(ip.quantity) as total_import_qty FROM imports i " +
+                            "JOIN import_products ip ON i.invoice_number = ip.invoice_number " +
+                            "WHERE i.invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')"+
+                            "GROUP BY i.supplier_id,i.supplier_name " +
+                            "ORDER BY total_import_qty DESC " +
+                            ") " +
+                            "WHERE ROWNUM = 1";
+            String rangeBasedTopCustQuery = "SELECT * FROM ( " +
+                    "SELECT e.customer_id, e.customer_name, SUM(ep.price * ep.quantity) as total_purchase FROM exports e " +
+                    "JOIN export_products ep ON e.invoice_number = ep.invoice_number " +
+                    "WHERE e.invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')"+
+                    "GROUP BY e.customer_id,e.customer_name " +
+                    "ORDER BY total_purchase DESC " +
+                    ") " +
+                    "WHERE ROWNUM = 1";
+            String rangeBasedNetProfitQuery = "SELECT " +
+                    "(SELECT NVL(SUM(sub_total),0) FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) -" +
+                    "(SELECT NVL(SUM(sub_total),0) FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) " +
+                    "AS net_profit FROM dual";
+            String rangeBasedPendingPaymentsQuery = "SELECT * FROM" +
+                    "(SELECT SUM(sub_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')), " +
+                    "(SELECT SUM(sub_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))";
+            String rangeBasedHighestImportQuery = "SELECT MAX(sub_total) AS highest_import FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
+            String rangeBasedHighestExportQuery = "SELECT MAX(sub_total) AS highest_export FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
+            setupSummarySection(rangeBasedNetProfitQuery,rangeBasedTopSuppQuery,rangeBasedTopCustQuery,rangeBasedPendingPaymentsQuery,rangeBasedHighestImportQuery,rangeBasedHighestExportQuery);
+            addStyles();
         });
     }
 
@@ -312,14 +341,16 @@ public class StatementController {
             toDate.setValue(null);
             searchField.setText("");
             loadStatementsData(FETCH_DATA_QUERY);
+            setupSummarySection(FETCH_NET_PROFIT,FETCH_TOP_SUPPLIER,FETCH_TOP_CUSTOMER,FETCH_PENDING_PAYMENTS,FETCH_HIGHEST_IMPORT,FETCH_HIGHEST_EXPORT);
+            addStyles();
         });
     }
 
-    private String getTopSupplier() {
+    private String getTopSupplier(String query) {
         StringBuilder topSupplier = new StringBuilder();
         try {
             Statement fetchTopSupStmt = conn.createStatement();
-            ResultSet rs = fetchTopSupStmt.executeQuery(FETCH_TOP_SUPPLIER);
+            ResultSet rs = fetchTopSupStmt.executeQuery(query);
             rs.next();
             topSupplier.append(rs.getString("supplier_name"));
             topSupplier.append(" (").append(rs.getInt("total_import_qty")).append(" Qty Imported)");
@@ -330,11 +361,11 @@ public class StatementController {
         return topSupplier.toString();
     }
 
-    private String getTopCustomer() {
+    private String getTopCustomer(String query) {
         StringBuilder topCustomer = new StringBuilder();
         try {
             Statement fetchTopCustStmt = conn.createStatement();
-            ResultSet rs = fetchTopCustStmt.executeQuery(FETCH_TOP_CUSTOMER);
+            ResultSet rs = fetchTopCustStmt.executeQuery(query);
             rs.next();
             topCustomer.append(rs.getString("customer_name"));
             topCustomer.append(" (Total purchase Rs.").append(df.format(rs.getDouble("total_purchase"))).append("/-)");
@@ -345,11 +376,11 @@ public class StatementController {
         return topCustomer.toString();
     }
 
-    private String getNetProfit() {
+    private String getNetProfit(String query) {
         StringBuilder netProfit = new StringBuilder();
         try {
             Statement fetchNetProfitStmt = conn.createStatement();
-            ResultSet rs = fetchNetProfitStmt.executeQuery(FETCH_NET_PROFIT);
+            ResultSet rs = fetchNetProfitStmt.executeQuery(query);
             rs.next();
             Double value = rs.getDouble("net_profit");
             if (value < 0) {
@@ -367,11 +398,11 @@ public class StatementController {
         return netProfit.toString();
     }
 
-    private String getPendingPayments() {
+    private String getPendingPayments(String query) {
         StringBuilder pendingPayments = new StringBuilder();
         try {
             Statement fetchPendingPaymentsStmt = conn.createStatement();
-            ResultSet rs = fetchPendingPaymentsStmt.executeQuery(FETCH_PENDING_PAYMENTS);
+            ResultSet rs = fetchPendingPaymentsStmt.executeQuery(query);
             rs.next();
             Double pendingAmountImports = rs.getDouble("imports_pending_payment");
             Double pendingAmountExports = rs.getDouble("exports_pending_payment");
@@ -385,11 +416,11 @@ public class StatementController {
         return pendingPayments.toString();
     }
 
-    private String getHighestImport() {
+    private String getHighestImport(String query) {
         StringBuilder highestImport = new StringBuilder();
         try {
             Statement fetchHighestImportStmt = conn.createStatement();
-            ResultSet rs = fetchHighestImportStmt.executeQuery(FETCH_HIGHEST_IMPORT);
+            ResultSet rs = fetchHighestImportStmt.executeQuery(query);
             rs.next();
             Double value = rs.getDouble("highest_import");
             highestImport.append(" Rs.").append(df.format(value)).append("/-");
@@ -402,11 +433,11 @@ public class StatementController {
         return highestImport.toString();
     }
 
-    private String getHighestExport() {
+    private String getHighestExport(String query) {
         StringBuilder highestExport = new StringBuilder();
         try {
             Statement fetchHighestExportStmt = conn.createStatement();
-            ResultSet rs = fetchHighestExportStmt.executeQuery(FETCH_HIGHEST_EXPORT);
+            ResultSet rs = fetchHighestExportStmt.executeQuery(query);
             rs.next();
             Double value = rs.getDouble("highest_export");
             highestExport.append(" Rs.").append(df.format(value)).append("/-");
