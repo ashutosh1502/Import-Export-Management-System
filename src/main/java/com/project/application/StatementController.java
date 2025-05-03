@@ -195,7 +195,9 @@ public class StatementController {
                 "-fx-background-repeat: no-repeat; " +
                 "-fx-background-position: center;");
         processBtn.setPrefWidth(150);
+        processBtn.setStyle("-fx-background-color: rgb(210,252,210); -fx-border-color: rgb(159,252,162); -fx-border-radius: 2px;");
         resetBtn.setPrefWidth(150);
+        resetBtn.setStyle("-fx-background-color: rgb(210,240,252); -fx-border-color: rgb(159,217,252); -fx-border-radius: 2px;");
         printBtn.setPrefWidth(150);
         h1.setPadding(new Insets(5, 0, 5, 10));
         h1.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
