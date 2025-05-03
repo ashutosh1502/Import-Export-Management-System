@@ -1051,7 +1051,7 @@ public class ExportController {
                 ExportBill exportBill = new ExportBill(sectionName,address,contact,
                         customerName,customerAddress,customerPhoneNumber, invoiceNumber,
                         tableEntries, paymentStatus);
-                String filePath = PDFGenerator.getSaveLocation(refPrimaryStage);
+                String filePath = PDFGenerator.getSaveLocation(refPrimaryStage,"");
                 if (filePath==null){
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
                     return;
