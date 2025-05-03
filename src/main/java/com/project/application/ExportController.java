@@ -99,8 +99,8 @@ public class ExportController {
                 String state = rs.getString("state");
                 String phno = rs.getString("phone_number");
                 String email = rs.getString("email");
-                String invoiceNo = rs.getString("invoice_number");
-                String orderDate = rs.getString("order_date");
+                String invoiceNo = processDateString(rs.getString("invoice_number"));
+                String orderDate = processDateString(rs.getString("order_date"));
                 String invoiceDate = rs.getString("invoice_date");
                 double subTotal = rs.getDouble("sub_total");
                 String paymentMode = rs.getString("payment_mode");
@@ -1051,7 +1051,7 @@ public class ExportController {
                 ExportBill exportBill = new ExportBill(sectionName,address,contact,
                         customerName,customerAddress,customerPhoneNumber, invoiceNumber,
                         tableEntries, paymentStatus);
-                String filePath = PDFGenerator.getSaveLocation(refPrimaryStage);
+                String filePath = PDFGenerator.getSaveLocation(refPrimaryStage,"");
                 if (filePath==null){
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
                     return;

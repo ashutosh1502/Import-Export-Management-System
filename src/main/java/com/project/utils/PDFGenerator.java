@@ -6,6 +6,8 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.project.models.ExportBillTableEntry;
+import com.project.models.StatementBill;
+import com.project.models.StatementBillTableEntry;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -16,12 +18,13 @@ import java.time.LocalDate;
 public class PDFGenerator {
     public PDFGenerator(){}
 
-    public static String getSaveLocation(Stage stage){
+    public static String getSaveLocation(Stage stage, String defaultFilename){
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save PDF Statement");
 
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)","*.pdf");
         fileChooser.getExtensionFilters().add(extensionFilter);
+        fileChooser.setInitialFileName(defaultFilename);
         File selectedFile = fileChooser.showSaveDialog(stage);
 
         if(selectedFile!=null){
@@ -116,6 +119,84 @@ public class PDFGenerator {
         document.close();
     }
 
+    public static void generateStatementsPDF(String filePath, StatementBill bill) throws Exception {
+        Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+        PdfWriter.getInstance(document, new FileOutputStream(filePath));
+        document.open();
+
+        Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
+        Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
+        Font normalFont = FontFactory.getFont(FontFactory.HELVETICA, 12, BaseColor.BLACK);
+        Font tableDataFont = FontFactory.getFont(FontFactory.HELVETICA, 11, BaseColor.BLACK);
+        Font labelFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
+
+        Paragraph title = new Paragraph(bill.industryName.toUpperCase(), titleFont);
+        title.setAlignment(Element.ALIGN_CENTER);
+        document.add(title);
+
+        Paragraph addressLine = new Paragraph(bill.address,normalFont);
+        addressLine.setAlignment(Element.ALIGN_CENTER);
+        document.add(addressLine);
+
+        Paragraph phoneNumberLine = new Paragraph(bill.contact,normalFont);
+        phoneNumberLine.setAlignment(Element.ALIGN_CENTER);
+        document.add(phoneNumberLine);
+
+        Paragraph dateRangeLine = new Paragraph((bill.dateRange == null) ? "" : bill.dateRange,normalFont);
+        dateRangeLine.setAlignment(Element.ALIGN_CENTER);
+        document.add(Chunk.NEWLINE);
+        document.add(dateRangeLine);
+        document.add(Chunk.NEWLINE);
+
+        PdfPTable statementInfoTable = new PdfPTable(5);
+        statementInfoTable.setWidthPercentage(100);
+        statementInfoTable.setWidths(new float[]{2, 1, 2, 1, 1});
+
+        statementInfoTable.addCell(getHeaderCell("Date", headerFont, BaseColor.BLACK));
+        statementInfoTable.addCell(getHeaderCell("Tran. Type", headerFont, BaseColor.BLACK));
+        statementInfoTable.addCell(getHeaderCell("Invoice No.", headerFont, BaseColor.BLACK));
+        statementInfoTable.addCell(getHeaderCell("Debit", headerFont, BaseColor.BLACK));
+        statementInfoTable.addCell(getHeaderCell("Credit", headerFont, BaseColor.BLACK));
+
+        double debitTotal = 0.0, creditTotal = 0.0;
+        for (StatementBillTableEntry entry: bill.tableEntries) {
+            statementInfoTable.addCell(getStmtValueCell(entry.date, tableDataFont));
+            statementInfoTable.addCell(getStmtValueCell(entry.transType, labelFont));
+            statementInfoTable.addCell(getStmtValueCell(entry.invoiceNum, tableDataFont));
+            statementInfoTable.addCell(getStmtValueCell(Double.toString(entry.debit), tableDataFont));
+            statementInfoTable.addCell(getStmtValueCell(
+                    (Double.toString(entry.credit).equalsIgnoreCase("0.0")) ? "" : Double.toString(entry.credit),
+                    tableDataFont));
+            debitTotal += entry.debit;
+            creditTotal += entry.credit;
+        }
+        double closingBalance = debitTotal - creditTotal;
+        String drcr = "Dr";
+        if(closingBalance < 0) {
+            drcr = "Cr";    closingBalance = Math.abs(closingBalance);
+        }
+        statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
+        statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
+        statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
+        statementInfoTable.addCell(getValueCell(Double.toString(debitTotal),tableDataFont));
+        statementInfoTable.addCell(getValueCell(Double.toString(creditTotal),tableDataFont));
+        statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
+        statementInfoTable.addCell(getStmtValueCell(drcr,tableDataFont));
+        statementInfoTable.addCell(getStmtValueCell("Closing Balance",labelFont));
+        statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
+        statementInfoTable.addCell(getStmtValueCell(Double.toString(closingBalance),labelFont));
+
+        document.add(statementInfoTable);
+        document.add(Chunk.NEWLINE);
+
+
+        Paragraph authSignature = new Paragraph("Authorized Signature", labelFont);
+        authSignature.setAlignment(Element.ALIGN_LEFT);
+        document.add(Chunk.NEWLINE);
+        document.add(authSignature);
+        document.close();
+    }
+
 // Helper methods
 
     private static PdfPCell getHeaderCell(String text, Font font, BaseColor bgColor) {
@@ -136,6 +217,13 @@ public class PDFGenerator {
     private static PdfPCell getValueCell(String text, Font font) {
         PdfPCell cell = new PdfPCell(new Phrase(text, font));
         //cell.setBorder(Rectangle.NO_BORDER);
+        cell.setPadding(5);
+        return cell;
+    }
+
+    private static PdfPCell getStmtValueCell(String text, Font font) {
+        PdfPCell cell = new PdfPCell(new Phrase(text, font));
+        cell.setBorder(Rectangle.NO_BORDER);
         cell.setPadding(5);
         return cell;
     }

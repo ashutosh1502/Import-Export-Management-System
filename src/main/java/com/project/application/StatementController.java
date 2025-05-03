@@ -1,10 +1,12 @@
 package com.project.application;
 
+import com.project.models.*;
 import com.project.utils.AlertUtils;
-import com.project.models.StatementEntity;
 import com.project.utils.DatabaseErrorHandler;
+import com.project.utils.PDFGenerator;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -15,12 +17,14 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class StatementController {
 
@@ -28,6 +32,7 @@ public class StatementController {
     private VBox leftPart, rightPart;
     private Label[] stats = new Label[7];
     private HBox h1, h2, searchPane;
+    private SplitPane bodyPane;
     private Label title;
     private Label from;
     private Label to;
@@ -39,7 +44,8 @@ public class StatementController {
     private TableColumn<StatementEntity, String> colPaymentStatus;
     private DecimalFormat df;
     private Connection conn;
-    private String fromDateStr, toDateStr;
+    private String fromDateStr = "", toDateStr = "", sectionName;
+    private Stage refStage;
     private static final String FETCH_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM IMPORTS "
             + "UNION ALL "
             + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM EXPORTS "
@@ -65,12 +71,17 @@ public class StatementController {
     private static final String FETCH_HIGHEST_IMPORT = "SELECT MAX(sub_total) AS highest_import FROM imports";
     private static final String FETCH_HIGHEST_EXPORT = "SELECT MAX(sub_total) AS highest_export FROM exports";
 
-    public VBox initializeStatementSection(Connection connection) {
+    public VBox initializeStatementSection(Connection connection, String sectionName, Stage refStage) {
         conn = connection;
+        this.sectionName = sectionName;
+        this.refStage = refStage;
 
         initializeUI();
         VBox main = new VBox();
-        main.getChildren().addAll(h1, h2, stmtTable, summaryPane);
+        bodyPane = new SplitPane();
+        bodyPane.setOrientation(Orientation.VERTICAL);
+        bodyPane.getItems().addAll(stmtTable,summaryPane);
+        main.getChildren().addAll(h1, h2, bodyPane);
         addStyles();
 
         return main;
@@ -78,8 +89,8 @@ public class StatementController {
 
     private void initializeUI() {
         createHeadingPane();
-        setupFilterSection();
         setupStatementsTable();
+        setupFilterSection();
         setupSummarySection(FETCH_NET_PROFIT,FETCH_TOP_SUPPLIER,FETCH_TOP_CUSTOMER,FETCH_PENDING_PAYMENTS,FETCH_HIGHEST_IMPORT,FETCH_HIGHEST_EXPORT);
     }
 
@@ -108,13 +119,14 @@ public class StatementController {
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
         printBtn = new Button("Print Statement");
+        setPrintStmtBtnAction();
         h2 = new HBox();
         h2.getChildren().addAll(from, fromDate, to, toDate, processBtn, resetBtn, spacer, printBtn);
     }
 
     private void setupStatementsTable() {
         stmtTable = new TableView<>();
-        stmtTable.setMaxHeight(450);
+        stmtTable.setMinHeight(300);
         stmtTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         TableColumn<StatementEntity, Integer> colSrno = new TableColumn<>("Sr No.");
         colType = new TableColumn<>("Transaction Type");
@@ -190,7 +202,9 @@ public class StatementController {
                 "-fx-background-repeat: no-repeat; " +
                 "-fx-background-position: center;");
         processBtn.setPrefWidth(150);
+        processBtn.setStyle("-fx-background-color: rgb(210,252,210); -fx-border-color: rgb(159,252,162); -fx-border-radius: 2px;");
         resetBtn.setPrefWidth(150);
+        resetBtn.setStyle("-fx-background-color: rgb(210,240,252); -fx-border-color: rgb(159,217,252); -fx-border-radius: 2px;");
         printBtn.setPrefWidth(150);
         h1.setPadding(new Insets(5, 0, 5, 10));
         h1.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
@@ -206,6 +220,9 @@ public class StatementController {
         }
         stats[5].setTextFill(Color.BLUEVIOLET);
         stats[6].setTextFill(Color.BLUEVIOLET);
+        summaryPane.setMaxHeight(140);
+        summaryPane.setMinHeight(50);
+        VBox.setVgrow(bodyPane,Priority.ALWAYS);
     }
 
     private void loadStatementsData(String query) {
@@ -221,7 +238,7 @@ public class StatementController {
                 StatementEntity stmtEntity = new StatementEntity(srno, rs.getString("type"),
                         rs.getString("invoice_number"), rs.getString("party_name"),
                         rs.getString("party_id"), rs.getDouble("sub_total"),
-                        rs.getString("payment_status"), rs.getString("invoice_date"));
+                        rs.getString("payment_status"), processDateString(rs.getString("invoice_date")));
                 stmtTable.getItems().add(stmtEntity);
 //                if (rs.getString("type").equalsIgnoreCase("exports")) {
 //                    totalExportsAmount += rs.getDouble("sub_total");
@@ -332,6 +349,7 @@ public class StatementController {
             String rangeBasedHighestExportQuery = "SELECT MAX(sub_total) AS highest_export FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
             setupSummarySection(rangeBasedNetProfitQuery,rangeBasedTopSuppQuery,rangeBasedTopCustQuery,rangeBasedPendingPaymentsQuery,rangeBasedHighestImportQuery,rangeBasedHighestExportQuery);
             addStyles();
+            setPrintStmtBtnAction();
         });
     }
 
@@ -448,6 +466,46 @@ public class StatementController {
             AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Something went wrong!", "Unable to get highest export amount");
         }
         return highestExport.toString();
+    }
+
+    private void setPrintStmtBtnAction(){
+        ArrayList<StatementBillTableEntry> entries = getTableEntries();
+        printBtn.setOnAction( e ->{
+            try{
+                String address,contact;
+                address = "Plot No-08, MIDC Urun Islampur- 415409, Tal-Walwa, Dist-Sangli.";
+                contact = "Contact: +91 8275057797, +91 9960013301.";
+
+                StatementBill stmtBill = new StatementBill(sectionName,address,contact,fromDateStr+" to "+toDateStr, entries);
+                String defaultFilename = (fromDateStr.isEmpty() || toDateStr.isEmpty()) ? "" : fromDateStr+"-"+toDateStr+"-statement";
+                String filePath = PDFGenerator.getSaveLocation(refStage,defaultFilename);
+                if (filePath==null){
+                    AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
+                    return;
+                }
+                PDFGenerator.generateStatementsPDF(filePath,stmtBill);
+            }catch (Exception ex){
+                System.out.println(ex);
+                AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Unable to print!");
+            }
+        });
+    }
+
+    private ArrayList getTableEntries(){
+        ArrayList<StatementBillTableEntry> entries = new ArrayList<>();
+        StatementBillTableEntry entry;
+        for(StatementEntity stmtEnt : stmtTable.getItems()){
+            entry = new StatementBillTableEntry(stmtEnt.getInvoiceDate(),stmtEnt.getType(),stmtEnt.getInvoiceNo(),
+                    stmtEnt.getSubTotal());
+            entries.add(entry);
+        }
+        return entries;
+    }
+
+    private String processDateString(String date){
+        String processedDate;
+        processedDate = date.substring(date.lastIndexOf('-')+1,date.lastIndexOf('-')+3) + "-" + date.substring(date.indexOf('-')+1,date.indexOf('-')+3) + "-" + "20" + date.substring(2,4);
+        return processedDate;
     }
 }
 
