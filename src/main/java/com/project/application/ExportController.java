@@ -99,8 +99,8 @@ public class ExportController {
                 String state = rs.getString("state");
                 String phno = rs.getString("phone_number");
                 String email = rs.getString("email");
-                String invoiceNo = rs.getString("invoice_number");
-                String orderDate = rs.getString("order_date");
+                String invoiceNo = processDateString(rs.getString("invoice_number"));
+                String orderDate = processDateString(rs.getString("order_date"));
                 String invoiceDate = rs.getString("invoice_date");
                 double subTotal = rs.getDouble("sub_total");
                 String paymentMode = rs.getString("payment_mode");
