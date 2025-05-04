@@ -9,17 +9,17 @@ public class Exports {
     private final String customerId;
     private final ArrayList<String> products;
     private final int totalQuantity;
-    private final double subTotal;
+    private final double netTotal;
     private final String address,city,state,phno,email,orderDate,invoiceDate,paymentMode,paymentStatus;
 
-    public Exports(int srno, String invoiceNo, String customerId, String customerName, ArrayList<String> products, int totalQuantity, double subTotal, String address, String city, String state, String phno, String email, String orderDate, String invoiceDate, String paymentMode, String paymentStatus) {
+    public Exports(int srno, String invoiceNo, String customerId, String customerName, ArrayList<String> products, int totalQuantity, double netTotal, String address, String city, String state, String phno, String email, String orderDate, String invoiceDate, String paymentMode, String paymentStatus) {
         this.SrNo=srno+".";
         this.invoiceNo=invoiceNo;
         this.customerName = customerName;
         this.customerId = customerId;
         this.products = products;
         this.totalQuantity = totalQuantity;
-        this.subTotal = subTotal;
+        this.netTotal = netTotal;
         this.address = address;
         this.city = city;
         this.state = state;
@@ -80,8 +80,8 @@ public class Exports {
         return invoiceDate;
     }
 
-    public double getSubTotal() {
-        return subTotal;
+    public double getNetTotal() {
+        return netTotal;
     }
 
     public int getTotalQuantity() {

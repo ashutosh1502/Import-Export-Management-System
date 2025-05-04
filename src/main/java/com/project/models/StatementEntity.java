@@ -6,17 +6,17 @@ public class StatementEntity {
     private String invoiceNo;
     private String SCName;
     private String SCId;
-    private double subTotal;
+    private double netTotal;
     private String paymentStatus;
     private String invoiceDate;
 
-    public StatementEntity(int srno, String type, String invoiceNo, String SCName, String SCId, double subTotal, String status, String invoiceDate){
+    public StatementEntity(int srno, String type, String invoiceNo, String SCName, String SCId, double netTotal, String status, String invoiceDate){
         this.srno = srno;
         this.type = type;
         this.invoiceNo = invoiceNo;
         this.SCName = SCName;
         this.SCId = SCId;
-        this.subTotal = subTotal;
+        this.netTotal = netTotal;
         this.paymentStatus = status;
         this.invoiceDate = invoiceDate;
     }
@@ -41,8 +41,8 @@ public class StatementEntity {
         return SCId;
     }
 
-    public double getSubTotal() {
-        return subTotal;
+    public double getNetTotal() {
+        return netTotal;
     }
 
     public String getPaymentStatus() {

@@ -31,7 +31,8 @@ public class ExportController {
     private TableView<Product> tblProducts;
     private static Connection conn;
     private int srno = 1;
-    private Label txtSubTotal;
+    private Label txtSubTotal, txtNetTotal;
+    private ComboBox<Integer> gstComboBox;
     private Button printInvoiceBtn;
     private String sectionName;
     private Stage refPrimaryStage;
@@ -39,10 +40,10 @@ public class ExportController {
     private static final String FETCH_EXPORTS_QUERY = "SELECT * FROM EXPORTS";
     private static final String FETCH_EXPORT_PRODUCTS_QUERY = "SELECT * FROM EXPORT_PRODUCTS WHERE invoice_number = ?";
     private static final String INSERT_EXPORTS_QUERY = "INSERT INTO EXPORTS (" +
-            "customer_name, customer_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
-            ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
+            "customer_name, customer_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status, gst, net_total" +
+            ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?, ?, ?)";
     private static final String INSERT_EXPORT_PRODUCTS_QUERY = "INSERT INTO EXPORT_PRODUCTS (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
-    private static final String UPDATE_EXPORTS_QUERY = "UPDATE EXPORTS SET customer_id = ?, customer_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?, 'YYYY-MM-DD'), invoice_date = TO_DATE(?, 'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
+    private static final String UPDATE_EXPORTS_QUERY = "UPDATE EXPORTS SET customer_id = ?, customer_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?, 'YYYY-MM-DD'), invoice_date = TO_DATE(?, 'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ?, gst = ?, net_total = ? WHERE invoice_number = ?";
     private static final String UPDATE_EXPORT_PRODUCTS_QUERY = "UPDATE EXPORT_PRODUCTS SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ? AND product_id =?";
     private static final String DELETE_EXPORT_QUERY = "DELETE FROM EXPORTS WHERE invoice_number = ?";
 
@@ -64,14 +65,14 @@ public class ExportController {
     }
 
     private void initializeExportsTableColumns() {
-        TableColumn<Exports, String> colSrNo, colInvoiceNo, colCustomerName, colProducts, colAmount, colPaymentStatus, colInvoiceDate;
+        TableColumn<Exports, String> colSrNo, colInvoiceNo, colCustomerName, colProducts, colNetTotal, colPaymentStatus, colInvoiceDate;
         TableColumn<Exports, Integer> colTotalQty;
         colSrNo = new TableColumn<>("SrNo.");
         colInvoiceNo = new TableColumn<>("Invoice No.");
         colCustomerName = new TableColumn<>("Customer Name");
         colProducts = new TableColumn<>("Products");
         colTotalQty = new TableColumn<>("Total Qty");
-        colAmount = new TableColumn<>("Amount");
+        colNetTotal = new TableColumn<>("Amount");
         colPaymentStatus = new TableColumn<>("Payment Status");
         colInvoiceDate = new TableColumn<>("Invoice Date");
         colSrNo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSrNo()));
@@ -79,10 +80,10 @@ public class ExportController {
         colCustomerName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCustomerName()));
         colProducts.setCellValueFactory(cellData -> new SimpleStringProperty(String.join(", ", cellData.getValue().getProducts())));
         colTotalQty.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getTotalQuantity()).asObject());
-        colAmount.setCellValueFactory(cellData -> new SimpleStringProperty("Rs. " + CURRENCY_FORMAT.format(cellData.getValue().getSubTotal())));
+        colNetTotal.setCellValueFactory(cellData -> new SimpleStringProperty("Rs. " + CURRENCY_FORMAT.format(cellData.getValue().getNetTotal())));
         colPaymentStatus.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPaymentStatus()));
         colInvoiceDate.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getInvoiceDate()));
-        exportsTable.getColumns().addAll(colSrNo, colInvoiceNo, colCustomerName, colProducts, colTotalQty, colAmount, colPaymentStatus, colInvoiceDate);
+        exportsTable.getColumns().addAll(colSrNo, colInvoiceNo, colCustomerName, colProducts, colTotalQty, colNetTotal, colPaymentStatus, colInvoiceDate);
     }
 
     public void loadExportsData() {
@@ -102,7 +103,7 @@ public class ExportController {
                 String invoiceNo = rs.getString("invoice_number");
                 String orderDate = processDateString(rs.getString("order_date"));
                 String invoiceDate = processDateString(rs.getString("invoice_date"));
-                double subTotal = rs.getDouble("sub_total");
+                double netTotal = rs.getDouble("net_total");
                 String paymentMode = rs.getString("payment_mode");
                 String paymentStatus = rs.getString("payment_status");
 
@@ -119,7 +120,7 @@ public class ExportController {
                 }
                 Exports exportItem = new Exports(
                         srNo++, invoiceNo, customerId, customerName, productList, totalQty,
-                        subTotal, address, city, state, phno, email, orderDate, invoiceDate,
+                        netTotal, address, city, state, phno, email, orderDate, invoiceDate,
                         paymentMode, paymentStatus
                 );
                 exportsTable.getItems().add(exportItem);
@@ -193,6 +194,20 @@ public class ExportController {
         Label subTotal = new Label("Sub Total:");
         txtSubTotal = new Label("0.00");
 
+        Label gst = new Label("GST (%):");
+        gstComboBox = new ComboBox<>();
+        gstComboBox.getItems().addAll(0,5,12,18,28);
+        gstComboBox.setValue(18);
+        gstComboBox.setMaxWidth(80);
+        gstComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            calculateNetTotal();
+        });
+
+        Label netTotal = new Label("Net Total:");
+        netTotal.setStyle("-fx-font-weight:bold;");
+        txtNetTotal = new Label("0.00");
+        txtNetTotal.setStyle("-fx-font-weight:bold;");
+
         Label paymentMode = new Label("Payment Mode:");
         ComboBox<String> payment = new ComboBox<>();
         payment.getItems().addAll("Cash", "Cheque", "Net-Banking", "Credit Card");
@@ -204,6 +219,7 @@ public class ExportController {
         ToggleGroup group = new ToggleGroup();
         paid.setToggleGroup(group);
         pending.setToggleGroup(group);
+        pending.setSelected(true);
         HBox statusLayout = new HBox(5);
         statusLayout.getChildren().addAll(paid, pending);
 
@@ -225,6 +241,8 @@ public class ExportController {
                 String invoiceNumberEntered = txtInvoiceNumber.getText();
                 String orderDateEntered = dpOrderDate.getValue().toString();
                 String invoiceDateEntered = dpInvoiceDate.getValue().toString();
+                int gstVal = gstComboBox.getValue();
+                double netTotalVal = Double.parseDouble(txtNetTotal.getText());
 
                 conn.setAutoCommit(false);
                 if(!FormValidator.validatePhoneNumber(phoneEntered)){
@@ -242,7 +260,7 @@ public class ExportController {
                 if(!insertExport(customerNameEntered, customerIdEntered, addressEntered, cityEntered,
                         stateEntered, phoneEntered, emailEntered, invoiceNumberEntered,
                         orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered,
-                        paymentStatusEntered)){
+                        paymentStatusEntered, gstVal, netTotalVal)){
                     conn.rollback();
                     return;
                 }
@@ -308,10 +326,14 @@ public class ExportController {
         formLayout.add(paymentDetails, 0, 7);
         formLayout.add(subTotal, 0, 8);
         formLayout.add(txtSubTotal, 1, 8);
-        formLayout.add(paymentMode, 0, 9);
-        formLayout.add(payment, 1, 9);
-        formLayout.add(status, 0, 10);
-        formLayout.add(statusLayout, 1, 10);
+        formLayout.add(gst,2,8);
+        formLayout.add(gstComboBox,3,8);
+        formLayout.add(netTotal,0,9);
+        formLayout.add(txtNetTotal,1,9);
+        formLayout.add(paymentMode, 0, 10);
+        formLayout.add(payment, 1, 10);
+        formLayout.add(status, 0, 11);
+        formLayout.add(statusLayout, 1, 11);
 
         formLayout.setPrefSize(300, 400);
 
@@ -383,6 +405,7 @@ public class ExportController {
                 srno++;
                 AlertUtils.showMsg("Product added successfully!");
                 calculateSubTotal();
+                calculateNetTotal();
                 txtProductName.clear();
                 txtProductId.clear();
                 txtQuantity.clear();
@@ -438,7 +461,7 @@ public class ExportController {
 
     private boolean insertExport(String customerName, String customerId, String address, String city, String state,
                                  String phone, String email, String invoiceNumber, String orderDate, String invoiceDate,
-                                 double subTotal, String paymentMode, String paymentStatus) {
+                                 double subTotal, String paymentMode, String paymentStatus, int gstVal, double netTotalVal) {
         try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_EXPORTS_QUERY)) {
             preparedStatement.setString(1, customerName);
             preparedStatement.setString(2, customerId);
@@ -453,6 +476,8 @@ public class ExportController {
             preparedStatement.setDouble(11, subTotal);
             preparedStatement.setString(12, paymentMode);
             preparedStatement.setString(13, paymentStatus);
+            preparedStatement.setInt(14, gstVal);
+            preparedStatement.setDouble(15, netTotalVal);
 
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -566,6 +591,7 @@ public class ExportController {
                     tblProducts.getItems().set(selectedIndex, updatedProduct);
                     AlertUtils.showMsg("Product updated successfully!");
                     calculateSubTotal();
+                    calculateNetTotal();
                     popupStage.close();
                 } else {
                     conn.rollback();
@@ -635,6 +661,8 @@ public class ExportController {
                 String subTotal = rs.getString("sub_total");
                 String paymentMode = rs.getString("payment_mode");
                 String status = rs.getString("payment_status");
+                int gstVal = rs.getInt("gst");
+                String netTotalVal = rs.getString("net_total");
 
                 // fetch product data .........
                 ArrayList<Product> productList = new ArrayList<>();
@@ -656,7 +684,7 @@ public class ExportController {
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Failed to load products");
                 }
                 // Pre-fill the form and allow updates
-                updateEntryForm(customerId, customerName, address, city, state, phone, email, orderDate, invoiceDate, subTotal, paymentMode, status, productList, invoiceNumber, scrollPane);
+                updateEntryForm(customerId, customerName, address, city, state, phone, email, orderDate, invoiceDate, subTotal, paymentMode, status, productList, invoiceNumber, gstVal, netTotalVal, scrollPane);
 
             } else {
                 AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Not Found", "The selected invoice does not exist in the database.");
@@ -669,8 +697,11 @@ public class ExportController {
     }
 
     @SuppressWarnings("unchecked")
-    private void updateEntryForm(String selectedCustomerId, String selectCustomerName, String selectedAddress, String selectedCity, String selectedState, String selectedPhone, String selectedEmail,
-                                 String selectedOrderDate, String selectedInvoiceDate, String selectedSubTotal, String selectedPaymentMode, String selectedStatus, ArrayList<Product> selectedProductList, String selectedInvoiceNumber, ScrollPane scrollPane) {
+    private void updateEntryForm(String selectedCustomerId, String selectCustomerName, String selectedAddress, String selectedCity,
+                                 String selectedState, String selectedPhone, String selectedEmail, String selectedOrderDate,
+                                 String selectedInvoiceDate, String selectedSubTotal, String selectedPaymentMode, String selectedStatus,
+                                 ArrayList<Product> selectedProductList, String selectedInvoiceNumber, int selectedGstVal, String selectedNetTotalVal,
+                                 ScrollPane scrollPane) {
 
         Stage popupStage = new Stage();
         popupStage.setTitle("Update Entry");
@@ -757,6 +788,20 @@ public class ExportController {
         Label subTotal = new Label("Sub Total:");
         txtSubTotal = new Label(selectedSubTotal);
 
+        Label gst = new Label("GST (%):");
+        gstComboBox = new ComboBox<>();
+        gstComboBox.getItems().addAll(0,5,12,18,28);
+        gstComboBox.setValue(selectedGstVal);
+        gstComboBox.setMaxWidth(80);
+        gstComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            calculateNetTotal();
+        });
+
+        Label netTotal = new Label("Net Total:");
+        netTotal.setStyle("-fx-font-weight:bold;");
+        txtNetTotal = new Label(selectedNetTotalVal);
+        txtNetTotal.setStyle("-fx-font-weight:bold;");
+
         Label paymentMode = new Label("Payment Mode:");
         ComboBox<String> payment = new ComboBox<>();
         payment.getItems().addAll("Cash", "Cheque", "Net-Banking", "Credit Card");
@@ -793,11 +838,11 @@ public class ExportController {
 
             try {
                 conn.setAutoCommit(false);
-
+                int gstVal = gstComboBox.getValue();
                 boolean updatedExport = updateExportsEntry(txtCustomerId.getText(),txtCustomerName.getText(),txtAddress.getText(),
                         txtCity.getText(), txtState.getText(), txtPhone.getText(), txtEmail.getText(), dpOrderDate.getValue().toString(),
                         dpInvoiceDate.getValue().toString(), txtSubTotal.getText(), payment.getValue(), paid.isSelected() ? "Paid" : "Pending",
-                        txtInvoiceNumber.getText(), selectedInvoiceNumber);
+                        txtInvoiceNumber.getText(), gstVal, Double.parseDouble(txtNetTotal.getText()), selectedInvoiceNumber);
 
                 // Create a nested table for the products column
                 if (updatedExport) {
@@ -817,8 +862,7 @@ public class ExportController {
                     AlertUtils.showMsg("Failed to update entry");
                 }
             } catch (Exception ex) {
-//                ex.printStackTrace();
-                System.out.println(ex.getCause());
+                ex.printStackTrace();
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Update Failed", "Error updating record: " + ex.getMessage());
                 try {
                     conn.rollback();
@@ -867,10 +911,14 @@ public class ExportController {
         formLayout.add(paymentDetails, 0, 7);
         formLayout.add(subTotal, 0, 8);
         formLayout.add(txtSubTotal, 1, 8);
-        formLayout.add(paymentMode, 0, 9);
-        formLayout.add(payment, 1, 9);
-        formLayout.add(status, 0, 10);
-        formLayout.add(statusLayout, 1, 10);
+        formLayout.add(gst,2,8);
+        formLayout.add(gstComboBox,3,8);
+        formLayout.add(netTotal,0,9);
+        formLayout.add(txtNetTotal,1,9);
+        formLayout.add(paymentMode, 0, 10);
+        formLayout.add(payment, 1, 10);
+        formLayout.add(status, 0, 11);
+        formLayout.add(statusLayout, 1, 11);
 
         formLayout.setPrefSize(300, 400);
 
@@ -899,8 +947,8 @@ public class ExportController {
     private boolean updateExportsEntry(String customerId, String customerName, String address, String city,
                                        String state, String phone, String email, String orderDate, String invoiceDate,
                                        String subtotal, String paymentMode, String paymentStatus, String invoiceNumber,
-                                       String selectedInvoiceNumber) throws SQLException{
-        System.out.println(customerId+customerName+invoiceDate+orderDate);
+                                       int gstVal, double netTotalVal, String selectedInvoiceNumber) throws SQLException{
+//        System.out.println(customerId+customerName+invoiceDate+orderDate);
         try(PreparedStatement updateStmt = conn.prepareStatement(UPDATE_EXPORTS_QUERY)){
             updateStmt.setString(1, (customerId!=null) ? customerId : "");
             updateStmt.setString(2, (customerName!=null) ? customerName : "");
@@ -915,7 +963,9 @@ public class ExportController {
             updateStmt.setString(11, (paymentMode!=null) ? paymentMode : "");
             updateStmt.setString(12, (paymentStatus!=null) ? paymentStatus : "");
             updateStmt.setString(13, (invoiceNumber!=null) ? invoiceNumber : "");
-            updateStmt.setString(14, (selectedInvoiceNumber!=null) ? selectedInvoiceNumber : "");
+            updateStmt.setInt(14, gstVal);
+            updateStmt.setDouble(15, netTotalVal);
+            updateStmt.setString(16, selectedInvoiceNumber);
             return updateStmt.executeUpdate() > 0;
         }
     }
@@ -975,12 +1025,20 @@ public class ExportController {
     //---------------------------------------------------------------------------------------------
 
     //HELPER FUNCTIONS--------------------------------------------------------------------------------------
-    public void calculateSubTotal() {
+    private void calculateSubTotal() {
         double subTotal = 0.0;
         for (Product product : tblProducts.getItems()) {
             subTotal += product.getPrice() * product.getQuantity();
         }
         txtSubTotal.setText(String.format("%.2f", subTotal));
+    }
+
+    private void calculateNetTotal(){
+        double netTotal = 0.0;
+        double subTotal = Double.parseDouble(txtSubTotal.getText());
+        int gst = gstComboBox.getValue();
+        netTotal = subTotal + (subTotal*((double) gst /100));
+        txtNetTotal.setText(String.format("%.2f",netTotal));
     }
 
     public void deleteProductFromEntry() {
@@ -1071,7 +1129,7 @@ public class ExportController {
         ArrayList<ExportBillTableEntry> entries = new ArrayList<>();
         ExportBillTableEntry entry;
         for(Product pr : tblProducts.getItems()){
-            entry = new ExportBillTableEntry(invoiceDate,pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity());
+            entry = new ExportBillTableEntry(processDateString(invoiceDate),pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity());
             entries.add(entry);
         }
         return entries;

@@ -46,9 +46,9 @@ public class StatementController {
     private Connection conn;
     private String fromDateStr = "", toDateStr = "", sectionName;
     private Stage refStage;
-    private static final String FETCH_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, sub_total, payment_status, invoice_date FROM IMPORTS "
+    private static final String FETCH_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, net_total, payment_status, invoice_date FROM IMPORTS "
             + "UNION ALL "
-            + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, sub_total, payment_status, invoice_date FROM EXPORTS "
+            + "SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, net_total, payment_status, invoice_date FROM EXPORTS "
             + "ORDER BY invoice_date";
     private static final String FETCH_TOP_SUPPLIER = "SELECT * FROM ( " +
             "SELECT i.supplier_id, i.supplier_name, SUM(ip.quantity) as total_import_qty FROM imports i " +
@@ -64,12 +64,12 @@ public class StatementController {
             "ORDER BY total_purchase DESC " +
             ") " +
             "WHERE ROWNUM = 1";
-    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(sub_total),0) FROM exports) - (SELECT NVL(SUM(sub_total),0) FROM imports) AS net_profit FROM dual";
+    private static final String FETCH_NET_PROFIT = "SELECT (SELECT NVL(SUM(net_total),0) FROM exports) - (SELECT NVL(SUM(net_total),0) FROM imports) AS net_profit FROM dual";
     private static final String FETCH_PENDING_PAYMENTS = "SELECT * FROM (" +
-            "SELECT SUM(sub_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending'), " +
-            "(SELECT SUM(sub_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending')";
-    private static final String FETCH_HIGHEST_IMPORT = "SELECT MAX(sub_total) AS highest_import FROM imports";
-    private static final String FETCH_HIGHEST_EXPORT = "SELECT MAX(sub_total) AS highest_export FROM exports";
+            "SELECT SUM(net_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending'), " +
+            "(SELECT SUM(net_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending')";
+    private static final String FETCH_HIGHEST_IMPORT = "SELECT MAX(net_total) AS highest_import FROM imports";
+    private static final String FETCH_HIGHEST_EXPORT = "SELECT MAX(net_total) AS highest_export FROM exports";
 
     public VBox initializeStatementSection(Connection connection, String sectionName, Stage refStage) {
         conn = connection;
@@ -133,7 +133,7 @@ public class StatementController {
         TableColumn<StatementEntity, String> colInvoiceNo = new TableColumn<>("Invoice No");
         TableColumn<StatementEntity, String> colSCName = new TableColumn<>("Supplier/Customer Name");
         TableColumn<StatementEntity, String> colSCId = new TableColumn<>("Supplier/Customer Id");
-        TableColumn<StatementEntity, String> colSubTotal = new TableColumn<>("Subtotal");
+        TableColumn<StatementEntity, String> colNetTotal = new TableColumn<>("Net Total");
         colPaymentStatus = new TableColumn<>("Payment Status");
         TableColumn<StatementEntity, String> colInvoiceDate = new TableColumn<>("Invoice Date");
 
@@ -145,15 +145,15 @@ public class StatementController {
         colInvoiceDate.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getInvoiceDate()));
 
         df = new DecimalFormat("##,##,###");
-        colSubTotal.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. " + df.format(cellData.getValue().getSubTotal())));
+        colNetTotal.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty("Rs. " + df.format(cellData.getValue().getNetTotal())));
         colPaymentStatus.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPaymentStatus()));
         colSrno.setPrefWidth(20);
         colType.setPrefWidth(70);
         colInvoiceNo.setPrefWidth(70);
-        colSubTotal.setPrefWidth(50);
+        colNetTotal.setPrefWidth(50);
         setColumnDataColors();
 
-        stmtTable.getColumns().addAll(colSrno, colType, colInvoiceNo, colSCName, colSCId, colSubTotal, colPaymentStatus, colInvoiceDate);
+        stmtTable.getColumns().addAll(colSrno, colType, colInvoiceNo, colSCName, colSCId, colNetTotal, colPaymentStatus, colInvoiceDate);
         loadStatementsData(FETCH_DATA_QUERY);
     }
 
@@ -227,9 +227,6 @@ public class StatementController {
 
     private void loadStatementsData(String query) {
         stmtTable.getItems().clear();
-//        double totalImportsAmount = 0;
-//        double totalExportsAmount = 0;
-
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -237,14 +234,9 @@ public class StatementController {
             while (rs.next()) {
                 StatementEntity stmtEntity = new StatementEntity(srno, rs.getString("type"),
                         rs.getString("invoice_number"), rs.getString("party_name"),
-                        rs.getString("party_id"), rs.getDouble("sub_total"),
+                        rs.getString("party_id"), rs.getDouble("net_total"),
                         rs.getString("payment_status"), processDateString(rs.getString("invoice_date")));
                 stmtTable.getItems().add(stmtEntity);
-//                if (rs.getString("type").equalsIgnoreCase("exports")) {
-//                    totalExportsAmount += rs.getDouble("sub_total");
-//                } else {
-//                    totalImportsAmount += rs.getDouble("sub_total");
-//                }
                 srno += 1;
             }
             Platform.runLater(() -> {
@@ -314,11 +306,11 @@ public class StatementController {
             toDateStr = toDate.getValue().toString();
             System.out.println(fromDateStr + " " + toDateStr);
             String rangeBasedDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
-                    "sub_total, payment_status, invoice_date FROM imports " +
+                    "net_total, payment_status, invoice_date FROM imports " +
                     "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
                     "UNION ALL " +
                     "SELECT 'Exports' AS type, invoice_number, customer_name AS party_name, customer_id AS party_id, " +
-                    "sub_total, payment_status, invoice_date FROM exports " +
+                    "net_total, payment_status, invoice_date FROM exports " +
                     "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
                     "ORDER BY invoice_date";
             loadStatementsData(rangeBasedDataQuery);
@@ -339,14 +331,14 @@ public class StatementController {
                     ") " +
                     "WHERE ROWNUM = 1";
             String rangeBasedNetProfitQuery = "SELECT " +
-                    "(SELECT NVL(SUM(sub_total),0) FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) -" +
-                    "(SELECT NVL(SUM(sub_total),0) FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) " +
+                    "(SELECT NVL(SUM(net_total),0) FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) -" +
+                    "(SELECT NVL(SUM(net_total),0) FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) " +
                     "AS net_profit FROM dual";
             String rangeBasedPendingPaymentsQuery = "SELECT * FROM" +
-                    "(SELECT SUM(sub_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')), " +
-                    "(SELECT SUM(sub_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))";
-            String rangeBasedHighestImportQuery = "SELECT MAX(sub_total) AS highest_import FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
-            String rangeBasedHighestExportQuery = "SELECT MAX(sub_total) AS highest_export FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
+                    "(SELECT SUM(net_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')), " +
+                    "(SELECT SUM(net_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))";
+            String rangeBasedHighestImportQuery = "SELECT MAX(net_total) AS highest_import FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
+            String rangeBasedHighestExportQuery = "SELECT MAX(net_total) AS highest_export FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
             setupSummarySection(rangeBasedNetProfitQuery,rangeBasedTopSuppQuery,rangeBasedTopCustQuery,rangeBasedPendingPaymentsQuery,rangeBasedHighestImportQuery,rangeBasedHighestExportQuery);
             addStyles();
             setPrintStmtBtnAction();
@@ -496,7 +488,7 @@ public class StatementController {
         StatementBillTableEntry entry;
         for(StatementEntity stmtEnt : stmtTable.getItems()){
             entry = new StatementBillTableEntry(stmtEnt.getInvoiceDate(),stmtEnt.getType(),stmtEnt.getInvoiceNo(),
-                    stmtEnt.getSubTotal());
+                    stmtEnt.getNetTotal());
             entries.add(entry);
         }
         return entries;

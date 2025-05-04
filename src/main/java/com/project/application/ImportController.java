@@ -27,15 +27,16 @@ public class ImportController {
     private TableView<Product> tblProducts;
     private static Connection conn;
     private int srno = 1;
-    private Label txtSubTotal;
+    private Label txtSubTotal, txtNetTotal;
+    private ComboBox<Integer> gstComboBox;
     private static final DecimalFormat CURRENCY_FORMAT = new DecimalFormat("##,##,###");
     private static final String FETCH_IMPORTS_QUERY = "SELECT * FROM IMPORTS";
     private static final String FETCH_IMPORT_PRODUCTS_QUERY = "SELECT * FROM IMPORT_PRODUCTS WHERE invoice_number = ?";
     private static final String INSERT_IMPORTS_QUERY = "INSERT INTO IMPORTS (" +
-            "supplier_name, supplier_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
-            ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
+            "supplier_name, supplier_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status, gst, net_total" +
+            ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?, ?, ?)";
     private static final String INSERT_IMPORT_PRODUCTS_QUERY = "INSERT INTO IMPORT_PRODUCTS (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
-    private static final String UPDATE_IMPORTS_QUERY = "UPDATE IMPORTS SET supplier_id = ?, supplier_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?,'YYYY-MM-DD'), invoice_date = TO_DATE(?,'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
+    private static final String UPDATE_IMPORTS_QUERY = "UPDATE IMPORTS SET supplier_id = ?, supplier_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?,'YYYY-MM-DD'), invoice_date = TO_DATE(?,'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ?, gst = ?, net_total = ? WHERE invoice_number = ?";
     private static final String UPDATE_IMPORT_PRODUCTS_QUERY = "UPDATE IMPORT_PRODUCTS SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ? AND product_id = ?";
     private static final String DELETE_IMPORT_QUERY = "DELETE FROM IMPORTS WHERE invoice_number = ?";
 
@@ -55,14 +56,14 @@ public class ImportController {
     }
 
     private void initializeImportsTableColumns(){
-        TableColumn<Imports, String> colSrNo, colInvoiceNo, colSupplierName, colProducts, colAmount, colPaymentStatus, colInvoiceDate;
+        TableColumn<Imports, String> colSrNo, colInvoiceNo, colSupplierName, colProducts, colNetTotal, colPaymentStatus, colInvoiceDate;
         TableColumn<Imports, Integer> colTotalQty;
         colSrNo = new TableColumn<>("SrNo.");
         colInvoiceNo = new TableColumn<>("Invoice No.");
         colSupplierName = new TableColumn<>("Supplier Name");
         colProducts = new TableColumn<>("Products");
         colTotalQty = new TableColumn<>("Total Qty");
-        colAmount = new TableColumn<>("Amount");
+        colNetTotal = new TableColumn<>("Net Total");
         colPaymentStatus = new TableColumn<>("Payment Status");
         colInvoiceDate = new TableColumn<>("Invoice Date");
         colSrNo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSrNo()));
@@ -70,10 +71,10 @@ public class ImportController {
         colSupplierName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSupplierName()));
         colProducts.setCellValueFactory(cellData -> new SimpleStringProperty(String.join(", ", cellData.getValue().getProducts())));
         colTotalQty.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getTotalQuantity()).asObject());
-        colAmount.setCellValueFactory(cellData -> new SimpleStringProperty("Rs. " + CURRENCY_FORMAT.format(cellData.getValue().getSubTotal())));
+        colNetTotal.setCellValueFactory(cellData -> new SimpleStringProperty("Rs. " + CURRENCY_FORMAT.format(cellData.getValue().getNetTotal())));
         colPaymentStatus.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPaymentStatus()));
         colInvoiceDate.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getInvoiceDate()));
-        importsTable.getColumns().addAll(colSrNo, colInvoiceNo, colSupplierName, colProducts, colTotalQty, colAmount, colPaymentStatus, colInvoiceDate);
+        importsTable.getColumns().addAll(colSrNo, colInvoiceNo, colSupplierName, colProducts, colTotalQty, colNetTotal, colPaymentStatus, colInvoiceDate);
     }
 
     //-------------------------------------------------------------------------------
@@ -95,7 +96,7 @@ public class ImportController {
                 String invoiceNo = rs.getString("invoice_number");
                 String orderDate = processDateString(rs.getString("order_date"));
                 String invoiceDate = processDateString(rs.getString("invoice_date"));
-                double subTotal = rs.getDouble("sub_total");
+                double netTotal = rs.getDouble("net_total");
                 String paymentMode = rs.getString("payment_mode");
                 String paymentStatus = rs.getString("payment_status");
 
@@ -112,7 +113,7 @@ public class ImportController {
                 }
                 Imports importItem = new Imports(
                         srNo++, invoiceNo, supplierId, supplierName, productList, totalQty,
-                        subTotal, address, city, state, phno, email, orderDate, invoiceDate,
+                        netTotal, address, city, state, phno, email, orderDate, invoiceDate,
                         paymentMode, paymentStatus
                 );
                 importsTable.getItems().add(importItem);
@@ -186,6 +187,20 @@ public class ImportController {
         Label subTotal = new Label("Sub Total:");
         txtSubTotal = new Label("0.00");
 
+        Label gst = new Label("GST (%):");
+        gstComboBox = new ComboBox<>();
+        gstComboBox.getItems().addAll(0,5,12,18,28);
+        gstComboBox.setValue(18);
+        gstComboBox.setMaxWidth(80);
+        gstComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            calculateNetTotal();
+        });
+
+        Label netTotal = new Label("Net Total:");
+        netTotal.setStyle("-fx-font-weight:bold;");
+        txtNetTotal = new Label("0.00");
+        txtNetTotal.setStyle("-fx-font-weight:bold;");
+
         Label paymentMode = new Label("Payment Mode:");
         ComboBox<String> payment = new ComboBox<>();
         payment.getItems().addAll("Cash", "Cheque", "Net-Banking", "Credit Card");
@@ -197,6 +212,7 @@ public class ImportController {
         ToggleGroup group = new ToggleGroup();
         paid.setToggleGroup(group);
         pending.setToggleGroup(group);
+        pending.setSelected(true);
         HBox statusLayout = new HBox(5);
         statusLayout.getChildren().addAll(paid, pending);
 
@@ -218,6 +234,8 @@ public class ImportController {
                 String invoiceNumberEntered = txtInvoiceNumber.getText();
                 String orderDateEntered = dpOrderDate.getValue().toString();
                 String invoiceDateEntered = dpInvoiceDate.getValue().toString();
+                int gstVal = gstComboBox.getValue();
+                double netTotalVal = Double.parseDouble(txtNetTotal.getText());
 
                 conn.setAutoCommit(false);
                 if(!FormValidator.validatePhoneNumber(phoneEntered)){
@@ -235,7 +253,7 @@ public class ImportController {
                 if (!insertImport(supplierNameEntered, supplierIdEntered, addressEntered, cityEntered,
                         stateEntered, phoneEntered, emailEntered, invoiceNumberEntered,
                         orderDateEntered, invoiceDateEntered, subTotalEntered, paymentModeEntered,
-                        paymentStatusEntered)) {
+                        paymentStatusEntered, gstVal, netTotalVal)) {
                     conn.rollback();
                     return;
                 }
@@ -301,10 +319,14 @@ public class ImportController {
         formLayout.add(paymentDetails, 0, 7);
         formLayout.add(subTotal, 0, 8);
         formLayout.add(txtSubTotal, 1, 8);
-        formLayout.add(paymentMode, 0, 9);
-        formLayout.add(payment, 1, 9);
-        formLayout.add(status, 0, 10);
-        formLayout.add(statusLayout, 1, 10);
+        formLayout.add(gst,2,8);
+        formLayout.add(gstComboBox,3,8);
+        formLayout.add(netTotal,0,9);
+        formLayout.add(txtNetTotal,1,9);
+        formLayout.add(paymentMode, 0, 10);
+        formLayout.add(payment, 1, 10);
+        formLayout.add(status, 0, 11);
+        formLayout.add(statusLayout, 1, 11);
 
         formLayout.setPrefSize(300, 400);
 
@@ -370,6 +392,7 @@ public class ImportController {
                 srno++;
                 AlertUtils.showMsg("Product added successfully!");
                 calculateSubTotal();
+                calculateNetTotal();
                 txtProductName.clear();
                 txtProductId.clear();
                 txtQuantity.clear();
@@ -425,7 +448,7 @@ public class ImportController {
 
     private boolean insertImport(String supplierName, String supplierId, String address, String city, String state,
                                  String phone, String email, String invoiceNumber, String orderDate, String invoiceDate,
-                                 double subTotal, String paymentMode, String paymentStatus) {
+                                 double subTotal, String paymentMode, String paymentStatus, int gstVal, double netTotalVal) {
         try (PreparedStatement preparedStatement = conn.prepareStatement(INSERT_IMPORTS_QUERY)) {
             preparedStatement.setString(1, supplierName);
             preparedStatement.setString(2, supplierId);
@@ -440,6 +463,8 @@ public class ImportController {
             preparedStatement.setDouble(11, subTotal);
             preparedStatement.setString(12, paymentMode);
             preparedStatement.setString(13, paymentStatus);
+            preparedStatement.setInt(14, gstVal);
+            preparedStatement.setDouble(15, netTotalVal);
 
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -555,6 +580,7 @@ public class ImportController {
                     tblProducts.getItems().set(selectedIndex, updatedProduct);
                     AlertUtils.showMsg("Product updated successfully!");
                     calculateSubTotal();
+                    calculateNetTotal();
                     popupStage.close();
                 } else {
                     conn.rollback();
@@ -624,6 +650,8 @@ public class ImportController {
                 String subTotal = rs.getString("sub_total");
                 String paymentMode = rs.getString("payment_mode");
                 String status = rs.getString("payment_status");
+                int gstVal = rs.getInt("gst");
+                String netTotalVal = rs.getString("net_total");
 
                 // fetch product data .........
                 ArrayList<Product> productList = new ArrayList<>();
@@ -645,7 +673,7 @@ public class ImportController {
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong","Failed to load products");
                 }
                 // Pre-fill the form and allow updates
-                updateEntryForm(supplierId, supplierName, address, city, state, phone, email, orderDate, invoiceDate, subTotal, paymentMode, status, productList, invoiceNumber, scrollPane);
+                updateEntryForm(supplierId, supplierName, address, city, state, phone, email, orderDate, invoiceDate, subTotal, paymentMode, status, productList, invoiceNumber, gstVal, netTotalVal, scrollPane);
 
             } else {
                 AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Not Found", "The selected invoice does not exist in the database.");
@@ -657,8 +685,11 @@ public class ImportController {
         }
     }
 
-    private void updateEntryForm(String selectedSupplierId, String selectedSupplierName, String selectedAddress, String selectedCity, String selectedState, String selectedPhone, String selectedEmail,
-                                 String selectedOrderDate, String selectedInvoiceDate, String selectedSubTotal, String selectedPaymentMode, String selectedStatus, ArrayList<Product> selectedProductList, String selectedInvoiceNumber, ScrollPane scrollPane) {
+    private void updateEntryForm(String selectedSupplierId, String selectedSupplierName, String selectedAddress, String selectedCity,
+                                 String selectedState, String selectedPhone, String selectedEmail,String selectedOrderDate,
+                                 String selectedInvoiceDate, String selectedSubTotal, String selectedPaymentMode, String selectedStatus,
+                                 ArrayList<Product> selectedProductList, String selectedInvoiceNumber, int selectedGstVal, String selectedNetTotalVal,
+                                 ScrollPane scrollPane) {
 
         Stage popupStage = new Stage();
         popupStage.setTitle("Update Entry");
@@ -745,6 +776,20 @@ public class ImportController {
         Label subTotal = new Label("Sub Total:");
         txtSubTotal = new Label(selectedSubTotal);
 
+        Label gst = new Label("GST (%):");
+        gstComboBox = new ComboBox<>();
+        gstComboBox.getItems().addAll(0,5,12,18,28);
+        gstComboBox.setValue(selectedGstVal);
+        gstComboBox.setMaxWidth(80);
+        gstComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            calculateNetTotal();
+        });
+
+        Label netTotal = new Label("Net Total:");
+        netTotal.setStyle("-fx-font-weight:bold;");
+        txtNetTotal = new Label(selectedNetTotalVal);
+        txtNetTotal.setStyle("-fx-font-weight:bold;");
+
         Label paymentMode = new Label("Payment Mode:");
         ComboBox<String> payment = new ComboBox<>();
         payment.getItems().addAll("Cash", "Cheque", "Net-Banking", "Credit Card");
@@ -781,11 +826,11 @@ public class ImportController {
 
             try {
                 conn.setAutoCommit(false);
-
+                int gstVal = gstComboBox.getValue();
                 boolean updatedImport = updateImportsEntry(txtSupplierId.getText(),txtSupplierName.getText(),txtAddress.getText(),
                         txtCity.getText(), txtState.getText(), txtPhone.getText(), txtEmail.getText(), dpOrderDate.getValue().toString(),
                         dpInvoiceDate.getValue().toString(), txtSubTotal.getText(), payment.getValue(), paid.isSelected() ? "Paid" : "Pending",
-                        txtInvoiceNumber.getText(), selectedInvoiceNumber);
+                        txtInvoiceNumber.getText(), gstVal, Double.parseDouble(txtNetTotal.getText()), selectedInvoiceNumber);
                 // Create a nested table for the products column
                 if (updatedImport) {
                     boolean invoiceUpdated = updateInvoiceProductsEntry(txtInvoiceNumber.getText(),selectedInvoiceNumber);
@@ -804,6 +849,7 @@ public class ImportController {
                     AlertUtils.showMsg("Failed to update entry!");
                 }
             } catch (Exception ex) {
+                ex.printStackTrace();
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Update Failed", "Error updating record: " + ex.getMessage());
                 try{
                     conn.rollback();
@@ -852,10 +898,14 @@ public class ImportController {
         formLayout.add(paymentDetails, 0, 7);
         formLayout.add(subTotal, 0, 8);
         formLayout.add(txtSubTotal, 1, 8);
-        formLayout.add(paymentMode, 0, 9);
-        formLayout.add(payment, 1, 9);
-        formLayout.add(status, 0, 10);
-        formLayout.add(statusLayout, 1, 10);
+        formLayout.add(gst,2,8);
+        formLayout.add(gstComboBox,3,8);
+        formLayout.add(netTotal,0,9);
+        formLayout.add(txtNetTotal,1,9);
+        formLayout.add(paymentMode, 0, 10);
+        formLayout.add(payment, 1, 10);
+        formLayout.add(status, 0, 11);
+        formLayout.add(statusLayout, 1, 11);
 
         formLayout.setPrefSize(300, 400);
 
@@ -875,7 +925,7 @@ public class ImportController {
     private boolean updateImportsEntry(String supplierId, String supplierName, String address, String city,
                                        String state, String phone, String email, String orderDate, String invoiceDate,
                                        String subtotal, String paymentMode, String paymentStatus, String invoiceNumber,
-                                       String selectedInvoiceNumber) throws SQLException{
+                                       int gstVal, double netTotalVal, String selectedInvoiceNumber) throws SQLException{
         try(PreparedStatement updateStmt = conn.prepareStatement(UPDATE_IMPORTS_QUERY)){
             updateStmt.setString(1, supplierId);
             updateStmt.setString(2, supplierName);
@@ -890,7 +940,9 @@ public class ImportController {
             updateStmt.setString(11, paymentMode);
             updateStmt.setString(12, paymentStatus);
             updateStmt.setString(13, invoiceNumber);
-            updateStmt.setString(14, selectedInvoiceNumber);
+            updateStmt.setInt(14, gstVal);
+            updateStmt.setDouble(15, netTotalVal);
+            updateStmt.setString(16, selectedInvoiceNumber);
             return updateStmt.executeUpdate() > 0;
         }
     }
@@ -964,12 +1016,20 @@ public class ImportController {
     //---------------------------------------------------------------------------------------------
 
     //HELPER FUNCTIONS--------------------------------------------------------------------------------------
-    public void calculateSubTotal() {
+    private void calculateSubTotal() {
         double subTotal = 0.0;
         for (Product product : tblProducts.getItems()) {
             subTotal += product.getPrice() * product.getQuantity();
         }
         txtSubTotal.setText(String.format("%.2f", subTotal));
+    }
+
+    private void calculateNetTotal(){
+        double netTotal = 0.0;
+        double subTotal = Double.parseDouble(txtSubTotal.getText());
+        int gst = gstComboBox.getValue();
+        netTotal = subTotal + (subTotal*((double) gst /100));
+        txtNetTotal.setText(String.format("%.2f",netTotal));
     }
 
     public void deleteProductFromEntry() {
