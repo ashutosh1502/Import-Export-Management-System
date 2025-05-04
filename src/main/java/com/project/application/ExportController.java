@@ -42,7 +42,7 @@ public class ExportController {
             "customer_name, customer_id, address, city, state, phone_number, email, invoice_number, order_date, invoice_date, sub_total, payment_mode, payment_status" +
             ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
     private static final String INSERT_EXPORT_PRODUCTS_QUERY = "INSERT INTO EXPORT_PRODUCTS (invoice_number,product_name,product_id,quantity,price) VALUES (?,?,?,?,?)";
-    private static final String UPDATE_EXPORTS_QUERY = "UPDATE EXPORTS SET customer_id = ?, customer_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = ?, invoice_date = ?, sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
+    private static final String UPDATE_EXPORTS_QUERY = "UPDATE EXPORTS SET customer_id = ?, customer_name = ?, address = ?, city = ?, state = ?, phone_number = ?, email = ?, order_date = TO_DATE(?, 'YYYY-MM-DD'), invoice_date = TO_DATE(?, 'YYYY-MM-DD'), sub_total = ?, payment_mode = ?, payment_status = ?, invoice_number = ? WHERE invoice_number = ?";
     private static final String UPDATE_EXPORT_PRODUCTS_QUERY = "UPDATE EXPORT_PRODUCTS SET product_name = ?, product_id = ?, quantity = ?, price = ? WHERE invoice_number = ? AND product_id =?";
     private static final String DELETE_EXPORT_QUERY = "DELETE FROM EXPORTS WHERE invoice_number = ?";
 
@@ -99,9 +99,9 @@ public class ExportController {
                 String state = rs.getString("state");
                 String phno = rs.getString("phone_number");
                 String email = rs.getString("email");
-                String invoiceNo = processDateString(rs.getString("invoice_number"));
+                String invoiceNo = rs.getString("invoice_number");
                 String orderDate = processDateString(rs.getString("order_date"));
-                String invoiceDate = rs.getString("invoice_date");
+                String invoiceDate = processDateString(rs.getString("invoice_date"));
                 double subTotal = rs.getDouble("sub_total");
                 String paymentMode = rs.getString("payment_mode");
                 String paymentStatus = rs.getString("payment_status");
@@ -817,6 +817,8 @@ public class ExportController {
                     AlertUtils.showMsg("Failed to update entry");
                 }
             } catch (Exception ex) {
+//                ex.printStackTrace();
+                System.out.println(ex.getCause());
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Update Failed", "Error updating record: " + ex.getMessage());
                 try {
                     conn.rollback();
@@ -898,21 +900,22 @@ public class ExportController {
                                        String state, String phone, String email, String orderDate, String invoiceDate,
                                        String subtotal, String paymentMode, String paymentStatus, String invoiceNumber,
                                        String selectedInvoiceNumber) throws SQLException{
+        System.out.println(customerId+customerName+invoiceDate+orderDate);
         try(PreparedStatement updateStmt = conn.prepareStatement(UPDATE_EXPORTS_QUERY)){
-            updateStmt.setString(1, customerId);
-            updateStmt.setString(2, customerName);
-            updateStmt.setString(3, address);
-            updateStmt.setString(4, city);
-            updateStmt.setString(5, state);
-            updateStmt.setString(6, phone);
-            updateStmt.setString(7, email);
-            updateStmt.setString(8, orderDate);
-            updateStmt.setString(9, invoiceDate);
-            updateStmt.setString(10, subtotal);
-            updateStmt.setString(11, paymentMode);
-            updateStmt.setString(12, paymentStatus);
-            updateStmt.setString(13, invoiceNumber);
-            updateStmt.setString(14, selectedInvoiceNumber);
+            updateStmt.setString(1, (customerId!=null) ? customerId : "");
+            updateStmt.setString(2, (customerName!=null) ? customerName : "");
+            updateStmt.setString(3, (address!=null) ? address : "");
+            updateStmt.setString(4, (city!=null) ? city : "");
+            updateStmt.setString(5, (state!=null) ? state : "");
+            updateStmt.setString(6, (phone!=null) ? phone : "");
+            updateStmt.setString(7, (email!=null) ? email : "");
+            updateStmt.setString(8, (orderDate!=null) ? orderDate : "");
+            updateStmt.setString(9, (invoiceDate!=null) ? invoiceDate : "");
+            updateStmt.setString(10, (subtotal!=null) ? subtotal : "");
+            updateStmt.setString(11, (paymentMode!=null) ? paymentMode : "");
+            updateStmt.setString(12, (paymentStatus!=null) ? paymentStatus : "");
+            updateStmt.setString(13, (invoiceNumber!=null) ? invoiceNumber : "");
+            updateStmt.setString(14, (selectedInvoiceNumber!=null) ? selectedInvoiceNumber : "");
             return updateStmt.executeUpdate() > 0;
         }
     }
