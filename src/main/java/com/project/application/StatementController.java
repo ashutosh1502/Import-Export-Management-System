@@ -476,8 +476,8 @@ public class StatementController {
                 address = "Plot No-08, MIDC Urun Islampur- 415409, Tal-Walwa, Dist-Sangli.";
                 contact = "Contact: +91 8275057797, +91 9960013301.";
 
-                StatementBill stmtBill = new StatementBill(sectionName,address,contact,fromDateStr+" to "+toDateStr, entries);
-                String defaultFilename = (fromDateStr.isEmpty() || toDateStr.isEmpty()) ? "" : fromDateStr+"-"+toDateStr+"-statement";
+                StatementBill stmtBill = new StatementBill(sectionName,address,contact,processDateString(fromDateStr)+" to "+processDateString(toDateStr), entries);
+                String defaultFilename = (fromDateStr.isEmpty() || toDateStr.isEmpty()) ? "" : processDateString(fromDateStr)+"-"+processDateString(toDateStr)+"-statement";
                 String filePath = PDFGenerator.getSaveLocation(refStage,defaultFilename);
                 if (filePath==null){
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
@@ -503,6 +503,7 @@ public class StatementController {
     }
 
     private String processDateString(String date){
+        if(date.isEmpty()) return "";
         String processedDate;
         processedDate = date.substring(date.lastIndexOf('-')+1,date.lastIndexOf('-')+3) + "-" + date.substring(date.indexOf('-')+1,date.indexOf('-')+3) + "-" + "20" + date.substring(2,4);
         return processedDate;

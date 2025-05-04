@@ -150,7 +150,7 @@ public class PDFGenerator {
 
         PdfPTable statementInfoTable = new PdfPTable(5);
         statementInfoTable.setWidthPercentage(100);
-        statementInfoTable.setWidths(new float[]{2, 1, 2, 1, 1});
+        statementInfoTable.setWidths(new float[]{1.5f, 1.5f, 2, 1, 1});
 
         statementInfoTable.addCell(getHeaderCell("Date", headerFont, BaseColor.BLACK));
         statementInfoTable.addCell(getHeaderCell("Tran. Type", headerFont, BaseColor.BLACK));
