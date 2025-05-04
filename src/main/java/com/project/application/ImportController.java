@@ -993,11 +993,13 @@ public class ImportController {
             PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
             for(Product pr:tblProducts.getItems()){
                 selectStmt.setString(1,pr.getProductID());
-                if(selectStmt.execute()){
+                ResultSet rs = selectStmt.executeQuery();
+                if(rs.next() && rs.getInt(1)>0){
                     updateStmt.setInt(1,pr.getQuantity());
                     updateStmt.setString(2,pr.getProductID());
                     if(!(updateStmt.executeUpdate()>0)){
                         AlertUtils.showAlert(Alert.AlertType.ERROR,"Stock Update Failed","Failed to update stock in inventory!");
+                        return;
                     }
                 }else{
                     insertStmt.setString(1,pr.getProductID());
@@ -1009,6 +1011,7 @@ public class ImportController {
                         updateStmt.setString(2,pr.getProductID());
                         if(!(updateStmt.executeUpdate()>0)){
                             AlertUtils.showAlert(Alert.AlertType.ERROR,"Stock Update Failed","Failed to add stock in inventory!");
+                            return;
                         }
                     }
                 }
