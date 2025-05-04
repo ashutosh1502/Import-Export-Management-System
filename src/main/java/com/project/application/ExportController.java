@@ -1129,7 +1129,8 @@ public class ExportController {
         ArrayList<ExportBillTableEntry> entries = new ArrayList<>();
         ExportBillTableEntry entry;
         for(Product pr : tblProducts.getItems()){
-            entry = new ExportBillTableEntry(processDateString(invoiceDate),pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity());
+            int gst = gstComboBox.getValue();
+            entry = new ExportBillTableEntry(processDateString(invoiceDate),pr.getProductName(),pr.getProductID(),pr.getQuantity(),(double) pr.getPrice()*pr.getQuantity(),gst);
             entries.add(entry);
         }
         return entries;

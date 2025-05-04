@@ -2,14 +2,15 @@ package com.project.models;
 
 public class ExportBillTableEntry {
     public String date, productName, productId, paymentStatus;
-    public int quantity;
-    public double totalAmount;
+    public int quantity, gst;
+    public double taxableAmount;
 
-    public ExportBillTableEntry(String date, String productName, String productId, int quantity, double totalAmount){
+    public ExportBillTableEntry(String date, String productName, String productId, int quantity, double taxableAmount, int gst){
         this.date = date;
         this.productName = productName;
         this.productId = productId;
         this.quantity = quantity;
-        this.totalAmount = totalAmount;
+        this.taxableAmount = taxableAmount;
+        this.gst = gst;
     }
 }

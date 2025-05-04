@@ -34,25 +34,25 @@ public class PDFGenerator {
     }
 
     public static void generateExportBillPDF(String filePath, ExportBill bill) throws Exception {
-        Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+        Document document = new Document(PageSize.A4, 36, 36, 36, 36);
         PdfWriter.getInstance(document, new FileOutputStream(filePath));
         document.open();
 
         Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
-        Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
+        Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 9, BaseColor.BLACK);
         Font normalFont = FontFactory.getFont(FontFactory.HELVETICA, 12, BaseColor.BLACK);
-        Font tableDataFont = FontFactory.getFont(FontFactory.HELVETICA, 11, BaseColor.BLACK);
+        Font tableDataFont = FontFactory.getFont(FontFactory.HELVETICA, 9, BaseColor.BLACK);
         Font labelFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
 
-        Paragraph title = new Paragraph(bill.industryName.toUpperCase(), titleFont);
+        Paragraph title = new Paragraph((bill.industryName==null)?"":bill.industryName.toUpperCase(), titleFont);
         title.setAlignment(Element.ALIGN_CENTER);
         document.add(title);
 
-        Paragraph addressLine = new Paragraph(bill.address,normalFont);
+        Paragraph addressLine = new Paragraph((bill.address==null)?"":bill.address,normalFont);
         addressLine.setAlignment(Element.ALIGN_CENTER);
         document.add(addressLine);
 
-        Paragraph phoneNumberLine = new Paragraph(bill.contact,normalFont);
+        Paragraph phoneNumberLine = new Paragraph((bill.contact==null)?"": bill.contact,normalFont);
         phoneNumberLine.setAlignment(Element.ALIGN_CENTER);
         document.add(phoneNumberLine);
         document.add(Chunk.NEWLINE);
@@ -61,34 +61,45 @@ public class PDFGenerator {
         customerInfo.setWidthPercentage(100);
         customerInfo.setWidths(new float[]{2, 2});
 
-        customerInfo.addCell(getLabelCell("Customer Name: "+bill.customerName, labelFont));
-        customerInfo.addCell(getLabelCell("Address: "+bill.customerAddress, labelFont));
-        customerInfo.addCell(getLabelCell("Phone No: "+bill.customerPhoneNumber, labelFont));
+        customerInfo.addCell(getLabelCell("Customer Name: "+((bill.customerName==null)?"Unknown":bill.customerName), labelFont));
+        customerInfo.addCell(getLabelCell("Address: "+((bill.customerAddress==null)?"":bill.customerAddress), labelFont));
+        customerInfo.addCell(getLabelCell("Phone No: "+((bill.customerPhoneNumber==null)?"":bill.customerPhoneNumber), labelFont));
         customerInfo.addCell(getLabelCell("Date: "+ LocalDate.now(), labelFont));
-        customerInfo.addCell(getLabelCell("Invoice No: "+ bill.invoiceNumber, labelFont));
+        customerInfo.addCell(getLabelCell("Invoice No: "+ ((bill.invoiceNumber==null)?"":bill.invoiceNumber), labelFont));
         customerInfo.addCell(getLabelCell("", labelFont));
 
         document.add(customerInfo);
         document.add(Chunk.NEWLINE);
 
-        PdfPTable table = new PdfPTable(5);
+        PdfPTable table = new PdfPTable(9);
         table.setWidthPercentage(100);
-        table.setWidths(new float[]{2, 4, 2, 1, 2});
+        table.setWidths(new float[]{1.4f, 3f, 1.4f, 0.5f, 1.2f,0.5f,1,1,1.5f});
 
-        table.addCell(getHeaderCell("Date", headerFont, BaseColor.BLACK));
-        table.addCell(getHeaderCell("Product Name", headerFont, BaseColor.BLACK));
-        table.addCell(getHeaderCell("Product ID", headerFont, BaseColor.BLACK));
-        table.addCell(getHeaderCell("Qty", headerFont, BaseColor.BLACK));
-        table.addCell(getHeaderCell("Total Amt.", headerFont, BaseColor.BLACK));
+        table.addCell(getHeaderCell("Date", headerFont));
+        table.addCell(getHeaderCell("Product Name", headerFont));
+        table.addCell(getHeaderCell("Product ID", headerFont));
+        table.addCell(getHeaderCell("Qty", headerFont));
+        table.addCell(getHeaderCell("Taxable Amount", headerFont));
+        table.addCell(getHeaderCell("GST %", headerFont));
+        table.addCell(getHeaderCell("CGST", headerFont));
+        table.addCell(getHeaderCell("SGST", headerFont));
+        table.addCell(getHeaderCell("Net Amount", headerFont));
 
-        double grandTotalVal=0.0;
+        double grandTotalVal=0.0, cgst = 0.0, sgst = 0.0, netAmount = 0.0;
         for (ExportBillTableEntry entry: bill.tableEntries) {
-            table.addCell(getValueCell(entry.date, tableDataFont));
-            table.addCell(getValueCell(entry.productName, tableDataFont));
-            table.addCell(getValueCell(entry.productId, tableDataFont));
-            table.addCell(getValueCell(Integer.toString(entry.quantity), tableDataFont));
-            table.addCell(getValueCell(Double.toString(entry.totalAmount), tableDataFont));
-            grandTotalVal += entry.totalAmount;
+            table.addCell(getValueCell(entry.date, tableDataFont, ""));
+            table.addCell(getValueCell(entry.productName, tableDataFont, ""));
+            table.addCell(getValueCell(entry.productId, tableDataFont, ""));
+            table.addCell(getValueCell(Integer.toString(entry.quantity), tableDataFont, "right"));
+            table.addCell(getValueCell(Double.toString(entry.taxableAmount), tableDataFont, "right"));
+            table.addCell(getValueCell(Integer.toString(entry.gst),tableDataFont, "right"));
+            cgst = entry.taxableAmount * ((double)(entry.gst/2)/100);
+            sgst = cgst;
+            netAmount = entry.taxableAmount + cgst + sgst;
+            table.addCell(getValueCell(String.format("%.2f",cgst), tableDataFont, "right"));
+            table.addCell(getValueCell(String.format("%.2f",sgst), tableDataFont, "right"));
+            table.addCell(getValueCell(String.format("%.2f",netAmount), tableDataFont, "right"));
+            grandTotalVal += netAmount;
         }
 
         document.add(table);
@@ -99,7 +110,7 @@ public class PDFGenerator {
                 totalPaidVal = grandTotalVal;
         else
                 totalPendingVal = grandTotalVal;
-        Paragraph grandTotal = new Paragraph("Grand Total: "+grandTotalVal, labelFont);
+        Paragraph grandTotal = new Paragraph("Grand Total: "+String.format("%.2f",grandTotalVal), labelFont);
         grandTotal.setAlignment(Element.ALIGN_RIGHT);
         Paragraph br = new Paragraph("______________________", labelFont);
         br.setAlignment(Element.ALIGN_RIGHT);
@@ -125,9 +136,9 @@ public class PDFGenerator {
         document.open();
 
         Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
-        Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.WHITE);
+        Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10, BaseColor.BLACK);
         Font normalFont = FontFactory.getFont(FontFactory.HELVETICA, 12, BaseColor.BLACK);
-        Font tableDataFont = FontFactory.getFont(FontFactory.HELVETICA, 11, BaseColor.BLACK);
+        Font tableDataFont = FontFactory.getFont(FontFactory.HELVETICA, 9, BaseColor.BLACK);
         Font labelFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
 
         Paragraph title = new Paragraph(bill.industryName.toUpperCase(), titleFont);
@@ -142,7 +153,8 @@ public class PDFGenerator {
         phoneNumberLine.setAlignment(Element.ALIGN_CENTER);
         document.add(phoneNumberLine);
 
-        Paragraph dateRangeLine = new Paragraph((bill.dateRange == null) ? "" : bill.dateRange,normalFont);
+        Paragraph dateRangeLine = new Paragraph((bill.dateRange == null ||
+                bill.dateRange.trim().equalsIgnoreCase("to")) ? "" : bill.dateRange,normalFont);
         dateRangeLine.setAlignment(Element.ALIGN_CENTER);
         document.add(Chunk.NEWLINE);
         document.add(dateRangeLine);
@@ -152,16 +164,16 @@ public class PDFGenerator {
         statementInfoTable.setWidthPercentage(100);
         statementInfoTable.setWidths(new float[]{1.5f, 1.5f, 2, 1, 1});
 
-        statementInfoTable.addCell(getHeaderCell("Date", headerFont, BaseColor.BLACK));
-        statementInfoTable.addCell(getHeaderCell("Tran. Type", headerFont, BaseColor.BLACK));
-        statementInfoTable.addCell(getHeaderCell("Invoice No.", headerFont, BaseColor.BLACK));
-        statementInfoTable.addCell(getHeaderCell("Debit", headerFont, BaseColor.BLACK));
-        statementInfoTable.addCell(getHeaderCell("Credit", headerFont, BaseColor.BLACK));
+        statementInfoTable.addCell(getHeaderCell("Date", headerFont));
+        statementInfoTable.addCell(getHeaderCell("Tran. Type", headerFont));
+        statementInfoTable.addCell(getHeaderCell("Invoice No.", headerFont));
+        statementInfoTable.addCell(getHeaderCell("Debit", headerFont));
+        statementInfoTable.addCell(getHeaderCell("Credit", headerFont));
 
         double debitTotal = 0.0, creditTotal = 0.0;
         for (StatementBillTableEntry entry: bill.tableEntries) {
             statementInfoTable.addCell(getStmtValueCell(entry.date, tableDataFont));
-            statementInfoTable.addCell(getStmtValueCell(entry.transType, labelFont));
+            statementInfoTable.addCell(getStmtValueCell(entry.transType, headerFont));
             statementInfoTable.addCell(getStmtValueCell(entry.invoiceNum, tableDataFont));
             statementInfoTable.addCell(getStmtValueCell(Double.toString(entry.debit), tableDataFont));
             statementInfoTable.addCell(getStmtValueCell(
@@ -178,8 +190,8 @@ public class PDFGenerator {
         statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
         statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
         statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
-        statementInfoTable.addCell(getValueCell(Double.toString(debitTotal),tableDataFont));
-        statementInfoTable.addCell(getValueCell(Double.toString(creditTotal),tableDataFont));
+        statementInfoTable.addCell(getValueCell(Double.toString(debitTotal),tableDataFont, "right"));
+        statementInfoTable.addCell(getValueCell(Double.toString(creditTotal),tableDataFont, "right"));
         statementInfoTable.addCell(getStmtValueCell("",tableDataFont));
         statementInfoTable.addCell(getStmtValueCell(drcr,tableDataFont));
         statementInfoTable.addCell(getStmtValueCell("Closing Balance",labelFont));
@@ -199,9 +211,8 @@ public class PDFGenerator {
 
 // Helper methods
 
-    private static PdfPCell getHeaderCell(String text, Font font, BaseColor bgColor) {
+    private static PdfPCell getHeaderCell(String text, Font font) {
         PdfPCell cell = new PdfPCell(new Phrase(text, font));
-        cell.setBackgroundColor(bgColor);
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setPadding(8);
         return cell;
@@ -210,13 +221,15 @@ public class PDFGenerator {
     private static PdfPCell getLabelCell(String text, Font font) {
         PdfPCell cell = new PdfPCell(new Phrase(text, font));
         cell.setBorder(Rectangle.NO_BORDER);
+
         cell.setPadding(5);
         return cell;
     }
 
-    private static PdfPCell getValueCell(String text, Font font) {
+    private static PdfPCell getValueCell(String text, Font font, String alignment) {
         PdfPCell cell = new PdfPCell(new Phrase(text, font));
-        //cell.setBorder(Rectangle.NO_BORDER);
+        if(alignment.equalsIgnoreCase("right"))
+            cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
         cell.setPadding(5);
         return cell;
     }
