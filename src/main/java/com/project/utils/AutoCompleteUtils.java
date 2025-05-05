@@ -43,8 +43,9 @@ public class AutoCompleteUtils {
         // Handle item selection from the ListView
         suggestionList.setOnMouseClicked(event -> {
             String selectedProduct = suggestionList.getSelectionModel().getSelectedItem();
-            String selectedProductId = suggestedProductId.get(suggestionList.getSelectionModel().getSelectedIndex());
-            double selectedProductPrice = suggestedProductPrice.get(suggestionList.getSelectionModel().getSelectedIndex());
+            int index = suggestionList.getSelectionModel().getSelectedIndex();
+            String selectedProductId = suggestedProductId.get(index);
+            double selectedProductPrice = suggestedProductPrice.get(index);
             if (selectedProduct != null) {
                 productName.clear();
                 productName.setText(selectedProduct);
