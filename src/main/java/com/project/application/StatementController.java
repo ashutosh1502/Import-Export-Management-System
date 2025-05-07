@@ -5,6 +5,7 @@ import com.project.utils.AlertUtils;
 import com.project.utils.DatabaseErrorHandler;
 import com.project.utils.PDFGenerator;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -12,11 +13,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
@@ -40,11 +44,10 @@ public class StatementController {
     private TextField searchField;
     private Button searchBtn, processBtn, resetBtn, printBtn;
     private TableView<StatementEntity> stmtTable;
-    private TableColumn<StatementEntity, String> colType;
-    private TableColumn<StatementEntity, String> colPaymentStatus;
+    private TableColumn<StatementEntity, String> colType, colSCName, colSCId, colPaymentStatus;
     private DecimalFormat df;
     private Connection conn;
-    private String fromDateStr = "", toDateStr = "", sectionName;
+    private String fromDateStr = "", toDateStr = "", sectionName, currentSearchTerm = "";
     private Stage refStage;
     private static final String FETCH_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, net_total, payment_status, invoice_date FROM IMPORTS "
             + "UNION ALL "
@@ -70,6 +73,7 @@ public class StatementController {
             "(SELECT SUM(net_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending')";
     private static final String FETCH_HIGHEST_IMPORT = "SELECT MAX(net_total) AS highest_import FROM imports";
     private static final String FETCH_HIGHEST_EXPORT = "SELECT MAX(net_total) AS highest_export FROM exports";
+
 
     public VBox initializeStatementSection(Connection connection, String sectionName, Stage refStage) {
         conn = connection;
@@ -99,8 +103,25 @@ public class StatementController {
         searchPane = new HBox();
         searchField = new TextField();
         searchField.setPrefWidth(200);
+        searchField.textProperty().addListener((obs, oldVal, newVal) -> {
+            if(newVal.isEmpty())
+                loadStatementsData(FETCH_DATA_QUERY);
+            currentSearchTerm = newVal.toLowerCase();
+            stmtTable.refresh();
+        });
+        searchField.setOnAction(e -> searchBtn.fire());
+
         searchBtn = new Button();
         searchBtn.setPrefWidth(25);
+        searchBtn.setOnAction(e -> {
+            if(currentSearchTerm!=null && !currentSearchTerm.isEmpty()){
+                String FETCH_FILTERED_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, net_total, payment_status, invoice_date FROM IMPORTS WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') " +
+                        " UNION ALL " +
+                        " SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, net_total, payment_status, invoice_date FROM EXPORTS WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') " +
+                        " ORDER BY invoice_date ";
+                loadStatementsData(FETCH_FILTERED_DATA_QUERY);
+            }
+        });
         searchPane.setAlignment(Pos.CENTER);
         searchPane.getChildren().addAll(searchField, searchBtn);
         h1 = new HBox();
@@ -126,13 +147,22 @@ public class StatementController {
 
     private void setupStatementsTable() {
         stmtTable = new TableView<>();
+        stmtTable.setRowFactory(tv -> {
+            TableRow<StatementEntity> row = new TableRow<>();
+            row.setPrefHeight(25);
+            return row;
+        });
         stmtTable.setMinHeight(300);
         stmtTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         TableColumn<StatementEntity, Integer> colSrno = new TableColumn<>("Sr No.");
         colType = new TableColumn<>("Transaction Type");
         TableColumn<StatementEntity, String> colInvoiceNo = new TableColumn<>("Invoice No");
-        TableColumn<StatementEntity, String> colSCName = new TableColumn<>("Supplier/Customer Name");
-        TableColumn<StatementEntity, String> colSCId = new TableColumn<>("Supplier/Customer Id");
+        colSCName = new TableColumn<>("Supplier/Customer Name");
+        colSCName.setCellValueFactory(new PropertyValueFactory<>("supplierCustomerName"));
+        makeColumnSearchable(colSCName);
+        colSCId = new TableColumn<>("Supplier/Customer Id");
+        colSCName.setCellValueFactory(new PropertyValueFactory<>("supplierCustomerId"));
+        makeColumnSearchable(colSCName);
         TableColumn<StatementEntity, String> colNetTotal = new TableColumn<>("Net Total");
         colPaymentStatus = new TableColumn<>("Payment Status");
         TableColumn<StatementEntity, String> colInvoiceDate = new TableColumn<>("Invoice Date");
@@ -483,6 +513,61 @@ public class StatementController {
         });
     }
 
+//    private void setSearchFunctionality(){
+//        searchBtn.setOnAction(e ->{
+//            String searchTerm = searchField.getText();
+//            if(!searchTerm.isEmpty()){
+//                for(StatementEntity stmtEntity = )
+//            }
+//        });
+//    }
+
+    private <T> void makeColumnSearchable(TableColumn<StatementEntity, T> column) {
+        column.setCellFactory(col -> new TableCell<>() {
+            @Override
+            protected void updateItem(T item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setGraphic(null);
+                    setText(null);
+                } else {
+                    String cellText = item.toString();
+                    if (currentSearchTerm != null && !currentSearchTerm.isEmpty()
+                            && cellText.toLowerCase().contains(currentSearchTerm.toLowerCase())) {
+                        TextFlow textFlow = buildHighlightedText(cellText, currentSearchTerm);
+                        textFlow.setLineSpacing(0);
+                        textFlow.setPadding(Insets.EMPTY);
+                        textFlow.setPrefWidth(getTableColumn().getWidth() - 10); // avoids wrapping
+                        setGraphic(textFlow);
+                        setText(null);
+                        setAlignment(Pos.CENTER_LEFT);
+
+                    } else {
+                        setText(cellText);
+                        setGraphic(null);
+                        setContentDisplay(ContentDisplay.TEXT_ONLY);
+                        setAlignment(Pos.CENTER_LEFT);
+                    }
+                }
+            }
+        });
+    }
+
+    private TextFlow buildHighlightedText(String text, String searchTerm) {
+        int startIndex = text.toLowerCase().indexOf(searchTerm.toLowerCase());
+        if (startIndex < 0) return new TextFlow(new Text(text));
+
+        Text before = new Text(text.substring(0, startIndex));
+        Text match = new Text(text.substring(startIndex, startIndex + searchTerm.length()));
+        Text after = new Text(text.substring(startIndex + searchTerm.length()));
+        match.setStyle("-fx-fill: rgb(42,230,0); -fx-font-weight: bold;");
+        before.setWrappingWidth(Double.MAX_VALUE);
+        match.setWrappingWidth(Double.MAX_VALUE);
+        after.setWrappingWidth(Double.MAX_VALUE);
+        TextFlow textFlow = new TextFlow(before, match, after);
+        return textFlow;
+    }
+
     private ArrayList getTableEntries(){
         ArrayList<StatementBillTableEntry> entries = new ArrayList<>();
         StatementBillTableEntry entry;
@@ -500,5 +585,6 @@ public class StatementController {
         processedDate = date.substring(date.lastIndexOf('-')+1,date.lastIndexOf('-')+3) + "-" + date.substring(date.indexOf('-')+1,date.indexOf('-')+3) + "-" + "20" + date.substring(2,4);
         return processedDate;
     }
+
 }
 
