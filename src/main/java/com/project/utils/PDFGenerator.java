@@ -85,7 +85,7 @@ public class PDFGenerator {
         table.addCell(getHeaderCell("SGST", headerFont));
         table.addCell(getHeaderCell("Net Amount", headerFont));
 
-        double grandTotalVal=0.0, cgst = 0.0, sgst = 0.0, netAmount = 0.0;
+        double grandTotalVal=0.0, cgst, sgst, netAmount;
         for (ExportBillTableEntry entry: bill.tableEntries) {
             table.addCell(getValueCell(entry.date, tableDataFont, ""));
             table.addCell(getValueCell(entry.productName, tableDataFont, ""));

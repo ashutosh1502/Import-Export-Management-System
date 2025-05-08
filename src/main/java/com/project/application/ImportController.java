@@ -831,22 +831,18 @@ public class ImportController {
                         txtCity.getText(), txtState.getText(), txtPhone.getText(), txtEmail.getText(), dpOrderDate.getValue().toString(),
                         dpInvoiceDate.getValue().toString(), txtSubTotal.getText(), payment.getValue(), paid.isSelected() ? "Paid" : "Pending",
                         txtInvoiceNumber.getText(), gstVal, Double.parseDouble(txtNetTotal.getText()), selectedInvoiceNumber);
+                boolean invoiceUpdated = updateInvoiceProductsEntry(txtInvoiceNumber.getText(),selectedInvoiceNumber);
                 // Create a nested table for the products column
-                if (updatedImport) {
-                    boolean invoiceUpdated = updateInvoiceProductsEntry(txtInvoiceNumber.getText(),selectedInvoiceNumber);
-                    if (invoiceUpdated) {
-                        AlertUtils.showMsg("Entry updated successfully!");
-                        popupStage.close();
-                        loadImportsData();
-                    } else {
-                        conn.rollback();
-                        AlertUtils.showMsg("Failed to update entry!");
-                        popupStage.close();
-                        loadImportsData();
-                    }
+                if (updatedImport && invoiceUpdated) {
+                    AlertUtils.showMsg("Entry updated successfully!");
+                    popupStage.close();
+                    loadImportsData();
+                    conn.rollback();
                 }else{
                     conn.rollback();
                     AlertUtils.showMsg("Failed to update entry!");
+                    popupStage.close();
+                    loadImportsData();
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -1025,7 +1021,7 @@ public class ImportController {
     }
 
     private void calculateNetTotal(){
-        double netTotal = 0.0;
+        double netTotal;
         double subTotal = Double.parseDouble(txtSubTotal.getText());
         int gst = gstComboBox.getValue();
         netTotal = subTotal + (subTotal*((double) gst /100));
@@ -1124,7 +1120,7 @@ public class ImportController {
 
     private String generateInvoiceNumber(){
         int importsCount = 1;
-        String invoiceNum = "";
+        String invoiceNum;
         if (importsTable != null && importsTable.getItems() != null) {
             importsCount = importsTable.getItems().size() + 1;
         }

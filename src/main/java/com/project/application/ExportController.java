@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -843,23 +844,18 @@ public class ExportController {
                         txtCity.getText(), txtState.getText(), txtPhone.getText(), txtEmail.getText(), dpOrderDate.getValue().toString(),
                         dpInvoiceDate.getValue().toString(), txtSubTotal.getText(), payment.getValue(), paid.isSelected() ? "Paid" : "Pending",
                         txtInvoiceNumber.getText(), gstVal, Double.parseDouble(txtNetTotal.getText()), selectedInvoiceNumber);
+                boolean invoiceUpdated = updateInvoiceProductsEntry(txtInvoiceNumber.getText(),selectedInvoiceNumber);
 
                 // Create a nested table for the products column
-                if (updatedExport) {
-                    boolean invoiceUpdated = updateInvoiceProductsEntry(txtInvoiceNumber.getText(),selectedInvoiceNumber);
-                    if (invoiceUpdated) {
-                        AlertUtils.showMsg("Entry updated successfully!");
-                        popupStage.close();
-                        loadExportsData();
-                    } else {
-                        conn.rollback();
-                        AlertUtils.showMsg("Failed to update entry!");
-                        popupStage.close();
-                        loadExportsData();
-                    }
+                if (updatedExport && invoiceUpdated) {
+                    AlertUtils.showMsg("Entry updated successfully!");
+                    popupStage.close();
+                    loadExportsData();
                 }else{
                     conn.rollback();
-                    AlertUtils.showMsg("Failed to update entry");
+                    AlertUtils.showMsg("Failed to update entry!");
+                    popupStage.close();
+                    loadExportsData();
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -926,11 +922,18 @@ public class ExportController {
         HBox hBox = new HBox(10);
         hBox.setStyle("-fx-border-color: gray;-fx-border-width: 1 0 0 0;");
 
-        Image printImage = new Image(getClass().getResourceAsStream("/print.png"));
-        ImageView printImageView = new ImageView(printImage);
-        printImageView.setFitWidth(30);
-        printImageView.setFitHeight(25);
-        printInvoiceBtn = new Button("",printImageView);
+        printInvoiceBtn = new Button("Print");
+        try(InputStream stream = getClass().getResourceAsStream("/print.png")){
+            if(stream != null){
+                Image printImage = new Image(stream);
+                ImageView printImageView = new ImageView(printImage);
+                printImageView.setFitWidth(30);
+                printImageView.setFitHeight(25);
+                printInvoiceBtn.setGraphic(printImageView);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
 
         ArrayList<ExportBillTableEntry> tableEntries = getTableEntries(dpInvoiceDate.getValue().toString());
         setPrintInvoiceBtnAction(txtCustomerName.getText(),txtAddress.getText(),txtPhone.getText(),txtInvoiceNumber.getText(),tableEntries, selectedStatus);
@@ -1034,7 +1037,7 @@ public class ExportController {
     }
 
     private void calculateNetTotal(){
-        double netTotal = 0.0;
+        double netTotal;
         double subTotal = Double.parseDouble(txtSubTotal.getText());
         int gst = gstComboBox.getValue();
         netTotal = subTotal + (subTotal*((double) gst /100));
@@ -1160,7 +1163,7 @@ public class ExportController {
 
     private String generateInvoiceNumber(){
         int importsCount = 1;
-        String invoiceNum = "";
+        String invoiceNum;
         if (exportsTable != null && exportsTable.getItems() != null) {
             importsCount = exportsTable.getItems().size() + 1;
         }
