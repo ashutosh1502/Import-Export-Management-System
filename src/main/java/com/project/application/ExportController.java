@@ -849,14 +849,12 @@ public class ExportController {
                 // Create a nested table for the products column
                 if (updatedExport && invoiceUpdated) {
                     AlertUtils.showMsg("Entry updated successfully!");
-                    popupStage.close();
-                    loadExportsData();
                 }else{
                     conn.rollback();
                     AlertUtils.showMsg("Failed to update entry!");
-                    popupStage.close();
-                    loadExportsData();
                 }
+                popupStage.close();
+                loadExportsData();
             } catch (Exception ex) {
                 ex.printStackTrace();
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Update Failed", "Error updating record: " + ex.getMessage());
