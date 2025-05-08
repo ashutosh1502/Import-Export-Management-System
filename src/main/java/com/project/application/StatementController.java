@@ -5,7 +5,6 @@ import com.project.utils.AlertUtils;
 import com.project.utils.DatabaseErrorHandler;
 import com.project.utils.PDFGenerator;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -29,6 +28,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class StatementController {
 
@@ -43,6 +43,8 @@ public class StatementController {
     private DatePicker fromDate, toDate;
     private TextField searchField;
     private Button searchBtn, processBtn, resetBtn, printBtn;
+    private ToggleGroup viewImpExpBtnGrp;
+    private ToggleButton viewImportsBtn, viewExportsBtn;
     private TableView<StatementEntity> stmtTable;
     private TableColumn<StatementEntity, String> colType, colSCName, colSCId, colPaymentStatus;
     private DecimalFormat df;
@@ -105,23 +107,14 @@ public class StatementController {
         searchField.setPrefWidth(200);
         searchField.textProperty().addListener((obs, oldVal, newVal) -> {
             if(newVal.isEmpty())
-                loadStatementsData(FETCH_DATA_QUERY);
+                resetBtn.fire();
             currentSearchTerm = newVal.toLowerCase();
             stmtTable.refresh();
         });
         searchField.setOnAction(e -> searchBtn.fire());
-
         searchBtn = new Button();
         searchBtn.setPrefWidth(25);
-        searchBtn.setOnAction(e -> {
-            if(currentSearchTerm!=null && !currentSearchTerm.isEmpty()){
-                String FETCH_FILTERED_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, net_total, payment_status, invoice_date FROM IMPORTS WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') " +
-                        " UNION ALL " +
-                        " SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, net_total, payment_status, invoice_date FROM EXPORTS WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') " +
-                        " ORDER BY invoice_date ";
-                loadStatementsData(FETCH_FILTERED_DATA_QUERY);
-            }
-        });
+        setSearchBtnAction();
         searchPane.setAlignment(Pos.CENTER);
         searchPane.getChildren().addAll(searchField, searchBtn);
         h1 = new HBox();
@@ -131,18 +124,33 @@ public class StatementController {
     private void setupFilterSection() {
         from = new Label("From: ");
         fromDate = new DatePicker();
+        fromDate.valueProperty().addListener((obc,oldDate,newDate) -> {
+            if(newDate != null){
+                fromDateStr = fromDate.getValue().toString();
+            }
+        });
         to = new Label("To: ");
         toDate = new DatePicker();
+        toDate.valueProperty().addListener((obc,oldDate,newDate) -> {
+            if(newDate != null){
+                toDateStr = toDate.getValue().toString();
+            }
+        });
         processBtn = new Button("Process");
         setProcessBtnAction();
         resetBtn = new Button("Reset");
         setResetBtnAction();
+        viewImportsBtn = new ToggleButton("Imports");
+        viewExportsBtn = new ToggleButton("Exports");
+        viewImpExpBtnGrp = new ToggleGroup();
+        viewImpExpBtnGrp.getToggles().addAll(viewImportsBtn,viewExportsBtn);
+        setToggleBtnsAction();
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
         printBtn = new Button("Print Statement");
         setPrintStmtBtnAction();
         h2 = new HBox();
-        h2.getChildren().addAll(from, fromDate, to, toDate, processBtn, resetBtn, spacer, printBtn);
+        h2.getChildren().addAll(viewImportsBtn, viewExportsBtn,from, fromDate, to, toDate, processBtn, resetBtn, spacer, printBtn);
     }
 
     private void setupStatementsTable() {
@@ -217,43 +225,7 @@ public class StatementController {
         stats[6].setText(stats[6].getText() + getHighestExport(highestExportQuery));
     }
 
-    public void addStyles() {
-        title.setStyle("-fx-font-size:16px;-fx-font-weight:bold;");
-        HBox.setMargin(searchPane, new Insets(0, 0, 0, 450));
-        HBox.setMargin(from, new Insets(5, 0, 0, 0));
-        HBox.setMargin(to, new Insets(5, 0, 0, 20));
-        HBox.setMargin(processBtn, new Insets(0, 0, 0, 20));
-        HBox.setMargin(resetBtn, new Insets(0, 0, 0, 10));
-        HBox.setMargin(printBtn, new Insets(0, 10, 5, 0));
-        from.setStyle("-fx-font-weight:bold;");
-        to.setStyle("-fx-font-weight:bold;");
-        searchBtn.setStyle("-fx-background-image: url('/search-icon.png'); " +
-                "-fx-background-size: 15px; " +
-                "-fx-background-repeat: no-repeat; " +
-                "-fx-background-position: center;");
-        processBtn.setPrefWidth(150);
-        processBtn.setStyle("-fx-background-color: rgb(210,252,210); -fx-border-color: rgb(159,252,162); -fx-border-radius: 2px;");
-        resetBtn.setPrefWidth(150);
-        resetBtn.setStyle("-fx-background-color: rgb(210,240,252); -fx-border-color: rgb(159,217,252); -fx-border-radius: 2px;");
-        printBtn.setPrefWidth(150);
-        h1.setPadding(new Insets(5, 0, 5, 10));
-        h1.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
-        h2.setPadding(new Insets(5, 0, 0, 10));
-        h2.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
 
-        HBox.setHgrow(leftPart, Priority.ALWAYS);
-        HBox.setHgrow(rightPart, Priority.ALWAYS);
-        leftPart.setPadding(new Insets(10, 10, 10, 10));
-        rightPart.setPadding(new Insets(10, 10, 10, 10));
-        for (Label stat : stats) {
-            stat.setStyle("-fx-font-size:12px;-fx-font-weight:bold;");
-        }
-        stats[5].setTextFill(Color.BLUEVIOLET);
-        stats[6].setTextFill(Color.BLUEVIOLET);
-        summaryPane.setMaxHeight(140);
-        summaryPane.setMinHeight(50);
-        VBox.setVgrow(bodyPane,Priority.ALWAYS);
-    }
 
     private void loadStatementsData(String query) {
         stmtTable.getItems().clear();
@@ -320,6 +292,31 @@ public class StatementController {
         });
     }
 
+    private void setSearchBtnAction(){
+        searchBtn.setOnAction(e -> {
+            if(currentSearchTerm!=null && !currentSearchTerm.isEmpty()){
+                String FETCH_FILTERED_DATA_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name as party_name, supplier_id as party_id, net_total, payment_status, invoice_date FROM IMPORTS WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') " +
+                        " UNION ALL " +
+                        " SELECT 'Exports' AS type, invoice_number, customer_name as party_name, customer_id as party_id, net_total, payment_status, invoice_date FROM EXPORTS WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') " +
+                        " ORDER BY invoice_date ";
+                String RANGE_BASED_FILTER_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
+                        "net_total, payment_status, invoice_date FROM imports " +
+                        "WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD')) " +
+                        "UNION ALL " +
+                        "SELECT 'Exports' AS type, invoice_number, customer_name AS party_name, customer_id AS party_id, " +
+                        "net_total, payment_status, invoice_date FROM exports " +
+                        "WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD')) " +
+                        "ORDER BY invoice_date";
+                if(fromDateStr != null && toDateStr != null &&
+                        !fromDateStr.isEmpty() && !toDateStr.isEmpty()){
+                    loadStatementsData(RANGE_BASED_FILTER_QUERY);
+                }else{
+                    loadStatementsData(FETCH_FILTERED_DATA_QUERY);
+                }
+            }
+        });
+    }
+
     private void setProcessBtnAction() {
         processBtn.setOnAction(event -> {
             if (fromDate.getValue() == null || toDate.getValue() == null) {
@@ -332,22 +329,21 @@ public class StatementController {
                 alert.showAndWait();
                 return;
             }
-            fromDateStr = fromDate.getValue().toString();
-            toDateStr = toDate.getValue().toString();
-            System.out.println(fromDateStr + " " + toDateStr);
-            String rangeBasedDataQuery = "SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
+//            fromDateStr = fromDate.getValue().toString();
+//            toDateStr = toDate.getValue().toString();
+            String RANGE_BASED_FILTER_QUERY = "SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
                     "net_total, payment_status, invoice_date FROM imports " +
-                    "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
+                    "WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD')) " +
                     "UNION ALL " +
                     "SELECT 'Exports' AS type, invoice_number, customer_name AS party_name, customer_id AS party_id, " +
                     "net_total, payment_status, invoice_date FROM exports " +
-                    "WHERE invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD') " +
+                    "WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('" + fromDateStr + "','YYYY-MM-DD')" + " AND TO_DATE('" + toDateStr + "','YYYY-MM-DD')) " +
                     "ORDER BY invoice_date";
-            loadStatementsData(rangeBasedDataQuery);
+            loadStatementsData(RANGE_BASED_FILTER_QUERY);
             String rangeBasedTopSuppQuery = "SELECT * FROM ( " +
                     "SELECT i.supplier_id, i.supplier_name, SUM(ip.quantity) as total_import_qty FROM imports i " +
                             "JOIN import_products ip ON i.invoice_number = ip.invoice_number " +
-                            "WHERE i.invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')"+
+                            "WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') AND (i.invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))"+
                             "GROUP BY i.supplier_id,i.supplier_name " +
                             "ORDER BY total_import_qty DESC " +
                             ") " +
@@ -355,20 +351,20 @@ public class StatementController {
             String rangeBasedTopCustQuery = "SELECT * FROM ( " +
                     "SELECT e.customer_id, e.customer_name, SUM(ep.price * ep.quantity) as total_purchase FROM exports e " +
                     "JOIN export_products ep ON e.invoice_number = ep.invoice_number " +
-                    "WHERE e.invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')"+
+                    "WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') AND (e.invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))"+
                     "GROUP BY e.customer_id,e.customer_name " +
                     "ORDER BY total_purchase DESC " +
                     ") " +
                     "WHERE ROWNUM = 1";
             String rangeBasedNetProfitQuery = "SELECT " +
-                    "(SELECT NVL(SUM(net_total),0) FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) -" +
-                    "(SELECT NVL(SUM(net_total),0) FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')) " +
+                    "(SELECT NVL(SUM(net_total),0) FROM exports WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))) -" +
+                    "(SELECT NVL(SUM(net_total),0) FROM imports WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))) " +
                     "AS net_profit FROM dual";
             String rangeBasedPendingPaymentsQuery = "SELECT * FROM" +
-                    "(SELECT SUM(net_total) AS imports_pending_payment FROM imports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')), " +
-                    "(SELECT SUM(net_total) AS exports_pending_payment FROM exports WHERE LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))";
-            String rangeBasedHighestImportQuery = "SELECT MAX(net_total) AS highest_import FROM imports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
-            String rangeBasedHighestExportQuery = "SELECT MAX(net_total) AS highest_export FROM exports WHERE invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')";
+                    "(SELECT SUM(net_total) AS imports_pending_payment FROM imports WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') AND LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD')), " +
+                    "(SELECT SUM(net_total) AS exports_pending_payment FROM exports WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') AND LOWER(payment_status) = 'pending' AND invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))";
+            String rangeBasedHighestImportQuery = "SELECT MAX(net_total) AS highest_import FROM imports WHERE (supplier_id LIKE '%"+currentSearchTerm+"%' OR supplier_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))";
+            String rangeBasedHighestExportQuery = "SELECT MAX(net_total) AS highest_export FROM exports WHERE (customer_id LIKE '%"+currentSearchTerm+"%' OR customer_name LIKE '%"+currentSearchTerm+"%') AND (invoice_date BETWEEN TO_DATE('"+fromDateStr+"','YYYY-MM-DD') AND TO_DATE('"+toDateStr+"','YYYY-MM-DD'))";
             setupSummarySection(rangeBasedNetProfitQuery,rangeBasedTopSuppQuery,rangeBasedTopCustQuery,rangeBasedPendingPaymentsQuery,rangeBasedHighestImportQuery,rangeBasedHighestExportQuery);
             addStyles();
             setPrintStmtBtnAction();
@@ -380,9 +376,12 @@ public class StatementController {
             fromDate.setValue(null);
             toDate.setValue(null);
             searchField.setText("");
+            viewImportsBtn.setSelected(false);
+            viewExportsBtn.setSelected(false);
             loadStatementsData(FETCH_DATA_QUERY);
             setupSummarySection(FETCH_NET_PROFIT,FETCH_TOP_SUPPLIER,FETCH_TOP_CUSTOMER,FETCH_PENDING_PAYMENTS,FETCH_HIGHEST_IMPORT,FETCH_HIGHEST_EXPORT);
             addStyles();
+            setPrintStmtBtnAction();
         });
     }
 
@@ -490,6 +489,53 @@ public class StatementController {
         return highestExport.toString();
     }
 
+    private void setToggleBtnsAction(){
+        viewImportsBtn.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                viewImportsBtn.setText("✓Imports");
+                viewImportsBtn.setStyle("-fx-background-color: rgb(130,190,255); -fx-opacity: 1; -fx-font-weight: bold;");
+                StringBuilder FETCH_ONLY_IMPORTS = new StringBuilder("SELECT 'Imports' AS type, invoice_number, supplier_name AS party_name, supplier_id AS party_id, " +
+                        "net_total, payment_status, invoice_date FROM imports WHERE 1=1 ");
+                if(currentSearchTerm != null && !currentSearchTerm.isEmpty()){
+                    FETCH_ONLY_IMPORTS.append(" AND (supplier_id LIKE '%").append(currentSearchTerm).append("%' OR supplier_name LIKE '%").append(currentSearchTerm).append("%')");
+                }
+//                System.out.println(fromDateStr + toDateStr);
+                if(fromDateStr != null && toDateStr != null &&
+                        !fromDateStr.isEmpty() && !toDateStr.isEmpty()){
+                    FETCH_ONLY_IMPORTS.append(" AND (invoice_date BETWEEN TO_DATE('").append(fromDateStr).append("','YYYY-MM-DD')").append(" AND TO_DATE('").append(toDateStr).append("','YYYY-MM-DD'))");
+                }
+//                System.out.println(FETCH_ONLY_IMPORTS);
+                loadStatementsData(FETCH_ONLY_IMPORTS.toString());
+            } else {
+                viewImportsBtn.setText("Imports");
+                viewImportsBtn.setStyle("-fx-background-color: rgb(130,190,255); -fx-opacity: 0.6;");
+                loadStatementsData(FETCH_DATA_QUERY);
+            }
+            setPrintStmtBtnAction();
+        });
+        viewExportsBtn.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                viewExportsBtn.setText("✓Exports");
+                viewExportsBtn.setStyle("-fx-background-color: rgb(130,190,255); -fx-opacity: 1; -fx-font-weight: bold;");
+                StringBuilder FETCH_ONLY_EXPORTS = new StringBuilder("SELECT 'Exports' AS type, invoice_number, customer_name AS party_name, customer_id AS party_id, " +
+                        "net_total, payment_status, invoice_date FROM exports WHERE 1=1 ");
+                if(currentSearchTerm != null && !currentSearchTerm.isEmpty()){
+                    FETCH_ONLY_EXPORTS.append(" AND (customer_id LIKE '%").append(currentSearchTerm).append("%' OR customer_name LIKE '%").append(currentSearchTerm).append("%')");
+                }
+                if(fromDateStr != null && toDateStr != null &&
+                        !fromDateStr.isEmpty() && !toDateStr.isEmpty()){
+                    FETCH_ONLY_EXPORTS.append(" AND (invoice_date BETWEEN TO_DATE('").append(fromDateStr).append("','YYYY-MM-DD')").append(" AND TO_DATE('").append(toDateStr).append("','YYYY-MM-DD'))");
+                }
+                loadStatementsData(FETCH_ONLY_EXPORTS.toString());
+            } else {
+                viewExportsBtn.setText("Exports");
+                viewExportsBtn.setStyle("-fx-background-color: rgb(130,190,255); -fx-opacity: 0.6;");
+                loadStatementsData(FETCH_DATA_QUERY);
+            }
+            setPrintStmtBtnAction();
+        });
+    }
+
     private void setPrintStmtBtnAction(){
         ArrayList<StatementBillTableEntry> entries = getTableEntries();
         printBtn.setOnAction( e ->{
@@ -497,10 +543,15 @@ public class StatementController {
                 String address,contact;
                 address = "Plot No-08, MIDC Urun Islampur- 415409, Tal-Walwa, Dist-Sangli.";
                 contact = "Contact: +91 8275057797, +91 9960013301.";
-
                 StatementBill stmtBill = new StatementBill(sectionName,address,contact,processDateString(fromDateStr)+" to "+processDateString(toDateStr), entries);
-                String defaultFilename = (fromDateStr.isEmpty() || toDateStr.isEmpty()) ? "" : processDateString(fromDateStr)+"-"+processDateString(toDateStr)+"-statement";
-                String filePath = PDFGenerator.getSaveLocation(refStage,defaultFilename);
+                StringBuilder defaultFilename = new StringBuilder( (fromDateStr.isEmpty() || toDateStr.isEmpty()) ? "" : "Statement-"+processDateString(fromDateStr)+"-"+processDateString(toDateStr));
+                if(viewImportsBtn.isSelected())
+                    defaultFilename.insert(0,"Imports-");
+                if (viewExportsBtn.isSelected())
+                    defaultFilename.insert(0,"Exports-");
+                if(currentSearchTerm !=null && !currentSearchTerm.isEmpty())
+                    defaultFilename.insert(0,currentSearchTerm.toUpperCase()+"-");
+                String filePath = PDFGenerator.getSaveLocation(refStage,defaultFilename.toString());
                 if (filePath==null){
                     AlertUtils.showAlert(Alert.AlertType.ERROR,"Something went wrong.","Please select a correct file path to store!");
                     return;
@@ -512,15 +563,6 @@ public class StatementController {
             }
         });
     }
-
-//    private void setSearchFunctionality(){
-//        searchBtn.setOnAction(e ->{
-//            String searchTerm = searchField.getText();
-//            if(!searchTerm.isEmpty()){
-//                for(StatementEntity stmtEntity = )
-//            }
-//        });
-//    }
 
     private <T> void makeColumnSearchable(TableColumn<StatementEntity, T> column) {
         column.setCellFactory(col -> new TableCell<>() {
@@ -586,5 +628,49 @@ public class StatementController {
         return processedDate;
     }
 
+    //CSS STYLING----------------------------------------------------------------------------------------------
+    private void addStyles() {
+        title.setStyle("-fx-font-size:16px;-fx-font-weight:bold;");
+        HBox.setMargin(searchPane, new Insets(0, 0, 0, 450));
+        HBox.setMargin(from, new Insets(5, 0, 0, 10));
+        HBox.setMargin(to, new Insets(5, 0, 0, 20));
+        HBox.setMargin(processBtn, new Insets(0, 0, 5, 20));
+        HBox.setMargin(resetBtn, new Insets(0, 0, 5, 10));
+        HBox.setMargin(viewImportsBtn, new Insets(0, 0, 5, 0));
+        HBox.setMargin(viewExportsBtn, new Insets(0, 0, 5, 5));
+        HBox.setMargin(printBtn, new Insets(0, 10, 5, 0));
+        from.setStyle("-fx-font-weight:bold;");
+        to.setStyle("-fx-font-weight:bold;");
+        searchBtn.setStyle("-fx-background-image: url('/search-icon.png'); " +
+                "-fx-background-size: 15px; " +
+                "-fx-background-repeat: no-repeat; " +
+                "-fx-background-position: center;");
+        processBtn.setPrefWidth(150);
+        processBtn.setStyle("-fx-background-color: rgb(210,252,210); -fx-border-color: rgb(0,252,0); -fx-border-radius: 2px;");
+        resetBtn.setPrefWidth(150);
+        resetBtn.setStyle("-fx-background-color: rgb(252,210,210); -fx-border-color: rgb(252,0,0); -fx-border-radius: 2px;");
+        printBtn.setPrefWidth(150);
+        viewImportsBtn.setPrefWidth(80);
+        viewExportsBtn.setPrefWidth(80);
+        viewImportsBtn.setStyle("-fx-background-color: rgb(130,190,255); -fx-opacity: 0.6;");
+        viewExportsBtn.setStyle("-fx-background-color: rgb(130,190,255); -fx-opacity: 0.6;");
+        h1.setPadding(new Insets(5, 0, 5, 10));
+        h1.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
+        h2.setPadding(new Insets(5, 0, 0, 10));
+        h2.setStyle("-fx-border-color:black;-fx-border-width: 0 0 1px 0;");
+
+        HBox.setHgrow(leftPart, Priority.ALWAYS);
+        HBox.setHgrow(rightPart, Priority.ALWAYS);
+        leftPart.setPadding(new Insets(10, 10, 10, 10));
+        rightPart.setPadding(new Insets(10, 10, 10, 10));
+        for (Label stat : stats) {
+            stat.setStyle("-fx-font-size:12px;-fx-font-weight:bold;");
+        }
+        stats[5].setTextFill(Color.BLUEVIOLET);
+        stats[6].setTextFill(Color.BLUEVIOLET);
+        summaryPane.setMaxHeight(140);
+        summaryPane.setMinHeight(50);
+        VBox.setVgrow(bodyPane,Priority.ALWAYS);
+    }
 }
 
