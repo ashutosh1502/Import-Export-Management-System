@@ -130,6 +130,15 @@ public class AutoCompleteUtils {
                 popup.hide();
             }
         });
-    }
 
+        matchedStates.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+            if(event.getCode() == KeyCode.ENTER){
+                String selected = matchedStates.getSelectionModel().getSelectedItem();
+                if (selected!=null){
+                    textField.setText(selected);
+                    popup.hide();
+                }
+            }
+        });
+    }
 }
