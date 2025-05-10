@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -354,25 +355,21 @@ public class ExportController {
         popupStage.setTitle("Add Product");
         popupStage.initModality(Modality.APPLICATION_MODAL);
 
-        GridPane productForm = new GridPane();
+        GridPane productForm = new GridPane(150,250);
         productForm.setPadding(new Insets(20));
         productForm.setHgap(10);
         productForm.setVgap(10);
 
         Label lblProductName = new Label("Product Name:");
         TextField txtProductName = new TextField();
-        ListView<String> suggestionList = new ListView<>();
-        VBox prBox = new VBox();
-        VBox.setMargin(txtProductName, new Insets(20, 0, 0, 0));
-        prBox.getChildren().addAll(txtProductName, suggestionList);
+        GridPane.setHgrow(txtProductName, Priority.ALWAYS);
 
         Label lblProductId = new Label("Product ID:");
         TextField txtProductId = new TextField();
 
-
         Label lblPrice = new Label("Price:");
         TextField txtPrice = new TextField();
-        AutoCompleteUtils.setAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice, suggestionList);
+        AutoCompleteUtils.setAutoCompleteProductName(conn, txtProductName, txtProductId, txtPrice);
 
         Label lblQuantity = new Label("Quantity:");
         TextField txtQuantity = new TextField();
@@ -417,9 +414,10 @@ public class ExportController {
                 alert.showAndWait();
             }
         });
+        btnClose.setOnAction(e -> popupStage.close());
 
         productForm.add(lblProductName, 0, 0);
-        productForm.add(prBox, 1, 0);
+        productForm.add(txtProductName, 1, 0);
         productForm.add(lblProductId, 0, 1);
         productForm.add(txtProductId, 1, 1);
         productForm.add(lblPrice, 0, 2);
@@ -429,11 +427,11 @@ public class ExportController {
         productForm.add(btnAddItem, 0, 4);
         productForm.add(btnClose, 1, 4);
 
-        Scene scene = new Scene(productForm, 350, 350);
+        Scene scene = new Scene(productForm, 440, 220);
         popupStage.setScene(scene);
-
-        btnClose.setOnAction(e -> popupStage.close());
         popupStage.show();
+        popupStage.setX(popupStage.getX()+140);
+        popupStage.setY(popupStage.getY()+80);
     }
 
     private void setUpProductsTable() {
