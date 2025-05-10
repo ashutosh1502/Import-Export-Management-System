@@ -1,6 +1,7 @@
 package com.project.application;
 
 import com.project.utils.AlertUtils;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -211,22 +212,78 @@ public class MainPage{
         options[index].setOnAction(e ->{
             selectOption(index);
             if(index==0){
-                scrollPane.setContent(importController.initializeImportsTable(conn));
+                Stage loaderStage = new SelectSection().showLoader(primaryStage);
+                new Thread(() -> {
+                    try{
+                        Platform.runLater(() -> {
+                            try {
+                                scrollPane.setContent(importController.initializeImportsTable(conn));
+                                loaderStage.close();
+                            } catch (Exception ex) {
+                                AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                            }
+                        });
+                    }catch (Exception ex) {
+                        AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                    }
+                }).start();
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==1){
-                scrollPane.setContent(exportController.initializeExportsTable(conn,sectionName,primaryStage));
+                Stage loaderStage = new SelectSection().showLoader(primaryStage);
+                new Thread(() -> {
+                    try{
+                        Platform.runLater(() -> {
+                            try {
+                                scrollPane.setContent(exportController.initializeExportsTable(conn,sectionName,primaryStage));
+                                loaderStage.close();
+                            } catch (Exception ex) {
+                                AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                            }
+                        });
+                    }catch (Exception ex) {
+                        AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                    }
+                }).start();
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==2){
-                scrollPane.setContent(stockController.initializeStocksTable(conn));
+                Stage loaderStage = new SelectSection().showLoader(primaryStage);
+                new Thread(() -> {
+                    try{
+                        Platform.runLater(() -> {
+                            try {
+                                scrollPane.setContent(stockController.initializeStocksTable(conn));
+                                loaderStage.close();
+                            } catch (Exception ex) {
+                                AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                            }
+                        });
+                    }catch (Exception ex) {
+                        AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                    }
+                }).start();
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);
             }else if(index==3){
-                scrollPane.setContent(statementController.initializeStatementSection(conn,sectionName,primaryStage));
+                Stage loaderStage = new SelectSection().showLoader(primaryStage);
+                new Thread(() -> {
+                    try{
+                        Platform.runLater(() -> {
+                            try {
+                                scrollPane.setContent(statementController.initializeStatementSection(conn, sectionName, primaryStage));
+                                loaderStage.close();
+                            } catch (Exception ex) {
+                                AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                            }
+                        });
+                    }catch (Exception ex) {
+                        AlertUtils.showAlert(Alert.AlertType.ERROR, "Something went wrong.", "Failed to load statement section!");
+                    }
+                }).start();
                 operationsPane.getChildren().clear();
                 for(Button btn:operations[index])
                     operationsPane.getChildren().add(btn);

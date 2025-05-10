@@ -82,7 +82,7 @@ public class SelectSection extends Application {
     }
 
 
-    private Stage showLoader(Stage owner) {
+    protected Stage showLoader(Stage owner) {
         Stage loaderStage = new Stage();
         loaderStage.initModality(Modality.WINDOW_MODAL);
         loaderStage.initOwner(owner);
