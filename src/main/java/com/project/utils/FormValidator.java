@@ -1,6 +1,15 @@
 package com.project.utils;
 
 public class FormValidator {
+
+    public static boolean validateSupplierId(String supplierId){
+        return supplierId == null || supplierId.isEmpty();
+    }
+
+    public static boolean validateSupplierName(String supplierName){
+        return supplierName == null || supplierName.isEmpty();
+    }
+
     public static boolean validatePhoneNumber(String phoneNumber){
         return phoneNumber==null || phoneNumber.isEmpty() || phoneNumber.matches("^[1-9]\\d{9}$");
     }
