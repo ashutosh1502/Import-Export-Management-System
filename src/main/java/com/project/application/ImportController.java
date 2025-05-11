@@ -239,6 +239,18 @@ public class ImportController {
                 double netTotalVal = Double.parseDouble(txtNetTotal.getText());
 
                 conn.setAutoCommit(false);
+                if(FormValidator.validateSupplierId(supplierIdEntered)){
+                    txtSupplierId.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtSupplierId.setStyle("-fx-border-width: 0px;");
+                }
+                if(FormValidator.validateSupplierName(supplierNameEntered)){
+                    txtSupplierName.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                    return;
+                }else{
+                    txtSupplierName.setStyle("-fx-border-width: 0px;");
+                }
                 if(!FormValidator.validatePhoneNumber(phoneEntered)){
                     txtPhone.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
                     return;
