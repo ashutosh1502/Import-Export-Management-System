@@ -8,9 +8,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Popup;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class AutoCompleteUtils {
@@ -25,6 +23,8 @@ public class AutoCompleteUtils {
     );
     private static final ListView<String> suggestionList = new ListView<>();
     private static final ListView<String> matchedStates = new ListView<>();
+    private static final ListView<String> matchedSupplierNames = new ListView<>();
+    private static final ArrayList<String> matchedSupplierIds = new ArrayList<>();
 
     public static void setAutoCompleteProductName(Connection conn, TextField productName, TextField productId, TextField productPrice) {
         Popup popup = new Popup();
@@ -100,6 +100,7 @@ public class AutoCompleteUtils {
         return productSuggestions;
     }
 
+    //--------------------------------------------------------------------------------------
     public static void setAutoCompleteStates(TextField textField){
         Popup popup = new Popup();
         popup.setAutoHide(true);
@@ -141,6 +142,84 @@ public class AutoCompleteUtils {
                     textField.setText(selected);
                     popup.hide();
                 }
+            }
+        });
+    }
+
+    //------------------------------------------------------------------------------------
+    public static void setAutoCompleteSupplierDetails(Connection conn, TextField supplierName, TextField supplierId, TextField address,
+                                                      TextField city, TextField state, TextField phoneNum, TextField email){
+        Popup popup = new Popup();
+        popup.setAutoHide(true);
+        popup.getContent().add(matchedSupplierNames);
+
+        supplierName.textProperty().addListener((obs, oldText, newText) -> {
+            if(newText.isEmpty()){
+                popup.hide();
+                return;
+            }
+            String FETCH_SUPP_NAMES = "SELECT supplier_name,supplier_id FROM suppliers WHERE supplier_name LIKE '%"+newText+"%'";
+            ObservableList<String> filtered = FXCollections.observableArrayList();
+
+            try{
+                Statement stmt = conn.createStatement();
+                ResultSet res = stmt.executeQuery(FETCH_SUPP_NAMES);
+                while(res.next()){
+                    filtered.add(res.getString("supplier_name"));
+                    matchedSupplierIds.add(res.getString("supplier_id"));
+                }
+            }catch (SQLException s){
+                DatabaseErrorHandler.handleDatabaseError(s);
+            }
+
+            if(filtered.isEmpty()){
+                popup.hide();
+                return;
+            }
+
+            matchedSupplierNames.setItems(filtered);
+            Bounds bounds = supplierName.localToScreen(supplierName.getBoundsInLocal());
+            popup.show(supplierName,bounds.getMinX(),bounds.getMaxY());
+        });
+        matchedSupplierNames.setOnMouseClicked(e -> {
+            String selectedName = matchedSupplierNames.getSelectionModel().getSelectedItem();
+            int index = matchedSupplierNames.getSelectionModel().getSelectedIndex();
+            String selectedId = matchedSupplierIds.get(index);
+            if (selectedName!=null){
+                supplierName.setText(selectedName);
+                supplierId.setText(selectedId);
+                try{
+                    ResultSet res = conn.createStatement().executeQuery("SELECT * EXCEPT supplier_name, supplier_id FROM suppliers WHERE supplier_id = " + selectedId);
+                    address.setText(res.getString("address"));
+                    city.setText(res.getString("city"));
+                    state.setText(res.getString("state"));
+                    phoneNum.setText(res.getString("phone_number"));
+                    email.setText(res.getString("email"));
+                }catch (SQLException s){
+                    DatabaseErrorHandler.handleDatabaseError(s);
+                }
+                popup.hide();
+            }
+        });
+
+        matchedSupplierNames.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+            String selectedName = matchedSupplierNames.getSelectionModel().getSelectedItem();
+            int index = matchedSupplierNames.getSelectionModel().getSelectedIndex();
+            String selectedId = matchedSupplierIds.get(index);
+            if (selectedName!=null){
+                supplierName.setText(selectedName);
+                supplierId.setText(selectedId);
+                try{
+                    ResultSet res = conn.createStatement().executeQuery("SELECT * EXCEPT supplier_name, supplier_id FROM suppliers WHERE supplier_id = " + selectedId);
+                    address.setText(res.getString("address"));
+                    city.setText(res.getString("city"));
+                    state.setText(res.getString("state"));
+                    phoneNum.setText(res.getString("phone_number"));
+                    email.setText(res.getString("email"));
+                }catch (SQLException s){
+                    DatabaseErrorHandler.handleDatabaseError(s);
+                }
+                popup.hide();
             }
         });
     }
